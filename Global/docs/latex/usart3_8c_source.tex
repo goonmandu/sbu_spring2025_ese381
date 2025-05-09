@@ -1,0 +1,43 @@
+\doxysection{usart3.\+c}
+\hypertarget{usart3_8c_source}{}\label{usart3_8c_source}\index{D:/ESE381/Global/ese381/ese381/usart3.c@{D:/ESE381/Global/ese381/ese381/usart3.c}}
+\mbox{\hyperlink{usart3_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <avr/io.h>}}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{usart3_8h}{usart3.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00004}\mbox{\hyperlink{usart3_8c_a290c577d8d7380019971c8081544f131}{00004}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{usart3_8c_a290c577d8d7380019971c8081544f131}{USART3\_init}}()\ \{}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00005}00005\ \ \ \ \ USART3.BAUD\ =\ 1667;}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00006}00006\ \ \ \ \ USART3.CTRLC\ =\ 0x03;}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00007}00007\ \ \ \ \ USART3.CTRLB\ =\ USART\_TXEN\_bm\ |\ USART\_RXEN\_bm;}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00008}00008\ \ \ \ \ VPORTB.DIR\ =\ 0x01;}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00011}\mbox{\hyperlink{usart3_8c_a506414426742aaed46baa16b07acdec7}{00011}}\ uint8\_t\ \mbox{\hyperlink{usart3_8c_a506414426742aaed46baa16b07acdec7}{USART3\_read}}()\ \{}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{while}\ (!(USART3.STATUS\ \&\ USART\_RXCIF\_bm));\ \ \textcolor{comment}{//\ wait\ for\ data\ to\ be\ fully\ received}}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{return}\ USART3.RXDATAL;}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00016}\mbox{\hyperlink{usart3_8c_a512d409fcaf076cdad171684b1dc01af}{00016}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{usart3_8c_a512d409fcaf076cdad171684b1dc01af}{USART3\_send\_char}}(uint8\_t\ c)\ \{}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{while}\ (!(USART3.STATUS\ \&\ USART\_DREIF\_bm));\ \ \textcolor{comment}{//\ wait\ for\ prev\ data\ to\ be\ fully\ sent}}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00018}00018\ \ \ \ \ USART3.TXDATAL\ =\ c;}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00021}\mbox{\hyperlink{usart3_8c_a3498a62a7db807a2dc834e38db2985e9}{00021}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{usart3_8c_a3498a62a7db807a2dc834e38db2985e9}{USART3\_send\_string}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *buf)\ \{}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ strlen(buf);\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{usart3_8c_a512d409fcaf076cdad171684b1dc01af}{USART3\_send\_char}}(buf[i]);}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00027}\mbox{\hyperlink{usart3_8c_a914a9817f460f33c6cb96f2ed993067a}{00027}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{usart3_8c_a914a9817f460f33c6cb96f2ed993067a}{USART3\_serlcd\_clear}}()\ \{}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{usart3_8c_a512d409fcaf076cdad171684b1dc01af}{USART3\_send\_char}}(\textcolor{charliteral}{'|'});}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{usart3_8c_a512d409fcaf076cdad171684b1dc01af}{USART3\_send\_char}}(\textcolor{charliteral}{'-\/'});}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00032}\mbox{\hyperlink{usart3_8c_a46dae884396b64833dc8ee4dccd808da}{00032}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{usart3_8c_a46dae884396b64833dc8ee4dccd808da}{USART3\_serlcd\_backlight}}(uint8\_t\ r,\ uint8\_t\ g,\ uint8\_t\ b)\ \{}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{usart3_8c_a512d409fcaf076cdad171684b1dc01af}{USART3\_send\_char}}(\textcolor{charliteral}{'+'});}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{usart3_8c_a512d409fcaf076cdad171684b1dc01af}{USART3\_send\_char}}(r);}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{usart3_8c_a512d409fcaf076cdad171684b1dc01af}{USART3\_send\_char}}(g);}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{usart3_8c_a512d409fcaf076cdad171684b1dc01af}{USART3\_send\_char}}(b);}
+\DoxyCodeLine{\Hypertarget{usart3_8c_source_l00037}00037\ \}}
+
+\end{DoxyCode}

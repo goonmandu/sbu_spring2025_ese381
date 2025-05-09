@@ -1,0 +1,196 @@
+\doxysection{D\+:/\+ESE381/\+Global/ese381/ese381/twi0\+\_\+master.h File Reference}
+\hypertarget{twi0__master_8h}{}\label{twi0__master_8h}\index{D:/ESE381/Global/ese381/ese381/twi0\_master.h@{D:/ESE381/Global/ese381/ese381/twi0\_master.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for twi0\+\_\+master.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{twi0__master_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{twi0__master_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{twi0__master_8h_a6fa83b03086be1a5348c221f5c65587d}{TWI\+\_\+init\+Host}} (void)
+\item 
+void \mbox{\hyperlink{twi0__master_8h_a98aa41f921217ea835a6f8e993c7dbc3}{TWI\+\_\+init\+Pins}} (void)
+\item 
+bool \mbox{\hyperlink{twi0__master_8h_a472ca814410582196cc43dc0d26ac959}{TWI\+\_\+send\+Byte}} (uint8\+\_\+t addr, uint8\+\_\+t data)
+\item 
+bool \mbox{\hyperlink{twi0__master_8h_a35878eea0edaf2bcecf05c45c6c9e0f5}{TWI\+\_\+send\+Bytes}} (uint8\+\_\+t addr, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t len)
+\item 
+bool \mbox{\hyperlink{twi0__master_8h_aba41249cfdcf6503f6facca53b858baf}{TWI\+\_\+read\+Byte}} (uint8\+\_\+t addr, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\item 
+bool \mbox{\hyperlink{twi0__master_8h_a81074b35f6014cebe4d13ea41b38484d}{TWI\+\_\+read\+Bytes}} (uint8\+\_\+t addr, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t len)
+\item 
+bool \mbox{\hyperlink{twi0__master_8h_abace615165977923b5a9abf7fe760f8a}{TWI\+\_\+send\+And\+Read\+Bytes}} (uint8\+\_\+t addr, uint8\+\_\+t reg\+Address, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t len)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{twi0__master_8h_a6fa83b03086be1a5348c221f5c65587d}\index{twi0\_master.h@{twi0\_master.h}!TWI\_initHost@{TWI\_initHost}}
+\index{TWI\_initHost@{TWI\_initHost}!twi0\_master.h@{twi0\_master.h}}
+\doxysubsubsection{\texorpdfstring{TWI\_initHost()}{TWI\_initHost()}}
+{\footnotesize\ttfamily \label{twi0__master_8h_a6fa83b03086be1a5348c221f5c65587d} 
+void TWI\+\_\+init\+Host (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Adapted by Mingi Hwang on 24 Mar 2025 from original source\+: \href{https://github.com/microchip-pic-avr-examples/avr128db48-bare-metal-twi-mplab/tree/master/twi-host.X/peripherals/TWI}{\texttt{ https\+://github.\+com/microchip-\/pic-\/avr-\/examples/avr128db48-\/bare-\/metal-\/twi-\/mplab/tree/master/twi-\/host.\+X/peripherals/\+TWI}}
+
+ORIGINAL SOURCE LICENSE STATEMENT
+
+(c) 2020 Microchip Technology Inc. and its subsidiaries.
+
+Subject to your compliance with these terms, you may use Microchip software and any derivatives exclusively with Microchip products. You\textquotesingle{}re responsible for complying with 3rd party license terms applicable to your use of 3rd party software (including open source software) that may accompany Microchip software.
+
+SOFTWARE IS "{}\+AS IS."{} NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-\/\+INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
+
+IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP\textquotesingle{}S TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE. Prof. Short does not want us to use internal pull-\/ups. External 10k PURs will be used. If defined, internal pull-\/up resistors will be used Initializes the TWI peripheral in Host Mode. 
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00055}{55}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+\Hypertarget{twi0__master_8h_a98aa41f921217ea835a6f8e993c7dbc3}\index{twi0\_master.h@{twi0\_master.h}!TWI\_initPins@{TWI\_initPins}}
+\index{TWI\_initPins@{TWI\_initPins}!twi0\_master.h@{twi0\_master.h}}
+\doxysubsubsection{\texorpdfstring{TWI\_initPins()}{TWI\_initPins()}}
+{\footnotesize\ttfamily \label{twi0__master_8h_a98aa41f921217ea835a6f8e993c7dbc3} 
+void TWI\+\_\+init\+Pins (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Initializes the I/O used by the TWI peripheral. 
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00076}{76}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+\Hypertarget{twi0__master_8h_aba41249cfdcf6503f6facca53b858baf}\index{twi0\_master.h@{twi0\_master.h}!TWI\_readByte@{TWI\_readByte}}
+\index{TWI\_readByte@{TWI\_readByte}!twi0\_master.h@{twi0\_master.h}}
+\doxysubsubsection{\texorpdfstring{TWI\_readByte()}{TWI\_readByte()}}
+{\footnotesize\ttfamily \label{twi0__master_8h_aba41249cfdcf6503f6facca53b858baf} 
+bool TWI\+\_\+read\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & -\/ Client Device Address \\
+\hline
+{\em data} & -\/ Where the byte received should be stored\\
+\hline
+\end{DoxyParams}
+Attempts to read 1 byte of data from the client. Returns true if successful, fails if unable to get data. 
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00195}{195}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{twi0__master_8h_aba41249cfdcf6503f6facca53b858baf_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{twi0__master_8h_a81074b35f6014cebe4d13ea41b38484d}\index{twi0\_master.h@{twi0\_master.h}!TWI\_readBytes@{TWI\_readBytes}}
+\index{TWI\_readBytes@{TWI\_readBytes}!twi0\_master.h@{twi0\_master.h}}
+\doxysubsubsection{\texorpdfstring{TWI\_readBytes()}{TWI\_readBytes()}}
+{\footnotesize\ttfamily \label{twi0__master_8h_a81074b35f6014cebe4d13ea41b38484d} 
+bool TWI\+\_\+read\+Bytes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint8\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & -\/ Client Device Address \\
+\hline
+{\em data} & -\/ Where the bytes received should be stored \\
+\hline
+{\em len} & -\/ Number of Bytes to Send\\
+\hline
+\end{DoxyParams}
+Attempts to read len bytes of data from the client. Returns true if successful, false if it failed to get data. 
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00208}{208}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{twi0__master_8h_a81074b35f6014cebe4d13ea41b38484d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{twi0__master_8h_abace615165977923b5a9abf7fe760f8a}\index{twi0\_master.h@{twi0\_master.h}!TWI\_sendAndReadBytes@{TWI\_sendAndReadBytes}}
+\index{TWI\_sendAndReadBytes@{TWI\_sendAndReadBytes}!twi0\_master.h@{twi0\_master.h}}
+\doxysubsubsection{\texorpdfstring{TWI\_sendAndReadBytes()}{TWI\_sendAndReadBytes()}}
+{\footnotesize\ttfamily \label{twi0__master_8h_abace615165977923b5a9abf7fe760f8a} 
+bool TWI\+\_\+send\+And\+Read\+Bytes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{, }\item[{uint8\+\_\+t}]{reg\+Address}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint8\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & -\/ Client Device Address \\
+\hline
+{\em reg\+Address} & -\/ Address of Register to Read From \\
+\hline
+{\em data} & -\/ Where the bytes received should be stored \\
+\hline
+{\em len} & -\/ Number of Bytes to Send\\
+\hline
+\end{DoxyParams}
+Writes a single byte (reg\+Address) to the client, then restarts and attempts to read len of data. Returns true if successful, false if it failed to get data. 
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00220}{220}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{twi0__master_8h_abace615165977923b5a9abf7fe760f8a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{twi0__master_8h_a472ca814410582196cc43dc0d26ac959}\index{twi0\_master.h@{twi0\_master.h}!TWI\_sendByte@{TWI\_sendByte}}
+\index{TWI\_sendByte@{TWI\_sendByte}!twi0\_master.h@{twi0\_master.h}}
+\doxysubsubsection{\texorpdfstring{TWI\_sendByte()}{TWI\_sendByte()}}
+{\footnotesize\ttfamily \label{twi0__master_8h_a472ca814410582196cc43dc0d26ac959} 
+bool TWI\+\_\+send\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{, }\item[{uint8\+\_\+t}]{data}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & -\/ Client Device Address \\
+\hline
+{\em data} & -\/ Data to Send\\
+\hline
+\end{DoxyParams}
+Sends a byte of data to the specified address. Returns true if successful, false if it failed 
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00166}{166}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{twi0__master_8h_a472ca814410582196cc43dc0d26ac959_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{twi0__master_8h_a35878eea0edaf2bcecf05c45c6c9e0f5}\index{twi0\_master.h@{twi0\_master.h}!TWI\_sendBytes@{TWI\_sendBytes}}
+\index{TWI\_sendBytes@{TWI\_sendBytes}!twi0\_master.h@{twi0\_master.h}}
+\doxysubsubsection{\texorpdfstring{TWI\_sendBytes()}{TWI\_sendBytes()}}
+{\footnotesize\ttfamily \label{twi0__master_8h_a35878eea0edaf2bcecf05c45c6c9e0f5} 
+bool TWI\+\_\+send\+Bytes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint8\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & -\/ Client Device Address \\
+\hline
+{\em data} & -\/ Pointer to the data to send \\
+\hline
+{\em len} & -\/ Number of Bytes to Send\\
+\hline
+\end{DoxyParams}
+Attempts to send len bytes of data to the client. Returns true if successful, false if it failed 
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00180}{180}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{twi0__master_8h_a35878eea0edaf2bcecf05c45c6c9e0f5_cgraph}
+\end{center}
+\end{figure}

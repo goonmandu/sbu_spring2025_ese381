@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_4c10d255f31da9eed8cb28f9c48f4f6c" xml:lang="en-US">
+<title>Lab10/src/Lab10 Directory Reference</title>
+<indexterm><primary>Lab10/src/Lab10 Directory Reference</primary></indexterm>
+Directory dependency graph for Lab10:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_4c10d255f31da9eed8cb28f9c48f4f6c_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_adef5f42ebf2f8890ce47a32613a09ba">Task3</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

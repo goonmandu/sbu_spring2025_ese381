@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_twi0__master_8h" xml:lang="en-US">
+<title>D:/ESE381/Global/ese381/ese381/twi0_master.h File Reference</title>
+<indexterm><primary>D:/ESE381/Global/ese381/ese381/twi0_master.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;stdbool.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?></programlisting>Include dependency graph for twi0_master.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="twi0__master_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="twi0__master_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_twi0__master_8h_1a6fa83b03086be1a5348c221f5c65587d">TWI_initHost</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_twi0__master_8h_1a98aa41f921217ea835a6f8e993c7dbc3">TWI_initPins</link> (void)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_twi0__master_8h_1a472ca814410582196cc43dc0d26ac959">TWI_sendByte</link> (uint8_t addr, uint8_t data)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_twi0__master_8h_1a35878eea0edaf2bcecf05c45c6c9e0f5">TWI_sendBytes</link> (uint8_t addr, uint8_t *data, uint8_t len)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_twi0__master_8h_1aba41249cfdcf6503f6facca53b858baf">TWI_readByte</link> (uint8_t addr, uint8_t *data)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_twi0__master_8h_1a81074b35f6014cebe4d13ea41b38484d">TWI_readBytes</link> (uint8_t addr, uint8_t *data, uint8_t len)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_twi0__master_8h_1abace615165977923b5a9abf7fe760f8a">TWI_sendAndReadBytes</link> (uint8_t addr, uint8_t regAddress, uint8_t *data, uint8_t len)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_twi0__master_8h_1a6fa83b03086be1a5348c221f5c65587d"/><section>
+    <title>TWI_initHost()</title>
+<indexterm><primary>TWI_initHost</primary><secondary>twi0_master.h</secondary></indexterm>
+<indexterm><primary>twi0_master.h</primary><secondary>TWI_initHost</secondary></indexterm>
+<para><computeroutput>void TWI_initHost (void )</computeroutput></para>
+<para>Adapted by Mingi Hwang on 24 Mar 2025 from original source: <link xlink:href="https://github.com/microchip-pic-avr-examples/avr128db48-bare-metal-twi-mplab/tree/master/twi-host.X/peripherals/TWI">https://github.com/microchip-pic-avr-examples/avr128db48-bare-metal-twi-mplab/tree/master/twi-host.X/peripherals/TWI</link></para>
+
+<para>ORIGINAL SOURCE LICENSE STATEMENT</para>
+
+<para>(c) 2020 Microchip Technology Inc. and its subsidiaries.</para>
+
+<para>Subject to your compliance with these terms, you may use Microchip software and any derivatives exclusively with Microchip products. You&apos;re responsible for complying with 3rd party license terms applicable to your use of 3rd party software (including open source software) that may accompany Microchip software.</para>
+
+<para>SOFTWARE IS &quot;AS IS.&quot; NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.</para>
+
+<para>IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP&apos;S TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE. Prof. Short does not want us to use internal pull-ups. External 10k PURs will be used. If defined, internal pull-up resistors will be used Initializes the TWI peripheral in Host Mode. </para>
+<para>
+Definition at line <link linkend="_twi0__master_8c_source_1l00055">55</link> of file <link linkend="_twi0__master_8c_source">twi0_master.c</link>.</para>
+</section>
+<anchor xml:id="_twi0__master_8h_1a98aa41f921217ea835a6f8e993c7dbc3"/><section>
+    <title>TWI_initPins()</title>
+<indexterm><primary>TWI_initPins</primary><secondary>twi0_master.h</secondary></indexterm>
+<indexterm><primary>twi0_master.h</primary><secondary>TWI_initPins</secondary></indexterm>
+<para><computeroutput>void TWI_initPins (void )</computeroutput></para>
+<para>Initializes the I/O used by the TWI peripheral. </para>
+<para>
+Definition at line <link linkend="_twi0__master_8c_source_1l00076">76</link> of file <link linkend="_twi0__master_8c_source">twi0_master.c</link>.</para>
+</section>
+<anchor xml:id="_twi0__master_8h_1aba41249cfdcf6503f6facca53b858baf"/><section>
+    <title>TWI_readByte()</title>
+<indexterm><primary>TWI_readByte</primary><secondary>twi0_master.h</secondary></indexterm>
+<indexterm><primary>twi0_master.h</primary><secondary>TWI_readByte</secondary></indexterm>
+<para><computeroutput>bool TWI_readByte (uint8_t addr, uint8_t * data)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>addr</entry><entry>
+<para>- Client Device Address </para>
+</entry>
+                            </row>
+                            <row>
+<entry>data</entry><entry>
+<para>- Where the byte received should be stored</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Attempts to read 1 byte of data from the client. Returns true if successful, fails if unable to get data. </para>
+<para>
+Definition at line <link linkend="_twi0__master_8c_source_1l00195">195</link> of file <link linkend="_twi0__master_8c_source">twi0_master.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="twi0__master_8h_aba41249cfdcf6503f6facca53b858baf_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_twi0__master_8h_1a81074b35f6014cebe4d13ea41b38484d"/><section>
+    <title>TWI_readBytes()</title>
+<indexterm><primary>TWI_readBytes</primary><secondary>twi0_master.h</secondary></indexterm>
+<indexterm><primary>twi0_master.h</primary><secondary>TWI_readBytes</secondary></indexterm>
+<para><computeroutput>bool TWI_readBytes (uint8_t addr, uint8_t * data, uint8_t len)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>addr</entry><entry>
+<para>- Client Device Address </para>
+</entry>
+                            </row>
+                            <row>
+<entry>data</entry><entry>
+<para>- Where the bytes received should be stored </para>
+</entry>
+                            </row>
+                            <row>
+<entry>len</entry><entry>
+<para>- Number of Bytes to Send</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Attempts to read len bytes of data from the client. Returns true if successful, false if it failed to get data. </para>
+<para>
+Definition at line <link linkend="_twi0__master_8c_source_1l00208">208</link> of file <link linkend="_twi0__master_8c_source">twi0_master.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="twi0__master_8h_a81074b35f6014cebe4d13ea41b38484d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_twi0__master_8h_1abace615165977923b5a9abf7fe760f8a"/><section>
+    <title>TWI_sendAndReadBytes()</title>
+<indexterm><primary>TWI_sendAndReadBytes</primary><secondary>twi0_master.h</secondary></indexterm>
+<indexterm><primary>twi0_master.h</primary><secondary>TWI_sendAndReadBytes</secondary></indexterm>
+<para><computeroutput>bool TWI_sendAndReadBytes (uint8_t addr, uint8_t regAddress, uint8_t * data, uint8_t len)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>addr</entry><entry>
+<para>- Client Device Address </para>
+</entry>
+                            </row>
+                            <row>
+<entry>regAddress</entry><entry>
+<para>- Address of Register to Read From </para>
+</entry>
+                            </row>
+                            <row>
+<entry>data</entry><entry>
+<para>- Where the bytes received should be stored </para>
+</entry>
+                            </row>
+                            <row>
+<entry>len</entry><entry>
+<para>- Number of Bytes to Send</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Writes a single byte (regAddress) to the client, then restarts and attempts to read len of data. Returns true if successful, false if it failed to get data. </para>
+<para>
+Definition at line <link linkend="_twi0__master_8c_source_1l00220">220</link> of file <link linkend="_twi0__master_8c_source">twi0_master.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="twi0__master_8h_abace615165977923b5a9abf7fe760f8a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_twi0__master_8h_1a472ca814410582196cc43dc0d26ac959"/><section>
+    <title>TWI_sendByte()</title>
+<indexterm><primary>TWI_sendByte</primary><secondary>twi0_master.h</secondary></indexterm>
+<indexterm><primary>twi0_master.h</primary><secondary>TWI_sendByte</secondary></indexterm>
+<para><computeroutput>bool TWI_sendByte (uint8_t addr, uint8_t data)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>addr</entry><entry>
+<para>- Client Device Address </para>
+</entry>
+                            </row>
+                            <row>
+<entry>data</entry><entry>
+<para>- Data to Send</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Sends a byte of data to the specified address. Returns true if successful, false if it failed </para>
+<para>
+Definition at line <link linkend="_twi0__master_8c_source_1l00166">166</link> of file <link linkend="_twi0__master_8c_source">twi0_master.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="twi0__master_8h_a472ca814410582196cc43dc0d26ac959_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_twi0__master_8h_1a35878eea0edaf2bcecf05c45c6c9e0f5"/><section>
+    <title>TWI_sendBytes()</title>
+<indexterm><primary>TWI_sendBytes</primary><secondary>twi0_master.h</secondary></indexterm>
+<indexterm><primary>twi0_master.h</primary><secondary>TWI_sendBytes</secondary></indexterm>
+<para><computeroutput>bool TWI_sendBytes (uint8_t addr, uint8_t * data, uint8_t len)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>addr</entry><entry>
+<para>- Client Device Address </para>
+</entry>
+                            </row>
+                            <row>
+<entry>data</entry><entry>
+<para>- Pointer to the data to send </para>
+</entry>
+                            </row>
+                            <row>
+<entry>len</entry><entry>
+<para>- Number of Bytes to Send</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Attempts to send len bytes of data to the client. Returns true if successful, false if it failed </para>
+<para>
+Definition at line <link linkend="_twi0__master_8c_source_1l00180">180</link> of file <link linkend="_twi0__master_8c_source">twi0_master.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="twi0__master_8h_a35878eea0edaf2bcecf05c45c6c9e0f5_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

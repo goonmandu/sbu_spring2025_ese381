@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="climate__monitor_8c" kind="file" language="C++">
+    <compoundname>climate_monitor.c</compoundname>
+    <includes local="no">avr/io.h</includes>
+    <includes local="no">util/delay.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">twi/twi0_master.h</includes>
+    <includes refid="serlcd_8h" local="yes">serlcd.h</includes>
+    <includes refid="scd41_8h" local="yes">scd41.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>Lab10/src/Lab10/Task3/climate_monitor.c</label>
+        <link refid="climate__monitor_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>scd41.h</label>
+        <link refid="scd41_8h"/>
+      </node>
+      <node id="7">
+        <label>serlcd.h</label>
+        <link refid="serlcd_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>avr/io.h</label>
+      </node>
+      <node id="8">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+      <node id="5">
+        <label>string.h</label>
+      </node>
+      <node id="6">
+        <label>twi/twi0_master.h</label>
+      </node>
+      <node id="3">
+        <label>util/delay.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="climate__monitor_8c_1a43bafb28b29491ec7f871319b5a3b2f8" prot="public" static="no">
+        <name>F_CPU</name>
+        <initializer>4000000UL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/climate_monitor.c" line="1" column="9" bodyfile="Lab10/src/Lab10/Task3/climate_monitor.c" bodystart="1" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="climate__monitor_8c_1a39f1cb051808572abc3926c273116336" prot="public" static="no">
+        <name>SCD41_ADDR</name>
+        <initializer>0x62</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/climate_monitor.c" line="2" column="9" bodyfile="Lab10/src/Lab10/Task3/climate_monitor.c" bodystart="2" bodyend="-1"/>
+        <referencedby refid="climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="climate__monitor_8c" startline="23" endline="43">main</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="climate__monitor_8c_1a92586ca8aecf916e0729fd2e50e1ad48" prot="public" static="no">
+        <name>SERLCD_ADDR</name>
+        <initializer>0x72</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/climate_monitor.c" line="3" column="9" bodyfile="Lab10/src/Lab10/Task3/climate_monitor.c" bodystart="3" bodyend="-1"/>
+        <referencedby refid="climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="climate__monitor_8c" startline="23" endline="43">main</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" prot="public" static="no" extern="yes" mutable="no">
+        <type>char</type>
+        <definition>char serlcd_buffer[SERLCD_ROWS][SERLCD_COLS+1]</definition>
+        <argsstring>[SERLCD_ROWS][SERLCD_COLS+1]</argsstring>
+        <name>serlcd_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The 4x20 character buffer for the SerLCD. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/climate_monitor.c" line="15" column="13" bodyfile="Lab10/src/Lab10/Task3/serlcd.h" bodystart="18" bodyend="-1" declfile="Lab10/src/Lab10/Task3/climate_monitor.c" declline="15" declcolumn="13"/>
+        <referencedby refid="climate__monitor_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" compoundref="climate__monitor_8c" startline="68" endline="90">fill_buffer</referencedby>
+        <referencedby refid="climate__monitor_8c_1a46b05d6d1daef9b152ad5c36d18bc39c" compoundref="climate__monitor_8c" startline="92" endline="98">initializing</referencedby>
+        <referencedby refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" compoundref="serlcd_8c" startline="23" endline="28">update_SerLCD</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697" prot="public" static="no" mutable="no">
+        <type><ref refid="structscd41__data__t" kindref="compound">scd41_data_t</ref></type>
+        <definition>scd41_data_t scd41_data</definition>
+        <argsstring></argsstring>
+        <name>scd41_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/climate_monitor.c" line="17" column="14" bodyfile="Lab10/src/Lab10/Task3/climate_monitor.c" bodystart="17" bodyend="-1"/>
+        <referencedby refid="climate__monitor_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" compoundref="climate__monitor_8c" startline="68" endline="90">fill_buffer</referencedby>
+        <referencedby refid="climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="climate__monitor_8c" startline="23" endline="43">main</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="climate__monitor_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fill_buffer</definition>
+        <argsstring>()</argsstring>
+        <name>fill_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/climate_monitor.c" line="68" column="6" bodyfile="Lab10/src/Lab10/Task3/climate_monitor.c" bodystart="68" bodyend="90" declfile="Lab10/src/Lab10/Task3/climate_monitor.c" declline="19" declcolumn="6"/>
+        <references refid="climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697" compoundref="climate__monitor_8c" startline="17">scd41_data</references>
+        <references refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" compoundref="serlcd_8h" startline="18">serlcd_buffer</references>
+        <referencedby refid="climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="climate__monitor_8c" startline="23" endline="43">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="climate__monitor_8c_1a46b05d6d1daef9b152ad5c36d18bc39c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void initializing</definition>
+        <argsstring>()</argsstring>
+        <name>initializing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/climate_monitor.c" line="92" column="6" bodyfile="Lab10/src/Lab10/Task3/climate_monitor.c" bodystart="92" bodyend="98" declfile="Lab10/src/Lab10/Task3/climate_monitor.c" declline="20" declcolumn="6"/>
+        <references refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" compoundref="serlcd_8h" startline="18">serlcd_buffer</references>
+        <referencedby refid="climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="climate__monitor_8c" startline="23" endline="43">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/climate_monitor.c" line="23" column="5" bodyfile="Lab10/src/Lab10/Task3/climate_monitor.c" bodystart="23" bodyend="43"/>
+        <references refid="climate__monitor_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" compoundref="climate__monitor_8c" startline="68" endline="90">fill_buffer</references>
+        <references refid="climate__monitor_8c_1a46b05d6d1daef9b152ad5c36d18bc39c" compoundref="climate__monitor_8c" startline="92" endline="98">initializing</references>
+        <references refid="climate__monitor_8c_1a39f1cb051808572abc3926c273116336" compoundref="climate__monitor_8c" startline="2">SCD41_ADDR</references>
+        <references refid="climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697" compoundref="climate__monitor_8c" startline="17">scd41_data</references>
+        <references refid="scd41_8c_1a4ca4e8746f6fdac58b506247e805cda3" compoundref="scd41_8c" startline="17" endline="22">scd41_has_data</references>
+        <references refid="scd41_8c_1a8c06da70168e9f5015616aa26d752fff" compoundref="scd41_8c" startline="24" endline="40">scd41_read_data</references>
+        <references refid="scd41_8c_1a5e947b775032bb94e49086b95477a205" compoundref="scd41_8c" startline="9" endline="11">scd41_start_periodic_meas</references>
+        <references refid="climate__monitor_8c_1a92586ca8aecf916e0729fd2e50e1ad48" compoundref="climate__monitor_8c" startline="3">SERLCD_ADDR</references>
+        <references refid="serlcd_8c_1ae0028b85aa630926c9fc2e9b93dfc1cc" compoundref="serlcd_8c" startline="30" endline="41">turn_backlight_off</references>
+        <references refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" compoundref="serlcd_8c" startline="23" endline="28">update_SerLCD</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="climate__monitor_8c_1a43bafb28b29491ec7f871319b5a3b2f8" refkind="member"><highlight class="preprocessor">#define<sp/>F_CPU<sp/>4000000UL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2" refid="climate__monitor_8c_1a39f1cb051808572abc3926c273116336" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SCD41_ADDR<sp/>0x62</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="climate__monitor_8c_1a92586ca8aecf916e0729fd2e50e1ad48" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SERLCD_ADDR<sp/>0x72</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avr/io.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;util/delay.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;twi/twi0_master.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="serlcd_8h" kindref="compound">serlcd.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="scd41_8h" kindref="compound">scd41.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[<ref refid="serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2" kindref="member">SERLCD_ROWS</ref>][<ref refid="serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28" kindref="member">SERLCD_COLS</ref>+1];</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697" refkind="member"><highlight class="normal"><ref refid="structscd41__data__t" kindref="compound">scd41_data_t</ref><sp/><ref refid="climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697" kindref="member">scd41_data</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="climate__monitor_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" kindref="member">fill_buffer</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="climate__monitor_8c_1a46b05d6d1daef9b152ad5c36d18bc39c" kindref="member">initializing</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>void<sp/>TWI_initHost_test(void);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_initHost();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_initPins();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="serlcd_8c_1ae0028b85aa630926c9fc2e9b93dfc1cc" kindref="member">turn_backlight_off</ref>(<ref refid="climate__monitor_8c_1a92586ca8aecf916e0729fd2e50e1ad48" kindref="member">SERLCD_ADDR</ref>);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>serlcd_set_background_rgb(SERLCD_ADDR,<sp/>0xF5,<sp/>0xA9,<sp/>0xB8);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="climate__monitor_8c_1a46b05d6d1daef9b152ad5c36d18bc39c" kindref="member">initializing</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" kindref="member">update_SerLCD</ref>(<ref refid="climate__monitor_8c_1a92586ca8aecf916e0729fd2e50e1ad48" kindref="member">SERLCD_ADDR</ref>);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="scd41_8c_1a5e947b775032bb94e49086b95477a205" kindref="member">scd41_start_periodic_meas</ref>(<ref refid="climate__monitor_8c_1a39f1cb051808572abc3926c273116336" kindref="member">SCD41_ADDR</ref>);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>_delay_ms(1000);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!<ref refid="scd41_8c_1a4ca4e8746f6fdac58b506247e805cda3" kindref="member">scd41_has_data</ref>(<ref refid="climate__monitor_8c_1a39f1cb051808572abc3926c273116336" kindref="member">SCD41_ADDR</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_delay_ms(250);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697" kindref="member">scd41_data</ref><sp/>=<sp/><ref refid="scd41_8c_1a8c06da70168e9f5015616aa26d752fff" kindref="member">scd41_read_data</ref>(<ref refid="climate__monitor_8c_1a39f1cb051808572abc3926c273116336" kindref="member">SCD41_ADDR</ref>);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="climate__monitor_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" kindref="member">fill_buffer</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" kindref="member">update_SerLCD</ref>(<ref refid="climate__monitor_8c_1a92586ca8aecf916e0729fd2e50e1ad48" kindref="member">SERLCD_ADDR</ref>);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="46"><highlight class="comment">void<sp/>TWI_initHost_test(void)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/><sp/><sp/>//Standard<sp/>100kHz<sp/>TWI,<sp/>4<sp/>Cycle<sp/>Hold,<sp/>50ns<sp/>SDA<sp/>Hold<sp/>Time</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/><sp/><sp/>TWI0.CTRLA<sp/>=<sp/>TWI_SDAHOLD_50NS_gc;</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/>//Clear<sp/>Dual<sp/>Control</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/><sp/>TWI0.DUALCTRL<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/><sp/><sp/>//Enable<sp/>Run<sp/>in<sp/>Debug</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/><sp/>TWI0.DBGCTRL<sp/>=<sp/>TWI_DBGRUN_bm;</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/><sp/>//Clear<sp/>MSTATUS<sp/>(write<sp/>1<sp/>to<sp/>flags).<sp/>BUSSTATE<sp/>set<sp/>to<sp/>idle</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/><sp/>TWI0.MSTATUS<sp/>=<sp/>TWI_RIF_bm<sp/>|<sp/>TWI_WIF_bm<sp/>|<sp/>TWI_CLKHOLD_bm<sp/>|<sp/>TWI_RXACK_bm<sp/>|</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/><sp/>TWI_ARBLOST_bm<sp/>|<sp/>TWI_BUSERR_bm<sp/>|<sp/>TWI_BUSSTATE_IDLE_gc;</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/><sp/>//Set<sp/>for<sp/>100kHz<sp/>from<sp/>a<sp/>4MHz<sp/>oscillator</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/><sp/>TWI0.MBAUD<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/><sp/><sp/>//[No<sp/>ISRs]<sp/>and<sp/>Host<sp/>Mode</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/><sp/>TWI0.MCTRLA<sp/>=<sp/>TWI_ENABLE_bm;</highlight></codeline>
+<codeline lineno="65"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="climate__monitor_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="climate__monitor_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" kindref="member">fill_buffer</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>int8_t<sp/>ipart,<sp/>fpart;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(<ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[0],<sp/></highlight><highlight class="stringliteral">&quot;%-20s&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>SCD41<sp/>Output&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>ipart<sp/>=<sp/>(int8_t)<ref refid="climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697" kindref="member">scd41_data</ref>.temp_c;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>fpart<sp/>=<sp/>(int8_t)((<ref refid="climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697" kindref="member">scd41_data</ref>.temp_c<sp/>-<sp/>ipart)<sp/>*<sp/>10);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fpart<sp/>&lt;<sp/>0)<sp/>fpart<sp/>*=<sp/>-1;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(<ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[1],<sp/></highlight><highlight class="stringliteral">&quot;%-20s&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[21]){0});</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>snprintf(<ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[1],<sp/>21,<sp/></highlight><highlight class="stringliteral">&quot;Temp:<sp/><sp/><sp/>%2d.%1d<sp/>C&quot;</highlight><highlight class="normal">,<sp/>ipart,<sp/>fpart);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>strlen(<ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[1]);<sp/>i<sp/>&lt;<sp/>20;<sp/>i++)<sp/><ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[1][i]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[1][20]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>ipart<sp/>=<sp/><ref refid="climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697" kindref="member">scd41_data</ref>.rh;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(<ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[2],<sp/></highlight><highlight class="stringliteral">&quot;%-20s&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[21]){0});</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>snprintf(<ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[2],<sp/>21,<sp/></highlight><highlight class="stringliteral">&quot;RelHum:<sp/>%d<sp/>%%&quot;</highlight><highlight class="normal">,<sp/>ipart);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>strlen(<ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[2]);<sp/>i<sp/>&lt;<sp/>20;<sp/>i++)<sp/><ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[2][i]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[2][20]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(<ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[3],<sp/></highlight><highlight class="stringliteral">&quot;%-20s&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[21]){0});</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>snprintf(<ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[3],<sp/>21,<sp/></highlight><highlight class="stringliteral">&quot;CO2:<sp/><sp/><sp/><sp/>%d<sp/>ppm&quot;</highlight><highlight class="normal">,<sp/><ref refid="climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697" kindref="member">scd41_data</ref>.co2_raw);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>strlen(<ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[3]);<sp/>i<sp/>&lt;<sp/>20;<sp/>i++)<sp/><ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[3][i]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[3][20]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="climate__monitor_8c_1a46b05d6d1daef9b152ad5c36d18bc39c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="climate__monitor_8c_1a46b05d6d1daef9b152ad5c36d18bc39c" kindref="member">initializing</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(<ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[0],<sp/></highlight><highlight class="stringliteral">&quot;%-20s&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>SCD41<sp/>Output&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;01234567890123456789&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(<ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[1],<sp/></highlight><highlight class="stringliteral">&quot;Waiting<sp/>for<sp/>SCD41...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(<ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[2],<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(<ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[3],<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Lab10/src/Lab10/Task3/climate_monitor.c"/>
+  </compounddef>
+</doxygen>

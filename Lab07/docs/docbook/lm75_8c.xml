@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_lm75_8c" xml:lang="en-US">
+<title>D:/ESE381/Lab06/src/Task2/lm75.c File Reference</title>
+<indexterm><primary>D:/ESE381/Lab06/src/Task2/lm75.c</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;twi/twi0_master.h&gt;<?linebreak?>#include &quot;lm75.h&quot;<?linebreak?></programlisting>Include dependency graph for lm75.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lm75_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint16_t <link linkend="_lm75_8c_1a1783c5db1415960e6a87e9be965d5153">read_LM75_temp_bytes</link> (uint8_t addr)</para>
+</listitem>
+            <listitem><para>float <link linkend="_lm75_8c_1a41112386168f6b29f716d86bb9742bab">lm75_to_celsius</link> (uint16_t bytes)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_lm75_8c_1a41112386168f6b29f716d86bb9742bab"/><section>
+    <title>lm75_to_celsius()</title>
+<indexterm><primary>lm75_to_celsius</primary><secondary>lm75.c</secondary></indexterm>
+<indexterm><primary>lm75.c</primary><secondary>lm75_to_celsius</secondary></indexterm>
+<para><computeroutput>float lm75_to_celsius (uint16_t bytes)</computeroutput></para>
+<para>Converts the LM75 raw data (2 bytes) to celsius.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>bytes</entry><entry>
+<para>Two bytes read from the LM75. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Temperature in celsius. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_lm75_8c_source_1l00010">10</link> of file <link linkend="_lm75_8c_source">lm75.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lm75_8c_a41112386168f6b29f716d86bb9742bab_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_lm75_8c_1a1783c5db1415960e6a87e9be965d5153"/><section>
+    <title>read_LM75_temp_bytes()</title>
+<indexterm><primary>read_LM75_temp_bytes</primary><secondary>lm75.c</secondary></indexterm>
+<indexterm><primary>lm75.c</primary><secondary>read_LM75_temp_bytes</secondary></indexterm>
+<para><computeroutput>uint16_t read_LM75_temp_bytes (uint8_t addr)</computeroutput></para>
+<para>Reads the two-byte result from an LM75 temperature sensor.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>addr</entry><entry>
+<para>I2C slave address of the LM75. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>2 bytes from the LM75. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_lm75_8c_source_1l00004">4</link> of file <link linkend="_lm75_8c_source">lm75.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lm75_8c_a1783c5db1415960e6a87e9be965d5153_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

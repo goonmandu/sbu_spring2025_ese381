@@ -1,0 +1,10 @@
+var searchData=
+[
+  ['twi_5finithost_0',['TWI_initHost',['../twi0__master_8c.html#a6fa83b03086be1a5348c221f5c65587d',1,'TWI_initHost(void):&#160;twi0_master.c'],['../twi0__master_8h.html#a6fa83b03086be1a5348c221f5c65587d',1,'TWI_initHost(void):&#160;twi0_master.c']]],
+  ['twi_5finitpins_1',['TWI_initPins',['../twi0__master_8c.html#a98aa41f921217ea835a6f8e993c7dbc3',1,'TWI_initPins(void):&#160;twi0_master.c'],['../twi0__master_8h.html#a98aa41f921217ea835a6f8e993c7dbc3',1,'TWI_initPins(void):&#160;twi0_master.c']]],
+  ['twi_5freadbyte_2',['TWI_readByte',['../twi0__master_8c.html#aba41249cfdcf6503f6facca53b858baf',1,'TWI_readByte(uint8_t addr, uint8_t *data):&#160;twi0_master.c'],['../twi0__master_8h.html#aba41249cfdcf6503f6facca53b858baf',1,'TWI_readByte(uint8_t addr, uint8_t *data):&#160;twi0_master.c']]],
+  ['twi_5freadbytes_3',['TWI_readBytes',['../twi0__master_8c.html#a81074b35f6014cebe4d13ea41b38484d',1,'TWI_readBytes(uint8_t addr, uint8_t *data, uint8_t len):&#160;twi0_master.c'],['../twi0__master_8h.html#a81074b35f6014cebe4d13ea41b38484d',1,'TWI_readBytes(uint8_t addr, uint8_t *data, uint8_t len):&#160;twi0_master.c']]],
+  ['twi_5fsendandreadbytes_4',['TWI_sendAndReadBytes',['../twi0__master_8c.html#abace615165977923b5a9abf7fe760f8a',1,'TWI_sendAndReadBytes(uint8_t addr, uint8_t regAddress, uint8_t *data, uint8_t len):&#160;twi0_master.c'],['../twi0__master_8h.html#abace615165977923b5a9abf7fe760f8a',1,'TWI_sendAndReadBytes(uint8_t addr, uint8_t regAddress, uint8_t *data, uint8_t len):&#160;twi0_master.c']]],
+  ['twi_5fsendbyte_5',['TWI_sendByte',['../twi0__master_8c.html#a472ca814410582196cc43dc0d26ac959',1,'TWI_sendByte(uint8_t addr, uint8_t data):&#160;twi0_master.c'],['../twi0__master_8h.html#a472ca814410582196cc43dc0d26ac959',1,'TWI_sendByte(uint8_t addr, uint8_t data):&#160;twi0_master.c']]],
+  ['twi_5fsendbytes_6',['TWI_sendBytes',['../twi0__master_8c.html#a35878eea0edaf2bcecf05c45c6c9e0f5',1,'TWI_sendBytes(uint8_t addr, uint8_t *data, uint8_t len):&#160;twi0_master.c'],['../twi0__master_8h.html#a35878eea0edaf2bcecf05c45c6c9e0f5',1,'TWI_sendBytes(uint8_t addr, uint8_t *data, uint8_t len):&#160;twi0_master.c']]]
+];

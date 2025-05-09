@@ -1,0 +1,264 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="serlcd_8h" kind="file" language="C++">
+    <compoundname>serlcd.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="serlcd_8c" local="yes">D:/ESE381/Lab06/src/Task2/serlcd.c</includedby>
+    <includedby refid="temp__meas___l_m75_8c" local="yes">D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/ESE381/Lab06/src/Task2/serlcd.h</label>
+        <link refid="serlcd_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>D:/ESE381/Lab06/src/Task2/serlcd.c</label>
+        <link refid="serlcd_8c"/>
+      </node>
+      <node id="1">
+        <label>D:/ESE381/Lab06/src/Task2/serlcd.h</label>
+        <link refid="serlcd_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c</label>
+        <link refid="temp__meas___l_m75_8c"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="serlcd_8h_1a43bafb28b29491ec7f871319b5a3b2f8" prot="public" static="no">
+        <name>F_CPU</name>
+        <initializer>4000000UL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Lab06/src/Task2/serlcd.h" line="6" column="12" bodyfile="D:/ESE381/Lab06/src/Task2/serlcd.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="serlcd_8h_1a87300936d844c1a423d732e28d71c509" prot="public" static="no">
+        <name>TWI_SERLCD_INTERVAL_US</name>
+        <initializer>150</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Lab06/src/Task2/serlcd.h" line="9" column="9" bodyfile="D:/ESE381/Lab06/src/Task2/serlcd.h" bodystart="9" bodyend="-1"/>
+        <referencedby refid="serlcd_8c_1aae95d59b494981540233ed751f39e341" compoundref="serlcd_8c" startline="16" endline="21">clear_SerLCD</referencedby>
+        <referencedby refid="serlcd_8c_1aec024d63790c43bb2635e0b3468583d8" compoundref="serlcd_8c" startline="9" endline="14">send_string_SerLCD</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2" prot="public" static="no">
+        <name>SERLCD_ROWS</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Lab06/src/Task2/serlcd.h" line="10" column="9" bodyfile="D:/ESE381/Lab06/src/Task2/serlcd.h" bodystart="10" bodyend="-1"/>
+        <referencedby refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" compoundref="serlcd_8c" startline="23" endline="28">update_SerLCD</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28" prot="public" static="no">
+        <name>SERLCD_COLS</name>
+        <initializer>20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Lab06/src/Task2/serlcd.h" line="11" column="9" bodyfile="D:/ESE381/Lab06/src/Task2/serlcd.h" bodystart="11" bodyend="-1"/>
+        <referencedby refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" compoundref="serlcd_8c" startline="23" endline="28">update_SerLCD</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char serlcd_buffer[SERLCD_ROWS][SERLCD_COLS+1]</definition>
+        <argsstring>[SERLCD_ROWS][SERLCD_COLS+1]</argsstring>
+        <name>serlcd_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The 4x20 character buffer for the SerLCD. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Lab06/src/Task2/serlcd.h" line="18" column="15" bodyfile="D:/ESE381/Lab06/src/Task2/serlcd.h" bodystart="18" bodyend="-1"/>
+        <referencedby refid="temp__meas___l_m75_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" compoundref="temp__meas___l_m75_8c" startline="60" endline="66">fill_buffer</referencedby>
+        <referencedby refid="temp__meas___l_m75_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="temp__meas___l_m75_8c" startline="26" endline="52">main</referencedby>
+        <referencedby refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" compoundref="serlcd_8c" startline="23" endline="28">update_SerLCD</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="serlcd_8h_1aec024d63790c43bb2635e0b3468583d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void send_string_SerLCD</definition>
+        <argsstring>(uint8_t addr, uint8_t *str, uint8_t len)</argsstring>
+        <name>send_string_SerLCD</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends char array to the SerLCD out of TWI0.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>I2C slave address of the SerLCD. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to start of char array to be sent. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of char array. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Lab06/src/Task2/serlcd.h" line="28" column="6" bodyfile="D:/ESE381/Lab06/src/Task2/serlcd.c" bodystart="9" bodyend="14" declfile="D:/ESE381/Lab06/src/Task2/serlcd.h" declline="28" declcolumn="6"/>
+        <references refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" compoundref="serlcd_8h" startline="9">TWI_SERLCD_INTERVAL_US</references>
+        <referencedby refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" compoundref="serlcd_8c" startline="23" endline="28">update_SerLCD</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serlcd_8h_1aae95d59b494981540233ed751f39e341" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void clear_SerLCD</definition>
+        <argsstring>(uint8_t addr)</argsstring>
+        <name>clear_SerLCD</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends the byte sequence |- out of TWI0 to clear the SerLCD.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>I2C slave address of the SerLCD. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Lab06/src/Task2/serlcd.h" line="36" column="6" bodyfile="D:/ESE381/Lab06/src/Task2/serlcd.c" bodystart="16" bodyend="21" declfile="D:/ESE381/Lab06/src/Task2/serlcd.h" declline="36" declcolumn="6"/>
+        <references refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" compoundref="serlcd_8h" startline="9">TWI_SERLCD_INTERVAL_US</references>
+        <referencedby refid="temp__meas___l_m75_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="temp__meas___l_m75_8c" startline="26" endline="52">main</referencedby>
+        <referencedby refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" compoundref="serlcd_8c" startline="23" endline="28">update_SerLCD</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serlcd_8h_1a96469994c1d7399edae5231ed06d714a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void update_SerLCD</definition>
+        <argsstring>(uint8_t addr)</argsstring>
+        <name>update_SerLCD</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends contents of <computeroutput>serlcd_buffer</computeroutput> out of TWI0.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>I2C slave address of the SerLCD. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Lab06/src/Task2/serlcd.h" line="44" column="6" bodyfile="D:/ESE381/Lab06/src/Task2/serlcd.c" bodystart="23" bodyend="28" declfile="D:/ESE381/Lab06/src/Task2/serlcd.h" declline="44" declcolumn="6"/>
+        <references refid="serlcd_8c_1aae95d59b494981540233ed751f39e341" compoundref="serlcd_8c" startline="16" endline="21">clear_SerLCD</references>
+        <references refid="serlcd_8c_1aec024d63790c43bb2635e0b3468583d8" compoundref="serlcd_8c" startline="9" endline="14">send_string_SerLCD</references>
+        <references refid="serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85" compoundref="serlcd_8h" startline="18">serlcd_buffer</references>
+        <references refid="serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28" compoundref="serlcd_8h" startline="11">SERLCD_COLS</references>
+        <references refid="serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2" compoundref="serlcd_8h" startline="10">SERLCD_ROWS</references>
+        <referencedby refid="temp__meas___l_m75_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="temp__meas___l_m75_8c" startline="26" endline="52">main</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SERLCD_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SERLCD_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>F_CPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#warning<sp/>&quot;F_CPU<sp/>is<sp/>not<sp/>defined!<sp/>Defaulting<sp/>to<sp/>4<sp/>MHz.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="serlcd_8h_1a43bafb28b29491ec7f871319b5a3b2f8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>F_CPU<sp/>4000000UL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>F_CPU<sp/>is<sp/>not<sp/>defined<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TWI_SERLCD_INTERVAL_US<sp/>150</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SERLCD_ROWS<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SERLCD_COLS<sp/>20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85" kindref="member">serlcd_buffer</ref>[<ref refid="serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2" kindref="member">SERLCD_ROWS</ref>][<ref refid="serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28" kindref="member">SERLCD_COLS</ref>+1];</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="serlcd_8h_1aec024d63790c43bb2635e0b3468583d8" kindref="member">send_string_SerLCD</ref>(uint8_t<sp/>addr,<sp/>uint8_t<sp/>*str,<sp/>uint8_t<sp/>len);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="serlcd_8h_1aae95d59b494981540233ed751f39e341" kindref="member">clear_SerLCD</ref>(uint8_t<sp/>addr);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="serlcd_8h_1a96469994c1d7399edae5231ed06d714a" kindref="member">update_SerLCD</ref>(uint8_t<sp/>addr);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SERLCD_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="D:/ESE381/Lab06/src/Task2/serlcd.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,131 @@
+.TH "D:/ESE381/Lab06/src/Task2/serlcd.h" 3 "Version 0" "Lab07" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/ESE381/Lab06/src/Task2/serlcd.h
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <stdint\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBF_CPU\fP   4000000UL"
+.br
+.ti -1c
+.RI "#define \fBTWI_SERLCD_INTERVAL_US\fP   150"
+.br
+.ti -1c
+.RI "#define \fBSERLCD_ROWS\fP   4"
+.br
+.ti -1c
+.RI "#define \fBSERLCD_COLS\fP   20"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsend_string_SerLCD\fP (uint8_t addr, uint8_t *str, uint8_t len)"
+.br
+.ti -1c
+.RI "void \fBclear_SerLCD\fP (uint8_t addr)"
+.br
+.ti -1c
+.RI "void \fBupdate_SerLCD\fP (uint8_t addr)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "unsigned char \fBserlcd_buffer\fP [\fBSERLCD_ROWS\fP][\fBSERLCD_COLS\fP+1]"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define F_CPU   4000000UL"
+
+.PP
+Definition at line \fB6\fP of file \fBserlcd\&.h\fP\&.
+.SS "#define SERLCD_COLS   20"
+
+.PP
+Definition at line \fB11\fP of file \fBserlcd\&.h\fP\&.
+.SS "#define SERLCD_ROWS   4"
+
+.PP
+Definition at line \fB10\fP of file \fBserlcd\&.h\fP\&.
+.SS "#define TWI_SERLCD_INTERVAL_US   150"
+
+.PP
+Definition at line \fB9\fP of file \fBserlcd\&.h\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void clear_SerLCD (uint8_t addr)"
+Sends the byte sequence |- out of TWI0 to clear the SerLCD\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP I2C slave address of the SerLCD\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB16\fP of file \fBserlcd\&.c\fP\&.
+.SS "void send_string_SerLCD (uint8_t addr, uint8_t * str, uint8_t len)"
+Sends char array to the SerLCD out of TWI0\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP I2C slave address of the SerLCD\&. 
+.br
+\fIstr\fP Pointer to start of char array to be sent\&. 
+.br
+\fIlen\fP Length of char array\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB9\fP of file \fBserlcd\&.c\fP\&.
+.SS "void update_SerLCD (uint8_t addr)"
+Sends contents of \fRserlcd_buffer\fP out of TWI0\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP I2C slave address of the SerLCD\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB23\fP of file \fBserlcd\&.c\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "unsigned char serlcd_buffer[\fBSERLCD_ROWS\fP][\fBSERLCD_COLS\fP+1]"
+The 4x20 character buffer for the SerLCD\&. 
+.PP
+Definition at line \fB18\fP of file \fBserlcd\&.h\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Lab07 from the source code\&.

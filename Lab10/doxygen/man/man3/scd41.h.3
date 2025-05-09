@@ -1,0 +1,113 @@
+.TH "Lab10/src/Lab10/Task3/scd41.h" 3 "Version 0.1" "Lab10 Climate Sensor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Lab10/src/Lab10/Task3/scd41.h \- Interface for interacting with the SCD41 CO? sensor via I2C\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBscd41_data_t\fP"
+.br
+.RI "Container for raw and converted SCD41 sensor data\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBscd41_start_periodic_meas\fP (uint8_t addr)"
+.br
+.ti -1c
+.RI "void \fBscd41_stop_periodic_meas\fP (uint8_t addr)"
+.br
+.ti -1c
+.RI "uint8_t \fBscd41_has_data\fP (uint8_t addr)"
+.br
+.ti -1c
+.RI "\fBscd41_data_t\fP \fBscd41_read_data\fP (uint8_t addr)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Interface for interacting with the SCD41 CO? sensor via I2C\&. 
+
+This module provides functions to start and stop periodic measurements, check data availability, and read CO?, temperature, and humidity data from the SCD41 sensor using the TWI0 interface\&. 
+.PP
+Definition in file \fBscd41\&.h\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "uint8_t scd41_has_data (uint8_t addr)"
+Checks if new measurement data is available from the SCD41\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP I2C address of the SCD41 sensor\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 if data is ready, 0 otherwise\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB17\fP of file \fBscd41\&.c\fP\&.
+.SS "\fBscd41_data_t\fP scd41_read_data (uint8_t addr)"
+Reads the latest measurement from the SCD41\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP I2C address of the SCD41 sensor\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fBscd41_data_t\fP struct containing raw values, CRCs, and converted temperature and humidity\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB24\fP of file \fBscd41\&.c\fP\&.
+.SS "void scd41_start_periodic_meas (uint8_t addr)"
+Sends command to start periodic measurements on the SCD41\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP I2C address of the SCD41 sensor\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB9\fP of file \fBscd41\&.c\fP\&.
+.SS "void scd41_stop_periodic_meas (uint8_t addr)"
+Sends command to stop periodic measurements on the SCD41\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP I2C address of the SCD41 sensor\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB13\fP of file \fBscd41\&.c\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Lab10 Climate Sensor from the source code\&.

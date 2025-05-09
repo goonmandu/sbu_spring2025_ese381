@@ -1,0 +1,798 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="twi0__master_8c" kind="file" language="C++">
+    <compoundname>twi0_master.c</compoundname>
+    <includes refid="twi0__master_8h" local="yes">twi0_master.h</includes>
+    <includes local="no">avr/io.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/ESE381/Global/ese381/ese381/twi0_master.c</label>
+        <link refid="twi0__master_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>twi0_master.h</label>
+        <link refid="twi0__master_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>avr/io.h</label>
+      </node>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="twi0__master_8c_1aaf9a8abccd811954f9cc316f2b2f87b3" prot="public" static="no">
+        <name>TWI_READ</name>
+        <initializer>true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adapted by Mingi Hwang on 24 Mar 2025 from original source: <ulink url="https://github.com/microchip-pic-avr-examples/avr128db48-bare-metal-twi-mplab/tree/master/twi-host.X/peripherals/TWI">https://github.com/microchip-pic-avr-examples/avr128db48-bare-metal-twi-mplab/tree/master/twi-host.X/peripherals/TWI</ulink></para>
+<para>ORIGINAL SOURCE LICENSE STATEMENT</para>
+<para>(c) 2020 Microchip Technology Inc. and its subsidiaries.</para>
+<para>Subject to your compliance with these terms, you may use Microchip software and any derivatives exclusively with Microchip products. You&apos;re responsible for complying with 3rd party license terms applicable to your use of 3rd party software (including open source software) that may accompany Microchip software.</para>
+<para>SOFTWARE IS &quot;AS IS.&quot; NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.</para>
+<para>IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP&apos;S TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="33" column="9" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="33" bodyend="-1"/>
+        <referencedby refid="twi0__master_8c_1aba41249cfdcf6503f6facca53b858baf" compoundref="twi0__master_8c" startline="195" endline="205">TWI_readByte</referencedby>
+        <referencedby refid="twi0__master_8c_1a81074b35f6014cebe4d13ea41b38484d" compoundref="twi0__master_8c" startline="208" endline="218">TWI_readBytes</referencedby>
+        <referencedby refid="twi0__master_8c_1abace615165977923b5a9abf7fe760f8a" compoundref="twi0__master_8c" startline="220" endline="249">TWI_sendAndReadBytes</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="twi0__master_8c_1a3b68e8e777b71520f9dbfac733774d5f" prot="public" static="no">
+        <name>TWI_WRITE</name>
+        <initializer>false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="34" column="9" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="34" bodyend="-1"/>
+        <referencedby refid="twi0__master_8c_1abace615165977923b5a9abf7fe760f8a" compoundref="twi0__master_8c" startline="220" endline="249">TWI_sendAndReadBytes</referencedby>
+        <referencedby refid="twi0__master_8c_1a472ca814410582196cc43dc0d26ac959" compoundref="twi0__master_8c" startline="166" endline="178">TWI_sendByte</referencedby>
+        <referencedby refid="twi0__master_8c_1a35878eea0edaf2bcecf05c45c6c9e0f5" compoundref="twi0__master_8c" startline="180" endline="193">TWI_sendBytes</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="twi0__master_8c_1afa0cbcb8305cff49652e10c777215a5a" prot="public" static="no">
+        <name>TWI_IS_CLOCKHELD</name>
+        <param></param>
+        <initializer>TWI0.MSTATUS &amp; TWI_CLKHOLD_bm</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="36" column="9" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="twi0__master_8c_1ab11b79abe3e8a765908aca36c72fd50b" prot="public" static="no">
+        <name>TWI_IS_BUSERR</name>
+        <param></param>
+        <initializer>TWI0.MSTATUS &amp; TWI_BUSERR_bm</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="37" column="9" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="twi0__master_8c_1ae97361cb8531ee2979c62b3a57d4a821" prot="public" static="no">
+        <name>TWI_IS_ARBLOST</name>
+        <param></param>
+        <initializer>TWI0.MSTATUS &amp; TWI_ARBLOST_bm</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="38" column="9" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="twi0__master_8c_1aa0c501a160d4a7bbac583a0760b69879" prot="public" static="no">
+        <name>CLIENT_NACK</name>
+        <param></param>
+        <initializer>TWI0.MSTATUS &amp; TWI_RXACK_bm</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="40" column="9" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="40" bodyend="-1"/>
+        <referencedby refid="twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb" compoundref="twi0__master_8c" startline="144" endline="164">_writeToTWI</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="twi0__master_8c_1a61a1d47676f2c72e1f73f5218c03322e" prot="public" static="no">
+        <name>CLIENT_ACK</name>
+        <param></param>
+        <initializer>!(TWI0.MSTATUS &amp; TWI_RXACK_bm)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="41" column="9" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="twi0__master_8c_1a86cd4c8996cbafb28d602fac380ffb6b" prot="public" static="no">
+        <name>TWI_IS_BUSBUSY</name>
+        <param></param>
+        <initializer>((TWI0.MSTATUS &amp; TWI_BUSSTATE_BUSY_gc) == TWI_BUSSTATE_BUSY_gc)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="43" column="9" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="43" bodyend="-1"/>
+        <referencedby refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" compoundref="twi0__master_8c" startline="91" endline="111">_startTWI</referencedby>
+        <referencedby refid="twi0__master_8c_1a88bac97d359ea3f873641d6ebf886231" compoundref="twi0__master_8c" startline="47" endline="53">isTWIBad</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503" prot="public" static="no">
+        <name>TWI_WAIT</name>
+        <param></param>
+        <initializer>while (!((<ref refid="twi0__master_8c_1afa0cbcb8305cff49652e10c777215a5a" kindref="member">TWI_IS_CLOCKHELD</ref>()) || (<ref refid="twi0__master_8c_1ab11b79abe3e8a765908aca36c72fd50b" kindref="member">TWI_IS_BUSERR</ref>()) || (<ref refid="twi0__master_8c_1ae97361cb8531ee2979c62b3a57d4a821" kindref="member">TWI_IS_ARBLOST</ref>()) || (<ref refid="twi0__master_8c_1a86cd4c8996cbafb28d602fac380ffb6b" kindref="member">TWI_IS_BUSBUSY</ref>())))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="45" column="9" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="45" bodyend="-1"/>
+        <referencedby refid="twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde" compoundref="twi0__master_8c" startline="114" endline="141">_readFromTWI</referencedby>
+        <referencedby refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" compoundref="twi0__master_8c" startline="91" endline="111">_startTWI</referencedby>
+        <referencedby refid="twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb" compoundref="twi0__master_8c" startline="144" endline="164">_writeToTWI</referencedby>
+        <referencedby refid="twi0__master_8c_1abace615165977923b5a9abf7fe760f8a" compoundref="twi0__master_8c" startline="220" endline="249">TWI_sendAndReadBytes</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="twi0__master_8c_1a88bac97d359ea3f873641d6ebf886231" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool isTWIBad</definition>
+        <argsstring>(void)</argsstring>
+        <name>isTWIBad</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="47" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="47" bodyend="53"/>
+        <references refid="twi0__master_8c_1a86cd4c8996cbafb28d602fac380ffb6b" compoundref="twi0__master_8c" startline="43">TWI_IS_BUSBUSY</references>
+        <referencedby refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" compoundref="twi0__master_8c" startline="91" endline="111">_startTWI</referencedby>
+        <referencedby refid="twi0__master_8c_1abace615165977923b5a9abf7fe760f8a" compoundref="twi0__master_8c" startline="220" endline="249">TWI_sendAndReadBytes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="twi0__master_8c_1a6fa83b03086be1a5348c221f5c65587d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TWI_initHost</definition>
+        <argsstring>(void)</argsstring>
+        <name>TWI_initHost</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adapted by Mingi Hwang on 24 Mar 2025 from original source: <ulink url="https://github.com/microchip-pic-avr-examples/avr128db48-bare-metal-twi-mplab/tree/master/twi-host.X/peripherals/TWI">https://github.com/microchip-pic-avr-examples/avr128db48-bare-metal-twi-mplab/tree/master/twi-host.X/peripherals/TWI</ulink></para>
+<para>ORIGINAL SOURCE LICENSE STATEMENT</para>
+<para>(c) 2020 Microchip Technology Inc. and its subsidiaries.</para>
+<para>Subject to your compliance with these terms, you may use Microchip software and any derivatives exclusively with Microchip products. You&apos;re responsible for complying with 3rd party license terms applicable to your use of 3rd party software (including open source software) that may accompany Microchip software.</para>
+<para>SOFTWARE IS &quot;AS IS.&quot; NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.</para>
+<para>IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP&apos;S TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE. Prof. Short does not want us to use internal pull-ups. External 10k PURs will be used. If defined, internal pull-up resistors will be used Initializes the TWI peripheral in Host Mode. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="55" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="55" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="twi0__master_8c_1a98aa41f921217ea835a6f8e993c7dbc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TWI_initPins</definition>
+        <argsstring>(void)</argsstring>
+        <name>TWI_initPins</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the I/O used by the TWI peripheral. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="76" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="76" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool _startTWI</definition>
+        <argsstring>(uint8_t addr, bool read)</argsstring>
+        <name>_startTWI</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>read</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="91" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="91" bodyend="111"/>
+        <references refid="twi0__master_8c_1a88bac97d359ea3f873641d6ebf886231" compoundref="twi0__master_8c" startline="47" endline="53">isTWIBad</references>
+        <references refid="twi0__master_8c_1a86cd4c8996cbafb28d602fac380ffb6b" compoundref="twi0__master_8c" startline="43">TWI_IS_BUSBUSY</references>
+        <references refid="twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503" compoundref="twi0__master_8c" startline="45">TWI_WAIT</references>
+        <referencedby refid="twi0__master_8c_1aba41249cfdcf6503f6facca53b858baf" compoundref="twi0__master_8c" startline="195" endline="205">TWI_readByte</referencedby>
+        <referencedby refid="twi0__master_8c_1a81074b35f6014cebe4d13ea41b38484d" compoundref="twi0__master_8c" startline="208" endline="218">TWI_readBytes</referencedby>
+        <referencedby refid="twi0__master_8c_1abace615165977923b5a9abf7fe760f8a" compoundref="twi0__master_8c" startline="220" endline="249">TWI_sendAndReadBytes</referencedby>
+        <referencedby refid="twi0__master_8c_1a472ca814410582196cc43dc0d26ac959" compoundref="twi0__master_8c" startline="166" endline="178">TWI_sendByte</referencedby>
+        <referencedby refid="twi0__master_8c_1a35878eea0edaf2bcecf05c45c6c9e0f5" compoundref="twi0__master_8c" startline="180" endline="193">TWI_sendBytes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _readFromTWI</definition>
+        <argsstring>(uint8_t *data, uint8_t len)</argsstring>
+        <name>_readFromTWI</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="114" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="114" bodyend="141"/>
+        <references refid="twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503" compoundref="twi0__master_8c" startline="45">TWI_WAIT</references>
+        <referencedby refid="twi0__master_8c_1aba41249cfdcf6503f6facca53b858baf" compoundref="twi0__master_8c" startline="195" endline="205">TWI_readByte</referencedby>
+        <referencedby refid="twi0__master_8c_1a81074b35f6014cebe4d13ea41b38484d" compoundref="twi0__master_8c" startline="208" endline="218">TWI_readBytes</referencedby>
+        <referencedby refid="twi0__master_8c_1abace615165977923b5a9abf7fe760f8a" compoundref="twi0__master_8c" startline="220" endline="249">TWI_sendAndReadBytes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool _writeToTWI</definition>
+        <argsstring>(uint8_t *data, uint8_t len)</argsstring>
+        <name>_writeToTWI</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="144" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="144" bodyend="164"/>
+        <references refid="twi0__master_8c_1aa0c501a160d4a7bbac583a0760b69879" compoundref="twi0__master_8c" startline="40">CLIENT_NACK</references>
+        <references refid="twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503" compoundref="twi0__master_8c" startline="45">TWI_WAIT</references>
+        <referencedby refid="twi0__master_8c_1abace615165977923b5a9abf7fe760f8a" compoundref="twi0__master_8c" startline="220" endline="249">TWI_sendAndReadBytes</referencedby>
+        <referencedby refid="twi0__master_8c_1a472ca814410582196cc43dc0d26ac959" compoundref="twi0__master_8c" startline="166" endline="178">TWI_sendByte</referencedby>
+        <referencedby refid="twi0__master_8c_1a35878eea0edaf2bcecf05c45c6c9e0f5" compoundref="twi0__master_8c" startline="180" endline="193">TWI_sendBytes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="twi0__master_8c_1a472ca814410582196cc43dc0d26ac959" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TWI_sendByte</definition>
+        <argsstring>(uint8_t addr, uint8_t data)</argsstring>
+        <name>TWI_sendByte</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Client Device Address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Data to Send</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Sends a byte of data to the specified address. Returns true if successful, false if it failed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="166" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="166" bodyend="178"/>
+        <references refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" compoundref="twi0__master_8c" startline="91" endline="111">_startTWI</references>
+        <references refid="twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb" compoundref="twi0__master_8c" startline="144" endline="164">_writeToTWI</references>
+        <references refid="twi0__master_8c_1a3b68e8e777b71520f9dbfac733774d5f" compoundref="twi0__master_8c" startline="34">TWI_WRITE</references>
+      </memberdef>
+      <memberdef kind="function" id="twi0__master_8c_1a35878eea0edaf2bcecf05c45c6c9e0f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TWI_sendBytes</definition>
+        <argsstring>(uint8_t addr, uint8_t *data, uint8_t len)</argsstring>
+        <name>TWI_sendBytes</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Client Device Address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to the data to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Number of Bytes to Send</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Attempts to send len bytes of data to the client. Returns true if successful, false if it failed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="180" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="180" bodyend="193"/>
+        <references refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" compoundref="twi0__master_8c" startline="91" endline="111">_startTWI</references>
+        <references refid="twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb" compoundref="twi0__master_8c" startline="144" endline="164">_writeToTWI</references>
+        <references refid="twi0__master_8c_1a3b68e8e777b71520f9dbfac733774d5f" compoundref="twi0__master_8c" startline="34">TWI_WRITE</references>
+      </memberdef>
+      <memberdef kind="function" id="twi0__master_8c_1aba41249cfdcf6503f6facca53b858baf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TWI_readByte</definition>
+        <argsstring>(uint8_t addr, uint8_t *data)</argsstring>
+        <name>TWI_readByte</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Client Device Address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Where the byte received should be stored</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Attempts to read 1 byte of data from the client. Returns true if successful, fails if unable to get data. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="195" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="195" bodyend="205"/>
+        <references refid="twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde" compoundref="twi0__master_8c" startline="114" endline="141">_readFromTWI</references>
+        <references refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" compoundref="twi0__master_8c" startline="91" endline="111">_startTWI</references>
+        <references refid="twi0__master_8c_1aaf9a8abccd811954f9cc316f2b2f87b3" compoundref="twi0__master_8c" startline="33">TWI_READ</references>
+      </memberdef>
+      <memberdef kind="function" id="twi0__master_8c_1a81074b35f6014cebe4d13ea41b38484d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TWI_readBytes</definition>
+        <argsstring>(uint8_t addr, uint8_t *data, uint8_t len)</argsstring>
+        <name>TWI_readBytes</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Client Device Address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Where the bytes received should be stored </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Number of Bytes to Send</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Attempts to read len bytes of data from the client. Returns true if successful, false if it failed to get data. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="208" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="208" bodyend="218"/>
+        <references refid="twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde" compoundref="twi0__master_8c" startline="114" endline="141">_readFromTWI</references>
+        <references refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" compoundref="twi0__master_8c" startline="91" endline="111">_startTWI</references>
+        <references refid="twi0__master_8c_1aaf9a8abccd811954f9cc316f2b2f87b3" compoundref="twi0__master_8c" startline="33">TWI_READ</references>
+      </memberdef>
+      <memberdef kind="function" id="twi0__master_8c_1abace615165977923b5a9abf7fe760f8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TWI_sendAndReadBytes</definition>
+        <argsstring>(uint8_t addr, uint8_t regAddress, uint8_t *data, uint8_t len)</argsstring>
+        <name>TWI_sendAndReadBytes</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>regAddress</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Client Device Address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>regAddress</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address of Register to Read From </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Where the bytes received should be stored </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Number of Bytes to Send</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Writes a single byte (regAddress) to the client, then restarts and attempts to read len of data. Returns true if successful, false if it failed to get data. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c" line="220" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="220" bodyend="249"/>
+        <references refid="twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde" compoundref="twi0__master_8c" startline="114" endline="141">_readFromTWI</references>
+        <references refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" compoundref="twi0__master_8c" startline="91" endline="111">_startTWI</references>
+        <references refid="twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb" compoundref="twi0__master_8c" startline="144" endline="164">_writeToTWI</references>
+        <references refid="twi0__master_8c_1a88bac97d359ea3f873641d6ebf886231" compoundref="twi0__master_8c" startline="47" endline="53">isTWIBad</references>
+        <references refid="twi0__master_8c_1aaf9a8abccd811954f9cc316f2b2f87b3" compoundref="twi0__master_8c" startline="33">TWI_READ</references>
+        <references refid="twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503" compoundref="twi0__master_8c" startline="45">TWI_WAIT</references>
+        <references refid="twi0__master_8c_1a3b68e8e777b71520f9dbfac733774d5f" compoundref="twi0__master_8c" startline="34">TWI_WRITE</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="twi0__master_8h" kindref="compound">twi0_master.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avr/io.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="twi0__master_8c_1aaf9a8abccd811954f9cc316f2b2f87b3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TWI_READ<sp/>true</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="twi0__master_8c_1a3b68e8e777b71520f9dbfac733774d5f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TWI_WRITE<sp/>false</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="twi0__master_8c_1afa0cbcb8305cff49652e10c777215a5a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TWI_IS_CLOCKHELD()<sp/>TWI0.MSTATUS<sp/>&amp;<sp/>TWI_CLKHOLD_bm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="twi0__master_8c_1ab11b79abe3e8a765908aca36c72fd50b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TWI_IS_BUSERR()<sp/>TWI0.MSTATUS<sp/>&amp;<sp/>TWI_BUSERR_bm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="twi0__master_8c_1ae97361cb8531ee2979c62b3a57d4a821" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TWI_IS_ARBLOST()<sp/>TWI0.MSTATUS<sp/>&amp;<sp/>TWI_ARBLOST_bm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="twi0__master_8c_1aa0c501a160d4a7bbac583a0760b69879" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CLIENT_NACK()<sp/>TWI0.MSTATUS<sp/>&amp;<sp/>TWI_RXACK_bm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="twi0__master_8c_1a61a1d47676f2c72e1f73f5218c03322e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CLIENT_ACK()<sp/>!(TWI0.MSTATUS<sp/>&amp;<sp/>TWI_RXACK_bm)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="twi0__master_8c_1a86cd4c8996cbafb28d602fac380ffb6b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TWI_IS_BUSBUSY()<sp/>((TWI0.MSTATUS<sp/>&amp;<sp/>TWI_BUSSTATE_BUSY_gc)<sp/>==<sp/>TWI_BUSSTATE_BUSY_gc)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TWI_WAIT()<sp/>while<sp/>(!((TWI_IS_CLOCKHELD())<sp/>||<sp/>(TWI_IS_BUSERR())<sp/>||<sp/>(TWI_IS_ARBLOST())<sp/>||<sp/>(TWI_IS_BUSBUSY())))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="twi0__master_8c_1a88bac97d359ea3f873641d6ebf886231" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8c_1a88bac97d359ea3f873641d6ebf886231" kindref="member">isTWIBad</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Checks<sp/>for:<sp/>NACK,<sp/>ARBLOST,<sp/>BUSERR,<sp/>Bus<sp/>Busy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((((TWI0.MSTATUS)<sp/>&amp;<sp/>(TWI_RXACK_bm<sp/>|<sp/>TWI_ARBLOST_bm<sp/>|<sp/>TWI_BUSERR_bm))<sp/>&gt;<sp/>0)<sp/>||<sp/>(<ref refid="twi0__master_8c_1a86cd4c8996cbafb28d602fac380ffb6b" kindref="member">TWI_IS_BUSBUSY</ref>()))<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="twi0__master_8c_1a6fa83b03086be1a5348c221f5c65587d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8c_1a6fa83b03086be1a5348c221f5c65587d" kindref="member">TWI_initHost</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Standard<sp/>100kHz<sp/>TWI,<sp/>4<sp/>Cycle<sp/>Hold,<sp/>50ns<sp/>SDA<sp/>Hold<sp/>Time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI0.CTRLA<sp/>=<sp/>TWI_SDAHOLD_50NS_gc;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Clear<sp/>Dual<sp/>Control</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI0.DUALCTRL<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Enable<sp/>Run<sp/>in<sp/>Debug</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI0.DBGCTRL<sp/>=<sp/>TWI_DBGRUN_bm;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Clear<sp/>MSTATUS<sp/>(write<sp/>1<sp/>to<sp/>flags).<sp/>BUSSTATE<sp/>set<sp/>to<sp/>idle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI0.MSTATUS<sp/>=<sp/>TWI_RIF_bm<sp/>|<sp/>TWI_WIF_bm<sp/>|<sp/>TWI_CLKHOLD_bm<sp/>|<sp/>TWI_RXACK_bm<sp/>|</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_ARBLOST_bm<sp/>|<sp/>TWI_BUSERR_bm<sp/>|<sp/>TWI_BUSSTATE_IDLE_gc;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Set<sp/>for<sp/>100kHz<sp/>from<sp/>a<sp/>4MHz<sp/>oscillator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI0.MBAUD<sp/>=<sp/>15;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//[No<sp/>ISRs]<sp/>and<sp/>Host<sp/>Mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI0.MCTRLA<sp/>=<sp/>TWI_ENABLE_bm;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="twi0__master_8c_1a98aa41f921217ea835a6f8e993c7dbc3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8c_1a98aa41f921217ea835a6f8e993c7dbc3" kindref="member">TWI_initPins</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Use<sp/>PA2<sp/>and<sp/>PA3<sp/>(default)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Output<sp/>I/O</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>PORTA.DIRSET<sp/>=<sp/>PIN2_bm<sp/>|<sp/>PIN3_bm;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#ifdef<sp/>TWI_ENABLE_PULLUPS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Enable<sp/>Pull-Ups</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>PORTA.PINCONFIG<sp/>=<sp/>PORT_PULLUPEN_bm;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Select<sp/>RA2/RA3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>PORTA.PINCTRLUPD<sp/>=<sp/>PIN2_bm<sp/>|<sp/>PIN3_bm;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" kindref="member">_startTWI</ref>(uint8_t<sp/>addr,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>read)<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>the<sp/>Bus<sp/>is<sp/>Busy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="twi0__master_8c_1a86cd4c8996cbafb28d602fac380ffb6b" kindref="member">TWI_IS_BUSBUSY</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Send<sp/>Address</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI0.MADDR<sp/>=<sp/>(addr<sp/>&lt;&lt;<sp/>1)<sp/>|<sp/>read;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Wait...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503" kindref="member">TWI_WAIT</ref>();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="twi0__master_8c_1a88bac97d359ea3f873641d6ebf886231" kindref="member">isTWIBad</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Stop<sp/>the<sp/>Bus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TWI0.MCTRLB<sp/>=<sp/>TWI_MCMD_STOP_gc;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TWI<sp/>Started</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment">//Internal<sp/>Function:<sp/>Reads<sp/>len<sp/>bytes<sp/>from<sp/>TWI,<sp/>then<sp/>issues<sp/>a<sp/>bus<sp/>STOP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde" kindref="member">_readFromTWI</ref>(uint8_t*<sp/>data,<sp/>uint8_t<sp/>len)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>bCount<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Release<sp/>the<sp/>clock<sp/>hold</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI0.MSTATUS<sp/>=<sp/>TWI_CLKHOLD_bm;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TWI0.MCTRLB<sp/>=<sp/>TWI_MCMD_RECVTRANS_gc;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(bCount<sp/>&lt;<sp/>len)<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Wait...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503" kindref="member">TWI_WAIT</ref>();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Store<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[bCount]<sp/>=<sp/>TWI0.MDATA;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Increment<sp/>the<sp/>counter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bCount<sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bCount<sp/>!=<sp/>len)<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>not<sp/>done,<sp/>then<sp/>ACK<sp/>and<sp/>read<sp/>the<sp/>next<sp/>byte</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TWI0.MCTRLB<sp/>=<sp/>TWI_ACKACT_ACK_gc<sp/>|<sp/>TWI_MCMD_RECVTRANS_gc;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//NACK<sp/>and<sp/>STOP<sp/>the<sp/>bus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI0.MCTRLB<sp/>=<sp/>TWI_ACKACT_NACK_gc<sp/>|<sp/>TWI_MCMD_STOP_gc;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="comment">//Internal<sp/>Function:<sp/>Write<sp/>len<sp/>bytes<sp/>to<sp/>TWI.<sp/>Does<sp/>NOT<sp/>STOP<sp/>the<sp/>bus.<sp/>Returns<sp/>true<sp/>if<sp/>successful</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb" kindref="member">_writeToTWI</ref>(uint8_t*<sp/>data,<sp/>uint8_t<sp/>len)<sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(count<sp/>&lt;<sp/>len)<sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Write<sp/>a<sp/>byte</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TWI0.MDATA<sp/>=<sp/>data[count];</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Wait...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503" kindref="member">TWI_WAIT</ref>();</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>the<sp/>client<sp/>NACKed,<sp/>then<sp/>abort<sp/>the<sp/>write</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="twi0__master_8c_1aa0c501a160d4a7bbac583a0760b69879" kindref="member">CLIENT_NACK</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Increment<sp/>the<sp/>counter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count++;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166" refid="twi0__master_8c_1a472ca814410582196cc43dc0d26ac959" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8c_1a472ca814410582196cc43dc0d26ac959" kindref="member">TWI_sendByte</ref>(uint8_t<sp/>addr,<sp/>uint8_t<sp/>data)<sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Address<sp/>Client<sp/>Device<sp/>(Write)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" kindref="member">_startTWI</ref>(addr,<sp/><ref refid="twi0__master_8c_1a3b68e8e777b71520f9dbfac733774d5f" kindref="member">TWI_WRITE</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success<sp/>=<sp/><ref refid="twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb" kindref="member">_writeToTWI</ref>(&amp;data,<sp/>1);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Stop<sp/>the<sp/>bus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI0.MCTRLB<sp/>=<sp/>TWI_MCMD_STOP_gc;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>success;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="twi0__master_8c_1a35878eea0edaf2bcecf05c45c6c9e0f5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8c_1a35878eea0edaf2bcecf05c45c6c9e0f5" kindref="member">TWI_sendBytes</ref>(uint8_t<sp/>addr,<sp/>uint8_t*<sp/>data,<sp/>uint8_t<sp/>len)<sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Address<sp/>Client<sp/>Device<sp/>(Write)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" kindref="member">_startTWI</ref>(addr,<sp/><ref refid="twi0__master_8c_1a3b68e8e777b71520f9dbfac733774d5f" kindref="member">TWI_WRITE</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Write<sp/>the<sp/>bytes<sp/>to<sp/>the<sp/>client</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success<sp/>=<sp/><ref refid="twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb" kindref="member">_writeToTWI</ref>(data,<sp/>len);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Stop<sp/>the<sp/>bus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI0.MCTRLB<sp/>=<sp/>TWI_MCMD_STOP_gc;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>success;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="twi0__master_8c_1aba41249cfdcf6503f6facca53b858baf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8c_1aba41249cfdcf6503f6facca53b858baf" kindref="member">TWI_readByte</ref>(uint8_t<sp/>addr,<sp/>uint8_t*<sp/>data)<sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Address<sp/>Client<sp/>Device<sp/>(Read)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" kindref="member">_startTWI</ref>(addr,<sp/><ref refid="twi0__master_8c_1aaf9a8abccd811954f9cc316f2b2f87b3" kindref="member">TWI_READ</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Read<sp/>byte<sp/>from<sp/>client</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde" kindref="member">_readFromTWI</ref>(data,<sp/>1);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208" refid="twi0__master_8c_1a81074b35f6014cebe4d13ea41b38484d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8c_1a81074b35f6014cebe4d13ea41b38484d" kindref="member">TWI_readBytes</ref>(uint8_t<sp/>addr,<sp/>uint8_t*<sp/>data,<sp/>uint8_t<sp/>len)<sp/>{</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Address<sp/>Client<sp/>Device<sp/>(Read)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" kindref="member">_startTWI</ref>(addr,<sp/><ref refid="twi0__master_8c_1aaf9a8abccd811954f9cc316f2b2f87b3" kindref="member">TWI_READ</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Read<sp/>bytes<sp/>from<sp/>client</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde" kindref="member">_readFromTWI</ref>(data,<sp/>len);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220" refid="twi0__master_8c_1abace615165977923b5a9abf7fe760f8a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8c_1abace615165977923b5a9abf7fe760f8a" kindref="member">TWI_sendAndReadBytes</ref>(uint8_t<sp/>addr,<sp/>uint8_t<sp/>regAddress,<sp/>uint8_t*<sp/>data,<sp/>uint8_t<sp/>len)<sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Address<sp/>Client<sp/>Device<sp/>(Write)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" kindref="member">_startTWI</ref>(addr,<sp/><ref refid="twi0__master_8c_1a3b68e8e777b71520f9dbfac733774d5f" kindref="member">TWI_WRITE</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Write<sp/>register<sp/>address</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb" kindref="member">_writeToTWI</ref>(&amp;regAddress,<sp/>1))<sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TWI0.MCTRLB<sp/>=<sp/>TWI_MCMD_STOP_gc;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Restart<sp/>the<sp/>TWI<sp/>Bus<sp/>in<sp/>READ<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI0.MADDR<sp/>|=<sp/><ref refid="twi0__master_8c_1aaf9a8abccd811954f9cc316f2b2f87b3" kindref="member">TWI_READ</ref>;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI0.MCTRLB<sp/>=<sp/>TWI_MCMD_REPSTART_gc;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Wait...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503" kindref="member">TWI_WAIT</ref>();</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="twi0__master_8c_1a88bac97d359ea3f873641d6ebf886231" kindref="member">isTWIBad</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Stop<sp/>the<sp/>TWI<sp/>Bus<sp/>if<sp/>an<sp/>error<sp/>occurred</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TWI0.MCTRLB<sp/>=<sp/>TWI_MCMD_STOP_gc;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Read<sp/>the<sp/>data<sp/>from<sp/>the<sp/>client</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde" kindref="member">_readFromTWI</ref>(data,<sp/>len);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/ESE381/Global/ese381/ese381/twi0_master.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_scd41_8c_source" xml:lang="en-US">
+<title>scd41.c</title>
+<indexterm><primary>Lab10/src/Lab10/Task3/scd41.c</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_scd41_8c_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&lt;twi/twi0_master.h&gt;</emphasis>
+<anchor xml:id="_scd41_8c_source_1l00002"/>00002 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_scd41_8h">scd41.h</link>&quot;</emphasis>
+<anchor xml:id="_scd41_8c_source_1l00003"/>00003 
+<anchor xml:id="_scd41_8c_source_1l00004"/>00004 <emphasis role="keyword">static</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;uint8_t&#32;start_meas[2]&#32;=&#32;{0x21,&#32;0xB1};
+<anchor xml:id="_scd41_8c_source_1l00005"/>00005 <emphasis role="keyword">static</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;uint8_t&#32;read_meas[2]&#32;&#32;=&#32;{0xEC,&#32;0x05};
+<anchor xml:id="_scd41_8c_source_1l00006"/>00006 <emphasis role="keyword">static</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;uint8_t&#32;stop_meas[2]&#32;&#32;=&#32;{0x3F,&#32;0x86};
+<anchor xml:id="_scd41_8c_source_1l00007"/>00007 <emphasis role="keyword">static</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;uint8_t&#32;data_ready[2]&#32;=&#32;{0xE4,&#32;0xB8};
+<anchor xml:id="_scd41_8c_source_1l00008"/>00008 &#32;&#32;&#32;&#32;
+<anchor xml:id="_scd41_8c_source_1l00009"/><link linkend="_scd41_8c_1a5e947b775032bb94e49086b95477a205">00009</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_scd41_8c_1a5e947b775032bb94e49086b95477a205">scd41_start_periodic_meas</link>(uint8_t&#32;addr)&#32;{
+<anchor xml:id="_scd41_8c_source_1l00010"/>00010 &#32;&#32;&#32;&#32;TWI_sendBytes(addr,&#32;start_meas,&#32;2);
+<anchor xml:id="_scd41_8c_source_1l00011"/>00011 }
+<anchor xml:id="_scd41_8c_source_1l00012"/>00012 
+<anchor xml:id="_scd41_8c_source_1l00013"/><link linkend="_scd41_8c_1a0485ec86cee25367d2762783d76ae12c">00013</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_scd41_8c_1a0485ec86cee25367d2762783d76ae12c">scd41_stop_periodic_meas</link>(uint8_t&#32;addr)&#32;{
+<anchor xml:id="_scd41_8c_source_1l00014"/>00014 &#32;&#32;&#32;&#32;TWI_sendBytes(addr,&#32;stop_meas,&#32;2);
+<anchor xml:id="_scd41_8c_source_1l00015"/>00015 }
+<anchor xml:id="_scd41_8c_source_1l00016"/>00016 
+<anchor xml:id="_scd41_8c_source_1l00017"/><link linkend="_scd41_8c_1a4ca4e8746f6fdac58b506247e805cda3">00017</link> uint8_t&#32;<link linkend="_scd41_8c_1a4ca4e8746f6fdac58b506247e805cda3">scd41_has_data</link>(uint8_t&#32;addr)&#32;{
+<anchor xml:id="_scd41_8c_source_1l00018"/>00018 &#32;&#32;&#32;&#32;uint8_t&#32;scd41_data_ready_response[3];
+<anchor xml:id="_scd41_8c_source_1l00019"/>00019 &#32;&#32;&#32;&#32;TWI_sendBytesAndReadBytes(addr,&#32;data_ready,&#32;2,&#32;scd41_data_ready_response,&#32;3,&#32;1);
+<anchor xml:id="_scd41_8c_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0bXXXXX000&#32;&#32;and&#32;0b00000000&#32;&#32;=&#32;&#32;DATA&#32;NOT&#32;READY</emphasis>
+<anchor xml:id="_scd41_8c_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(scd41_data_ready_response[0]&#32;&amp;&#32;0x07)&#32;||&#32;(scd41_data_ready_response[1]);
+<anchor xml:id="_scd41_8c_source_1l00022"/>00022 }
+<anchor xml:id="_scd41_8c_source_1l00023"/>00023 
+<anchor xml:id="_scd41_8c_source_1l00024"/><link linkend="_scd41_8c_1a8c06da70168e9f5015616aa26d752fff">00024</link> <link linkend="_structscd41__data__t">scd41_data_t</link>&#32;<link linkend="_scd41_8c_1a8c06da70168e9f5015616aa26d752fff">scd41_read_data</link>(uint8_t&#32;addr)&#32;{
+<anchor xml:id="_scd41_8c_source_1l00025"/>00025 &#32;&#32;&#32;&#32;<link linkend="_structscd41__data__t">scd41_data_t</link>&#32;ret;
+<anchor xml:id="_scd41_8c_source_1l00026"/>00026 &#32;&#32;&#32;&#32;uint8_t&#32;scd41_response[9];
+<anchor xml:id="_scd41_8c_source_1l00027"/>00027 &#32;&#32;&#32;&#32;TWI_sendBytesAndReadBytes(addr,&#32;read_meas,&#32;2,&#32;scd41_response,&#32;9,&#32;1);
+<anchor xml:id="_scd41_8c_source_1l00028"/>00028 &#32;&#32;&#32;&#32;
+<anchor xml:id="_scd41_8c_source_1l00029"/>00029 &#32;&#32;&#32;&#32;ret.<link linkend="_structscd41__data__t_1aa2dd73af24dfe2a9b2b8aaf8917be643">co2_raw</link>&#32;=&#32;scd41_response[0]&#32;&lt;&lt;&#32;8&#32;|&#32;scd41_response[1];
+<anchor xml:id="_scd41_8c_source_1l00030"/>00030 &#32;&#32;&#32;&#32;ret.<link linkend="_structscd41__data__t_1a8f687631f21b0ec1af9190a6e16cbd07">co2_crc</link>&#32;=&#32;scd41_response[2];
+<anchor xml:id="_scd41_8c_source_1l00031"/>00031 &#32;&#32;&#32;&#32;ret.<link linkend="_structscd41__data__t_1a047d7f97f65e020d9118d2a6638e81bb">temp_c_raw</link>&#32;=&#32;scd41_response[3]&#32;&lt;&lt;&#32;8&#32;|&#32;scd41_response[4];
+<anchor xml:id="_scd41_8c_source_1l00032"/>00032 &#32;&#32;&#32;&#32;ret.<link linkend="_structscd41__data__t_1a793c42f5f3acaa1f47e5f88215bf85d6">temp_c_crc</link>&#32;=&#32;scd41_response[5];
+<anchor xml:id="_scd41_8c_source_1l00033"/>00033 &#32;&#32;&#32;&#32;ret.<link linkend="_structscd41__data__t_1a2ce16830b237eef33a7a3b9498eb5361">rh_raw</link>&#32;=&#32;scd41_response[6]&#32;&lt;&lt;&#32;8&#32;|&#32;scd41_response[7];
+<anchor xml:id="_scd41_8c_source_1l00034"/>00034 &#32;&#32;&#32;&#32;ret.<link linkend="_structscd41__data__t_1ac2ca72396924faac9da3569ca7f8618e">rh_crc</link>&#32;=&#32;scd41_response[8];
+<anchor xml:id="_scd41_8c_source_1l00035"/>00035 &#32;&#32;&#32;&#32;
+<anchor xml:id="_scd41_8c_source_1l00036"/>00036 &#32;&#32;&#32;&#32;ret.<link linkend="_structscd41__data__t_1a10aa9d025b4a09a420126fb30f37a8af">temp_c</link>&#32;=&#32;-45.0f&#32;+&#32;175.0f&#32;*&#32;ret.<link linkend="_structscd41__data__t_1a047d7f97f65e020d9118d2a6638e81bb">temp_c_raw</link>&#32;/&#32;65536.0f;
+<anchor xml:id="_scd41_8c_source_1l00037"/>00037 &#32;&#32;&#32;&#32;ret.<link linkend="_structscd41__data__t_1aad864e72b35172fbe003fab04b990bf9">rh</link>&#32;=&#32;100.0f&#32;*&#32;ret.<link linkend="_structscd41__data__t_1a2ce16830b237eef33a7a3b9498eb5361">rh_raw</link>&#32;/&#32;65536.0f;
+<anchor xml:id="_scd41_8c_source_1l00038"/>00038 &#32;&#32;&#32;&#32;
+<anchor xml:id="_scd41_8c_source_1l00039"/>00039 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_scd41_8c_source_1l00040"/>00040 }
+</programlisting></section>

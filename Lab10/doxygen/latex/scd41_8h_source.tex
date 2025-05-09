@@ -1,0 +1,31 @@
+\doxysection{scd41.\+h}
+\hypertarget{scd41_8h_source}{}\label{scd41_8h_source}\index{Lab10/src/Lab10/Task3/scd41.h@{Lab10/src/Lab10/Task3/scd41.h}}
+\mbox{\hyperlink{scd41_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00010}00010\ \textcolor{preprocessor}{\#ifndef\ SCD41\_H\_}}
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00011}00011\ \textcolor{preprocessor}{\#define\ SCD41\_H\_}}
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00020}\mbox{\hyperlink{structscd41__data__t}{00020}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00021}\mbox{\hyperlink{structscd41__data__t_aa2dd73af24dfe2a9b2b8aaf8917be643}{00021}}\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structscd41__data__t_aa2dd73af24dfe2a9b2b8aaf8917be643}{co2\_raw}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00022}\mbox{\hyperlink{structscd41__data__t_a8f687631f21b0ec1af9190a6e16cbd07}{00022}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structscd41__data__t_a8f687631f21b0ec1af9190a6e16cbd07}{co2\_crc}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00023}\mbox{\hyperlink{structscd41__data__t_a047d7f97f65e020d9118d2a6638e81bb}{00023}}\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structscd41__data__t_a047d7f97f65e020d9118d2a6638e81bb}{temp\_c\_raw}};\ \ }
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00024}\mbox{\hyperlink{structscd41__data__t_a793c42f5f3acaa1f47e5f88215bf85d6}{00024}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structscd41__data__t_a793c42f5f3acaa1f47e5f88215bf85d6}{temp\_c\_crc}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00025}\mbox{\hyperlink{structscd41__data__t_a2ce16830b237eef33a7a3b9498eb5361}{00025}}\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structscd41__data__t_a2ce16830b237eef33a7a3b9498eb5361}{rh\_raw}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00026}\mbox{\hyperlink{structscd41__data__t_ac2ca72396924faac9da3569ca7f8618e}{00026}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structscd41__data__t_ac2ca72396924faac9da3569ca7f8618e}{rh\_crc}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00027}\mbox{\hyperlink{structscd41__data__t_a10aa9d025b4a09a420126fb30f37a8af}{00027}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structscd41__data__t_a10aa9d025b4a09a420126fb30f37a8af}{temp\_c}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00028}\mbox{\hyperlink{structscd41__data__t_aad864e72b35172fbe003fab04b990bf9}{00028}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structscd41__data__t_aad864e72b35172fbe003fab04b990bf9}{rh}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00029}00029\ \}\ \mbox{\hyperlink{structscd41__data__t}{scd41\_data\_t}};}
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00037}00037\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{scd41_8h_a5e947b775032bb94e49086b95477a205}{scd41\_start\_periodic\_meas}}(uint8\_t\ addr);}
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00045}00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{scd41_8h_a0485ec86cee25367d2762783d76ae12c}{scd41\_stop\_periodic\_meas}}(uint8\_t\ addr);}
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00053}00053\ uint8\_t\ \mbox{\hyperlink{scd41_8h_a4ca4e8746f6fdac58b506247e805cda3}{scd41\_has\_data}}(uint8\_t\ addr);}
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00062}00062\ \mbox{\hyperlink{structscd41__data__t}{scd41\_data\_t}}\ \mbox{\hyperlink{scd41_8h_a8c06da70168e9f5015616aa26d752fff}{scd41\_read\_data}}(uint8\_t\ addr);}
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{scd41_8h_source_l00064}00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SCD41\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,334 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="serlcd_8c" kind="file" language="C++">
+    <compoundname>serlcd.c</compoundname>
+    <includes refid="serlcd_8h" local="yes">serlcd.h</includes>
+    <includes local="no">avr/io.h</includes>
+    <includes local="no">util/delay.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">twi/twi0_master.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>Lab10/src/Lab10/Task3/serlcd.c</label>
+        <link refid="serlcd_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>serlcd.h</label>
+        <link refid="serlcd_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>avr/io.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="6">
+        <label>stdio.h</label>
+      </node>
+      <node id="7">
+        <label>twi/twi0_master.h</label>
+      </node>
+      <node id="5">
+        <label>util/delay.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="serlcd_8c_1aec024d63790c43bb2635e0b3468583d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void send_string_SerLCD</definition>
+        <argsstring>(uint8_t addr, uint8_t *str, uint8_t len)</argsstring>
+        <name>send_string_SerLCD</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends char array to the SerLCD out of TWI0.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>I2C slave address of the SerLCD. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to start of char array to be sent. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of char array. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/serlcd.c" line="9" column="6" bodyfile="Lab10/src/Lab10/Task3/serlcd.c" bodystart="9" bodyend="14"/>
+        <references refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" compoundref="serlcd_8h" startline="9">TWI_SERLCD_INTERVAL_US</references>
+        <referencedby refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" compoundref="serlcd_8c" startline="23" endline="28">update_SerLCD</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serlcd_8c_1aae95d59b494981540233ed751f39e341" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void clear_SerLCD</definition>
+        <argsstring>(uint8_t addr)</argsstring>
+        <name>clear_SerLCD</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends the byte sequence |- out of TWI0 to clear the SerLCD.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>I2C slave address of the SerLCD. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/serlcd.c" line="16" column="6" bodyfile="Lab10/src/Lab10/Task3/serlcd.c" bodystart="16" bodyend="21"/>
+        <references refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" compoundref="serlcd_8h" startline="9">TWI_SERLCD_INTERVAL_US</references>
+        <referencedby refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" compoundref="serlcd_8c" startline="23" endline="28">update_SerLCD</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void update_SerLCD</definition>
+        <argsstring>(uint8_t addr)</argsstring>
+        <name>update_SerLCD</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends contents of <computeroutput>serlcd_buffer</computeroutput> out of TWI0.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>I2C slave address of the SerLCD. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/serlcd.c" line="23" column="6" bodyfile="Lab10/src/Lab10/Task3/serlcd.c" bodystart="23" bodyend="28"/>
+        <references refid="serlcd_8c_1aae95d59b494981540233ed751f39e341" compoundref="serlcd_8c" startline="16" endline="21">clear_SerLCD</references>
+        <references refid="serlcd_8c_1aec024d63790c43bb2635e0b3468583d8" compoundref="serlcd_8c" startline="9" endline="14">send_string_SerLCD</references>
+        <references refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" compoundref="serlcd_8h" startline="18">serlcd_buffer</references>
+        <references refid="serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28" compoundref="serlcd_8h" startline="11">SERLCD_COLS</references>
+        <references refid="serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2" compoundref="serlcd_8h" startline="10">SERLCD_ROWS</references>
+        <referencedby refid="climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="climate__monitor_8c" startline="23" endline="43">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serlcd_8c_1ae0028b85aa630926c9fc2e9b93dfc1cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void turn_backlight_off</definition>
+        <argsstring>(uint8_t addr)</argsstring>
+        <name>turn_backlight_off</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends byte sequence to turn off the SerLCD backlight.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>I2C slave address of the SerLCD. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/serlcd.c" line="30" column="6" bodyfile="Lab10/src/Lab10/Task3/serlcd.c" bodystart="30" bodyend="41"/>
+        <references refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" compoundref="serlcd_8h" startline="9">TWI_SERLCD_INTERVAL_US</references>
+        <referencedby refid="climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="climate__monitor_8c" startline="23" endline="43">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="serlcd_8c_1a0dd8c0b6f054f78d97273423fd965aec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void serlcd_set_background_rgb</definition>
+        <argsstring>(uint8_t addr, uint8_t r, uint8_t g, uint8_t b)</argsstring>
+        <name>serlcd_set_background_rgb</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the RGB background color of the SerLCD backlight.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>I2C slave address of the SerLCD. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Red intensity (0–255). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Green intensity (0–255). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Blue intensity (0–255). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/serlcd.c" line="43" column="6" bodyfile="Lab10/src/Lab10/Task3/serlcd.c" bodystart="43" bodyend="54"/>
+        <references refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" compoundref="serlcd_8h" startline="9">TWI_SERLCD_INTERVAL_US</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="serlcd_8h" kindref="compound">serlcd.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avr/io.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;util/delay.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;twi/twi0_master.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="serlcd_8c_1aec024d63790c43bb2635e0b3468583d8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="serlcd_8c_1aec024d63790c43bb2635e0b3468583d8" kindref="member">send_string_SerLCD</ref>(uint8_t<sp/>addr,<sp/>uint8_t<sp/>*str,<sp/>uint8_t<sp/>len)<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint8_t<sp/>idx<sp/>=<sp/>0;<sp/>idx<sp/>&lt;<sp/>len;<sp/>++idx)<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TWI_sendByte(addr,<sp/>str[idx]);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_delay_us(<ref refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" kindref="member">TWI_SERLCD_INTERVAL_US</ref>);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="serlcd_8c_1aae95d59b494981540233ed751f39e341" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="serlcd_8c_1aae95d59b494981540233ed751f39e341" kindref="member">clear_SerLCD</ref>(uint8_t<sp/>addr)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_sendByte(addr,<sp/></highlight><highlight class="charliteral">&apos;|&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>_delay_us(<ref refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" kindref="member">TWI_SERLCD_INTERVAL_US</ref>);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_sendByte(addr,<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>_delay_us(<ref refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" kindref="member">TWI_SERLCD_INTERVAL_US</ref>);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" kindref="member">update_SerLCD</ref>(uint8_t<sp/>addr)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="serlcd_8c_1aae95d59b494981540233ed751f39e341" kindref="member">clear_SerLCD</ref>(addr);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint8_t<sp/>idx<sp/>=<sp/>0;<sp/>idx<sp/>&lt;<sp/><ref refid="serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2" kindref="member">SERLCD_ROWS</ref>;<sp/>++idx)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="serlcd_8c_1aec024d63790c43bb2635e0b3468583d8" kindref="member">send_string_SerLCD</ref>(addr,<sp/><ref refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kindref="member">serlcd_buffer</ref>[idx],<sp/><ref refid="serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28" kindref="member">SERLCD_COLS</ref>);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="serlcd_8c_1ae0028b85aa630926c9fc2e9b93dfc1cc" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="serlcd_8c_1ae0028b85aa630926c9fc2e9b93dfc1cc" kindref="member">turn_backlight_off</ref>(uint8_t<sp/>addr)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_sendByte(addr,<sp/></highlight><highlight class="charliteral">&apos;|&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>_delay_us(<ref refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" kindref="member">TWI_SERLCD_INTERVAL_US</ref>);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_sendByte(addr,<sp/></highlight><highlight class="charliteral">&apos;+&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>_delay_us(<ref refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" kindref="member">TWI_SERLCD_INTERVAL_US</ref>);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_sendByte(addr,<sp/>0);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>_delay_us(<ref refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" kindref="member">TWI_SERLCD_INTERVAL_US</ref>);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_sendByte(addr,<sp/>0);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>_delay_us(<ref refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" kindref="member">TWI_SERLCD_INTERVAL_US</ref>);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_sendByte(addr,<sp/>0);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>_delay_us(<ref refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" kindref="member">TWI_SERLCD_INTERVAL_US</ref>);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="serlcd_8c_1a0dd8c0b6f054f78d97273423fd965aec" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="serlcd_8c_1a0dd8c0b6f054f78d97273423fd965aec" kindref="member">serlcd_set_background_rgb</ref>(uint8_t<sp/>addr,<sp/>uint8_t<sp/>r,<sp/>uint8_t<sp/>g,<sp/>uint8_t<sp/>b)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_sendByte(addr,<sp/></highlight><highlight class="charliteral">&apos;|&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>_delay_us(<ref refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" kindref="member">TWI_SERLCD_INTERVAL_US</ref>);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_sendByte(addr,<sp/></highlight><highlight class="charliteral">&apos;+&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>_delay_us(<ref refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" kindref="member">TWI_SERLCD_INTERVAL_US</ref>);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_sendByte(addr,<sp/>r);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>_delay_us(<ref refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" kindref="member">TWI_SERLCD_INTERVAL_US</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_sendByte(addr,<sp/>g);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>_delay_us(<ref refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" kindref="member">TWI_SERLCD_INTERVAL_US</ref>);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_sendByte(addr,<sp/>b);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>_delay_us(<ref refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" kindref="member">TWI_SERLCD_INTERVAL_US</ref>);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Lab10/src/Lab10/Task3/serlcd.c"/>
+  </compounddef>
+</doxygen>

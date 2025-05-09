@@ -1,0 +1,84 @@
+.TH "scd41_data_t" 3 "Version 0.1" "Lab10 Climate Sensor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scd41_data_t \- Container for raw and converted SCD41 sensor data\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <scd41\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "uint16_t \fBco2_raw\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBco2_crc\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBtemp_c_raw\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBtemp_c_crc\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBrh_raw\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBrh_crc\fP"
+.br
+.ti -1c
+.RI "float \fBtemp_c\fP"
+.br
+.ti -1c
+.RI "float \fBrh\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Container for raw and converted SCD41 sensor data\&. 
+
+Holds raw 16-bit values and their CRCs as received from the sensor, along with floating-point temperature in °C and relative humidity in %\&. 
+.PP
+Definition at line \fB20\fP of file \fBscd41\&.h\fP\&.
+.SH "Field Documentation"
+.PP 
+.SS "uint8_t co2_crc"
+CRC for raw CO? value 
+.PP
+Definition at line \fB22\fP of file \fBscd41\&.h\fP\&.
+.SS "uint16_t co2_raw"
+Raw CO? value from sensor 
+.PP
+Definition at line \fB21\fP of file \fBscd41\&.h\fP\&.
+.SS "float rh"
+Calculated relative humidity in percent 
+.PP
+Definition at line \fB28\fP of file \fBscd41\&.h\fP\&.
+.SS "uint8_t rh_crc"
+CRC for raw relative humidity value 
+.PP
+Definition at line \fB26\fP of file \fBscd41\&.h\fP\&.
+.SS "uint16_t rh_raw"
+Raw relative humidity value from sensor 
+.PP
+Definition at line \fB25\fP of file \fBscd41\&.h\fP\&.
+.SS "float temp_c"
+Calculated temperature in degrees Celsius 
+.PP
+Definition at line \fB27\fP of file \fBscd41\&.h\fP\&.
+.SS "uint8_t temp_c_crc"
+CRC for raw temperature value 
+.PP
+Definition at line \fB24\fP of file \fBscd41\&.h\fP\&.
+.SS "uint16_t temp_c_raw"
+Raw temperature value from sensor 
+.PP
+Definition at line \fB23\fP of file \fBscd41\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Lab10 Climate Sensor from the source code\&.

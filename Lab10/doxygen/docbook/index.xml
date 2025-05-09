@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="en-US">
+    <info>
+    <title>Lab10 Climate Sensor</title>
+    </info>
+<chapter>
+    <title>Data Structure Documentation</title>
+    <xi:include href="structscd41__data__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>File Documentation</title>
+    <xi:include href="climate__monitor_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="climate__monitor_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="climate__monitor_8d.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="climate__monitor_8d_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="main_8d.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="main_8d_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="scd41_8d.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="scd41_8d_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="serlcd_8d.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="serlcd_8d_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="scd41_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="scd41_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="scd41_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="scd41_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="serlcd_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="serlcd_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="serlcd_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="serlcd_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

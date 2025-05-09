@@ -1,0 +1,9 @@
+<map id="read_spi0_LM74" name="read_spi0_LM74">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,122,83"/>
+<area shape="rect" id="Node000002" href="$spi0_8c.html#a906389614337beb227e0311d81f43b13" title=" " alt="" coords="170,5,317,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,53,178,34,180,39,114,58"/>
+<area shape="rect" id="Node000003" href="$spi0_8c.html#ae62b6dae69170c525e3249f3045da294" title=" " alt="" coords="189,56,298,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="122,67,173,67,173,72,122,72"/>
+<area shape="rect" id="Node000004" href="$spi0_8c.html#a49c7c2f13c7f79ce2f2700f608e78dad" title=" " alt="" coords="177,107,310,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="114,81,180,99,178,105,113,86"/>
+</map>

@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_temp__meas___l_m75_8c" xml:lang="en-US">
+<title>D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c File Reference</title>
+<indexterm><primary>D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;util/delay.h&gt;<?linebreak?>#include &lt;stdio.h&gt;<?linebreak?>#include &lt;twi/twi0_master.h&gt;<?linebreak?>#include &quot;serlcd.h&quot;<?linebreak?>#include &quot;lm75.h&quot;<?linebreak?></programlisting>Include dependency graph for temp_meas_LM75.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="temp__meas___l_m75_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_temp__meas___l_m75_8c_1a92586ca8aecf916e0729fd2e50e1ad48">SERLCD_ADDR</link>&#160;&#160;&#160;0x72</para>
+</listitem>
+            <listitem><para>#define <link linkend="_temp__meas___l_m75_8c_1a48b0d5e3234086fa92932198b565eb6b">LM75_ADDR</link>&#160;&#160;&#160;0x48</para>
+</listitem>
+            <listitem><para>#define <link linkend="_temp__meas___l_m75_8c_1a43bafb28b29491ec7f871319b5a3b2f8">F_CPU</link>&#160;&#160;&#160;4000000UL</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_temp__meas___l_m75_8c_1ae2e0f7cf24504a9d075c351f848b7d8d">fill_buffer</link> ()</para>
+</listitem>
+            <listitem><para>float <link linkend="_temp__meas___l_m75_8c_1a68a292c808957403e5ca69a16ee52592">c_to_f</link> (float c)</para>
+</listitem>
+            <listitem><para>int <link linkend="_temp__meas___l_m75_8c_1a840291bc02cba5474a4cb46a9b9566fe">main</link> (void)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>uint16_t <link linkend="_temp__meas___l_m75_8c_1a78f1124f769dea5b40ef26818088fdd3">lm75_bytes</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_temp__meas___l_m75_8c_1a43bafb28b29491ec7f871319b5a3b2f8"/><section>
+    <title>F_CPU</title>
+<indexterm><primary>F_CPU</primary><secondary>temp_meas_LM75.c</secondary></indexterm>
+<indexterm><primary>temp_meas_LM75.c</primary><secondary>F_CPU</secondary></indexterm>
+<para><computeroutput>#define F_CPU&#160;&#160;&#160;4000000UL</computeroutput></para><para>
+Definition at line <link linkend="_temp__meas___l_m75_8c_source_1l00011">11</link> of file <link linkend="_temp__meas___l_m75_8c_source">temp_meas_LM75.c</link>.</para>
+</section>
+<anchor xml:id="_temp__meas___l_m75_8c_1a48b0d5e3234086fa92932198b565eb6b"/><section>
+    <title>LM75_ADDR</title>
+<indexterm><primary>LM75_ADDR</primary><secondary>temp_meas_LM75.c</secondary></indexterm>
+<indexterm><primary>temp_meas_LM75.c</primary><secondary>LM75_ADDR</secondary></indexterm>
+<para><computeroutput>#define LM75_ADDR&#160;&#160;&#160;0x48</computeroutput></para><para>
+Definition at line <link linkend="_temp__meas___l_m75_8c_source_1l00010">10</link> of file <link linkend="_temp__meas___l_m75_8c_source">temp_meas_LM75.c</link>.</para>
+</section>
+<anchor xml:id="_temp__meas___l_m75_8c_1a92586ca8aecf916e0729fd2e50e1ad48"/><section>
+    <title>SERLCD_ADDR</title>
+<indexterm><primary>SERLCD_ADDR</primary><secondary>temp_meas_LM75.c</secondary></indexterm>
+<indexterm><primary>temp_meas_LM75.c</primary><secondary>SERLCD_ADDR</secondary></indexterm>
+<para><computeroutput>#define SERLCD_ADDR&#160;&#160;&#160;0x72</computeroutput></para>
+<para>TO THE PRELAB GRADER:</para>
+
+<para>This program is intended to be the solution code for both Task 2 and Task 3 as Task 3 is simply an extension of Task 2 with none of the Task 2 components modified. </para>
+<para>
+Definition at line <link linkend="_temp__meas___l_m75_8c_source_1l00009">9</link> of file <link linkend="_temp__meas___l_m75_8c_source">temp_meas_LM75.c</link>.</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_temp__meas___l_m75_8c_1a68a292c808957403e5ca69a16ee52592"/><section>
+    <title>c_to_f()</title>
+<indexterm><primary>c_to_f</primary><secondary>temp_meas_LM75.c</secondary></indexterm>
+<indexterm><primary>temp_meas_LM75.c</primary><secondary>c_to_f</secondary></indexterm>
+<para><computeroutput>float c_to_f (float c)</computeroutput></para>
+<para>Converts celsius to fahrenheit.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>c</entry><entry>
+<para>Celsius. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Fahrenheit. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_temp__meas___l_m75_8c_source_1l00074">74</link> of file <link linkend="_temp__meas___l_m75_8c_source">temp_meas_LM75.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="temp__meas___l_m75_8c_a68a292c808957403e5ca69a16ee52592_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_temp__meas___l_m75_8c_1ae2e0f7cf24504a9d075c351f848b7d8d"/><section>
+    <title>fill_buffer()</title>
+<indexterm><primary>fill_buffer</primary><secondary>temp_meas_LM75.c</secondary></indexterm>
+<indexterm><primary>temp_meas_LM75.c</primary><secondary>fill_buffer</secondary></indexterm>
+<para><computeroutput>void fill_buffer ( )</computeroutput></para>
+<para>Fills <computeroutput>serlcd_buffer</computeroutput> with Lab 07 template.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_temp__meas___l_m75_8c_source_1l00060">60</link> of file <link linkend="_temp__meas___l_m75_8c_source">temp_meas_LM75.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="temp__meas___l_m75_8c_ae2e0f7cf24504a9d075c351f848b7d8d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_temp__meas___l_m75_8c_1a840291bc02cba5474a4cb46a9b9566fe"/><section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>temp_meas_LM75.c</secondary></indexterm>
+<indexterm><primary>temp_meas_LM75.c</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main (void )</computeroutput></para><para>
+Definition at line <link linkend="_temp__meas___l_m75_8c_source_1l00026">26</link> of file <link linkend="_temp__meas___l_m75_8c_source">temp_meas_LM75.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="temp__meas___l_m75_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_temp__meas___l_m75_8c_1a78f1124f769dea5b40ef26818088fdd3"/><section>
+    <title>lm75_bytes</title>
+<indexterm><primary>lm75_bytes</primary><secondary>temp_meas_LM75.c</secondary></indexterm>
+<indexterm><primary>temp_meas_LM75.c</primary><secondary>lm75_bytes</secondary></indexterm>
+<para><computeroutput>uint16_t lm75_bytes</computeroutput></para><para>
+Definition at line <link linkend="_temp__meas___l_m75_8c_source_1l00024">24</link> of file <link linkend="_temp__meas___l_m75_8c_source">temp_meas_LM75.c</link>.</para>
+</section>
+</section>
+</section>

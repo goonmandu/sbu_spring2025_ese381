@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="temp__meas___l_m75_8c" kind="file" language="C++">
+    <compoundname>temp_meas_LM75.c</compoundname>
+    <includes local="no">util/delay.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">twi/twi0_master.h</includes>
+    <includes refid="serlcd_8h" local="yes">serlcd.h</includes>
+    <includes refid="lm75_8h" local="yes">lm75.h</includes>
+    <incdepgraph>
+      <node id="7">
+        <label>lm75.h</label>
+        <link refid="lm75_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>serlcd.h</label>
+        <link refid="serlcd_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c</label>
+        <link refid="temp__meas___l_m75_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>stdio.h</label>
+      </node>
+      <node id="4">
+        <label>twi/twi0_master.h</label>
+      </node>
+      <node id="2">
+        <label>util/delay.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="temp__meas___l_m75_8c_1a92586ca8aecf916e0729fd2e50e1ad48" prot="public" static="no">
+        <name>SERLCD_ADDR</name>
+        <initializer>0x72</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>TO THE PRELAB GRADER:</para>
+<para>This program is intended to be the solution code for both Task 2 and Task 3 as Task 3 is simply an extension of Task 2 with none of the Task 2 components modified. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" line="9" column="9" bodyfile="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" bodystart="9" bodyend="-1"/>
+        <referencedby refid="temp__meas___l_m75_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="temp__meas___l_m75_8c" startline="26" endline="52">main</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="temp__meas___l_m75_8c_1a48b0d5e3234086fa92932198b565eb6b" prot="public" static="no">
+        <name>LM75_ADDR</name>
+        <initializer>0x48</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" line="10" column="9" bodyfile="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" bodystart="10" bodyend="-1"/>
+        <referencedby refid="temp__meas___l_m75_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="temp__meas___l_m75_8c" startline="26" endline="52">main</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="temp__meas___l_m75_8c_1a43bafb28b29491ec7f871319b5a3b2f8" prot="public" static="no">
+        <name>F_CPU</name>
+        <initializer>4000000UL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" line="11" column="9" bodyfile="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" bodystart="11" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="temp__meas___l_m75_8c_1a78f1124f769dea5b40ef26818088fdd3" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t lm75_bytes</definition>
+        <argsstring></argsstring>
+        <name>lm75_bytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" line="24" column="10" bodyfile="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" bodystart="24" bodyend="-1"/>
+        <referencedby refid="temp__meas___l_m75_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="temp__meas___l_m75_8c" startline="26" endline="52">main</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="temp__meas___l_m75_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fill_buffer</definition>
+        <argsstring>()</argsstring>
+        <name>fill_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fills <computeroutput>serlcd_buffer</computeroutput> with Lab 07 template.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" line="60" column="6" bodyfile="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" bodystart="60" bodyend="66" declfile="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" declline="21" declcolumn="6"/>
+        <references refid="serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85" compoundref="serlcd_8h" startline="18">serlcd_buffer</references>
+        <referencedby refid="temp__meas___l_m75_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="temp__meas___l_m75_8c" startline="26" endline="52">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="temp__meas___l_m75_8c_1a68a292c808957403e5ca69a16ee52592" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float c_to_f</definition>
+        <argsstring>(float c)</argsstring>
+        <name>c_to_f</name>
+        <param>
+          <type>float</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts celsius to fahrenheit.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Celsius. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Fahrenheit. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" line="74" column="7" bodyfile="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" bodystart="74" bodyend="76" declfile="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" declline="22" declcolumn="7"/>
+        <referencedby refid="temp__meas___l_m75_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="temp__meas___l_m75_8c" startline="26" endline="52">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="temp__meas___l_m75_8c_1a840291bc02cba5474a4cb46a9b9566fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(void)</argsstring>
+        <name>main</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" line="26" column="5" bodyfile="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" bodystart="26" bodyend="52"/>
+        <references refid="temp__meas___l_m75_8c_1a68a292c808957403e5ca69a16ee52592" compoundref="temp__meas___l_m75_8c" startline="74" endline="76">c_to_f</references>
+        <references refid="serlcd_8c_1aae95d59b494981540233ed751f39e341" compoundref="serlcd_8c" startline="16" endline="21">clear_SerLCD</references>
+        <references refid="temp__meas___l_m75_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" compoundref="temp__meas___l_m75_8c" startline="60" endline="66">fill_buffer</references>
+        <references refid="temp__meas___l_m75_8c_1a48b0d5e3234086fa92932198b565eb6b" compoundref="temp__meas___l_m75_8c" startline="10">LM75_ADDR</references>
+        <references refid="temp__meas___l_m75_8c_1a78f1124f769dea5b40ef26818088fdd3" compoundref="temp__meas___l_m75_8c" startline="24">lm75_bytes</references>
+        <references refid="lm75_8c_1a41112386168f6b29f716d86bb9742bab" compoundref="lm75_8c" startline="10" endline="16">lm75_to_celsius</references>
+        <references refid="lm75_8c_1a1783c5db1415960e6a87e9be965d5153" compoundref="lm75_8c" startline="4" endline="8">read_LM75_temp_bytes</references>
+        <references refid="temp__meas___l_m75_8c_1a92586ca8aecf916e0729fd2e50e1ad48" compoundref="temp__meas___l_m75_8c" startline="9">SERLCD_ADDR</references>
+        <references refid="serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85" compoundref="serlcd_8h" startline="18">serlcd_buffer</references>
+        <references refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" compoundref="serlcd_8c" startline="23" endline="28">update_SerLCD</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="temp__meas___l_m75_8c_1a92586ca8aecf916e0729fd2e50e1ad48" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SERLCD_ADDR<sp/>0x72</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="temp__meas___l_m75_8c_1a48b0d5e3234086fa92932198b565eb6b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LM75_ADDR<sp/>0x48</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="temp__meas___l_m75_8c_1a43bafb28b29491ec7f871319b5a3b2f8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>F_CPU<sp/>4000000UL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;util/delay.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>TWI_ENABLE_PULLUPS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;twi/twi0_master.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="serlcd_8h" kindref="compound">serlcd.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="lm75_8h" kindref="compound">lm75.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="temp__meas___l_m75_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" kindref="member">fill_buffer</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="temp__meas___l_m75_8c_1a68a292c808957403e5ca69a16ee52592" kindref="member">c_to_f</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="temp__meas___l_m75_8c_1a78f1124f769dea5b40ef26818088fdd3" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="temp__meas___l_m75_8c_1a78f1124f769dea5b40ef26818088fdd3" kindref="member">lm75_bytes</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="temp__meas___l_m75_8c_1a840291bc02cba5474a4cb46a9b9566fe" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="temp__meas___l_m75_8c_1a840291bc02cba5474a4cb46a9b9566fe" kindref="member">main</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>deg_c,<sp/>deg_f;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>int8_t<sp/>ipart,<sp/>fpart;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_initHost();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>TWI_initPins();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="serlcd_8c_1aae95d59b494981540233ed751f39e341" kindref="member">clear_SerLCD</ref>(<ref refid="temp__meas___l_m75_8c_1a92586ca8aecf916e0729fd2e50e1ad48" kindref="member">SERLCD_ADDR</ref>);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="temp__meas___l_m75_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" kindref="member">fill_buffer</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="temp__meas___l_m75_8c_1a78f1124f769dea5b40ef26818088fdd3" kindref="member">lm75_bytes</ref><sp/>=<sp/><ref refid="lm75_8c_1a1783c5db1415960e6a87e9be965d5153" kindref="member">read_LM75_temp_bytes</ref>(<ref refid="temp__meas___l_m75_8c_1a48b0d5e3234086fa92932198b565eb6b" kindref="member">LM75_ADDR</ref>);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>deg_c<sp/>=<sp/><ref refid="lm75_8c_1a41112386168f6b29f716d86bb9742bab" kindref="member">lm75_to_celsius</ref>(<ref refid="temp__meas___l_m75_8c_1a78f1124f769dea5b40ef26818088fdd3" kindref="member">lm75_bytes</ref>);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>deg_f<sp/>=<sp/><ref refid="temp__meas___l_m75_8c_1a68a292c808957403e5ca69a16ee52592" kindref="member">c_to_f</ref>(deg_c);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ipart<sp/>=<sp/>(int8_t)deg_c;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fpart<sp/>=<sp/>(int8_t)((deg_c<sp/>-<sp/>ipart)<sp/>*<sp/>10);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fpart<sp/>&lt;<sp/>0)<sp/>fpart<sp/>*=<sp/>-1;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(<ref refid="serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85" kindref="member">serlcd_buffer</ref>[1],<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/>%3d.%1d<sp/>C<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>,<sp/>ipart,<sp/>fpart);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ipart<sp/>=<sp/>(int8_t)deg_f;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fpart<sp/>=<sp/>(int8_t)((deg_f<sp/>-<sp/>ipart)<sp/>*<sp/>10);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fpart<sp/>&lt;<sp/>0)<sp/>fpart<sp/>*=<sp/>-1;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(<ref refid="serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85" kindref="member">serlcd_buffer</ref>[2],<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/>%3d.%1d<sp/>F<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>,<sp/>ipart,<sp/>fpart);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" kindref="member">update_SerLCD</ref>(<ref refid="temp__meas___l_m75_8c_1a92586ca8aecf916e0729fd2e50e1ad48" kindref="member">SERLCD_ADDR</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_delay_ms(500);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="temp__meas___l_m75_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="temp__meas___l_m75_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" kindref="member">fill_buffer</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>01234567890123456789</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(<ref refid="serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85" kindref="member">serlcd_buffer</ref>[0],<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>LM75<sp/>Temperature<sp/><sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(<ref refid="serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85" kindref="member">serlcd_buffer</ref>[1],<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(<ref refid="serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85" kindref="member">serlcd_buffer</ref>[2],<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf(<ref refid="serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85" kindref="member">serlcd_buffer</ref>[3],<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="temp__meas___l_m75_8c_1a68a292c808957403e5ca69a16ee52592" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="temp__meas___l_m75_8c_1a68a292c808957403e5ca69a16ee52592" kindref="member">c_to_f</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>c)<sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>c<sp/>*<sp/>1.8f<sp/>+<sp/>32;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c"/>
+  </compounddef>
+</doxygen>

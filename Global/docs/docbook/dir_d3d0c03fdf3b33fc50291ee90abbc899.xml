@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_d3d0c03fdf3b33fc50291ee90abbc899" xml:lang="en-US">
+<title>D:/ESE381/Global/ese381/ese381/Debug Directory Reference</title>
+<indexterm><primary>D:/ESE381/Global/ese381/ese381/Debug Directory Reference</primary></indexterm>
+Directory dependency graph for Debug:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_d3d0c03fdf3b33fc50291ee90abbc899_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_ascii_8d">ascii.d</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_spi0_8d">spi0.d</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_twi0__master_8d">twi0_master.d</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_usart3_8d">usart3.d</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

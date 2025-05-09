@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_serlcd_8c_source" xml:lang="en-US">
+<title>serlcd.c</title>
+<indexterm><primary>D:/ESE381/Lab06/src/Task2/serlcd.c</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_serlcd_8c_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_serlcd_8h">serlcd.h</link>&quot;</emphasis>
+<anchor xml:id="_serlcd_8c_source_1l00002"/>00002 
+<anchor xml:id="_serlcd_8c_source_1l00003"/>00003 <emphasis role="preprocessor">#include&#32;&lt;avr/io.h&gt;</emphasis>
+<anchor xml:id="_serlcd_8c_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;util/delay.h&gt;</emphasis>
+<anchor xml:id="_serlcd_8c_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&lt;stdio.h&gt;</emphasis>
+<anchor xml:id="_serlcd_8c_source_1l00006"/>00006 
+<anchor xml:id="_serlcd_8c_source_1l00007"/>00007 <emphasis role="preprocessor">#include&#32;&lt;twi/twi0_master.h&gt;</emphasis>
+<anchor xml:id="_serlcd_8c_source_1l00008"/>00008 
+<anchor xml:id="_serlcd_8c_source_1l00009"/><link linkend="_serlcd_8c_1aec024d63790c43bb2635e0b3468583d8">00009</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_serlcd_8c_1aec024d63790c43bb2635e0b3468583d8">send_string_SerLCD</link>(uint8_t&#32;addr,&#32;uint8_t&#32;*str,&#32;uint8_t&#32;len)&#32;{
+<anchor xml:id="_serlcd_8c_source_1l00010"/>00010 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(uint8_t&#32;idx&#32;=&#32;0;&#32;idx&#32;&lt;&#32;len;&#32;++idx)&#32;{
+<anchor xml:id="_serlcd_8c_source_1l00011"/>00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TWI_sendByte(addr,&#32;str[idx]);
+<anchor xml:id="_serlcd_8c_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_delay_us(<link linkend="_serlcd_8h_1a87300936d844c1a423d732e28d71c509">TWI_SERLCD_INTERVAL_US</link>);
+<anchor xml:id="_serlcd_8c_source_1l00013"/>00013 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_serlcd_8c_source_1l00014"/>00014 }
+<anchor xml:id="_serlcd_8c_source_1l00015"/>00015 
+<anchor xml:id="_serlcd_8c_source_1l00016"/><link linkend="_serlcd_8c_1aae95d59b494981540233ed751f39e341">00016</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_serlcd_8c_1aae95d59b494981540233ed751f39e341">clear_SerLCD</link>(uint8_t&#32;addr)&#32;{
+<anchor xml:id="_serlcd_8c_source_1l00017"/>00017 &#32;&#32;&#32;&#32;TWI_sendByte(addr,&#32;<emphasis role="charliteral">&apos;|&apos;</emphasis>);
+<anchor xml:id="_serlcd_8c_source_1l00018"/>00018 &#32;&#32;&#32;&#32;_delay_us(<link linkend="_serlcd_8h_1a87300936d844c1a423d732e28d71c509">TWI_SERLCD_INTERVAL_US</link>);
+<anchor xml:id="_serlcd_8c_source_1l00019"/>00019 &#32;&#32;&#32;&#32;TWI_sendByte(addr,&#32;<emphasis role="charliteral">&apos;-&apos;</emphasis>);
+<anchor xml:id="_serlcd_8c_source_1l00020"/>00020 &#32;&#32;&#32;&#32;_delay_us(<link linkend="_serlcd_8h_1a87300936d844c1a423d732e28d71c509">TWI_SERLCD_INTERVAL_US</link>);
+<anchor xml:id="_serlcd_8c_source_1l00021"/>00021 }
+<anchor xml:id="_serlcd_8c_source_1l00022"/>00022 
+<anchor xml:id="_serlcd_8c_source_1l00023"/><link linkend="_serlcd_8c_1a96469994c1d7399edae5231ed06d714a">00023</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_serlcd_8c_1a96469994c1d7399edae5231ed06d714a">update_SerLCD</link>(uint8_t&#32;addr)&#32;{
+<anchor xml:id="_serlcd_8c_source_1l00024"/>00024 &#32;&#32;&#32;&#32;<link linkend="_serlcd_8c_1aae95d59b494981540233ed751f39e341">clear_SerLCD</link>(addr);
+<anchor xml:id="_serlcd_8c_source_1l00025"/>00025 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(uint8_t&#32;idx&#32;=&#32;0;&#32;idx&#32;&lt;&#32;<link linkend="_serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2">SERLCD_ROWS</link>;&#32;++idx)&#32;{
+<anchor xml:id="_serlcd_8c_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_serlcd_8c_1aec024d63790c43bb2635e0b3468583d8">send_string_SerLCD</link>(addr,&#32;<link linkend="_serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85">serlcd_buffer</link>[idx],&#32;<link linkend="_serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28">SERLCD_COLS</link>);
+<anchor xml:id="_serlcd_8c_source_1l00027"/>00027 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_serlcd_8c_source_1l00028"/>00028 }
+</programlisting></section>

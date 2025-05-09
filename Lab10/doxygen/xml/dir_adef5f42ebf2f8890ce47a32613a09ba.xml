@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_adef5f42ebf2f8890ce47a32613a09ba" kind="dir">
+    <compoundname>Lab10/src/Lab10/Task3</compoundname>
+    <innerdir refid="dir_e66566bd352532857e2117cd2cc27b92">Lab10/src/Lab10/Task3/Debug</innerdir>
+    <innerfile refid="climate__monitor_8c">climate_monitor.c</innerfile>
+    <innerfile refid="scd41_8c">scd41.c</innerfile>
+    <innerfile refid="scd41_8h">scd41.h</innerfile>
+    <innerfile refid="serlcd_8c">serlcd.c</innerfile>
+    <innerfile refid="serlcd_8h">serlcd.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Lab10/src/Lab10/Task3/"/>
+  </compounddef>
+</doxygen>

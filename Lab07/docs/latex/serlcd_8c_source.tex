@@ -1,0 +1,34 @@
+\doxysection{serlcd.\+c}
+\hypertarget{serlcd_8c_source}{}\label{serlcd_8c_source}\index{D:/ESE381/Lab06/src/Task2/serlcd.c@{D:/ESE381/Lab06/src/Task2/serlcd.c}}
+\mbox{\hyperlink{serlcd_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serlcd_8h}{serlcd.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <avr/io.h>}}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <util/delay.h>}}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <twi/twi0\_master.h>}}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00009}\mbox{\hyperlink{serlcd_8c_aec024d63790c43bb2635e0b3468583d8}{00009}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{serlcd_8c_aec024d63790c43bb2635e0b3468583d8}{send\_string\_SerLCD}}(uint8\_t\ addr,\ uint8\_t\ *str,\ uint8\_t\ len)\ \{}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00010}00010\ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ idx\ =\ 0;\ idx\ <\ len;\ ++idx)\ \{}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00011}00011\ \ \ \ \ \ \ \ \ TWI\_sendByte(addr,\ str[idx]);}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00012}00012\ \ \ \ \ \ \ \ \ \_delay\_us(\mbox{\hyperlink{serlcd_8h_a87300936d844c1a423d732e28d71c509}{TWI\_SERLCD\_INTERVAL\_US}});}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00013}00013\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00016}\mbox{\hyperlink{serlcd_8c_aae95d59b494981540233ed751f39e341}{00016}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{serlcd_8c_aae95d59b494981540233ed751f39e341}{clear\_SerLCD}}(uint8\_t\ addr)\ \{}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00017}00017\ \ \ \ \ TWI\_sendByte(addr,\ \textcolor{charliteral}{'|'});}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00018}00018\ \ \ \ \ \_delay\_us(\mbox{\hyperlink{serlcd_8h_a87300936d844c1a423d732e28d71c509}{TWI\_SERLCD\_INTERVAL\_US}});}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00019}00019\ \ \ \ \ TWI\_sendByte(addr,\ \textcolor{charliteral}{'-\/'});}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00020}00020\ \ \ \ \ \_delay\_us(\mbox{\hyperlink{serlcd_8h_a87300936d844c1a423d732e28d71c509}{TWI\_SERLCD\_INTERVAL\_US}});}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00023}\mbox{\hyperlink{serlcd_8c_a96469994c1d7399edae5231ed06d714a}{00023}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{serlcd_8c_a96469994c1d7399edae5231ed06d714a}{update\_SerLCD}}(uint8\_t\ addr)\ \{}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{serlcd_8c_aae95d59b494981540233ed751f39e341}{clear\_SerLCD}}(addr);}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ idx\ =\ 0;\ idx\ <\ \mbox{\hyperlink{serlcd_8h_a1db3ed071f2efe10511f4a740919bff2}{SERLCD\_ROWS}};\ ++idx)\ \{}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{serlcd_8c_aec024d63790c43bb2635e0b3468583d8}{send\_string\_SerLCD}}(addr,\ \mbox{\hyperlink{serlcd_8h_a185c8f21f3e5dafd872962fae9826c85}{serlcd\_buffer}}[idx],\ \mbox{\hyperlink{serlcd_8h_ab1e63f7dc45d7bae8a6eff9e3aff3c28}{SERLCD\_COLS}});}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{serlcd_8c_source_l00028}00028\ \}}
+
+\end{DoxyCode}

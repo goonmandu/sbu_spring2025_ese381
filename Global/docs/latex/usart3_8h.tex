@@ -1,0 +1,177 @@
+\doxysection{D\+:/\+ESE381/\+Global/ese381/ese381/usart3.h File Reference}
+\hypertarget{usart3_8h}{}\label{usart3_8h}\index{D:/ESE381/Global/ese381/ese381/usart3.h@{D:/ESE381/Global/ese381/ese381/usart3.h}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for usart3.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{usart3_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{usart3_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{usart3_8h_a488c271e6c83a80de94b2d6c06c369b7}{USART3\+\_\+init}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{usart3_8h_a7135becf6c267a1a4ba33668aab939ae}{USART3\+\_\+read}} (void)
+\item 
+void \mbox{\hyperlink{usart3_8h_a512d409fcaf076cdad171684b1dc01af}{USART3\+\_\+send\+\_\+char}} (uint8\+\_\+t c)
+\item 
+void \mbox{\hyperlink{usart3_8h_a3498a62a7db807a2dc834e38db2985e9}{USART3\+\_\+send\+\_\+string}} (const char \texorpdfstring{$\ast$}{*}buf)
+\item 
+void \mbox{\hyperlink{usart3_8h_a25e9ce100be80a27531a3c424b1798c2}{USART3\+\_\+serlcd\+\_\+clear}} (void)
+\item 
+void \mbox{\hyperlink{usart3_8h_a46dae884396b64833dc8ee4dccd808da}{USART3\+\_\+serlcd\+\_\+backlight}} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{usart3_8h_a488c271e6c83a80de94b2d6c06c369b7}\index{usart3.h@{usart3.h}!USART3\_init@{USART3\_init}}
+\index{USART3\_init@{USART3\_init}!usart3.h@{usart3.h}}
+\doxysubsubsection{\texorpdfstring{USART3\_init()}{USART3\_init()}}
+{\footnotesize\ttfamily \label{usart3_8h_a488c271e6c83a80de94b2d6c06c369b7} 
+void USART3\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Initializes USART3 to 9600 8N1 and sets the pin directions. 
+
+Definition at line \mbox{\hyperlink{usart3_8c_source_l00004}{4}} of file \mbox{\hyperlink{usart3_8c_source}{usart3.\+c}}.
+
+\Hypertarget{usart3_8h_a7135becf6c267a1a4ba33668aab939ae}\index{usart3.h@{usart3.h}!USART3\_read@{USART3\_read}}
+\index{USART3\_read@{USART3\_read}!usart3.h@{usart3.h}}
+\doxysubsubsection{\texorpdfstring{USART3\_read()}{USART3\_read()}}
+{\footnotesize\ttfamily \label{usart3_8h_a7135becf6c267a1a4ba33668aab939ae} 
+uint8\+\_\+t USART3\+\_\+read (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Blockingly reads a byte from USART3 by polling the RXCIF flag.
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Byte read from USART3. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{usart3_8c_source_l00011}{11}} of file \mbox{\hyperlink{usart3_8c_source}{usart3.\+c}}.
+
+\Hypertarget{usart3_8h_a512d409fcaf076cdad171684b1dc01af}\index{usart3.h@{usart3.h}!USART3\_send\_char@{USART3\_send\_char}}
+\index{USART3\_send\_char@{USART3\_send\_char}!usart3.h@{usart3.h}}
+\doxysubsubsection{\texorpdfstring{USART3\_send\_char()}{USART3\_send\_char()}}
+{\footnotesize\ttfamily \label{usart3_8h_a512d409fcaf076cdad171684b1dc01af} 
+void USART3\+\_\+send\+\_\+char (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{c}{}\end{DoxyParamCaption})}
+
+Blockingly sends a byte out of USART3 by polling the DREIF flag.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Byte to be sent. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{usart3_8c_source_l00016}{16}} of file \mbox{\hyperlink{usart3_8c_source}{usart3.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usart3_8h_a512d409fcaf076cdad171684b1dc01af_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{usart3_8h_a3498a62a7db807a2dc834e38db2985e9}\index{usart3.h@{usart3.h}!USART3\_send\_string@{USART3\_send\_string}}
+\index{USART3\_send\_string@{USART3\_send\_string}!usart3.h@{usart3.h}}
+\doxysubsubsection{\texorpdfstring{USART3\_send\_string()}{USART3\_send\_string()}}
+{\footnotesize\ttfamily \label{usart3_8h_a3498a62a7db807a2dc834e38db2985e9} 
+void USART3\+\_\+send\+\_\+string (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{buf}{}\end{DoxyParamCaption})}
+
+Blockingly sends a null-\/terminated ASCII string out of USART3 by calling {\ttfamily USART3\+\_\+send\+\_\+char} multiple times.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & Pointer to char array to be sent. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{usart3_8c_source_l00021}{21}} of file \mbox{\hyperlink{usart3_8c_source}{usart3.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{usart3_8h_a3498a62a7db807a2dc834e38db2985e9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{usart3_8h_a46dae884396b64833dc8ee4dccd808da}\index{usart3.h@{usart3.h}!USART3\_serlcd\_backlight@{USART3\_serlcd\_backlight}}
+\index{USART3\_serlcd\_backlight@{USART3\_serlcd\_backlight}!usart3.h@{usart3.h}}
+\doxysubsubsection{\texorpdfstring{USART3\_serlcd\_backlight()}{USART3\_serlcd\_backlight()}}
+{\footnotesize\ttfamily \label{usart3_8h_a46dae884396b64833dc8ee4dccd808da} 
+void USART3\+\_\+serlcd\+\_\+backlight (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{r}{, }\item[{uint8\+\_\+t}]{g}{, }\item[{uint8\+\_\+t}]{b}{}\end{DoxyParamCaption})}
+
+Blockingly sends the sequence +rgb to control the backlight RGB value on an RGB Spark\+Fun Ser\+LCD.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Red. 0 to 255. \\
+\hline
+{\em g} & Green. 0 to 255. \\
+\hline
+{\em b} & Blue. 0 to 255. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{usart3_8c_source_l00032}{32}} of file \mbox{\hyperlink{usart3_8c_source}{usart3.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usart3_8h_a46dae884396b64833dc8ee4dccd808da_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{usart3_8h_a25e9ce100be80a27531a3c424b1798c2}\index{usart3.h@{usart3.h}!USART3\_serlcd\_clear@{USART3\_serlcd\_clear}}
+\index{USART3\_serlcd\_clear@{USART3\_serlcd\_clear}!usart3.h@{usart3.h}}
+\doxysubsubsection{\texorpdfstring{USART3\_serlcd\_clear()}{USART3\_serlcd\_clear()}}
+{\footnotesize\ttfamily \label{usart3_8h_a25e9ce100be80a27531a3c424b1798c2} 
+void USART3\+\_\+serlcd\+\_\+clear (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Blockingly sends the sequence \texorpdfstring{$\vert$}{|}-\/ out of USART3 to clear a Spark\+Fun Ser\+LCD.
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{usart3_8c_source_l00027}{27}} of file \mbox{\hyperlink{usart3_8c_source}{usart3.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{usart3_8h_a25e9ce100be80a27531a3c424b1798c2_cgraph}
+\end{center}
+\end{figure}

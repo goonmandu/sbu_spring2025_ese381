@@ -1,0 +1,5 @@
+<map id="USART3_serlcd_clear" name="USART3_serlcd_clear">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,156,32"/>
+<area shape="rect" id="Node000002" href="$usart3_8c.html#a512d409fcaf076cdad171684b1dc01af" title=" " alt="" coords="204,5,344,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,16,188,16,188,21,156,21"/>
+</map>

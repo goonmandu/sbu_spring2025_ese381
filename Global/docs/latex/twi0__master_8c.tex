@@ -1,0 +1,432 @@
+\doxysection{D\+:/\+ESE381/\+Global/ese381/ese381/twi0\+\_\+master.c File Reference}
+\hypertarget{twi0__master_8c}{}\label{twi0__master_8c}\index{D:/ESE381/Global/ese381/ese381/twi0\_master.c@{D:/ESE381/Global/ese381/ese381/twi0\_master.c}}
+{\ttfamily \#include "{}twi0\+\_\+master.\+h"{}}\newline
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for twi0\+\_\+master.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{twi0__master_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{twi0__master_8c_aaf9a8abccd811954f9cc316f2b2f87b3}{TWI\+\_\+\+READ}}~true
+\item 
+\#define \mbox{\hyperlink{twi0__master_8c_a3b68e8e777b71520f9dbfac733774d5f}{TWI\+\_\+\+WRITE}}~false
+\item 
+\#define \mbox{\hyperlink{twi0__master_8c_afa0cbcb8305cff49652e10c777215a5a}{TWI\+\_\+\+IS\+\_\+\+CLOCKHELD}}()
+\item 
+\#define \mbox{\hyperlink{twi0__master_8c_ab11b79abe3e8a765908aca36c72fd50b}{TWI\+\_\+\+IS\+\_\+\+BUSERR}}()
+\item 
+\#define \mbox{\hyperlink{twi0__master_8c_ae97361cb8531ee2979c62b3a57d4a821}{TWI\+\_\+\+IS\+\_\+\+ARBLOST}}()
+\item 
+\#define \mbox{\hyperlink{twi0__master_8c_aa0c501a160d4a7bbac583a0760b69879}{CLIENT\+\_\+\+NACK}}()
+\item 
+\#define \mbox{\hyperlink{twi0__master_8c_a61a1d47676f2c72e1f73f5218c03322e}{CLIENT\+\_\+\+ACK}}()
+\item 
+\#define \mbox{\hyperlink{twi0__master_8c_a86cd4c8996cbafb28d602fac380ffb6b}{TWI\+\_\+\+IS\+\_\+\+BUSBUSY}}()
+\item 
+\#define \mbox{\hyperlink{twi0__master_8c_aef324916c0a83c59999e0c67e5b3a503}{TWI\+\_\+\+WAIT}}()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{twi0__master_8c_a88bac97d359ea3f873641d6ebf886231}{is\+TWIBad}} (void)
+\item 
+void \mbox{\hyperlink{twi0__master_8c_a6fa83b03086be1a5348c221f5c65587d}{TWI\+\_\+init\+Host}} (void)
+\item 
+void \mbox{\hyperlink{twi0__master_8c_a98aa41f921217ea835a6f8e993c7dbc3}{TWI\+\_\+init\+Pins}} (void)
+\item 
+bool \mbox{\hyperlink{twi0__master_8c_a5b0e3bd68badf9ef45b187cbc4ef275d}{\+\_\+start\+TWI}} (uint8\+\_\+t addr, bool read)
+\item 
+void \mbox{\hyperlink{twi0__master_8c_aac65a59189d5da063979d45c6a21fdde}{\+\_\+read\+From\+TWI}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t len)
+\item 
+bool \mbox{\hyperlink{twi0__master_8c_af12b3c7e52e7b420a53cf17fda194eeb}{\+\_\+write\+To\+TWI}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t len)
+\item 
+bool \mbox{\hyperlink{twi0__master_8c_a472ca814410582196cc43dc0d26ac959}{TWI\+\_\+send\+Byte}} (uint8\+\_\+t addr, uint8\+\_\+t data)
+\item 
+bool \mbox{\hyperlink{twi0__master_8c_a35878eea0edaf2bcecf05c45c6c9e0f5}{TWI\+\_\+send\+Bytes}} (uint8\+\_\+t addr, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t len)
+\item 
+bool \mbox{\hyperlink{twi0__master_8c_aba41249cfdcf6503f6facca53b858baf}{TWI\+\_\+read\+Byte}} (uint8\+\_\+t addr, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\item 
+bool \mbox{\hyperlink{twi0__master_8c_a81074b35f6014cebe4d13ea41b38484d}{TWI\+\_\+read\+Bytes}} (uint8\+\_\+t addr, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t len)
+\item 
+bool \mbox{\hyperlink{twi0__master_8c_abace615165977923b5a9abf7fe760f8a}{TWI\+\_\+send\+And\+Read\+Bytes}} (uint8\+\_\+t addr, uint8\+\_\+t reg\+Address, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t len)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{twi0__master_8c_a61a1d47676f2c72e1f73f5218c03322e}\index{twi0\_master.c@{twi0\_master.c}!CLIENT\_ACK@{CLIENT\_ACK}}
+\index{CLIENT\_ACK@{CLIENT\_ACK}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{CLIENT\_ACK}{CLIENT\_ACK}}
+{\footnotesize\ttfamily \label{twi0__master_8c_a61a1d47676f2c72e1f73f5218c03322e} 
+\#define CLIENT\+\_\+\+ACK(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{!(TWI0.MSTATUS\ \&\ TWI\_RXACK\_bm)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00041}{41}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+\Hypertarget{twi0__master_8c_aa0c501a160d4a7bbac583a0760b69879}\index{twi0\_master.c@{twi0\_master.c}!CLIENT\_NACK@{CLIENT\_NACK}}
+\index{CLIENT\_NACK@{CLIENT\_NACK}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{CLIENT\_NACK}{CLIENT\_NACK}}
+{\footnotesize\ttfamily \label{twi0__master_8c_aa0c501a160d4a7bbac583a0760b69879} 
+\#define CLIENT\+\_\+\+NACK(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{TWI0.MSTATUS\ \&\ TWI\_RXACK\_bm}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00040}{40}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+\Hypertarget{twi0__master_8c_ae97361cb8531ee2979c62b3a57d4a821}\index{twi0\_master.c@{twi0\_master.c}!TWI\_IS\_ARBLOST@{TWI\_IS\_ARBLOST}}
+\index{TWI\_IS\_ARBLOST@{TWI\_IS\_ARBLOST}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{TWI\_IS\_ARBLOST}{TWI\_IS\_ARBLOST}}
+{\footnotesize\ttfamily \label{twi0__master_8c_ae97361cb8531ee2979c62b3a57d4a821} 
+\#define TWI\+\_\+\+IS\+\_\+\+ARBLOST(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{TWI0.MSTATUS\ \&\ TWI\_ARBLOST\_bm}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00038}{38}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+\Hypertarget{twi0__master_8c_a86cd4c8996cbafb28d602fac380ffb6b}\index{twi0\_master.c@{twi0\_master.c}!TWI\_IS\_BUSBUSY@{TWI\_IS\_BUSBUSY}}
+\index{TWI\_IS\_BUSBUSY@{TWI\_IS\_BUSBUSY}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{TWI\_IS\_BUSBUSY}{TWI\_IS\_BUSBUSY}}
+{\footnotesize\ttfamily \label{twi0__master_8c_a86cd4c8996cbafb28d602fac380ffb6b} 
+\#define TWI\+\_\+\+IS\+\_\+\+BUSBUSY(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((TWI0.MSTATUS\ \&\ TWI\_BUSSTATE\_BUSY\_gc)\ ==\ TWI\_BUSSTATE\_BUSY\_gc)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00043}{43}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+\Hypertarget{twi0__master_8c_ab11b79abe3e8a765908aca36c72fd50b}\index{twi0\_master.c@{twi0\_master.c}!TWI\_IS\_BUSERR@{TWI\_IS\_BUSERR}}
+\index{TWI\_IS\_BUSERR@{TWI\_IS\_BUSERR}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{TWI\_IS\_BUSERR}{TWI\_IS\_BUSERR}}
+{\footnotesize\ttfamily \label{twi0__master_8c_ab11b79abe3e8a765908aca36c72fd50b} 
+\#define TWI\+\_\+\+IS\+\_\+\+BUSERR(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{TWI0.MSTATUS\ \&\ TWI\_BUSERR\_bm}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00037}{37}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+\Hypertarget{twi0__master_8c_afa0cbcb8305cff49652e10c777215a5a}\index{twi0\_master.c@{twi0\_master.c}!TWI\_IS\_CLOCKHELD@{TWI\_IS\_CLOCKHELD}}
+\index{TWI\_IS\_CLOCKHELD@{TWI\_IS\_CLOCKHELD}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{TWI\_IS\_CLOCKHELD}{TWI\_IS\_CLOCKHELD}}
+{\footnotesize\ttfamily \label{twi0__master_8c_afa0cbcb8305cff49652e10c777215a5a} 
+\#define TWI\+\_\+\+IS\+\_\+\+CLOCKHELD(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{TWI0.MSTATUS\ \&\ TWI\_CLKHOLD\_bm}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00036}{36}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+\Hypertarget{twi0__master_8c_aaf9a8abccd811954f9cc316f2b2f87b3}\index{twi0\_master.c@{twi0\_master.c}!TWI\_READ@{TWI\_READ}}
+\index{TWI\_READ@{TWI\_READ}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{TWI\_READ}{TWI\_READ}}
+{\footnotesize\ttfamily \label{twi0__master_8c_aaf9a8abccd811954f9cc316f2b2f87b3} 
+\#define TWI\+\_\+\+READ~true}
+
+Adapted by Mingi Hwang on 24 Mar 2025 from original source\+: \href{https://github.com/microchip-pic-avr-examples/avr128db48-bare-metal-twi-mplab/tree/master/twi-host.X/peripherals/TWI}{\texttt{ https\+://github.\+com/microchip-\/pic-\/avr-\/examples/avr128db48-\/bare-\/metal-\/twi-\/mplab/tree/master/twi-\/host.\+X/peripherals/\+TWI}}
+
+ORIGINAL SOURCE LICENSE STATEMENT
+
+(c) 2020 Microchip Technology Inc. and its subsidiaries.
+
+Subject to your compliance with these terms, you may use Microchip software and any derivatives exclusively with Microchip products. You\textquotesingle{}re responsible for complying with 3rd party license terms applicable to your use of 3rd party software (including open source software) that may accompany Microchip software.
+
+SOFTWARE IS "{}\+AS IS."{} NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-\/\+INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
+
+IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP\textquotesingle{}S TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE. 
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00033}{33}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+\Hypertarget{twi0__master_8c_aef324916c0a83c59999e0c67e5b3a503}\index{twi0\_master.c@{twi0\_master.c}!TWI\_WAIT@{TWI\_WAIT}}
+\index{TWI\_WAIT@{TWI\_WAIT}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{TWI\_WAIT}{TWI\_WAIT}}
+{\footnotesize\ttfamily \label{twi0__master_8c_aef324916c0a83c59999e0c67e5b3a503} 
+\#define TWI\+\_\+\+WAIT(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{while}\ (!((\mbox{\hyperlink{twi0__master_8c_afa0cbcb8305cff49652e10c777215a5a}{TWI\_IS\_CLOCKHELD}}())\ ||\ (\mbox{\hyperlink{twi0__master_8c_ab11b79abe3e8a765908aca36c72fd50b}{TWI\_IS\_BUSERR}}())\ ||\ (\mbox{\hyperlink{twi0__master_8c_ae97361cb8531ee2979c62b3a57d4a821}{TWI\_IS\_ARBLOST}}())\ ||\ (\mbox{\hyperlink{twi0__master_8c_a86cd4c8996cbafb28d602fac380ffb6b}{TWI\_IS\_BUSBUSY}}())))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00045}{45}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+\Hypertarget{twi0__master_8c_a3b68e8e777b71520f9dbfac733774d5f}\index{twi0\_master.c@{twi0\_master.c}!TWI\_WRITE@{TWI\_WRITE}}
+\index{TWI\_WRITE@{TWI\_WRITE}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{TWI\_WRITE}{TWI\_WRITE}}
+{\footnotesize\ttfamily \label{twi0__master_8c_a3b68e8e777b71520f9dbfac733774d5f} 
+\#define TWI\+\_\+\+WRITE~false}
+
+
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00034}{34}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{twi0__master_8c_aac65a59189d5da063979d45c6a21fdde}\index{twi0\_master.c@{twi0\_master.c}!\_readFromTWI@{\_readFromTWI}}
+\index{\_readFromTWI@{\_readFromTWI}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{\_readFromTWI()}{\_readFromTWI()}}
+{\footnotesize\ttfamily \label{twi0__master_8c_aac65a59189d5da063979d45c6a21fdde} 
+void \+\_\+read\+From\+TWI (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint8\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00114}{114}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{twi0__master_8c_aac65a59189d5da063979d45c6a21fdde_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{twi0__master_8c_a5b0e3bd68badf9ef45b187cbc4ef275d}\index{twi0\_master.c@{twi0\_master.c}!\_startTWI@{\_startTWI}}
+\index{\_startTWI@{\_startTWI}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{\_startTWI()}{\_startTWI()}}
+{\footnotesize\ttfamily \label{twi0__master_8c_a5b0e3bd68badf9ef45b187cbc4ef275d} 
+bool \+\_\+start\+TWI (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{, }\item[{bool}]{read}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00091}{91}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{twi0__master_8c_a5b0e3bd68badf9ef45b187cbc4ef275d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{twi0__master_8c_a5b0e3bd68badf9ef45b187cbc4ef275d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{twi0__master_8c_af12b3c7e52e7b420a53cf17fda194eeb}\index{twi0\_master.c@{twi0\_master.c}!\_writeToTWI@{\_writeToTWI}}
+\index{\_writeToTWI@{\_writeToTWI}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{\_writeToTWI()}{\_writeToTWI()}}
+{\footnotesize\ttfamily \label{twi0__master_8c_af12b3c7e52e7b420a53cf17fda194eeb} 
+bool \+\_\+write\+To\+TWI (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint8\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00144}{144}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{twi0__master_8c_af12b3c7e52e7b420a53cf17fda194eeb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{twi0__master_8c_a88bac97d359ea3f873641d6ebf886231}\index{twi0\_master.c@{twi0\_master.c}!isTWIBad@{isTWIBad}}
+\index{isTWIBad@{isTWIBad}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{isTWIBad()}{isTWIBad()}}
+{\footnotesize\ttfamily \label{twi0__master_8c_a88bac97d359ea3f873641d6ebf886231} 
+bool is\+TWIBad (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00047}{47}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{twi0__master_8c_a88bac97d359ea3f873641d6ebf886231_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{twi0__master_8c_a6fa83b03086be1a5348c221f5c65587d}\index{twi0\_master.c@{twi0\_master.c}!TWI\_initHost@{TWI\_initHost}}
+\index{TWI\_initHost@{TWI\_initHost}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{TWI\_initHost()}{TWI\_initHost()}}
+{\footnotesize\ttfamily \label{twi0__master_8c_a6fa83b03086be1a5348c221f5c65587d} 
+void TWI\+\_\+init\+Host (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Adapted by Mingi Hwang on 24 Mar 2025 from original source\+: \href{https://github.com/microchip-pic-avr-examples/avr128db48-bare-metal-twi-mplab/tree/master/twi-host.X/peripherals/TWI}{\texttt{ https\+://github.\+com/microchip-\/pic-\/avr-\/examples/avr128db48-\/bare-\/metal-\/twi-\/mplab/tree/master/twi-\/host.\+X/peripherals/\+TWI}}
+
+ORIGINAL SOURCE LICENSE STATEMENT
+
+(c) 2020 Microchip Technology Inc. and its subsidiaries.
+
+Subject to your compliance with these terms, you may use Microchip software and any derivatives exclusively with Microchip products. You\textquotesingle{}re responsible for complying with 3rd party license terms applicable to your use of 3rd party software (including open source software) that may accompany Microchip software.
+
+SOFTWARE IS "{}\+AS IS."{} NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-\/\+INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
+
+IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP\textquotesingle{}S TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE. Prof. Short does not want us to use internal pull-\/ups. External 10k PURs will be used. If defined, internal pull-\/up resistors will be used Initializes the TWI peripheral in Host Mode. 
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00055}{55}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+\Hypertarget{twi0__master_8c_a98aa41f921217ea835a6f8e993c7dbc3}\index{twi0\_master.c@{twi0\_master.c}!TWI\_initPins@{TWI\_initPins}}
+\index{TWI\_initPins@{TWI\_initPins}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{TWI\_initPins()}{TWI\_initPins()}}
+{\footnotesize\ttfamily \label{twi0__master_8c_a98aa41f921217ea835a6f8e993c7dbc3} 
+void TWI\+\_\+init\+Pins (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Initializes the I/O used by the TWI peripheral. 
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00076}{76}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+\Hypertarget{twi0__master_8c_aba41249cfdcf6503f6facca53b858baf}\index{twi0\_master.c@{twi0\_master.c}!TWI\_readByte@{TWI\_readByte}}
+\index{TWI\_readByte@{TWI\_readByte}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{TWI\_readByte()}{TWI\_readByte()}}
+{\footnotesize\ttfamily \label{twi0__master_8c_aba41249cfdcf6503f6facca53b858baf} 
+bool TWI\+\_\+read\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & -\/ Client Device Address \\
+\hline
+{\em data} & -\/ Where the byte received should be stored\\
+\hline
+\end{DoxyParams}
+Attempts to read 1 byte of data from the client. Returns true if successful, fails if unable to get data. 
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00195}{195}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{twi0__master_8c_aba41249cfdcf6503f6facca53b858baf_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{twi0__master_8c_a81074b35f6014cebe4d13ea41b38484d}\index{twi0\_master.c@{twi0\_master.c}!TWI\_readBytes@{TWI\_readBytes}}
+\index{TWI\_readBytes@{TWI\_readBytes}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{TWI\_readBytes()}{TWI\_readBytes()}}
+{\footnotesize\ttfamily \label{twi0__master_8c_a81074b35f6014cebe4d13ea41b38484d} 
+bool TWI\+\_\+read\+Bytes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint8\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & -\/ Client Device Address \\
+\hline
+{\em data} & -\/ Where the bytes received should be stored \\
+\hline
+{\em len} & -\/ Number of Bytes to Send\\
+\hline
+\end{DoxyParams}
+Attempts to read len bytes of data from the client. Returns true if successful, false if it failed to get data. 
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00208}{208}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{twi0__master_8c_a81074b35f6014cebe4d13ea41b38484d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{twi0__master_8c_abace615165977923b5a9abf7fe760f8a}\index{twi0\_master.c@{twi0\_master.c}!TWI\_sendAndReadBytes@{TWI\_sendAndReadBytes}}
+\index{TWI\_sendAndReadBytes@{TWI\_sendAndReadBytes}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{TWI\_sendAndReadBytes()}{TWI\_sendAndReadBytes()}}
+{\footnotesize\ttfamily \label{twi0__master_8c_abace615165977923b5a9abf7fe760f8a} 
+bool TWI\+\_\+send\+And\+Read\+Bytes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{, }\item[{uint8\+\_\+t}]{reg\+Address}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint8\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & -\/ Client Device Address \\
+\hline
+{\em reg\+Address} & -\/ Address of Register to Read From \\
+\hline
+{\em data} & -\/ Where the bytes received should be stored \\
+\hline
+{\em len} & -\/ Number of Bytes to Send\\
+\hline
+\end{DoxyParams}
+Writes a single byte (reg\+Address) to the client, then restarts and attempts to read len of data. Returns true if successful, false if it failed to get data. 
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00220}{220}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{twi0__master_8c_abace615165977923b5a9abf7fe760f8a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{twi0__master_8c_a472ca814410582196cc43dc0d26ac959}\index{twi0\_master.c@{twi0\_master.c}!TWI\_sendByte@{TWI\_sendByte}}
+\index{TWI\_sendByte@{TWI\_sendByte}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{TWI\_sendByte()}{TWI\_sendByte()}}
+{\footnotesize\ttfamily \label{twi0__master_8c_a472ca814410582196cc43dc0d26ac959} 
+bool TWI\+\_\+send\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{, }\item[{uint8\+\_\+t}]{data}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & -\/ Client Device Address \\
+\hline
+{\em data} & -\/ Data to Send\\
+\hline
+\end{DoxyParams}
+Sends a byte of data to the specified address. Returns true if successful, false if it failed 
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00166}{166}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{twi0__master_8c_a472ca814410582196cc43dc0d26ac959_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{twi0__master_8c_a35878eea0edaf2bcecf05c45c6c9e0f5}\index{twi0\_master.c@{twi0\_master.c}!TWI\_sendBytes@{TWI\_sendBytes}}
+\index{TWI\_sendBytes@{TWI\_sendBytes}!twi0\_master.c@{twi0\_master.c}}
+\doxysubsubsection{\texorpdfstring{TWI\_sendBytes()}{TWI\_sendBytes()}}
+{\footnotesize\ttfamily \label{twi0__master_8c_a35878eea0edaf2bcecf05c45c6c9e0f5} 
+bool TWI\+\_\+send\+Bytes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint8\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & -\/ Client Device Address \\
+\hline
+{\em data} & -\/ Pointer to the data to send \\
+\hline
+{\em len} & -\/ Number of Bytes to Send\\
+\hline
+\end{DoxyParams}
+Attempts to send len bytes of data to the client. Returns true if successful, false if it failed 
+
+Definition at line \mbox{\hyperlink{twi0__master_8c_source_l00180}{180}} of file \mbox{\hyperlink{twi0__master_8c_source}{twi0\+\_\+master.\+c}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{twi0__master_8c_a35878eea0edaf2bcecf05c45c6c9e0f5_cgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,181 @@
+\doxysection{Lab10/src/\+Lab10/\+Task3/serlcd.c File Reference}
+\hypertarget{serlcd_8c}{}\label{serlcd_8c}\index{Lab10/src/Lab10/Task3/serlcd.c@{Lab10/src/Lab10/Task3/serlcd.c}}
+{\ttfamily \#include "{}serlcd.\+h"{}}\newline
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$twi/twi0\+\_\+master.\+h$>$}\newline
+Include dependency graph for serlcd.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{serlcd_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{serlcd_8c_aec024d63790c43bb2635e0b3468583d8}{send\+\_\+string\+\_\+\+Ser\+LCD}} (uint8\+\_\+t addr, uint8\+\_\+t \texorpdfstring{$\ast$}{*}str, uint8\+\_\+t len)
+\item 
+void \mbox{\hyperlink{serlcd_8c_aae95d59b494981540233ed751f39e341}{clear\+\_\+\+Ser\+LCD}} (uint8\+\_\+t addr)
+\item 
+void \mbox{\hyperlink{serlcd_8c_a96469994c1d7399edae5231ed06d714a}{update\+\_\+\+Ser\+LCD}} (uint8\+\_\+t addr)
+\item 
+void \mbox{\hyperlink{serlcd_8c_ae0028b85aa630926c9fc2e9b93dfc1cc}{turn\+\_\+backlight\+\_\+off}} (uint8\+\_\+t addr)
+\item 
+void \mbox{\hyperlink{serlcd_8c_a0dd8c0b6f054f78d97273423fd965aec}{serlcd\+\_\+set\+\_\+background\+\_\+rgb}} (uint8\+\_\+t addr, uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{serlcd_8c_aae95d59b494981540233ed751f39e341}\index{serlcd.c@{serlcd.c}!clear\_SerLCD@{clear\_SerLCD}}
+\index{clear\_SerLCD@{clear\_SerLCD}!serlcd.c@{serlcd.c}}
+\doxysubsubsection{\texorpdfstring{clear\_SerLCD()}{clear\_SerLCD()}}
+{\footnotesize\ttfamily \label{serlcd_8c_aae95d59b494981540233ed751f39e341} 
+void clear\+\_\+\+Ser\+LCD (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{}\end{DoxyParamCaption})}
+
+Sends the byte sequence \texorpdfstring{$\vert$}{|}-\/ out of TWI0 to clear the Ser\+LCD.
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & I2C slave address of the Ser\+LCD. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{serlcd_8c_source_l00016}{16}} of file \mbox{\hyperlink{serlcd_8c_source}{serlcd.\+c}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{serlcd_8c_aae95d59b494981540233ed751f39e341_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{serlcd_8c_aec024d63790c43bb2635e0b3468583d8}\index{serlcd.c@{serlcd.c}!send\_string\_SerLCD@{send\_string\_SerLCD}}
+\index{send\_string\_SerLCD@{send\_string\_SerLCD}!serlcd.c@{serlcd.c}}
+\doxysubsubsection{\texorpdfstring{send\_string\_SerLCD()}{send\_string\_SerLCD()}}
+{\footnotesize\ttfamily \label{serlcd_8c_aec024d63790c43bb2635e0b3468583d8} 
+void send\+\_\+string\+\_\+\+Ser\+LCD (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{str}{, }\item[{uint8\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+Sends char array to the Ser\+LCD out of TWI0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & I2C slave address of the Ser\+LCD. \\
+\hline
+{\em str} & Pointer to start of char array to be sent. \\
+\hline
+{\em len} & Length of char array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{serlcd_8c_source_l00009}{9}} of file \mbox{\hyperlink{serlcd_8c_source}{serlcd.\+c}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{serlcd_8c_aec024d63790c43bb2635e0b3468583d8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{serlcd_8c_a0dd8c0b6f054f78d97273423fd965aec}\index{serlcd.c@{serlcd.c}!serlcd\_set\_background\_rgb@{serlcd\_set\_background\_rgb}}
+\index{serlcd\_set\_background\_rgb@{serlcd\_set\_background\_rgb}!serlcd.c@{serlcd.c}}
+\doxysubsubsection{\texorpdfstring{serlcd\_set\_background\_rgb()}{serlcd\_set\_background\_rgb()}}
+{\footnotesize\ttfamily \label{serlcd_8c_a0dd8c0b6f054f78d97273423fd965aec} 
+void serlcd\+\_\+set\+\_\+background\+\_\+rgb (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{, }\item[{uint8\+\_\+t}]{r}{, }\item[{uint8\+\_\+t}]{g}{, }\item[{uint8\+\_\+t}]{b}{}\end{DoxyParamCaption})}
+
+Sets the RGB background color of the Ser\+LCD backlight.
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & I2C slave address of the Ser\+LCD. \\
+\hline
+{\em r} & Red intensity (0–255). \\
+\hline
+{\em g} & Green intensity (0–255). \\
+\hline
+{\em b} & Blue intensity (0–255). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{serlcd_8c_source_l00043}{43}} of file \mbox{\hyperlink{serlcd_8c_source}{serlcd.\+c}}.
+
+\Hypertarget{serlcd_8c_ae0028b85aa630926c9fc2e9b93dfc1cc}\index{serlcd.c@{serlcd.c}!turn\_backlight\_off@{turn\_backlight\_off}}
+\index{turn\_backlight\_off@{turn\_backlight\_off}!serlcd.c@{serlcd.c}}
+\doxysubsubsection{\texorpdfstring{turn\_backlight\_off()}{turn\_backlight\_off()}}
+{\footnotesize\ttfamily \label{serlcd_8c_ae0028b85aa630926c9fc2e9b93dfc1cc} 
+void turn\+\_\+backlight\+\_\+off (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{}\end{DoxyParamCaption})}
+
+Sends byte sequence to turn off the Ser\+LCD backlight.
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & I2C slave address of the Ser\+LCD. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{serlcd_8c_source_l00030}{30}} of file \mbox{\hyperlink{serlcd_8c_source}{serlcd.\+c}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{serlcd_8c_ae0028b85aa630926c9fc2e9b93dfc1cc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{serlcd_8c_a96469994c1d7399edae5231ed06d714a}\index{serlcd.c@{serlcd.c}!update\_SerLCD@{update\_SerLCD}}
+\index{update\_SerLCD@{update\_SerLCD}!serlcd.c@{serlcd.c}}
+\doxysubsubsection{\texorpdfstring{update\_SerLCD()}{update\_SerLCD()}}
+{\footnotesize\ttfamily \label{serlcd_8c_a96469994c1d7399edae5231ed06d714a} 
+void update\+\_\+\+Ser\+LCD (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{}\end{DoxyParamCaption})}
+
+Sends contents of {\ttfamily serlcd\+\_\+buffer} out of TWI0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & I2C slave address of the Ser\+LCD. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{serlcd_8c_source_l00023}{23}} of file \mbox{\hyperlink{serlcd_8c_source}{serlcd.\+c}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{serlcd_8c_a96469994c1d7399edae5231ed06d714a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{serlcd_8c_a96469994c1d7399edae5231ed06d714a_icgraph}
+\end{center}
+\end{figure}

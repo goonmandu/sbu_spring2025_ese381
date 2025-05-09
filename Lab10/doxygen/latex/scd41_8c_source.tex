@@ -1,0 +1,46 @@
+\doxysection{scd41.\+c}
+\hypertarget{scd41_8c_source}{}\label{scd41_8c_source}\index{Lab10/src/Lab10/Task3/scd41.c@{Lab10/src/Lab10/Task3/scd41.c}}
+\mbox{\hyperlink{scd41_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <twi/twi0\_master.h>}}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{scd41_8h}{scd41.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00004}00004\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ start\_meas[2]\ =\ \{0x21,\ 0xB1\};}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00005}00005\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ read\_meas[2]\ \ =\ \{0xEC,\ 0x05\};}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00006}00006\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ stop\_meas[2]\ \ =\ \{0x3F,\ 0x86\};}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00007}00007\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ data\_ready[2]\ =\ \{0xE4,\ 0xB8\};}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00008}00008\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00009}\mbox{\hyperlink{scd41_8c_a5e947b775032bb94e49086b95477a205}{00009}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{scd41_8c_a5e947b775032bb94e49086b95477a205}{scd41\_start\_periodic\_meas}}(uint8\_t\ addr)\ \{}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00010}00010\ \ \ \ \ TWI\_sendBytes(addr,\ start\_meas,\ 2);}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00013}\mbox{\hyperlink{scd41_8c_a0485ec86cee25367d2762783d76ae12c}{00013}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{scd41_8c_a0485ec86cee25367d2762783d76ae12c}{scd41\_stop\_periodic\_meas}}(uint8\_t\ addr)\ \{}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00014}00014\ \ \ \ \ TWI\_sendBytes(addr,\ stop\_meas,\ 2);}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00017}\mbox{\hyperlink{scd41_8c_a4ca4e8746f6fdac58b506247e805cda3}{00017}}\ uint8\_t\ \mbox{\hyperlink{scd41_8c_a4ca4e8746f6fdac58b506247e805cda3}{scd41\_has\_data}}(uint8\_t\ addr)\ \{}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00018}00018\ \ \ \ \ uint8\_t\ scd41\_data\_ready\_response[3];}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00019}00019\ \ \ \ \ TWI\_sendBytesAndReadBytes(addr,\ data\_ready,\ 2,\ scd41\_data\_ready\_response,\ 3,\ 1);}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0bXXXXX000\ \ and\ 0b00000000\ \ =\ \ DATA\ NOT\ READY}}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{return}\ (scd41\_data\_ready\_response[0]\ \&\ 0x07)\ ||\ (scd41\_data\_ready\_response[1]);}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00024}\mbox{\hyperlink{scd41_8c_a8c06da70168e9f5015616aa26d752fff}{00024}}\ \mbox{\hyperlink{structscd41__data__t}{scd41\_data\_t}}\ \mbox{\hyperlink{scd41_8c_a8c06da70168e9f5015616aa26d752fff}{scd41\_read\_data}}(uint8\_t\ addr)\ \{}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{structscd41__data__t}{scd41\_data\_t}}\ ret;}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00026}00026\ \ \ \ \ uint8\_t\ scd41\_response[9];}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00027}00027\ \ \ \ \ TWI\_sendBytesAndReadBytes(addr,\ read\_meas,\ 2,\ scd41\_response,\ 9,\ 1);}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00028}00028\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00029}00029\ \ \ \ \ ret.\mbox{\hyperlink{structscd41__data__t_aa2dd73af24dfe2a9b2b8aaf8917be643}{co2\_raw}}\ =\ scd41\_response[0]\ <<\ 8\ |\ scd41\_response[1];}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00030}00030\ \ \ \ \ ret.\mbox{\hyperlink{structscd41__data__t_a8f687631f21b0ec1af9190a6e16cbd07}{co2\_crc}}\ =\ scd41\_response[2];}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00031}00031\ \ \ \ \ ret.\mbox{\hyperlink{structscd41__data__t_a047d7f97f65e020d9118d2a6638e81bb}{temp\_c\_raw}}\ =\ scd41\_response[3]\ <<\ 8\ |\ scd41\_response[4];}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00032}00032\ \ \ \ \ ret.\mbox{\hyperlink{structscd41__data__t_a793c42f5f3acaa1f47e5f88215bf85d6}{temp\_c\_crc}}\ =\ scd41\_response[5];}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00033}00033\ \ \ \ \ ret.\mbox{\hyperlink{structscd41__data__t_a2ce16830b237eef33a7a3b9498eb5361}{rh\_raw}}\ =\ scd41\_response[6]\ <<\ 8\ |\ scd41\_response[7];}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00034}00034\ \ \ \ \ ret.\mbox{\hyperlink{structscd41__data__t_ac2ca72396924faac9da3569ca7f8618e}{rh\_crc}}\ =\ scd41\_response[8];}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00035}00035\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00036}00036\ \ \ \ \ ret.\mbox{\hyperlink{structscd41__data__t_a10aa9d025b4a09a420126fb30f37a8af}{temp\_c}}\ =\ -\/45.0f\ +\ 175.0f\ *\ ret.\mbox{\hyperlink{structscd41__data__t_a047d7f97f65e020d9118d2a6638e81bb}{temp\_c\_raw}}\ /\ 65536.0f;}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00037}00037\ \ \ \ \ ret.\mbox{\hyperlink{structscd41__data__t_aad864e72b35172fbe003fab04b990bf9}{rh}}\ =\ 100.0f\ *\ ret.\mbox{\hyperlink{structscd41__data__t_a2ce16830b237eef33a7a3b9498eb5361}{rh\_raw}}\ /\ 65536.0f;}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00038}00038\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{scd41_8c_source_l00040}00040\ \}}
+
+\end{DoxyCode}

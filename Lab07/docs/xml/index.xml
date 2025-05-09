@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.13.2" xml:lang="en-US">
+  <compound refid="lm75_8c" kind="file"><name>lm75.c</name>
+    <member refid="lm75_8c_1a1783c5db1415960e6a87e9be965d5153" kind="function"><name>read_LM75_temp_bytes</name></member>
+    <member refid="lm75_8c_1a41112386168f6b29f716d86bb9742bab" kind="function"><name>lm75_to_celsius</name></member>
+  </compound>
+  <compound refid="lm75_8h" kind="file"><name>lm75.h</name>
+    <member refid="lm75_8h_1a1783c5db1415960e6a87e9be965d5153" kind="function"><name>read_LM75_temp_bytes</name></member>
+    <member refid="lm75_8h_1a41112386168f6b29f716d86bb9742bab" kind="function"><name>lm75_to_celsius</name></member>
+  </compound>
+  <compound refid="serlcd_8c" kind="file"><name>serlcd.c</name>
+    <member refid="serlcd_8c_1aec024d63790c43bb2635e0b3468583d8" kind="function"><name>send_string_SerLCD</name></member>
+    <member refid="serlcd_8c_1aae95d59b494981540233ed751f39e341" kind="function"><name>clear_SerLCD</name></member>
+    <member refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" kind="function"><name>update_SerLCD</name></member>
+  </compound>
+  <compound refid="serlcd_8h" kind="file"><name>serlcd.h</name>
+    <member refid="serlcd_8h_1a43bafb28b29491ec7f871319b5a3b2f8" kind="define"><name>F_CPU</name></member>
+    <member refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" kind="define"><name>TWI_SERLCD_INTERVAL_US</name></member>
+    <member refid="serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2" kind="define"><name>SERLCD_ROWS</name></member>
+    <member refid="serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28" kind="define"><name>SERLCD_COLS</name></member>
+    <member refid="serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85" kind="variable"><name>serlcd_buffer</name></member>
+    <member refid="serlcd_8h_1aec024d63790c43bb2635e0b3468583d8" kind="function"><name>send_string_SerLCD</name></member>
+    <member refid="serlcd_8h_1aae95d59b494981540233ed751f39e341" kind="function"><name>clear_SerLCD</name></member>
+    <member refid="serlcd_8h_1a96469994c1d7399edae5231ed06d714a" kind="function"><name>update_SerLCD</name></member>
+  </compound>
+  <compound refid="temp__meas___l_m75_8c" kind="file"><name>temp_meas_LM75.c</name>
+    <member refid="temp__meas___l_m75_8c_1a92586ca8aecf916e0729fd2e50e1ad48" kind="define"><name>SERLCD_ADDR</name></member>
+    <member refid="temp__meas___l_m75_8c_1a48b0d5e3234086fa92932198b565eb6b" kind="define"><name>LM75_ADDR</name></member>
+    <member refid="temp__meas___l_m75_8c_1a43bafb28b29491ec7f871319b5a3b2f8" kind="define"><name>F_CPU</name></member>
+    <member refid="temp__meas___l_m75_8c_1a78f1124f769dea5b40ef26818088fdd3" kind="variable"><name>lm75_bytes</name></member>
+    <member refid="temp__meas___l_m75_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" kind="function"><name>fill_buffer</name></member>
+    <member refid="temp__meas___l_m75_8c_1a68a292c808957403e5ca69a16ee52592" kind="function"><name>c_to_f</name></member>
+    <member refid="temp__meas___l_m75_8c_1a840291bc02cba5474a4cb46a9b9566fe" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dir_7c42f51ae411db0a04ec8d47e3d18971" kind="dir"><name>D:/ESE381/Lab06</name>
+  </compound>
+  <compound refid="dir_0b567e77a3af918946266cba1ca84357" kind="dir"><name>D:/ESE381/Lab06/src</name>
+  </compound>
+  <compound refid="dir_f01a4ff1384ef713166392880521a1b6" kind="dir"><name>D:/ESE381/Lab06/src/Task2</name>
+  </compound>
+</doxygenindex>

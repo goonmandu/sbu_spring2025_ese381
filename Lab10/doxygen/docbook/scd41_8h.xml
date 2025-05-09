@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_scd41_8h" xml:lang="en-US">
+<title>Lab10/src/Lab10/Task3/scd41.h File Reference</title>
+<indexterm><primary>Lab10/src/Lab10/Task3/scd41.h</primary></indexterm>
+<para>
+
+<para>Interface for interacting with the SCD41 CO? sensor via I2C. </para>
+ 
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="scd41_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Data Structures    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structscd41__data__t">scd41_data_t</link></para>
+
+<para>Container for raw and converted SCD41 sensor data. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_scd41_8h_1a5e947b775032bb94e49086b95477a205">scd41_start_periodic_meas</link> (uint8_t addr)</para>
+</listitem>
+            <listitem><para>void <link linkend="_scd41_8h_1a0485ec86cee25367d2762783d76ae12c">scd41_stop_periodic_meas</link> (uint8_t addr)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_scd41_8h_1a4ca4e8746f6fdac58b506247e805cda3">scd41_has_data</link> (uint8_t addr)</para>
+</listitem>
+            <listitem><para><link linkend="_structscd41__data__t">scd41_data_t</link> <link linkend="_scd41_8h_1a8c06da70168e9f5015616aa26d752fff">scd41_read_data</link> (uint8_t addr)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Interface for interacting with the SCD41 CO? sensor via I2C. </para>
+
+<para>This module provides functions to start and stop periodic measurements, check data availability, and read CO?, temperature, and humidity data from the SCD41 sensor using the TWI0 interface. </para>
+<para>
+Definition in file <link linkend="_scd41_8h_source">scd41.h</link>.</para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_scd41_8h_1a4ca4e8746f6fdac58b506247e805cda3"/><section>
+    <title>scd41_has_data()</title>
+<indexterm><primary>scd41_has_data</primary><secondary>scd41.h</secondary></indexterm>
+<indexterm><primary>scd41.h</primary><secondary>scd41_has_data</secondary></indexterm>
+<para><computeroutput>uint8_t scd41_has_data (uint8_t addr)</computeroutput></para>
+<para>Checks if new measurement data is available from the SCD41.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>addr</entry><entry>
+<para>I2C address of the SCD41 sensor. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>1 if data is ready, 0 otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_scd41_8c_source_1l00017">17</link> of file <link linkend="_scd41_8c_source">scd41.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="scd41_8h_a4ca4e8746f6fdac58b506247e805cda3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_scd41_8h_1a8c06da70168e9f5015616aa26d752fff"/><section>
+    <title>scd41_read_data()</title>
+<indexterm><primary>scd41_read_data</primary><secondary>scd41.h</secondary></indexterm>
+<indexterm><primary>scd41.h</primary><secondary>scd41_read_data</secondary></indexterm>
+<para><computeroutput><link linkend="_structscd41__data__t">scd41_data_t</link> scd41_read_data (uint8_t addr)</computeroutput></para>
+<para>Reads the latest measurement from the SCD41.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>addr</entry><entry>
+<para>I2C address of the SCD41 sensor. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><link linkend="_structscd41__data__t">scd41_data_t</link> struct containing raw values, CRCs, and converted temperature and humidity. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_scd41_8c_source_1l00024">24</link> of file <link linkend="_scd41_8c_source">scd41.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="scd41_8h_a8c06da70168e9f5015616aa26d752fff_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_scd41_8h_1a5e947b775032bb94e49086b95477a205"/><section>
+    <title>scd41_start_periodic_meas()</title>
+<indexterm><primary>scd41_start_periodic_meas</primary><secondary>scd41.h</secondary></indexterm>
+<indexterm><primary>scd41.h</primary><secondary>scd41_start_periodic_meas</secondary></indexterm>
+<para><computeroutput>void scd41_start_periodic_meas (uint8_t addr)</computeroutput></para>
+<para>Sends command to start periodic measurements on the SCD41.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>addr</entry><entry>
+<para>I2C address of the SCD41 sensor. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_scd41_8c_source_1l00009">9</link> of file <link linkend="_scd41_8c_source">scd41.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="scd41_8h_a5e947b775032bb94e49086b95477a205_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_scd41_8h_1a0485ec86cee25367d2762783d76ae12c"/><section>
+    <title>scd41_stop_periodic_meas()</title>
+<indexterm><primary>scd41_stop_periodic_meas</primary><secondary>scd41.h</secondary></indexterm>
+<indexterm><primary>scd41.h</primary><secondary>scd41_stop_periodic_meas</secondary></indexterm>
+<para><computeroutput>void scd41_stop_periodic_meas (uint8_t addr)</computeroutput></para>
+<para>Sends command to stop periodic measurements on the SCD41.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>addr</entry><entry>
+<para>I2C address of the SCD41 sensor. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_scd41_8c_source_1l00013">13</link> of file <link linkend="_scd41_8c_source">scd41.c</link>.</para>
+</section>
+</section>
+</section>

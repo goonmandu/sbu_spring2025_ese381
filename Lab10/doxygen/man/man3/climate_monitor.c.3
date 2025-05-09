@@ -1,0 +1,100 @@
+.TH "Lab10/src/Lab10/Task3/climate_monitor.c" 3 "Version 0.1" "Lab10 Climate Sensor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Lab10/src/Lab10/Task3/climate_monitor.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <avr/io\&.h>\fP
+.br
+\fR#include <util/delay\&.h>\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include <string\&.h>\fP
+.br
+\fR#include <twi/twi0_master\&.h>\fP
+.br
+\fR#include 'serlcd\&.h'\fP
+.br
+\fR#include 'scd41\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBF_CPU\fP   4000000UL"
+.br
+.ti -1c
+.RI "#define \fBSCD41_ADDR\fP   0x62"
+.br
+.ti -1c
+.RI "#define \fBSERLCD_ADDR\fP   0x72"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfill_buffer\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitializing\fP ()"
+.br
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "char \fBserlcd_buffer\fP [\fBSERLCD_ROWS\fP][\fBSERLCD_COLS\fP+1]"
+.br
+.ti -1c
+.RI "\fBscd41_data_t\fP \fBscd41_data\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define F_CPU   4000000UL"
+
+.PP
+Definition at line \fB1\fP of file \fBclimate_monitor\&.c\fP\&.
+.SS "#define SCD41_ADDR   0x62"
+
+.PP
+Definition at line \fB2\fP of file \fBclimate_monitor\&.c\fP\&.
+.SS "#define SERLCD_ADDR   0x72"
+
+.PP
+Definition at line \fB3\fP of file \fBclimate_monitor\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void fill_buffer ()"
+
+.PP
+Definition at line \fB68\fP of file \fBclimate_monitor\&.c\fP\&.
+.SS "void initializing ()"
+
+.PP
+Definition at line \fB92\fP of file \fBclimate_monitor\&.c\fP\&.
+.SS "int main ()"
+
+.PP
+Definition at line \fB23\fP of file \fBclimate_monitor\&.c\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "\fBscd41_data_t\fP scd41_data"
+
+.PP
+Definition at line \fB17\fP of file \fBclimate_monitor\&.c\fP\&.
+.SS "char serlcd_buffer[\fBSERLCD_ROWS\fP][\fBSERLCD_COLS\fP+1]\fR [extern]\fP"
+The 4x20 character buffer for the SerLCD\&. 
+.PP
+Definition at line \fB18\fP of file \fBserlcd\&.h\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Lab10 Climate Sensor from the source code\&.

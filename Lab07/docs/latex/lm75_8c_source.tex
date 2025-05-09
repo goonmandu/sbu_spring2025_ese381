@@ -1,0 +1,22 @@
+\doxysection{lm75.\+c}
+\hypertarget{lm75_8c_source}{}\label{lm75_8c_source}\index{D:/ESE381/Lab06/src/Task2/lm75.c@{D:/ESE381/Lab06/src/Task2/lm75.c}}
+\mbox{\hyperlink{lm75_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{lm75_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <twi/twi0\_master.h>}}
+\DoxyCodeLine{\Hypertarget{lm75_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lm75_8h}{lm75.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lm75_8c_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{lm75_8c_source_l00004}\mbox{\hyperlink{lm75_8c_a1783c5db1415960e6a87e9be965d5153}{00004}}\ uint16\_t\ \mbox{\hyperlink{lm75_8c_a1783c5db1415960e6a87e9be965d5153}{read\_LM75\_temp\_bytes}}(uint8\_t\ addr)\ \{}
+\DoxyCodeLine{\Hypertarget{lm75_8c_source_l00005}00005\ \ \ \ \ uint8\_t\ temp\_bytes[2];}
+\DoxyCodeLine{\Hypertarget{lm75_8c_source_l00006}00006\ \ \ \ \ TWI\_readBytes(addr,\ temp\_bytes,\ 2);}
+\DoxyCodeLine{\Hypertarget{lm75_8c_source_l00007}00007\ \ \ \ \ \textcolor{keywordflow}{return}\ ((temp\_bytes[0]\ <<\ 8)\ |\ (temp\_bytes[1]))\ \&\ 0xFF80;}
+\DoxyCodeLine{\Hypertarget{lm75_8c_source_l00008}00008\ \}}
+\DoxyCodeLine{\Hypertarget{lm75_8c_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{lm75_8c_source_l00010}\mbox{\hyperlink{lm75_8c_a41112386168f6b29f716d86bb9742bab}{00010}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{lm75_8c_a41112386168f6b29f716d86bb9742bab}{lm75\_to\_celsius}}(uint16\_t\ bytes)\ \{}
+\DoxyCodeLine{\Hypertarget{lm75_8c_source_l00011}00011\ \ \ \ \ bytes\ >>=\ 7;}
+\DoxyCodeLine{\Hypertarget{lm75_8c_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (bytes\ \&\ 0x0100)\ \{}
+\DoxyCodeLine{\Hypertarget{lm75_8c_source_l00013}00013\ \ \ \ \ \ \ \ \ bytes\ |=\ 0xFE00;}
+\DoxyCodeLine{\Hypertarget{lm75_8c_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lm75_8c_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.5\ *\ (int16\_t)bytes;}
+\DoxyCodeLine{\Hypertarget{lm75_8c_source_l00016}00016\ \}}
+
+\end{DoxyCode}

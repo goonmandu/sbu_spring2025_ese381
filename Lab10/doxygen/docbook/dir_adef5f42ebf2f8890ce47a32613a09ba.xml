@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_adef5f42ebf2f8890ce47a32613a09ba" xml:lang="en-US">
+<title>Lab10/src/Lab10/Task3 Directory Reference</title>
+<indexterm><primary>Lab10/src/Lab10/Task3 Directory Reference</primary></indexterm>
+Directory dependency graph for Task3:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_adef5f42ebf2f8890ce47a32613a09ba_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_e66566bd352532857e2117cd2cc27b92">Debug</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_climate__monitor_8c">climate_monitor.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_scd41_8c">scd41.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_scd41_8h">scd41.h</link></para>
+
+<para>Interface for interacting with the SCD41 CO? sensor via I2C. </para>
+</listitem>
+            <listitem><para>file <link linkend="_serlcd_8c">serlcd.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_serlcd_8h">serlcd.h</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

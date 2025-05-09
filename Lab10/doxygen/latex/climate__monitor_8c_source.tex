@@ -1,0 +1,104 @@
+\doxysection{climate\+\_\+monitor.\+c}
+\hypertarget{climate__monitor_8c_source}{}\label{climate__monitor_8c_source}\index{Lab10/src/Lab10/Task3/climate\_monitor.c@{Lab10/src/Lab10/Task3/climate\_monitor.c}}
+\mbox{\hyperlink{climate__monitor_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00001}\mbox{\hyperlink{climate__monitor_8c_a43bafb28b29491ec7f871319b5a3b2f8}{00001}}\ \textcolor{preprocessor}{\#define\ F\_CPU\ 4000000UL}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00002}\mbox{\hyperlink{climate__monitor_8c_a39f1cb051808572abc3926c273116336}{00002}}\ \textcolor{preprocessor}{\#define\ SCD41\_ADDR\ 0x62}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00003}\mbox{\hyperlink{climate__monitor_8c_a92586ca8aecf916e0729fd2e50e1ad48}{00003}}\ \textcolor{preprocessor}{\#define\ SERLCD\_ADDR\ 0x72}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <avr/io.h>}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <util/delay.h>}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <twi/twi0\_master.h>}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serlcd_8h}{serlcd.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{scd41_8h}{scd41.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00015}00015\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[\mbox{\hyperlink{serlcd_8h_a1db3ed071f2efe10511f4a740919bff2}{SERLCD\_ROWS}}][\mbox{\hyperlink{serlcd_8h_ab1e63f7dc45d7bae8a6eff9e3aff3c28}{SERLCD\_COLS}}+1];}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00017}\mbox{\hyperlink{climate__monitor_8c_a92ace26aeb49cd3504f41532cfa80697}{00017}}\ \mbox{\hyperlink{structscd41__data__t}{scd41\_data\_t}}\ \mbox{\hyperlink{climate__monitor_8c_a92ace26aeb49cd3504f41532cfa80697}{scd41\_data}};}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00019}00019\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{climate__monitor_8c_ae2e0f7cf24504a9d075c351f848b7d8d}{fill\_buffer}}();}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00020}00020\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{climate__monitor_8c_a46b05d6d1daef9b152ad5c36d18bc39c}{initializing}}();}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00021}00021\ \textcolor{comment}{//\ void\ TWI\_initHost\_test(void);}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00023}\mbox{\hyperlink{climate__monitor_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{00023}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{climate__monitor_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00024}00024\ \ \ \ \ TWI\_initHost();}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00025}00025\ \ \ \ \ TWI\_initPins();}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00026}00026\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{serlcd_8c_ae0028b85aa630926c9fc2e9b93dfc1cc}{turn\_backlight\_off}}(\mbox{\hyperlink{climate__monitor_8c_a92586ca8aecf916e0729fd2e50e1ad48}{SERLCD\_ADDR}});}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ serlcd\_set\_background\_rgb(SERLCD\_ADDR,\ 0xF5,\ 0xA9,\ 0xB8);}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{climate__monitor_8c_a46b05d6d1daef9b152ad5c36d18bc39c}{initializing}}();}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{serlcd_8c_a96469994c1d7399edae5231ed06d714a}{update\_SerLCD}}(\mbox{\hyperlink{climate__monitor_8c_a92586ca8aecf916e0729fd2e50e1ad48}{SERLCD\_ADDR}});}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00031}00031\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{scd41_8c_a5e947b775032bb94e49086b95477a205}{scd41\_start\_periodic\_meas}}(\mbox{\hyperlink{climate__monitor_8c_a39f1cb051808572abc3926c273116336}{SCD41\_ADDR}});}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00033}00033\ \ \ \ \ \_delay\_ms(1000);}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00034}00034\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{scd41_8c_a4ca4e8746f6fdac58b506247e805cda3}{scd41\_has\_data}}(\mbox{\hyperlink{climate__monitor_8c_a39f1cb051808572abc3926c273116336}{SCD41\_ADDR}}))\ \{}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \_delay\_ms(250);}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{climate__monitor_8c_a92ace26aeb49cd3504f41532cfa80697}{scd41\_data}}\ =\ \mbox{\hyperlink{scd41_8c_a8c06da70168e9f5015616aa26d752fff}{scd41\_read\_data}}(\mbox{\hyperlink{climate__monitor_8c_a39f1cb051808572abc3926c273116336}{SCD41\_ADDR}});}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{climate__monitor_8c_ae2e0f7cf24504a9d075c351f848b7d8d}{fill\_buffer}}();}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{serlcd_8c_a96469994c1d7399edae5231ed06d714a}{update\_SerLCD}}(\mbox{\hyperlink{climate__monitor_8c_a92586ca8aecf916e0729fd2e50e1ad48}{SERLCD\_ADDR}});}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00045}00045\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00046}00046\ \textcolor{comment}{void\ TWI\_initHost\_test(void)\ \{}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00047}00047\ \textcolor{comment}{\ \ \ \ //Standard\ 100kHz\ TWI,\ 4\ Cycle\ Hold,\ 50ns\ SDA\ Hold\ Time}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00048}00048\ \textcolor{comment}{\ \ \ \ TWI0.CTRLA\ =\ TWI\_SDAHOLD\_50NS\_gc;}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00049}00049\ \textcolor{comment}{\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00050}00050\ \textcolor{comment}{\ \ \ \ //Clear\ Dual\ Control}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00051}00051\ \textcolor{comment}{\ \ \ \ TWI0.DUALCTRL\ =\ 0x00;}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00052}00052\ \textcolor{comment}{\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00053}00053\ \textcolor{comment}{\ \ \ \ //Enable\ Run\ in\ Debug}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00054}00054\ \textcolor{comment}{\ \ \ \ TWI0.DBGCTRL\ =\ TWI\_DBGRUN\_bm;}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00055}00055\ \textcolor{comment}{\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00056}00056\ \textcolor{comment}{\ \ \ \ //Clear\ MSTATUS\ (write\ 1\ to\ flags).\ BUSSTATE\ set\ to\ idle}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00057}00057\ \textcolor{comment}{\ \ \ \ TWI0.MSTATUS\ =\ TWI\_RIF\_bm\ |\ TWI\_WIF\_bm\ |\ TWI\_CLKHOLD\_bm\ |\ TWI\_RXACK\_bm\ |}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00058}00058\ \textcolor{comment}{\ \ \ \ TWI\_ARBLOST\_bm\ |\ TWI\_BUSERR\_bm\ |\ TWI\_BUSSTATE\_IDLE\_gc;}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00059}00059\ \textcolor{comment}{\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00060}00060\ \textcolor{comment}{\ \ \ \ //Set\ for\ 100kHz\ from\ a\ 4MHz\ oscillator}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00061}00061\ \textcolor{comment}{\ \ \ \ TWI0.MBAUD\ =\ 0;}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00062}00062\ \textcolor{comment}{\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00063}00063\ \textcolor{comment}{\ \ \ \ //[No\ ISRs]\ and\ Host\ Mode}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00064}00064\ \textcolor{comment}{\ \ \ \ TWI0.MCTRLA\ =\ TWI\_ENABLE\_bm;}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00065}00065\ \textcolor{comment}{\}}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00066}00066\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00068}\mbox{\hyperlink{climate__monitor_8c_ae2e0f7cf24504a9d075c351f848b7d8d}{00068}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{climate__monitor_8c_ae2e0f7cf24504a9d075c351f848b7d8d}{fill\_buffer}}()\ \{}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00069}00069\ \ \ \ \ int8\_t\ ipart,\ fpart;}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00070}00070\ \ \ \ \ sprintf(\mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[0],\ \textcolor{stringliteral}{"{}\%-\/20s"{}},\ \textcolor{stringliteral}{"{}\ \ \ \ SCD41\ Output"{}});}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00071}00071\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00072}00072\ \ \ \ \ ipart\ =\ (int8\_t)\mbox{\hyperlink{climate__monitor_8c_a92ace26aeb49cd3504f41532cfa80697}{scd41\_data}}.temp\_c;}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00073}00073\ \ \ \ \ fpart\ =\ (int8\_t)((\mbox{\hyperlink{climate__monitor_8c_a92ace26aeb49cd3504f41532cfa80697}{scd41\_data}}.temp\_c\ -\/\ ipart)\ *\ 10);}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (fpart\ <\ 0)\ fpart\ *=\ -\/1;}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00075}00075\ \ \ \ \ sprintf(\mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[1],\ \textcolor{stringliteral}{"{}\%-\/20s"{}},\ (\textcolor{keywordtype}{char}[21])\{0\});}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00076}00076\ \ \ \ \ snprintf(\mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[1],\ 21,\ \textcolor{stringliteral}{"{}Temp:\ \ \ \%2d.\%1d\ C"{}},\ ipart,\ fpart);}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ strlen(\mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[1]);\ i\ <\ 20;\ i++)\ \mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[1][i]\ =\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00078}00078\ \ \ \ \ \mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[1][20]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00080}00080\ \ \ \ \ ipart\ =\ \mbox{\hyperlink{climate__monitor_8c_a92ace26aeb49cd3504f41532cfa80697}{scd41\_data}}.rh;}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00081}00081\ \ \ \ \ sprintf(\mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[2],\ \textcolor{stringliteral}{"{}\%-\/20s"{}},\ (\textcolor{keywordtype}{char}[21])\{0\});}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00082}00082\ \ \ \ \ snprintf(\mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[2],\ 21,\ \textcolor{stringliteral}{"{}RelHum:\ \%d\ \%\%"{}},\ ipart);}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ strlen(\mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[2]);\ i\ <\ 20;\ i++)\ \mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[2][i]\ =\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[2][20]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00086}00086\ \ \ \ \ sprintf(\mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[3],\ \textcolor{stringliteral}{"{}\%-\/20s"{}},\ (\textcolor{keywordtype}{char}[21])\{0\});}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00087}00087\ \ \ \ \ snprintf(\mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[3],\ 21,\ \textcolor{stringliteral}{"{}CO2:\ \ \ \ \%d\ ppm"{}},\ \mbox{\hyperlink{climate__monitor_8c_a92ace26aeb49cd3504f41532cfa80697}{scd41\_data}}.co2\_raw);}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ strlen(\mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[3]);\ i\ <\ 20;\ i++)\ \mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[3][i]\ =\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[3][20]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00092}\mbox{\hyperlink{climate__monitor_8c_a46b05d6d1daef9b152ad5c36d18bc39c}{00092}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{climate__monitor_8c_a46b05d6d1daef9b152ad5c36d18bc39c}{initializing}}()\ \{}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00093}00093\ \ \ \ \ sprintf(\mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[0],\ \textcolor{stringliteral}{"{}\%-\/20s"{}},\ \textcolor{stringliteral}{"{}\ \ \ \ SCD41\ Output"{}});}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00094}00094\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}01234567890123456789"{}}}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00095}00095\ \ \ \ \ sprintf(\mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[1],\ \textcolor{stringliteral}{"{}Waiting\ for\ SCD41..."{}});}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00096}00096\ \ \ \ \ sprintf(\mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[2],\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}});}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00097}00097\ \ \ \ \ sprintf(\mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[3],\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}});}
+\DoxyCodeLine{\Hypertarget{climate__monitor_8c_source_l00098}00098\ \}}
+
+\end{DoxyCode}

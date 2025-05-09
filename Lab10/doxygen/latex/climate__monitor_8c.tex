@@ -1,0 +1,155 @@
+\doxysection{Lab10/src/\+Lab10/\+Task3/climate\+\_\+monitor.c File Reference}
+\hypertarget{climate__monitor_8c}{}\label{climate__monitor_8c}\index{Lab10/src/Lab10/Task3/climate\_monitor.c@{Lab10/src/Lab10/Task3/climate\_monitor.c}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$twi/twi0\+\_\+master.\+h$>$}\newline
+{\ttfamily \#include "{}serlcd.\+h"{}}\newline
+{\ttfamily \#include "{}scd41.\+h"{}}\newline
+Include dependency graph for climate\+\_\+monitor.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{climate__monitor_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{climate__monitor_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+CPU}}~4000000\+UL
+\item 
+\#define \mbox{\hyperlink{climate__monitor_8c_a39f1cb051808572abc3926c273116336}{SCD41\+\_\+\+ADDR}}~0x62
+\item 
+\#define \mbox{\hyperlink{climate__monitor_8c_a92586ca8aecf916e0729fd2e50e1ad48}{SERLCD\+\_\+\+ADDR}}~0x72
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{climate__monitor_8c_ae2e0f7cf24504a9d075c351f848b7d8d}{fill\+\_\+buffer}} ()
+\item 
+void \mbox{\hyperlink{climate__monitor_8c_a46b05d6d1daef9b152ad5c36d18bc39c}{initializing}} ()
+\item 
+int \mbox{\hyperlink{climate__monitor_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\+\_\+buffer}} \mbox{[}\mbox{\hyperlink{serlcd_8h_a1db3ed071f2efe10511f4a740919bff2}{SERLCD\+\_\+\+ROWS}}\mbox{]}\mbox{[}\mbox{\hyperlink{serlcd_8h_ab1e63f7dc45d7bae8a6eff9e3aff3c28}{SERLCD\+\_\+\+COLS}}+1\mbox{]}
+\item 
+\mbox{\hyperlink{structscd41__data__t}{scd41\+\_\+data\+\_\+t}} \mbox{\hyperlink{climate__monitor_8c_a92ace26aeb49cd3504f41532cfa80697}{scd41\+\_\+data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{climate__monitor_8c_a43bafb28b29491ec7f871319b5a3b2f8}\index{climate\_monitor.c@{climate\_monitor.c}!F\_CPU@{F\_CPU}}
+\index{F\_CPU@{F\_CPU}!climate\_monitor.c@{climate\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{F\_CPU}{F\_CPU}}
+{\footnotesize\ttfamily \label{climate__monitor_8c_a43bafb28b29491ec7f871319b5a3b2f8} 
+\#define F\+\_\+\+CPU~4000000\+UL}
+
+
+
+Definition at line \mbox{\hyperlink{climate__monitor_8c_source_l00001}{1}} of file \mbox{\hyperlink{climate__monitor_8c_source}{climate\+\_\+monitor.\+c}}.
+
+\Hypertarget{climate__monitor_8c_a39f1cb051808572abc3926c273116336}\index{climate\_monitor.c@{climate\_monitor.c}!SCD41\_ADDR@{SCD41\_ADDR}}
+\index{SCD41\_ADDR@{SCD41\_ADDR}!climate\_monitor.c@{climate\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{SCD41\_ADDR}{SCD41\_ADDR}}
+{\footnotesize\ttfamily \label{climate__monitor_8c_a39f1cb051808572abc3926c273116336} 
+\#define SCD41\+\_\+\+ADDR~0x62}
+
+
+
+Definition at line \mbox{\hyperlink{climate__monitor_8c_source_l00002}{2}} of file \mbox{\hyperlink{climate__monitor_8c_source}{climate\+\_\+monitor.\+c}}.
+
+\Hypertarget{climate__monitor_8c_a92586ca8aecf916e0729fd2e50e1ad48}\index{climate\_monitor.c@{climate\_monitor.c}!SERLCD\_ADDR@{SERLCD\_ADDR}}
+\index{SERLCD\_ADDR@{SERLCD\_ADDR}!climate\_monitor.c@{climate\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{SERLCD\_ADDR}{SERLCD\_ADDR}}
+{\footnotesize\ttfamily \label{climate__monitor_8c_a92586ca8aecf916e0729fd2e50e1ad48} 
+\#define SERLCD\+\_\+\+ADDR~0x72}
+
+
+
+Definition at line \mbox{\hyperlink{climate__monitor_8c_source_l00003}{3}} of file \mbox{\hyperlink{climate__monitor_8c_source}{climate\+\_\+monitor.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{climate__monitor_8c_ae2e0f7cf24504a9d075c351f848b7d8d}\index{climate\_monitor.c@{climate\_monitor.c}!fill\_buffer@{fill\_buffer}}
+\index{fill\_buffer@{fill\_buffer}!climate\_monitor.c@{climate\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{fill\_buffer()}{fill\_buffer()}}
+{\footnotesize\ttfamily \label{climate__monitor_8c_ae2e0f7cf24504a9d075c351f848b7d8d} 
+void fill\+\_\+buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{climate__monitor_8c_source_l00068}{68}} of file \mbox{\hyperlink{climate__monitor_8c_source}{climate\+\_\+monitor.\+c}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{climate__monitor_8c_ae2e0f7cf24504a9d075c351f848b7d8d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{climate__monitor_8c_a46b05d6d1daef9b152ad5c36d18bc39c}\index{climate\_monitor.c@{climate\_monitor.c}!initializing@{initializing}}
+\index{initializing@{initializing}!climate\_monitor.c@{climate\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{initializing()}{initializing()}}
+{\footnotesize\ttfamily \label{climate__monitor_8c_a46b05d6d1daef9b152ad5c36d18bc39c} 
+void initializing (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{climate__monitor_8c_source_l00092}{92}} of file \mbox{\hyperlink{climate__monitor_8c_source}{climate\+\_\+monitor.\+c}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{climate__monitor_8c_a46b05d6d1daef9b152ad5c36d18bc39c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{climate__monitor_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{climate\_monitor.c@{climate\_monitor.c}!main@{main}}
+\index{main@{main}!climate\_monitor.c@{climate\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{climate__monitor_8c_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{climate__monitor_8c_source_l00023}{23}} of file \mbox{\hyperlink{climate__monitor_8c_source}{climate\+\_\+monitor.\+c}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{climate__monitor_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{climate__monitor_8c_a92ace26aeb49cd3504f41532cfa80697}\index{climate\_monitor.c@{climate\_monitor.c}!scd41\_data@{scd41\_data}}
+\index{scd41\_data@{scd41\_data}!climate\_monitor.c@{climate\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{scd41\_data}{scd41\_data}}
+{\footnotesize\ttfamily \label{climate__monitor_8c_a92ace26aeb49cd3504f41532cfa80697} 
+\mbox{\hyperlink{structscd41__data__t}{scd41\+\_\+data\+\_\+t}} scd41\+\_\+data}
+
+
+
+Definition at line \mbox{\hyperlink{climate__monitor_8c_source_l00017}{17}} of file \mbox{\hyperlink{climate__monitor_8c_source}{climate\+\_\+monitor.\+c}}.
+
+\Hypertarget{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}\index{climate\_monitor.c@{climate\_monitor.c}!serlcd\_buffer@{serlcd\_buffer}}
+\index{serlcd\_buffer@{serlcd\_buffer}!climate\_monitor.c@{climate\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{serlcd\_buffer}{serlcd\_buffer}}
+{\footnotesize\ttfamily \label{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb} 
+char serlcd\+\_\+buffer\mbox{[}\mbox{\hyperlink{serlcd_8h_a1db3ed071f2efe10511f4a740919bff2}{SERLCD\+\_\+\+ROWS}}\mbox{]}\mbox{[}\mbox{\hyperlink{serlcd_8h_ab1e63f7dc45d7bae8a6eff9e3aff3c28}{SERLCD\+\_\+\+COLS}}+1\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+The 4x20 character buffer for the Ser\+LCD. 
+
+Definition at line \mbox{\hyperlink{serlcd_8h_source_l00018}{18}} of file \mbox{\hyperlink{serlcd_8h_source}{serlcd.\+h}}.
+

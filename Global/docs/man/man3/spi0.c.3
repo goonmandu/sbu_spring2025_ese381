@@ -1,0 +1,274 @@
+.TH "D:/ESE381/Global/ese381/ese381/spi0.c" 3 "Version 0" "ESE 381 Module Drivers Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/ESE381/Global/ese381/ese381/spi0.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <avr/io\&.h>\fP
+.br
+\fR#include 'spi0\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinit_spi0\fP (void)"
+.br
+.ti -1c
+.RI "void \fBinit_spi0_SerLCD\fP (void)"
+.br
+.ti -1c
+.RI "void \fBinit_spi0_LM74\fP (void)"
+.br
+.ti -1c
+.RI "uint16_t \fBread_spi0_LM74\fP ()"
+.br
+.ti -1c
+.RI "void \fBsend_byte_SerLCD\fP (uint8_t data)"
+.br
+.ti -1c
+.RI "void \fBselect_slave_SerLCD\fP ()"
+.br
+.ti -1c
+.RI "void \fBdeselect_slave_SerLCD\fP ()"
+.br
+.ti -1c
+.RI "void \fBselect_slave_LM74\fP ()"
+.br
+.ti -1c
+.RI "void \fBdeselect_slave_LM74\fP ()"
+.br
+.ti -1c
+.RI "uint8_t \fBexchange_byte\fP (uint8_t data)"
+.br
+.ti -1c
+.RI "uint8_t \fBnormalize_range\fP (uint8_t from_min, uint8_t from_val, uint8_t from_max, uint8_t result_min, uint8_t result_max)"
+.br
+.ti -1c
+.RI "void \fBset_backlight_rgb\fP (uint8_t r, uint8_t g, uint8_t b)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void deselect_slave_LM74 ()"
+Pulls PA7 high\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB58\fP of file \fBspi0\&.c\fP\&.
+.SS "void deselect_slave_SerLCD ()"
+Pulls PA3 high\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB50\fP of file \fBspi0\&.c\fP\&.
+.SS "uint8_t exchange_byte (uint8_t data)"
+Sends and receives one byte from SPI0\&. Does not automatically select/deselect slave device\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP Data to be sent\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Data in SPI0\&.DATA after exchange\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB62\fP of file \fBspi0\&.c\fP\&.
+.SS "void init_spi0 (void )"
+Initializes SPI0 to master-only mode\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB5\fP of file \fBspi0\&.c\fP\&.
+.SS "void init_spi0_LM74 (void )"
+Initializes SPI0 to be compatible with the LM74\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB18\fP of file \fBspi0\&.c\fP\&.
+.SS "void init_spi0_SerLCD (void )"
+Initializes SPI0 to be compatible with the SerLCD\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB13\fP of file \fBspi0\&.c\fP\&.
+.SS "uint8_t normalize_range (uint8_t from_min, uint8_t from_val, uint8_t from_max, uint8_t result_min, uint8_t result_max)"
+(This function should not be here, but I am too lazy\&. Whatever\&.) Normalizes a uint8_t to another range\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIfrom_min\fP Minimum value of original range\&. 
+.br
+\fIfrom_val\fP Value to normalize\&. 
+.br
+\fIfrom_max\fP Maximum value of original range\&. 
+.br
+\fIresult_min\fP Minimum value of normalized range\&. 
+.br
+\fIresult_max\fP Maximum value of normalized range\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Normalized number\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB69\fP of file \fBspi0\&.c\fP\&.
+.SS "uint16_t read_spi0_LM74 (void )"
+Reads two bytes from an LM74 via SPI0 and returns the 16-bit response\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+LM74 output\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB23\fP of file \fBspi0\&.c\fP\&.
+.SS "void select_slave_LM74 ()"
+Pulls PA7 low\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB54\fP of file \fBspi0\&.c\fP\&.
+.SS "void select_slave_SerLCD ()"
+Pulls PA3 low\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB46\fP of file \fBspi0\&.c\fP\&.
+.SS "void send_byte_SerLCD (uint8_t data)"
+Sends a byte out of SPI0\&. Assumes /SS = PA7\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP Byte to be sent\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB40\fP of file \fBspi0\&.c\fP\&.
+.SS "void set_backlight_rgb (uint8_t r, uint8_t g, uint8_t b)"
+Normalizes r, g, b to be between 0-29 (inclusive) and sends the sequence |r|g|b
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIr\fP Red\&. 0 to 255\&. 
+.br
+\fIg\fP Green\&. 0 to 255\&. 
+.br
+\fIb\fP Blue\&. 0 to 255\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB78\fP of file \fBspi0\&.c\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ESE 381 Module Drivers Library from the source code\&.

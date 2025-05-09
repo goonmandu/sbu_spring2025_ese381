@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_887df86ca82b5736ed586f4c646db434" xml:lang="en-US">
+<title>Lab10 Directory Reference</title>
+<indexterm><primary>Lab10 Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_aa277ffc5554ac736f735b2d40bf9825">src</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_climate__monitor_8c" xml:lang="en-US">
+<title>Lab10/src/Lab10/Task3/climate_monitor.c File Reference</title>
+<indexterm><primary>Lab10/src/Lab10/Task3/climate_monitor.c</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;avr/io.h&gt;<?linebreak?>#include &lt;util/delay.h&gt;<?linebreak?>#include &lt;stdio.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &lt;twi/twi0_master.h&gt;<?linebreak?>#include &quot;serlcd.h&quot;<?linebreak?>#include &quot;scd41.h&quot;<?linebreak?></programlisting>Include dependency graph for climate_monitor.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="climate__monitor_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_climate__monitor_8c_1a43bafb28b29491ec7f871319b5a3b2f8">F_CPU</link>&#160;&#160;&#160;4000000UL</para>
+</listitem>
+            <listitem><para>#define <link linkend="_climate__monitor_8c_1a39f1cb051808572abc3926c273116336">SCD41_ADDR</link>&#160;&#160;&#160;0x62</para>
+</listitem>
+            <listitem><para>#define <link linkend="_climate__monitor_8c_1a92586ca8aecf916e0729fd2e50e1ad48">SERLCD_ADDR</link>&#160;&#160;&#160;0x72</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_climate__monitor_8c_1ae2e0f7cf24504a9d075c351f848b7d8d">fill_buffer</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_climate__monitor_8c_1a46b05d6d1daef9b152ad5c36d18bc39c">initializing</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>char <link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link> [<link linkend="_serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2">SERLCD_ROWS</link>][<link linkend="_serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28">SERLCD_COLS</link>+1]</para>
+</listitem>
+            <listitem><para><link linkend="_structscd41__data__t">scd41_data_t</link> <link linkend="_climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697">scd41_data</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_climate__monitor_8c_1a43bafb28b29491ec7f871319b5a3b2f8"/><section>
+    <title>F_CPU</title>
+<indexterm><primary>F_CPU</primary><secondary>climate_monitor.c</secondary></indexterm>
+<indexterm><primary>climate_monitor.c</primary><secondary>F_CPU</secondary></indexterm>
+<para><computeroutput>#define F_CPU&#160;&#160;&#160;4000000UL</computeroutput></para><para>
+Definition at line <link linkend="_climate__monitor_8c_source_1l00001">1</link> of file <link linkend="_climate__monitor_8c_source">climate_monitor.c</link>.</para>
+</section>
+<anchor xml:id="_climate__monitor_8c_1a39f1cb051808572abc3926c273116336"/><section>
+    <title>SCD41_ADDR</title>
+<indexterm><primary>SCD41_ADDR</primary><secondary>climate_monitor.c</secondary></indexterm>
+<indexterm><primary>climate_monitor.c</primary><secondary>SCD41_ADDR</secondary></indexterm>
+<para><computeroutput>#define SCD41_ADDR&#160;&#160;&#160;0x62</computeroutput></para><para>
+Definition at line <link linkend="_climate__monitor_8c_source_1l00002">2</link> of file <link linkend="_climate__monitor_8c_source">climate_monitor.c</link>.</para>
+</section>
+<anchor xml:id="_climate__monitor_8c_1a92586ca8aecf916e0729fd2e50e1ad48"/><section>
+    <title>SERLCD_ADDR</title>
+<indexterm><primary>SERLCD_ADDR</primary><secondary>climate_monitor.c</secondary></indexterm>
+<indexterm><primary>climate_monitor.c</primary><secondary>SERLCD_ADDR</secondary></indexterm>
+<para><computeroutput>#define SERLCD_ADDR&#160;&#160;&#160;0x72</computeroutput></para><para>
+Definition at line <link linkend="_climate__monitor_8c_source_1l00003">3</link> of file <link linkend="_climate__monitor_8c_source">climate_monitor.c</link>.</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_climate__monitor_8c_1ae2e0f7cf24504a9d075c351f848b7d8d"/><section>
+    <title>fill_buffer()</title>
+<indexterm><primary>fill_buffer</primary><secondary>climate_monitor.c</secondary></indexterm>
+<indexterm><primary>climate_monitor.c</primary><secondary>fill_buffer</secondary></indexterm>
+<para><computeroutput>void fill_buffer ( )</computeroutput></para><para>
+Definition at line <link linkend="_climate__monitor_8c_source_1l00068">68</link> of file <link linkend="_climate__monitor_8c_source">climate_monitor.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="climate__monitor_8c_ae2e0f7cf24504a9d075c351f848b7d8d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_climate__monitor_8c_1a46b05d6d1daef9b152ad5c36d18bc39c"/><section>
+    <title>initializing()</title>
+<indexterm><primary>initializing</primary><secondary>climate_monitor.c</secondary></indexterm>
+<indexterm><primary>climate_monitor.c</primary><secondary>initializing</secondary></indexterm>
+<para><computeroutput>void initializing ( )</computeroutput></para><para>
+Definition at line <link linkend="_climate__monitor_8c_source_1l00092">92</link> of file <link linkend="_climate__monitor_8c_source">climate_monitor.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="climate__monitor_8c_a46b05d6d1daef9b152ad5c36d18bc39c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4"/><section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>climate_monitor.c</secondary></indexterm>
+<indexterm><primary>climate_monitor.c</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main ( )</computeroutput></para><para>
+Definition at line <link linkend="_climate__monitor_8c_source_1l00023">23</link> of file <link linkend="_climate__monitor_8c_source">climate_monitor.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="climate__monitor_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697"/><section>
+    <title>scd41_data</title>
+<indexterm><primary>scd41_data</primary><secondary>climate_monitor.c</secondary></indexterm>
+<indexterm><primary>climate_monitor.c</primary><secondary>scd41_data</secondary></indexterm>
+<para><computeroutput><link linkend="_structscd41__data__t">scd41_data_t</link> scd41_data</computeroutput></para><para>
+Definition at line <link linkend="_climate__monitor_8c_source_1l00017">17</link> of file <link linkend="_climate__monitor_8c_source">climate_monitor.c</link>.</para>
+</section>
+<anchor xml:id="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb"/><section>
+    <title>serlcd_buffer</title>
+<indexterm><primary>serlcd_buffer</primary><secondary>climate_monitor.c</secondary></indexterm>
+<indexterm><primary>climate_monitor.c</primary><secondary>serlcd_buffer</secondary></indexterm>
+<para><computeroutput>char serlcd_buffer[<link linkend="_serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2">SERLCD_ROWS</link>][<link linkend="_serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28">SERLCD_COLS</link>+1]<computeroutput>[extern]</computeroutput></computeroutput></para>
+<para>The 4x20 character buffer for the SerLCD. </para>
+<para>
+Definition at line <link linkend="_serlcd_8h_source_1l00018">18</link> of file <link linkend="_serlcd_8h_source">serlcd.h</link>.</para>
+</section>
+</section>
+</section>

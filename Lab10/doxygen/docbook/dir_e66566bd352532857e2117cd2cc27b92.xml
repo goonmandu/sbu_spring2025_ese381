@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_e66566bd352532857e2117cd2cc27b92" xml:lang="en-US">
+<title>Lab10/src/Lab10/Task3/Debug Directory Reference</title>
+<indexterm><primary>Lab10/src/Lab10/Task3/Debug Directory Reference</primary></indexterm>
+Directory dependency graph for Debug:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_e66566bd352532857e2117cd2cc27b92_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_climate__monitor_8d">climate_monitor.d</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_main_8d">main.d</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_scd41_8d">scd41.d</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_serlcd_8d">serlcd.d</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

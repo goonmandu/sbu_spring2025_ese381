@@ -1,0 +1,264 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_usart3_8c" xml:lang="en-US">
+<title>D:/ESE381/Global/ese381/ese381/usart3.c File Reference</title>
+<indexterm><primary>D:/ESE381/Global/ese381/ese381/usart3.c</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;avr/io.h&gt;<?linebreak?>#include &quot;usart3.h&quot;<?linebreak?></programlisting>Include dependency graph for usart3.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="usart3_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_usart3_8c_1a290c577d8d7380019971c8081544f131">USART3_init</link> ()</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_usart3_8c_1a506414426742aaed46baa16b07acdec7">USART3_read</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_usart3_8c_1a512d409fcaf076cdad171684b1dc01af">USART3_send_char</link> (uint8_t c)</para>
+</listitem>
+            <listitem><para>void <link linkend="_usart3_8c_1a3498a62a7db807a2dc834e38db2985e9">USART3_send_string</link> (const char *buf)</para>
+</listitem>
+            <listitem><para>void <link linkend="_usart3_8c_1a914a9817f460f33c6cb96f2ed993067a">USART3_serlcd_clear</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_usart3_8c_1a46dae884396b64833dc8ee4dccd808da">USART3_serlcd_backlight</link> (uint8_t r, uint8_t g, uint8_t b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_usart3_8c_1a290c577d8d7380019971c8081544f131"/><section>
+    <title>USART3_init()</title>
+<indexterm><primary>USART3_init</primary><secondary>usart3.c</secondary></indexterm>
+<indexterm><primary>usart3.c</primary><secondary>USART3_init</secondary></indexterm>
+<para><computeroutput>void USART3_init (void )</computeroutput></para>
+<para>Initializes USART3 to 9600 8N1 and sets the pin directions. </para>
+<para>
+Definition at line <link linkend="_usart3_8c_source_1l00004">4</link> of file <link linkend="_usart3_8c_source">usart3.c</link>.</para>
+</section>
+<anchor xml:id="_usart3_8c_1a506414426742aaed46baa16b07acdec7"/><section>
+    <title>USART3_read()</title>
+<indexterm><primary>USART3_read</primary><secondary>usart3.c</secondary></indexterm>
+<indexterm><primary>usart3.c</primary><secondary>USART3_read</secondary></indexterm>
+<para><computeroutput>uint8_t USART3_read (void )</computeroutput></para>
+<para>Blockingly reads a byte from USART3 by polling the RXCIF flag.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Byte read from USART3. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_usart3_8c_source_1l00011">11</link> of file <link linkend="_usart3_8c_source">usart3.c</link>.</para>
+</section>
+<anchor xml:id="_usart3_8c_1a512d409fcaf076cdad171684b1dc01af"/><section>
+    <title>USART3_send_char()</title>
+<indexterm><primary>USART3_send_char</primary><secondary>usart3.c</secondary></indexterm>
+<indexterm><primary>usart3.c</primary><secondary>USART3_send_char</secondary></indexterm>
+<para><computeroutput>void USART3_send_char (uint8_t c)</computeroutput></para>
+<para>Blockingly sends a byte out of USART3 by polling the DREIF flag.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>c</entry><entry>
+<para>Byte to be sent. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_usart3_8c_source_1l00016">16</link> of file <link linkend="_usart3_8c_source">usart3.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="usart3_8c_a512d409fcaf076cdad171684b1dc01af_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_usart3_8c_1a3498a62a7db807a2dc834e38db2985e9"/><section>
+    <title>USART3_send_string()</title>
+<indexterm><primary>USART3_send_string</primary><secondary>usart3.c</secondary></indexterm>
+<indexterm><primary>usart3.c</primary><secondary>USART3_send_string</secondary></indexterm>
+<para><computeroutput>void USART3_send_string (const char * buf)</computeroutput></para>
+<para>Blockingly sends a null-terminated ASCII string out of USART3 by calling <computeroutput>USART3_send_char</computeroutput> multiple times.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>buf</entry><entry>
+<para>Pointer to char array to be sent. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_usart3_8c_source_1l00021">21</link> of file <link linkend="_usart3_8c_source">usart3.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="usart3_8c_a3498a62a7db807a2dc834e38db2985e9_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_usart3_8c_1a46dae884396b64833dc8ee4dccd808da"/><section>
+    <title>USART3_serlcd_backlight()</title>
+<indexterm><primary>USART3_serlcd_backlight</primary><secondary>usart3.c</secondary></indexterm>
+<indexterm><primary>usart3.c</primary><secondary>USART3_serlcd_backlight</secondary></indexterm>
+<para><computeroutput>void USART3_serlcd_backlight (uint8_t r, uint8_t g, uint8_t b)</computeroutput></para>
+<para>Blockingly sends the sequence +rgb to control the backlight RGB value on an RGB SparkFun SerLCD.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>r</entry><entry>
+<para>Red. 0 to 255. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>g</entry><entry>
+<para>Green. 0 to 255. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>b</entry><entry>
+<para>Blue. 0 to 255. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_usart3_8c_source_1l00032">32</link> of file <link linkend="_usart3_8c_source">usart3.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="usart3_8c_a46dae884396b64833dc8ee4dccd808da_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_usart3_8c_1a914a9817f460f33c6cb96f2ed993067a"/><section>
+    <title>USART3_serlcd_clear()</title>
+<indexterm><primary>USART3_serlcd_clear</primary><secondary>usart3.c</secondary></indexterm>
+<indexterm><primary>usart3.c</primary><secondary>USART3_serlcd_clear</secondary></indexterm>
+<para><computeroutput>void USART3_serlcd_clear (void )</computeroutput></para>
+<para>Blockingly sends the sequence |- out of USART3 to clear a SparkFun SerLCD.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_usart3_8c_source_1l00027">27</link> of file <link linkend="_usart3_8c_source">usart3.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="usart3_8c_a914a9817f460f33c6cb96f2ed993067a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

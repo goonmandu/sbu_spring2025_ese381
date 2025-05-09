@@ -1,0 +1,34 @@
+\doxysection{serlcd.\+h}
+\hypertarget{serlcd_8h_source}{}\label{serlcd_8h_source}\index{Lab10/src/Lab10/Task3/serlcd.h@{Lab10/src/Lab10/Task3/serlcd.h}}
+\mbox{\hyperlink{serlcd_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ SERLCD\_H\_}}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ SERLCD\_H\_}}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00004}00004\ \textcolor{preprocessor}{\#ifndef\ F\_CPU}}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00005}00005\ \textcolor{preprocessor}{\ \ \ \ \#warning\ "{}F\_CPU\ is\ not\ defined!\ Defaulting\ to\ 4\ MHz."{}}}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00006}\mbox{\hyperlink{serlcd_8h_a43bafb28b29491ec7f871319b5a3b2f8}{00006}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ F\_CPU\ 4000000UL}}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00007}00007\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ F\_CPU\ is\ not\ defined\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00009}\mbox{\hyperlink{serlcd_8h_a87300936d844c1a423d732e28d71c509}{00009}}\ \textcolor{preprocessor}{\#define\ TWI\_SERLCD\_INTERVAL\_US\ 150}}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00010}\mbox{\hyperlink{serlcd_8h_a1db3ed071f2efe10511f4a740919bff2}{00010}}\ \textcolor{preprocessor}{\#define\ SERLCD\_ROWS\ 4}}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00011}\mbox{\hyperlink{serlcd_8h_ab1e63f7dc45d7bae8a6eff9e3aff3c28}{00011}}\ \textcolor{preprocessor}{\#define\ SERLCD\_COLS\ 20}}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00018}\mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{00018}}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{climate__monitor_8c_a9882e0e64074b315c1c4ecd54d8de5cb}{serlcd\_buffer}}[\mbox{\hyperlink{serlcd_8h_a1db3ed071f2efe10511f4a740919bff2}{SERLCD\_ROWS}}][\mbox{\hyperlink{serlcd_8h_ab1e63f7dc45d7bae8a6eff9e3aff3c28}{SERLCD\_COLS}}+1];}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00028}00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{serlcd_8h_aec024d63790c43bb2635e0b3468583d8}{send\_string\_SerLCD}}(uint8\_t\ addr,\ uint8\_t\ *str,\ uint8\_t\ len);}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00036}00036\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{serlcd_8h_aae95d59b494981540233ed751f39e341}{clear\_SerLCD}}(uint8\_t\ addr);}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00044}00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{serlcd_8h_a96469994c1d7399edae5231ed06d714a}{update\_SerLCD}}(uint8\_t\ addr);}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00052}00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{serlcd_8h_ae0028b85aa630926c9fc2e9b93dfc1cc}{turn\_backlight\_off}}(uint8\_t\ addr);}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00063}00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{serlcd_8h_a0dd8c0b6f054f78d97273423fd965aec}{serlcd\_set\_background\_rgb}}(uint8\_t\ addr,\ uint8\_t\ r,\ uint8\_t\ g,\ uint8\_t\ b);}
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{serlcd_8h_source_l00066}00066\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SERLCD\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

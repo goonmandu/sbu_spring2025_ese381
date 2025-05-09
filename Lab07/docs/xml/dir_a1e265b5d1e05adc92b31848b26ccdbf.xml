@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_a1e265b5d1e05adc92b31848b26ccdbf" kind="dir">
+    <compoundname>D:/ESE381/Lab06/src/Task2/Debug</compoundname>
+    <innerfile refid="lm75_8d">lm75.d</innerfile>
+    <innerfile refid="serlcd_8d">serlcd.d</innerfile>
+    <innerfile refid="temp__meas___l_m75_8d">temp_meas_LM75.d</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/ESE381/Lab06/src/Task2/Debug/"/>
+  </compounddef>
+</doxygen>

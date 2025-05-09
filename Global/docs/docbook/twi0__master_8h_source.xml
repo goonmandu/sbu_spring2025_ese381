@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_twi0__master_8h_source" xml:lang="en-US">
+<title>twi0_master.h</title>
+<indexterm><primary>D:/ESE381/Global/ese381/ese381/twi0_master.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_twi0__master_8h_source_1l00001"/>00001 
+<anchor xml:id="_twi0__master_8h_source_1l00027"/>00027 
+<anchor xml:id="_twi0__master_8h_source_1l00028"/>00028 <emphasis role="preprocessor">#ifndef&#32;TWI0_MASTER_H</emphasis>
+<anchor xml:id="_twi0__master_8h_source_1l00029"/>00029 <emphasis role="preprocessor">#define&#32;TWI0_MASTER_H</emphasis>
+<anchor xml:id="_twi0__master_8h_source_1l00030"/>00030 
+<anchor xml:id="_twi0__master_8h_source_1l00031"/>00031 <emphasis role="preprocessor">#ifdef&#32;&#32;__cplusplus</emphasis>
+<anchor xml:id="_twi0__master_8h_source_1l00032"/>00032 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+<anchor xml:id="_twi0__master_8h_source_1l00033"/>00033 <emphasis role="preprocessor">#endif</emphasis>
+<anchor xml:id="_twi0__master_8h_source_1l00034"/>00034 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8h_source_1l00035"/>00035 <emphasis role="preprocessor">#include&#32;&lt;stdbool.h&gt;</emphasis>
+<anchor xml:id="_twi0__master_8h_source_1l00036"/>00036 <emphasis role="preprocessor">#include&#32;&lt;stdint.h&gt;</emphasis>
+<anchor xml:id="_twi0__master_8h_source_1l00037"/>00037 
+<anchor xml:id="_twi0__master_8h_source_1l00043"/>00043 
+<anchor xml:id="_twi0__master_8h_source_1l00044"/>00044 <emphasis role="comment">//&#32;#define&#32;TWI_ENABLE_PULLUPS</emphasis>
+<anchor xml:id="_twi0__master_8h_source_1l00045"/>00045 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8h_source_1l00049"/>00049 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_twi0__master_8h_1a6fa83b03086be1a5348c221f5c65587d">TWI_initHost</link>(<emphasis role="keywordtype">void</emphasis>);
+<anchor xml:id="_twi0__master_8h_source_1l00050"/>00050 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8h_source_1l00054"/>00054 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_twi0__master_8h_1a98aa41f921217ea835a6f8e993c7dbc3">TWI_initPins</link>(<emphasis role="keywordtype">void</emphasis>);
+<anchor xml:id="_twi0__master_8h_source_1l00055"/>00055 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8h_source_1l00063"/>00063 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_twi0__master_8h_1a472ca814410582196cc43dc0d26ac959">TWI_sendByte</link>(uint8_t&#32;addr,&#32;uint8_t&#32;data);
+<anchor xml:id="_twi0__master_8h_source_1l00064"/>00064 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8h_source_1l00073"/>00073 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_twi0__master_8h_1a35878eea0edaf2bcecf05c45c6c9e0f5">TWI_sendBytes</link>(uint8_t&#32;addr,&#32;uint8_t*&#32;data,&#32;uint8_t&#32;len);
+<anchor xml:id="_twi0__master_8h_source_1l00074"/>00074 
+<anchor xml:id="_twi0__master_8h_source_1l00082"/>00082 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_twi0__master_8h_1aba41249cfdcf6503f6facca53b858baf">TWI_readByte</link>(uint8_t&#32;addr,&#32;uint8_t*&#32;data);
+<anchor xml:id="_twi0__master_8h_source_1l00083"/>00083 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8h_source_1l00092"/>00092 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_twi0__master_8h_1a81074b35f6014cebe4d13ea41b38484d">TWI_readBytes</link>(uint8_t&#32;addr,&#32;uint8_t*&#32;data,&#32;uint8_t&#32;len);
+<anchor xml:id="_twi0__master_8h_source_1l00093"/>00093 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8h_source_1l00103"/>00103 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_twi0__master_8h_1abace615165977923b5a9abf7fe760f8a">TWI_sendAndReadBytes</link>(uint8_t&#32;addr,&#32;uint8_t&#32;regAddress,&#32;uint8_t*&#32;data,&#32;uint8_t&#32;len);
+<anchor xml:id="_twi0__master_8h_source_1l00104"/>00104 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8h_source_1l00105"/>00105 <emphasis role="preprocessor">#ifdef&#32;&#32;__cplusplus</emphasis>
+<anchor xml:id="_twi0__master_8h_source_1l00106"/>00106 }
+<anchor xml:id="_twi0__master_8h_source_1l00107"/>00107 <emphasis role="preprocessor">#endif</emphasis>
+<anchor xml:id="_twi0__master_8h_source_1l00108"/>00108 
+<anchor xml:id="_twi0__master_8h_source_1l00109"/>00109 <emphasis role="preprocessor">#endif&#32;&#32;</emphasis><emphasis role="comment">/*&#32;TWI0_MASTER_H&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+</programlisting></section>

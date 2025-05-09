@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="scd41_8h" kind="file" language="C++">
+    <compoundname>scd41.h</compoundname>
+    <includedby refid="climate__monitor_8c" local="yes">Lab10/src/Lab10/Task3/climate_monitor.c</includedby>
+    <includedby refid="scd41_8c" local="yes">Lab10/src/Lab10/Task3/scd41.c</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>Lab10/src/Lab10/Task3/climate_monitor.c</label>
+        <link refid="climate__monitor_8c"/>
+      </node>
+      <node id="3">
+        <label>Lab10/src/Lab10/Task3/scd41.c</label>
+        <link refid="scd41_8c"/>
+      </node>
+      <node id="1">
+        <label>Lab10/src/Lab10/Task3/scd41.h</label>
+        <link refid="scd41_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structscd41__data__t" prot="public">scd41_data_t</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="scd41_8h_1a5e947b775032bb94e49086b95477a205" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void scd41_start_periodic_meas</definition>
+        <argsstring>(uint8_t addr)</argsstring>
+        <name>scd41_start_periodic_meas</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends command to start periodic measurements on the SCD41.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>I2C address of the SCD41 sensor. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/scd41.h" line="37" column="6" bodyfile="Lab10/src/Lab10/Task3/scd41.c" bodystart="9" bodyend="11" declfile="Lab10/src/Lab10/Task3/scd41.h" declline="37" declcolumn="6"/>
+        <referencedby refid="climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="climate__monitor_8c" startline="23" endline="43">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="scd41_8h_1a0485ec86cee25367d2762783d76ae12c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void scd41_stop_periodic_meas</definition>
+        <argsstring>(uint8_t addr)</argsstring>
+        <name>scd41_stop_periodic_meas</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends command to stop periodic measurements on the SCD41.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>I2C address of the SCD41 sensor. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/scd41.h" line="45" column="6" bodyfile="Lab10/src/Lab10/Task3/scd41.c" bodystart="13" bodyend="15" declfile="Lab10/src/Lab10/Task3/scd41.h" declline="45" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="scd41_8h_1a4ca4e8746f6fdac58b506247e805cda3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t scd41_has_data</definition>
+        <argsstring>(uint8_t addr)</argsstring>
+        <name>scd41_has_data</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if new measurement data is available from the SCD41.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>I2C address of the SCD41 sensor. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 if data is ready, 0 otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/scd41.h" line="53" column="9" bodyfile="Lab10/src/Lab10/Task3/scd41.c" bodystart="17" bodyend="22" declfile="Lab10/src/Lab10/Task3/scd41.h" declline="53" declcolumn="9"/>
+        <referencedby refid="climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="climate__monitor_8c" startline="23" endline="43">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="scd41_8h_1a8c06da70168e9f5015616aa26d752fff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structscd41__data__t" kindref="compound">scd41_data_t</ref></type>
+        <definition>scd41_data_t scd41_read_data</definition>
+        <argsstring>(uint8_t addr)</argsstring>
+        <name>scd41_read_data</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads the latest measurement from the SCD41.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>I2C address of the SCD41 sensor. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="structscd41__data__t" kindref="compound">scd41_data_t</ref> struct containing raw values, CRCs, and converted temperature and humidity. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/scd41.h" line="62" column="14" bodyfile="Lab10/src/Lab10/Task3/scd41.c" bodystart="24" bodyend="40" declfile="Lab10/src/Lab10/Task3/scd41.h" declline="62" declcolumn="14"/>
+        <references refid="structscd41__data__t_1a8f687631f21b0ec1af9190a6e16cbd07" compoundref="scd41_8h" startline="22">scd41_data_t::co2_crc</references>
+        <references refid="structscd41__data__t_1aa2dd73af24dfe2a9b2b8aaf8917be643" compoundref="scd41_8h" startline="21">scd41_data_t::co2_raw</references>
+        <references refid="structscd41__data__t_1aad864e72b35172fbe003fab04b990bf9" compoundref="scd41_8h" startline="28">scd41_data_t::rh</references>
+        <references refid="structscd41__data__t_1ac2ca72396924faac9da3569ca7f8618e" compoundref="scd41_8h" startline="26">scd41_data_t::rh_crc</references>
+        <references refid="structscd41__data__t_1a2ce16830b237eef33a7a3b9498eb5361" compoundref="scd41_8h" startline="25">scd41_data_t::rh_raw</references>
+        <references refid="structscd41__data__t_1a10aa9d025b4a09a420126fb30f37a8af" compoundref="scd41_8h" startline="27">scd41_data_t::temp_c</references>
+        <references refid="structscd41__data__t_1a793c42f5f3acaa1f47e5f88215bf85d6" compoundref="scd41_8h" startline="24">scd41_data_t::temp_c_crc</references>
+        <references refid="structscd41__data__t_1a047d7f97f65e020d9118d2a6638e81bb" compoundref="scd41_8h" startline="23">scd41_data_t::temp_c_raw</references>
+        <referencedby refid="climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="climate__monitor_8c" startline="23" endline="43">main</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Interface for interacting with the SCD41 CO? sensor via I2C. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This module provides functions to start and stop periodic measurements, check data availability, and read CO?, temperature, and humidity data from the SCD41 sensor using the TWI0 interface. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SCD41_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SCD41_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="structscd41__data__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21" refid="structscd41__data__t_1aa2dd73af24dfe2a9b2b8aaf8917be643" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structscd41__data__t_1aa2dd73af24dfe2a9b2b8aaf8917be643" kindref="member">co2_raw</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22" refid="structscd41__data__t_1a8f687631f21b0ec1af9190a6e16cbd07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structscd41__data__t_1a8f687631f21b0ec1af9190a6e16cbd07" kindref="member">co2_crc</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23" refid="structscd41__data__t_1a047d7f97f65e020d9118d2a6638e81bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structscd41__data__t_1a047d7f97f65e020d9118d2a6638e81bb" kindref="member">temp_c_raw</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="24" refid="structscd41__data__t_1a793c42f5f3acaa1f47e5f88215bf85d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structscd41__data__t_1a793c42f5f3acaa1f47e5f88215bf85d6" kindref="member">temp_c_crc</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="25" refid="structscd41__data__t_1a2ce16830b237eef33a7a3b9498eb5361" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structscd41__data__t_1a2ce16830b237eef33a7a3b9498eb5361" kindref="member">rh_raw</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="26" refid="structscd41__data__t_1ac2ca72396924faac9da3569ca7f8618e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structscd41__data__t_1ac2ca72396924faac9da3569ca7f8618e" kindref="member">rh_crc</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27" refid="structscd41__data__t_1a10aa9d025b4a09a420126fb30f37a8af" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structscd41__data__t_1a10aa9d025b4a09a420126fb30f37a8af" kindref="member">temp_c</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28" refid="structscd41__data__t_1aad864e72b35172fbe003fab04b990bf9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structscd41__data__t_1aad864e72b35172fbe003fab04b990bf9" kindref="member">rh</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}<sp/><ref refid="structscd41__data__t" kindref="compound">scd41_data_t</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="scd41_8h_1a5e947b775032bb94e49086b95477a205" kindref="member">scd41_start_periodic_meas</ref>(uint8_t<sp/>addr);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="scd41_8h_1a0485ec86cee25367d2762783d76ae12c" kindref="member">scd41_stop_periodic_meas</ref>(uint8_t<sp/>addr);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">uint8_t<sp/><ref refid="scd41_8h_1a4ca4e8746f6fdac58b506247e805cda3" kindref="member">scd41_has_data</ref>(uint8_t<sp/>addr);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><ref refid="structscd41__data__t" kindref="compound">scd41_data_t</ref><sp/><ref refid="scd41_8h_1a8c06da70168e9f5015616aa26d752fff" kindref="member">scd41_read_data</ref>(uint8_t<sp/>addr);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SCD41_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="Lab10/src/Lab10/Task3/scd41.h"/>
+  </compounddef>
+</doxygen>

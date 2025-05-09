@@ -1,0 +1,230 @@
+\doxysection{twi0\+\_\+master.\+c}
+\hypertarget{twi0__master_8c_source}{}\label{twi0__master_8c_source}\index{D:/ESE381/Global/ese381/ese381/twi0\_master.c@{D:/ESE381/Global/ese381/ese381/twi0\_master.c}}
+\mbox{\hyperlink{twi0__master_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{twi0__master_8h}{twi0\_master.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <avr/io.h>}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00033}\mbox{\hyperlink{twi0__master_8c_aaf9a8abccd811954f9cc316f2b2f87b3}{00033}}\ \textcolor{preprocessor}{\#define\ TWI\_READ\ true}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00034}\mbox{\hyperlink{twi0__master_8c_a3b68e8e777b71520f9dbfac733774d5f}{00034}}\ \textcolor{preprocessor}{\#define\ TWI\_WRITE\ false}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00036}\mbox{\hyperlink{twi0__master_8c_afa0cbcb8305cff49652e10c777215a5a}{00036}}\ \textcolor{preprocessor}{\#define\ TWI\_IS\_CLOCKHELD()\ TWI0.MSTATUS\ \&\ TWI\_CLKHOLD\_bm}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00037}\mbox{\hyperlink{twi0__master_8c_ab11b79abe3e8a765908aca36c72fd50b}{00037}}\ \textcolor{preprocessor}{\#define\ TWI\_IS\_BUSERR()\ TWI0.MSTATUS\ \&\ TWI\_BUSERR\_bm}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00038}\mbox{\hyperlink{twi0__master_8c_ae97361cb8531ee2979c62b3a57d4a821}{00038}}\ \textcolor{preprocessor}{\#define\ TWI\_IS\_ARBLOST()\ TWI0.MSTATUS\ \&\ TWI\_ARBLOST\_bm}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00040}\mbox{\hyperlink{twi0__master_8c_aa0c501a160d4a7bbac583a0760b69879}{00040}}\ \textcolor{preprocessor}{\#define\ CLIENT\_NACK()\ TWI0.MSTATUS\ \&\ TWI\_RXACK\_bm}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00041}\mbox{\hyperlink{twi0__master_8c_a61a1d47676f2c72e1f73f5218c03322e}{00041}}\ \textcolor{preprocessor}{\#define\ CLIENT\_ACK()\ !(TWI0.MSTATUS\ \&\ TWI\_RXACK\_bm)}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00043}\mbox{\hyperlink{twi0__master_8c_a86cd4c8996cbafb28d602fac380ffb6b}{00043}}\ \textcolor{preprocessor}{\#define\ TWI\_IS\_BUSBUSY()\ ((TWI0.MSTATUS\ \&\ TWI\_BUSSTATE\_BUSY\_gc)\ ==\ TWI\_BUSSTATE\_BUSY\_gc)}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00045}\mbox{\hyperlink{twi0__master_8c_aef324916c0a83c59999e0c67e5b3a503}{00045}}\ \textcolor{preprocessor}{\#define\ TWI\_WAIT()\ while\ (!((TWI\_IS\_CLOCKHELD())\ ||\ (TWI\_IS\_BUSERR())\ ||\ (TWI\_IS\_ARBLOST())\ ||\ (TWI\_IS\_BUSBUSY())))}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00047}\mbox{\hyperlink{twi0__master_8c_a88bac97d359ea3f873641d6ebf886231}{00047}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{twi0__master_8c_a88bac97d359ea3f873641d6ebf886231}{isTWIBad}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//Checks\ for:\ NACK,\ ARBLOST,\ BUSERR,\ Bus\ Busy}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}\ ((((TWI0.MSTATUS)\ \&\ (TWI\_RXACK\_bm\ |\ TWI\_ARBLOST\_bm\ |\ TWI\_BUSERR\_bm))\ >\ 0)\ ||\ (\mbox{\hyperlink{twi0__master_8c_a86cd4c8996cbafb28d602fac380ffb6b}{TWI\_IS\_BUSBUSY}}()))\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00055}\mbox{\hyperlink{twi0__master_8c_a6fa83b03086be1a5348c221f5c65587d}{00055}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{twi0__master_8c_a6fa83b03086be1a5348c221f5c65587d}{TWI\_initHost}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//Standard\ 100kHz\ TWI,\ 4\ Cycle\ Hold,\ 50ns\ SDA\ Hold\ Time}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00057}00057\ \ \ \ \ TWI0.CTRLA\ =\ TWI\_SDAHOLD\_50NS\_gc;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00058}00058\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//Clear\ Dual\ Control}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00060}00060\ \ \ \ \ TWI0.DUALCTRL\ =\ 0x00;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00061}00061\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//Enable\ Run\ in\ Debug}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00063}00063\ \ \ \ \ TWI0.DBGCTRL\ =\ TWI\_DBGRUN\_bm;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00064}00064\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//Clear\ MSTATUS\ (write\ 1\ to\ flags).\ BUSSTATE\ set\ to\ idle}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00066}00066\ \ \ \ \ TWI0.MSTATUS\ =\ TWI\_RIF\_bm\ |\ TWI\_WIF\_bm\ |\ TWI\_CLKHOLD\_bm\ |\ TWI\_RXACK\_bm\ |}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00067}00067\ \ \ \ \ TWI\_ARBLOST\_bm\ |\ TWI\_BUSERR\_bm\ |\ TWI\_BUSSTATE\_IDLE\_gc;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00068}00068\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00069}00069\ \ \ \ \ \textcolor{comment}{//Set\ for\ 100kHz\ from\ a\ 4MHz\ oscillator}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00070}00070\ \ \ \ \ TWI0.MBAUD\ =\ 15;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00071}00071\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00072}00072\ \ \ \ \ \textcolor{comment}{//[No\ ISRs]\ and\ Host\ Mode}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00073}00073\ \ \ \ \ TWI0.MCTRLA\ =\ TWI\_ENABLE\_bm;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00076}\mbox{\hyperlink{twi0__master_8c_a98aa41f921217ea835a6f8e993c7dbc3}{00076}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{twi0__master_8c_a98aa41f921217ea835a6f8e993c7dbc3}{TWI\_initPins}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00077}00077\ \ \ \ \ \textcolor{comment}{//\ Use\ PA2\ and\ PA3\ (default)}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00078}00078\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00079}00079\ \ \ \ \ \textcolor{comment}{//Output\ I/O}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00080}00080\ \ \ \ \ PORTA.DIRSET\ =\ PIN2\_bm\ |\ PIN3\_bm;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00082}00082\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TWI\_ENABLE\_PULLUPS}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00083}00083\ \ \ \ \ \textcolor{comment}{//Enable\ Pull-\/Ups}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00084}00084\ \ \ \ \ PORTA.PINCONFIG\ =\ PORT\_PULLUPEN\_bm;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00085}00085\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00087}00087\ \ \ \ \ \textcolor{comment}{//Select\ RA2/RA3}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00088}00088\ \ \ \ \ PORTA.PINCTRLUPD\ =\ PIN2\_bm\ |\ PIN3\_bm;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00089}00089\ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00091}\mbox{\hyperlink{twi0__master_8c_a5b0e3bd68badf9ef45b187cbc4ef275d}{00091}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{twi0__master_8c_a5b0e3bd68badf9ef45b187cbc4ef275d}{\_startTWI}}(uint8\_t\ addr,\ \textcolor{keywordtype}{bool}\ read)\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00092}00092\ \ \ \ \ \textcolor{comment}{//If\ the\ Bus\ is\ Busy}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00093}00093\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{twi0__master_8c_a86cd4c8996cbafb28d602fac380ffb6b}{TWI\_IS\_BUSBUSY}}())\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00096}00096\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00097}00097\ \ \ \ \ \textcolor{comment}{//Send\ Address}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00098}00098\ \ \ \ \ TWI0.MADDR\ =\ (addr\ <<\ 1)\ |\ read;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00099}00099\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00100}00100\ \ \ \ \ \textcolor{comment}{//Wait...}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00101}00101\ \ \ \ \ \mbox{\hyperlink{twi0__master_8c_aef324916c0a83c59999e0c67e5b3a503}{TWI\_WAIT}}();}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00102}00102\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{twi0__master_8c_a88bac97d359ea3f873641d6ebf886231}{isTWIBad}}())\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Stop\ the\ Bus}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00105}00105\ \ \ \ \ \ \ \ \ TWI0.MCTRLB\ =\ TWI\_MCMD\_STOP\_gc;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00108}00108\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00109}00109\ \ \ \ \ \textcolor{comment}{//TWI\ Started}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00111}00111\ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00113}00113\ \textcolor{comment}{//Internal\ Function:\ Reads\ len\ bytes\ from\ TWI,\ then\ issues\ a\ bus\ STOP}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00114}\mbox{\hyperlink{twi0__master_8c_aac65a59189d5da063979d45c6a21fdde}{00114}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{twi0__master_8c_aac65a59189d5da063979d45c6a21fdde}{\_readFromTWI}}(uint8\_t*\ data,\ uint8\_t\ len)\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00115}00115\ \ \ \ \ uint8\_t\ bCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00116}00116\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00117}00117\ \ \ \ \ \textcolor{comment}{//Release\ the\ clock\ hold}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00118}00118\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00119}00119\ \ \ \ \ TWI0.MSTATUS\ =\ TWI\_CLKHOLD\_bm;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00120}00120\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00121}00121\ \ \ \ \ \textcolor{comment}{//TWI0.MCTRLB\ =\ TWI\_MCMD\_RECVTRANS\_gc;}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00122}00122\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00123}00123\ \ \ \ \ \textcolor{keywordflow}{while}\ (bCount\ <\ len)\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Wait...}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00125}00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{twi0__master_8c_aef324916c0a83c59999e0c67e5b3a503}{TWI\_WAIT}}();}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00126}00126\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Store\ data}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00128}00128\ \ \ \ \ \ \ \ \ data[bCount]\ =\ TWI0.MDATA;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Increment\ the\ counter}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00131}00131\ \ \ \ \ \ \ \ \ bCount\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00132}00132\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bCount\ !=\ len)\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//If\ not\ done,\ then\ ACK\ and\ read\ the\ next\ byte}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ TWI0.MCTRLB\ =\ TWI\_ACKACT\_ACK\_gc\ |\ TWI\_MCMD\_RECVTRANS\_gc;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00136}00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00137}00137\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00138}00138\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00139}00139\ \ \ \ \ \textcolor{comment}{//NACK\ and\ STOP\ the\ bus}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00140}00140\ \ \ \ \ TWI0.MCTRLB\ =\ TWI\_ACKACT\_NACK\_gc\ |\ TWI\_MCMD\_STOP\_gc;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00141}00141\ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00143}00143\ \textcolor{comment}{//Internal\ Function:\ Write\ len\ bytes\ to\ TWI.\ Does\ NOT\ STOP\ the\ bus.\ Returns\ true\ if\ successful}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00144}\mbox{\hyperlink{twi0__master_8c_af12b3c7e52e7b420a53cf17fda194eeb}{00144}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{twi0__master_8c_af12b3c7e52e7b420a53cf17fda194eeb}{\_writeToTWI}}(uint8\_t*\ data,\ uint8\_t\ len)\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00145}00145\ \ \ \ \ uint8\_t\ count\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00146}00146\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00147}00147\ \ \ \ \ \textcolor{keywordflow}{while}\ (count\ <\ len)\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Write\ a\ byte}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00149}00149\ \ \ \ \ \ \ \ \ TWI0.MDATA\ =\ data[count];}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00150}00150\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00151}00151\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Wait...}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00152}00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{twi0__master_8c_aef324916c0a83c59999e0c67e5b3a503}{TWI\_WAIT}}();}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00153}00153\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{comment}{//If\ the\ client\ NACKed,\ then\ abort\ the\ write}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00155}00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{twi0__master_8c_aa0c501a160d4a7bbac583a0760b69879}{CLIENT\_NACK}}())\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00157}00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00158}00158\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Increment\ the\ counter}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00160}00160\ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00161}00161\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00162}00162\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00163}00163\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00164}00164\ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00166}\mbox{\hyperlink{twi0__master_8c_a472ca814410582196cc43dc0d26ac959}{00166}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{twi0__master_8c_a472ca814410582196cc43dc0d26ac959}{TWI\_sendByte}}(uint8\_t\ addr,\ uint8\_t\ data)\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00167}00167\ \ \ \ \ \textcolor{comment}{//Address\ Client\ Device\ (Write)}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00168}00168\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{twi0__master_8c_a5b0e3bd68badf9ef45b187cbc4ef275d}{\_startTWI}}(addr,\ \mbox{\hyperlink{twi0__master_8c_a3b68e8e777b71520f9dbfac733774d5f}{TWI\_WRITE}}))\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00169}00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00170}00170\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00171}00171\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00172}00172\ \ \ \ \ \textcolor{keywordtype}{bool}\ success\ =\ \mbox{\hyperlink{twi0__master_8c_af12b3c7e52e7b420a53cf17fda194eeb}{\_writeToTWI}}(\&data,\ 1);}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00173}00173\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00174}00174\ \ \ \ \ \textcolor{comment}{//Stop\ the\ bus}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00175}00175\ \ \ \ \ TWI0.MCTRLB\ =\ TWI\_MCMD\_STOP\_gc;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00176}00176\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00177}00177\ \ \ \ \ \textcolor{keywordflow}{return}\ success;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00178}00178\ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00180}\mbox{\hyperlink{twi0__master_8c_a35878eea0edaf2bcecf05c45c6c9e0f5}{00180}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{twi0__master_8c_a35878eea0edaf2bcecf05c45c6c9e0f5}{TWI\_sendBytes}}(uint8\_t\ addr,\ uint8\_t*\ data,\ uint8\_t\ len)\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00181}00181\ \ \ \ \ \textcolor{comment}{//Address\ Client\ Device\ (Write)}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00182}00182\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{twi0__master_8c_a5b0e3bd68badf9ef45b187cbc4ef275d}{\_startTWI}}(addr,\ \mbox{\hyperlink{twi0__master_8c_a3b68e8e777b71520f9dbfac733774d5f}{TWI\_WRITE}}))\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00184}00184\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00185}00185\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00186}00186\ \ \ \ \ \textcolor{comment}{//Write\ the\ bytes\ to\ the\ client}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00187}00187\ \ \ \ \ \textcolor{keywordtype}{bool}\ success\ =\ \mbox{\hyperlink{twi0__master_8c_af12b3c7e52e7b420a53cf17fda194eeb}{\_writeToTWI}}(data,\ len);}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00189}00189\ \ \ \ \ \textcolor{comment}{//Stop\ the\ bus}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00190}00190\ \ \ \ \ TWI0.MCTRLB\ =\ TWI\_MCMD\_STOP\_gc;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00191}00191\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00192}00192\ \ \ \ \ \textcolor{keywordflow}{return}\ success;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00193}00193\ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00195}\mbox{\hyperlink{twi0__master_8c_aba41249cfdcf6503f6facca53b858baf}{00195}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{twi0__master_8c_aba41249cfdcf6503f6facca53b858baf}{TWI\_readByte}}(uint8\_t\ addr,\ uint8\_t*\ data)\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00196}00196\ \ \ \ \ \textcolor{comment}{//Address\ Client\ Device\ (Read)}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00197}00197\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{twi0__master_8c_a5b0e3bd68badf9ef45b187cbc4ef275d}{\_startTWI}}(addr,\ \mbox{\hyperlink{twi0__master_8c_aaf9a8abccd811954f9cc316f2b2f87b3}{TWI\_READ}}))\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00199}00199\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00200}00200\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00201}00201\ \ \ \ \ \textcolor{comment}{//Read\ byte\ from\ client}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00202}00202\ \ \ \ \ \mbox{\hyperlink{twi0__master_8c_aac65a59189d5da063979d45c6a21fdde}{\_readFromTWI}}(data,\ 1);}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00204}00204\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00205}00205\ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00208}\mbox{\hyperlink{twi0__master_8c_a81074b35f6014cebe4d13ea41b38484d}{00208}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{twi0__master_8c_a81074b35f6014cebe4d13ea41b38484d}{TWI\_readBytes}}(uint8\_t\ addr,\ uint8\_t*\ data,\ uint8\_t\ len)\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00209}00209\ \ \ \ \ \textcolor{comment}{//Address\ Client\ Device\ (Read)}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00210}00210\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{twi0__master_8c_a5b0e3bd68badf9ef45b187cbc4ef275d}{\_startTWI}}(addr,\ \mbox{\hyperlink{twi0__master_8c_aaf9a8abccd811954f9cc316f2b2f87b3}{TWI\_READ}}))\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00211}00211\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00212}00212\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00213}00213\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00214}00214\ \ \ \ \ \textcolor{comment}{//Read\ bytes\ from\ client}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00215}00215\ \ \ \ \ \mbox{\hyperlink{twi0__master_8c_aac65a59189d5da063979d45c6a21fdde}{\_readFromTWI}}(data,\ len);}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00216}00216\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00217}00217\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00218}00218\ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00220}\mbox{\hyperlink{twi0__master_8c_abace615165977923b5a9abf7fe760f8a}{00220}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{twi0__master_8c_abace615165977923b5a9abf7fe760f8a}{TWI\_sendAndReadBytes}}(uint8\_t\ addr,\ uint8\_t\ regAddress,\ uint8\_t*\ data,\ uint8\_t\ len)\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00221}00221\ \ \ \ \ \textcolor{comment}{//Address\ Client\ Device\ (Write)}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00222}00222\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{twi0__master_8c_a5b0e3bd68badf9ef45b187cbc4ef275d}{\_startTWI}}(addr,\ \mbox{\hyperlink{twi0__master_8c_a3b68e8e777b71520f9dbfac733774d5f}{TWI\_WRITE}}))\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00223}00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00224}00224\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00225}00225\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00226}00226\ \ \ \ \ \textcolor{comment}{//Write\ register\ address}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00227}00227\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{twi0__master_8c_af12b3c7e52e7b420a53cf17fda194eeb}{\_writeToTWI}}(\&regAddress,\ 1))\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00228}00228\ \ \ \ \ \ \ \ \ TWI0.MCTRLB\ =\ TWI\_MCMD\_STOP\_gc;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00229}00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00230}00230\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00231}00231\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00232}00232\ \ \ \ \ \textcolor{comment}{//Restart\ the\ TWI\ Bus\ in\ READ\ mode}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00233}00233\ \ \ \ \ TWI0.MADDR\ |=\ \mbox{\hyperlink{twi0__master_8c_aaf9a8abccd811954f9cc316f2b2f87b3}{TWI\_READ}};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00234}00234\ \ \ \ \ TWI0.MCTRLB\ =\ TWI\_MCMD\_REPSTART\_gc;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00235}00235\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00236}00236\ \ \ \ \ \textcolor{comment}{//Wait...}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00237}00237\ \ \ \ \ \mbox{\hyperlink{twi0__master_8c_aef324916c0a83c59999e0c67e5b3a503}{TWI\_WAIT}}();}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00238}00238\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00239}00239\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{twi0__master_8c_a88bac97d359ea3f873641d6ebf886231}{isTWIBad}}())\ \{}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00240}00240\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Stop\ the\ TWI\ Bus\ if\ an\ error\ occurred}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00241}00241\ \ \ \ \ \ \ \ \ TWI0.MCTRLB\ =\ TWI\_MCMD\_STOP\_gc;}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00242}00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00243}00243\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00244}00244\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00245}00245\ \ \ \ \ \textcolor{comment}{//Read\ the\ data\ from\ the\ client}}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00246}00246\ \ \ \ \ \mbox{\hyperlink{twi0__master_8c_aac65a59189d5da063979d45c6a21fdde}{\_readFromTWI}}(data,\ len);}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00247}00247\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00248}00248\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{twi0__master_8c_source_l00249}00249\ \}}
+
+\end{DoxyCode}

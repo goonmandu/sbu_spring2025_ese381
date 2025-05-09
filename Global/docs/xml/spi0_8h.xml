@@ -1,0 +1,484 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="spi0_8h" kind="file" language="C++">
+    <compoundname>spi0.h</compoundname>
+    <includedby refid="spi0_8c" local="yes">D:/ESE381/Global/ese381/ese381/spi0.c</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>D:/ESE381/Global/ese381/ese381/spi0.c</label>
+        <link refid="spi0_8c"/>
+      </node>
+      <node id="1">
+        <label>D:/ESE381/Global/ese381/ese381/spi0.h</label>
+        <link refid="spi0_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="spi0_8h_1af3aadd8467647d87fdefd5a408690b49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void init_spi0</definition>
+        <argsstring>(void)</argsstring>
+        <name>init_spi0</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes SPI0 to master-only mode.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/spi0.h" line="10" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/spi0.c" bodystart="5" bodyend="11" declfile="D:/ESE381/Global/ese381/ese381/spi0.h" declline="10" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="spi0_8h_1a7290192eabed536d6abbeb98b0f2d20c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void init_spi0_SerLCD</definition>
+        <argsstring>(void)</argsstring>
+        <name>init_spi0_SerLCD</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes SPI0 to be compatible with the SerLCD.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/spi0.h" line="18" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/spi0.c" bodystart="13" bodyend="16" declfile="D:/ESE381/Global/ese381/ese381/spi0.h" declline="18" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="spi0_8h_1a6b765ca20ee963e16e8422b1dc8d1ca5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void init_spi0_LM74</definition>
+        <argsstring>(void)</argsstring>
+        <name>init_spi0_LM74</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes SPI0 to be compatible with the LM74.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/spi0.h" line="26" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/spi0.c" bodystart="18" bodyend="21" declfile="D:/ESE381/Global/ese381/ese381/spi0.h" declline="26" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="spi0_8h_1ab7a8d5baf0cd05fad40c0d1fec618690" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t read_spi0_LM74</definition>
+        <argsstring>(void)</argsstring>
+        <name>read_spi0_LM74</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads two bytes from an LM74 via SPI0 and returns the 16-bit response.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>LM74 output. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/spi0.h" line="34" column="10" bodyfile="D:/ESE381/Global/ese381/ese381/spi0.c" bodystart="23" bodyend="38" declfile="D:/ESE381/Global/ese381/ese381/spi0.h" declline="34" declcolumn="10"/>
+        <references refid="spi0_8c_1a906389614337beb227e0311d81f43b13" compoundref="spi0_8c" startline="58" endline="60">deselect_slave_LM74</references>
+        <references refid="spi0_8c_1ae62b6dae69170c525e3249f3045da294" compoundref="spi0_8c" startline="62" endline="67">exchange_byte</references>
+        <references refid="spi0_8c_1a49c7c2f13c7f79ce2f2700f608e78dad" compoundref="spi0_8c" startline="54" endline="56">select_slave_LM74</references>
+      </memberdef>
+      <memberdef kind="function" id="spi0_8h_1a7cccc9fe28ba278b4c3e905498fbe4d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void send_byte_SerLCD</definition>
+        <argsstring>(uint8_t data)</argsstring>
+        <name>send_byte_SerLCD</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends a byte out of SPI0. Assumes /SS = PA7.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Byte to be sent. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/spi0.h" line="42" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/spi0.c" bodystart="40" bodyend="44" declfile="D:/ESE381/Global/ese381/ese381/spi0.h" declline="42" declcolumn="6"/>
+        <references refid="spi0_8c_1ae67d1cf7cd2115af93ac9ec7cb196b04" compoundref="spi0_8c" startline="50" endline="52">deselect_slave_SerLCD</references>
+        <references refid="spi0_8c_1ae62b6dae69170c525e3249f3045da294" compoundref="spi0_8c" startline="62" endline="67">exchange_byte</references>
+        <references refid="spi0_8c_1a3f4d86a5e30afea3246ab177a53b7c70" compoundref="spi0_8c" startline="46" endline="48">select_slave_SerLCD</references>
+        <referencedby refid="spi0_8c_1a8566401125e518db3ae42a99e9a47ead" compoundref="spi0_8c" startline="78" endline="91">set_backlight_rgb</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="spi0_8h_1a3f4d86a5e30afea3246ab177a53b7c70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void select_slave_SerLCD</definition>
+        <argsstring>()</argsstring>
+        <name>select_slave_SerLCD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pulls PA3 low.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/spi0.h" line="50" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/spi0.c" bodystart="46" bodyend="48" declfile="D:/ESE381/Global/ese381/ese381/spi0.h" declline="50" declcolumn="6"/>
+        <referencedby refid="spi0_8c_1a7cccc9fe28ba278b4c3e905498fbe4d7" compoundref="spi0_8c" startline="40" endline="44">send_byte_SerLCD</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="spi0_8h_1ae67d1cf7cd2115af93ac9ec7cb196b04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void deselect_slave_SerLCD</definition>
+        <argsstring>()</argsstring>
+        <name>deselect_slave_SerLCD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pulls PA3 high.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/spi0.h" line="58" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/spi0.c" bodystart="50" bodyend="52" declfile="D:/ESE381/Global/ese381/ese381/spi0.h" declline="58" declcolumn="6"/>
+        <referencedby refid="spi0_8c_1a7cccc9fe28ba278b4c3e905498fbe4d7" compoundref="spi0_8c" startline="40" endline="44">send_byte_SerLCD</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="spi0_8h_1a49c7c2f13c7f79ce2f2700f608e78dad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void select_slave_LM74</definition>
+        <argsstring>()</argsstring>
+        <name>select_slave_LM74</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pulls PA7 low.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/spi0.h" line="66" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/spi0.c" bodystart="54" bodyend="56" declfile="D:/ESE381/Global/ese381/ese381/spi0.h" declline="66" declcolumn="6"/>
+        <referencedby refid="spi0_8c_1a7f14a9668cca4f13d96dd0692187244f" compoundref="spi0_8c" startline="23" endline="38">read_spi0_LM74</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="spi0_8h_1a906389614337beb227e0311d81f43b13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void deselect_slave_LM74</definition>
+        <argsstring>()</argsstring>
+        <name>deselect_slave_LM74</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pulls PA7 high.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/spi0.h" line="74" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/spi0.c" bodystart="58" bodyend="60" declfile="D:/ESE381/Global/ese381/ese381/spi0.h" declline="74" declcolumn="6"/>
+        <referencedby refid="spi0_8c_1a7f14a9668cca4f13d96dd0692187244f" compoundref="spi0_8c" startline="23" endline="38">read_spi0_LM74</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="spi0_8h_1ae62b6dae69170c525e3249f3045da294" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t exchange_byte</definition>
+        <argsstring>(uint8_t data)</argsstring>
+        <name>exchange_byte</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends and receives one byte from SPI0. Does not automatically select/deselect slave device.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data to be sent. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Data in SPI0.DATA after exchange. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/spi0.h" line="83" column="9" bodyfile="D:/ESE381/Global/ese381/ese381/spi0.c" bodystart="62" bodyend="67" declfile="D:/ESE381/Global/ese381/ese381/spi0.h" declline="83" declcolumn="9"/>
+        <referencedby refid="spi0_8c_1a7f14a9668cca4f13d96dd0692187244f" compoundref="spi0_8c" startline="23" endline="38">read_spi0_LM74</referencedby>
+        <referencedby refid="spi0_8c_1a7cccc9fe28ba278b4c3e905498fbe4d7" compoundref="spi0_8c" startline="40" endline="44">send_byte_SerLCD</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="spi0_8h_1a6d50b5924f40d5943fe17712cfabc396" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t normalize_range</definition>
+        <argsstring>(uint8_t from_min, uint8_t from_val, uint8_t from_max, uint8_t result_min, uint8_t result_max)</argsstring>
+        <name>normalize_range</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>from_min</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>from_val</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>from_max</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>result_min</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>result_max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>(This function should not be here, but I am too lazy. Whatever.) Normalizes a uint8_t to another range.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>from_min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum value of original range. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>from_val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to normalize. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>from_max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum value of original range. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result_min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum value of normalized range. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result_max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum value of normalized range. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Normalized number. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/spi0.h" line="96" column="9" bodyfile="D:/ESE381/Global/ese381/ese381/spi0.c" bodystart="69" bodyend="76" declfile="D:/ESE381/Global/ese381/ese381/spi0.h" declline="96" declcolumn="9"/>
+        <referencedby refid="spi0_8c_1a8566401125e518db3ae42a99e9a47ead" compoundref="spi0_8c" startline="78" endline="91">set_backlight_rgb</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="spi0_8h_1a8566401125e518db3ae42a99e9a47ead" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void set_backlight_rgb</definition>
+        <argsstring>(uint8_t r, uint8_t g, uint8_t b)</argsstring>
+        <name>set_backlight_rgb</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Normalizes r, g, b to be between 0-29 (inclusive) and sends the sequence |r|g|b</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Red. 0 to 255. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Green. 0 to 255. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Blue. 0 to 255. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/spi0.h" line="107" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/spi0.c" bodystart="78" bodyend="91" declfile="D:/ESE381/Global/ese381/ese381/spi0.h" declline="107" declcolumn="6"/>
+        <references refid="spi0_8c_1a6d50b5924f40d5943fe17712cfabc396" compoundref="spi0_8c" startline="69" endline="76">normalize_range</references>
+        <references refid="spi0_8c_1a7cccc9fe28ba278b4c3e905498fbe4d7" compoundref="spi0_8c" startline="40" endline="44">send_byte_SerLCD</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SPI0_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SPI0_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="spi0_8h_1af3aadd8467647d87fdefd5a408690b49" kindref="member">init_spi0</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="spi0_8h_1a7290192eabed536d6abbeb98b0f2d20c" kindref="member">init_spi0_SerLCD</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="spi0_8h_1a6b765ca20ee963e16e8422b1dc8d1ca5" kindref="member">init_spi0_LM74</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">uint16_t<sp/><ref refid="spi0_8h_1ab7a8d5baf0cd05fad40c0d1fec618690" kindref="member">read_spi0_LM74</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="spi0_8h_1a7cccc9fe28ba278b4c3e905498fbe4d7" kindref="member">send_byte_SerLCD</ref>(uint8_t<sp/>data);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="spi0_8h_1a3f4d86a5e30afea3246ab177a53b7c70" kindref="member">select_slave_SerLCD</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="spi0_8h_1ae67d1cf7cd2115af93ac9ec7cb196b04" kindref="member">deselect_slave_SerLCD</ref>();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="spi0_8h_1a49c7c2f13c7f79ce2f2700f608e78dad" kindref="member">select_slave_LM74</ref>();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="spi0_8h_1a906389614337beb227e0311d81f43b13" kindref="member">deselect_slave_LM74</ref>();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">uint8_t<sp/><ref refid="spi0_8h_1ae62b6dae69170c525e3249f3045da294" kindref="member">exchange_byte</ref>(uint8_t<sp/>data);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">uint8_t<sp/><ref refid="spi0_8h_1a6d50b5924f40d5943fe17712cfabc396" kindref="member">normalize_range</ref>(uint8_t<sp/>from_min,<sp/>uint8_t<sp/>from_val,<sp/>uint8_t<sp/>from_max,<sp/>uint8_t<sp/>result_min,<sp/>uint8_t<sp/>result_max);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="spi0_8h_1a8566401125e518db3ae42a99e9a47ead" kindref="member">set_backlight_rgb</ref>(uint8_t<sp/>r,<sp/>uint8_t<sp/>g,<sp/>uint8_t<sp/>b);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SPI0_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="D:/ESE381/Global/ese381/ese381/spi0.h"/>
+  </compounddef>
+</doxygen>

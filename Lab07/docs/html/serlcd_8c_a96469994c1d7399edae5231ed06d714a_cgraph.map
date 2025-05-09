@@ -1,0 +1,7 @@
+<map id="update_SerLCD" name="update_SerLCD">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,120,57"/>
+<area shape="rect" id="Node000002" href="$serlcd_8c.html#aae95d59b494981540233ed751f39e341" title=" " alt="" coords="187,5,290,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,33,171,26,172,31,121,38"/>
+<area shape="rect" id="Node000003" href="$serlcd_8c.html#aec024d63790c43bb2635e0b3468583d8" title=" " alt="" coords="168,56,310,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="121,50,153,54,152,60,120,55"/>
+</map>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_scd41_8h_source" xml:lang="en-US">
+<title>scd41.h</title>
+<indexterm><primary>Lab10/src/Lab10/Task3/scd41.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_scd41_8h_source_1l00001"/>00001 
+<anchor xml:id="_scd41_8h_source_1l00009"/>00009 
+<anchor xml:id="_scd41_8h_source_1l00010"/>00010 <emphasis role="preprocessor">#ifndef&#32;SCD41_H_</emphasis>
+<anchor xml:id="_scd41_8h_source_1l00011"/>00011 <emphasis role="preprocessor">#define&#32;SCD41_H_</emphasis>
+<anchor xml:id="_scd41_8h_source_1l00012"/>00012 
+<anchor xml:id="_scd41_8h_source_1l00020"/><link linkend="_structscd41__data__t">00020</link> <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis>{
+<anchor xml:id="_scd41_8h_source_1l00021"/><link linkend="_structscd41__data__t_1aa2dd73af24dfe2a9b2b8aaf8917be643">00021</link> &#32;&#32;&#32;&#32;uint16_t&#32;<link linkend="_structscd41__data__t_1aa2dd73af24dfe2a9b2b8aaf8917be643">co2_raw</link>;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_scd41_8h_source_1l00022"/><link linkend="_structscd41__data__t_1a8f687631f21b0ec1af9190a6e16cbd07">00022</link> &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_structscd41__data__t_1a8f687631f21b0ec1af9190a6e16cbd07">co2_crc</link>;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_scd41_8h_source_1l00023"/><link linkend="_structscd41__data__t_1a047d7f97f65e020d9118d2a6638e81bb">00023</link> &#32;&#32;&#32;&#32;uint16_t&#32;<link linkend="_structscd41__data__t_1a047d7f97f65e020d9118d2a6638e81bb">temp_c_raw</link>;&#32;&#32;
+<anchor xml:id="_scd41_8h_source_1l00024"/><link linkend="_structscd41__data__t_1a793c42f5f3acaa1f47e5f88215bf85d6">00024</link> &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_structscd41__data__t_1a793c42f5f3acaa1f47e5f88215bf85d6">temp_c_crc</link>;&#32;&#32;&#32;
+<anchor xml:id="_scd41_8h_source_1l00025"/><link linkend="_structscd41__data__t_1a2ce16830b237eef33a7a3b9498eb5361">00025</link> &#32;&#32;&#32;&#32;uint16_t&#32;<link linkend="_structscd41__data__t_1a2ce16830b237eef33a7a3b9498eb5361">rh_raw</link>;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_scd41_8h_source_1l00026"/><link linkend="_structscd41__data__t_1ac2ca72396924faac9da3569ca7f8618e">00026</link> &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_structscd41__data__t_1ac2ca72396924faac9da3569ca7f8618e">rh_crc</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_scd41_8h_source_1l00027"/><link linkend="_structscd41__data__t_1a10aa9d025b4a09a420126fb30f37a8af">00027</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_structscd41__data__t_1a10aa9d025b4a09a420126fb30f37a8af">temp_c</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_scd41_8h_source_1l00028"/><link linkend="_structscd41__data__t_1aad864e72b35172fbe003fab04b990bf9">00028</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_structscd41__data__t_1aad864e72b35172fbe003fab04b990bf9">rh</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_scd41_8h_source_1l00029"/>00029 }&#32;<link linkend="_structscd41__data__t">scd41_data_t</link>;
+<anchor xml:id="_scd41_8h_source_1l00030"/>00030 
+<anchor xml:id="_scd41_8h_source_1l00037"/>00037 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_scd41_8h_1a5e947b775032bb94e49086b95477a205">scd41_start_periodic_meas</link>(uint8_t&#32;addr);
+<anchor xml:id="_scd41_8h_source_1l00038"/>00038 
+<anchor xml:id="_scd41_8h_source_1l00045"/>00045 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_scd41_8h_1a0485ec86cee25367d2762783d76ae12c">scd41_stop_periodic_meas</link>(uint8_t&#32;addr);
+<anchor xml:id="_scd41_8h_source_1l00046"/>00046 
+<anchor xml:id="_scd41_8h_source_1l00053"/>00053 uint8_t&#32;<link linkend="_scd41_8h_1a4ca4e8746f6fdac58b506247e805cda3">scd41_has_data</link>(uint8_t&#32;addr);
+<anchor xml:id="_scd41_8h_source_1l00054"/>00054 
+<anchor xml:id="_scd41_8h_source_1l00062"/>00062 <link linkend="_structscd41__data__t">scd41_data_t</link>&#32;<link linkend="_scd41_8h_1a8c06da70168e9f5015616aa26d752fff">scd41_read_data</link>(uint8_t&#32;addr);
+<anchor xml:id="_scd41_8h_source_1l00063"/>00063 
+<anchor xml:id="_scd41_8h_source_1l00064"/>00064 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SCD41_H_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+</programlisting></section>

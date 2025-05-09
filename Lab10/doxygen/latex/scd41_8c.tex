@@ -1,0 +1,130 @@
+\doxysection{Lab10/src/\+Lab10/\+Task3/scd41.c File Reference}
+\hypertarget{scd41_8c}{}\label{scd41_8c}\index{Lab10/src/Lab10/Task3/scd41.c@{Lab10/src/Lab10/Task3/scd41.c}}
+{\ttfamily \#include $<$twi/twi0\+\_\+master.\+h$>$}\newline
+{\ttfamily \#include "{}scd41.\+h"{}}\newline
+Include dependency graph for scd41.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{scd41_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{scd41_8c_a5e947b775032bb94e49086b95477a205}{scd41\+\_\+start\+\_\+periodic\+\_\+meas}} (uint8\+\_\+t addr)
+\item 
+void \mbox{\hyperlink{scd41_8c_a0485ec86cee25367d2762783d76ae12c}{scd41\+\_\+stop\+\_\+periodic\+\_\+meas}} (uint8\+\_\+t addr)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{scd41_8c_a4ca4e8746f6fdac58b506247e805cda3}{scd41\+\_\+has\+\_\+data}} (uint8\+\_\+t addr)
+\item 
+\mbox{\hyperlink{structscd41__data__t}{scd41\+\_\+data\+\_\+t}} \mbox{\hyperlink{scd41_8c_a8c06da70168e9f5015616aa26d752fff}{scd41\+\_\+read\+\_\+data}} (uint8\+\_\+t addr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{scd41_8c_a4ca4e8746f6fdac58b506247e805cda3}\index{scd41.c@{scd41.c}!scd41\_has\_data@{scd41\_has\_data}}
+\index{scd41\_has\_data@{scd41\_has\_data}!scd41.c@{scd41.c}}
+\doxysubsubsection{\texorpdfstring{scd41\_has\_data()}{scd41\_has\_data()}}
+{\footnotesize\ttfamily \label{scd41_8c_a4ca4e8746f6fdac58b506247e805cda3} 
+uint8\+\_\+t scd41\+\_\+has\+\_\+data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{}\end{DoxyParamCaption})}
+
+Checks if new measurement data is available from the SCD41.
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & I2C address of the SCD41 sensor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if data is ready, 0 otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{scd41_8c_source_l00017}{17}} of file \mbox{\hyperlink{scd41_8c_source}{scd41.\+c}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{scd41_8c_a4ca4e8746f6fdac58b506247e805cda3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{scd41_8c_a8c06da70168e9f5015616aa26d752fff}\index{scd41.c@{scd41.c}!scd41\_read\_data@{scd41\_read\_data}}
+\index{scd41\_read\_data@{scd41\_read\_data}!scd41.c@{scd41.c}}
+\doxysubsubsection{\texorpdfstring{scd41\_read\_data()}{scd41\_read\_data()}}
+{\footnotesize\ttfamily \label{scd41_8c_a8c06da70168e9f5015616aa26d752fff} 
+\mbox{\hyperlink{structscd41__data__t}{scd41\+\_\+data\+\_\+t}} scd41\+\_\+read\+\_\+data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{}\end{DoxyParamCaption})}
+
+Reads the latest measurement from the SCD41.
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & I2C address of the SCD41 sensor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structscd41__data__t}{scd41\+\_\+data\+\_\+t} struct containing raw values, CRCs, and converted temperature and humidity. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{scd41_8c_source_l00024}{24}} of file \mbox{\hyperlink{scd41_8c_source}{scd41.\+c}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{scd41_8c_a8c06da70168e9f5015616aa26d752fff_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{scd41_8c_a5e947b775032bb94e49086b95477a205}\index{scd41.c@{scd41.c}!scd41\_start\_periodic\_meas@{scd41\_start\_periodic\_meas}}
+\index{scd41\_start\_periodic\_meas@{scd41\_start\_periodic\_meas}!scd41.c@{scd41.c}}
+\doxysubsubsection{\texorpdfstring{scd41\_start\_periodic\_meas()}{scd41\_start\_periodic\_meas()}}
+{\footnotesize\ttfamily \label{scd41_8c_a5e947b775032bb94e49086b95477a205} 
+void scd41\+\_\+start\+\_\+periodic\+\_\+meas (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{}\end{DoxyParamCaption})}
+
+Sends command to start periodic measurements on the SCD41.
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & I2C address of the SCD41 sensor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{scd41_8c_source_l00009}{9}} of file \mbox{\hyperlink{scd41_8c_source}{scd41.\+c}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{scd41_8c_a5e947b775032bb94e49086b95477a205_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{scd41_8c_a0485ec86cee25367d2762783d76ae12c}\index{scd41.c@{scd41.c}!scd41\_stop\_periodic\_meas@{scd41\_stop\_periodic\_meas}}
+\index{scd41\_stop\_periodic\_meas@{scd41\_stop\_periodic\_meas}!scd41.c@{scd41.c}}
+\doxysubsubsection{\texorpdfstring{scd41\_stop\_periodic\_meas()}{scd41\_stop\_periodic\_meas()}}
+{\footnotesize\ttfamily \label{scd41_8c_a0485ec86cee25367d2762783d76ae12c} 
+void scd41\+\_\+stop\+\_\+periodic\+\_\+meas (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{}\end{DoxyParamCaption})}
+
+Sends command to stop periodic measurements on the SCD41.
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & I2C address of the SCD41 sensor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{scd41_8c_source_l00013}{13}} of file \mbox{\hyperlink{scd41_8c_source}{scd41.\+c}}.
+

@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.13.2" xml:lang="en-US">
+  <compound refid="ascii_8c" kind="file"><name>ascii.c</name>
+    <member refid="ascii_8c_1acd5b28e1a9097bc5737aa7cc6821be2b" kind="function"><name>complement_case</name></member>
+  </compound>
+  <compound refid="ascii_8h" kind="file"><name>ascii.h</name>
+    <member refid="ascii_8h_1acd5b28e1a9097bc5737aa7cc6821be2b" kind="function"><name>complement_case</name></member>
+  </compound>
+  <compound refid="spi0_8c" kind="file"><name>spi0.c</name>
+    <member refid="spi0_8c_1af3aadd8467647d87fdefd5a408690b49" kind="function"><name>init_spi0</name></member>
+    <member refid="spi0_8c_1a7290192eabed536d6abbeb98b0f2d20c" kind="function"><name>init_spi0_SerLCD</name></member>
+    <member refid="spi0_8c_1a6b765ca20ee963e16e8422b1dc8d1ca5" kind="function"><name>init_spi0_LM74</name></member>
+    <member refid="spi0_8c_1a7f14a9668cca4f13d96dd0692187244f" kind="function"><name>read_spi0_LM74</name></member>
+    <member refid="spi0_8c_1a7cccc9fe28ba278b4c3e905498fbe4d7" kind="function"><name>send_byte_SerLCD</name></member>
+    <member refid="spi0_8c_1a3f4d86a5e30afea3246ab177a53b7c70" kind="function"><name>select_slave_SerLCD</name></member>
+    <member refid="spi0_8c_1ae67d1cf7cd2115af93ac9ec7cb196b04" kind="function"><name>deselect_slave_SerLCD</name></member>
+    <member refid="spi0_8c_1a49c7c2f13c7f79ce2f2700f608e78dad" kind="function"><name>select_slave_LM74</name></member>
+    <member refid="spi0_8c_1a906389614337beb227e0311d81f43b13" kind="function"><name>deselect_slave_LM74</name></member>
+    <member refid="spi0_8c_1ae62b6dae69170c525e3249f3045da294" kind="function"><name>exchange_byte</name></member>
+    <member refid="spi0_8c_1a6d50b5924f40d5943fe17712cfabc396" kind="function"><name>normalize_range</name></member>
+    <member refid="spi0_8c_1a8566401125e518db3ae42a99e9a47ead" kind="function"><name>set_backlight_rgb</name></member>
+  </compound>
+  <compound refid="spi0_8h" kind="file"><name>spi0.h</name>
+    <member refid="spi0_8h_1af3aadd8467647d87fdefd5a408690b49" kind="function"><name>init_spi0</name></member>
+    <member refid="spi0_8h_1a7290192eabed536d6abbeb98b0f2d20c" kind="function"><name>init_spi0_SerLCD</name></member>
+    <member refid="spi0_8h_1a6b765ca20ee963e16e8422b1dc8d1ca5" kind="function"><name>init_spi0_LM74</name></member>
+    <member refid="spi0_8h_1ab7a8d5baf0cd05fad40c0d1fec618690" kind="function"><name>read_spi0_LM74</name></member>
+    <member refid="spi0_8h_1a7cccc9fe28ba278b4c3e905498fbe4d7" kind="function"><name>send_byte_SerLCD</name></member>
+    <member refid="spi0_8h_1a3f4d86a5e30afea3246ab177a53b7c70" kind="function"><name>select_slave_SerLCD</name></member>
+    <member refid="spi0_8h_1ae67d1cf7cd2115af93ac9ec7cb196b04" kind="function"><name>deselect_slave_SerLCD</name></member>
+    <member refid="spi0_8h_1a49c7c2f13c7f79ce2f2700f608e78dad" kind="function"><name>select_slave_LM74</name></member>
+    <member refid="spi0_8h_1a906389614337beb227e0311d81f43b13" kind="function"><name>deselect_slave_LM74</name></member>
+    <member refid="spi0_8h_1ae62b6dae69170c525e3249f3045da294" kind="function"><name>exchange_byte</name></member>
+    <member refid="spi0_8h_1a6d50b5924f40d5943fe17712cfabc396" kind="function"><name>normalize_range</name></member>
+    <member refid="spi0_8h_1a8566401125e518db3ae42a99e9a47ead" kind="function"><name>set_backlight_rgb</name></member>
+  </compound>
+  <compound refid="twi0__master_8c" kind="file"><name>twi0_master.c</name>
+    <member refid="twi0__master_8c_1aaf9a8abccd811954f9cc316f2b2f87b3" kind="define"><name>TWI_READ</name></member>
+    <member refid="twi0__master_8c_1a3b68e8e777b71520f9dbfac733774d5f" kind="define"><name>TWI_WRITE</name></member>
+    <member refid="twi0__master_8c_1afa0cbcb8305cff49652e10c777215a5a" kind="define"><name>TWI_IS_CLOCKHELD</name></member>
+    <member refid="twi0__master_8c_1ab11b79abe3e8a765908aca36c72fd50b" kind="define"><name>TWI_IS_BUSERR</name></member>
+    <member refid="twi0__master_8c_1ae97361cb8531ee2979c62b3a57d4a821" kind="define"><name>TWI_IS_ARBLOST</name></member>
+    <member refid="twi0__master_8c_1aa0c501a160d4a7bbac583a0760b69879" kind="define"><name>CLIENT_NACK</name></member>
+    <member refid="twi0__master_8c_1a61a1d47676f2c72e1f73f5218c03322e" kind="define"><name>CLIENT_ACK</name></member>
+    <member refid="twi0__master_8c_1a86cd4c8996cbafb28d602fac380ffb6b" kind="define"><name>TWI_IS_BUSBUSY</name></member>
+    <member refid="twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503" kind="define"><name>TWI_WAIT</name></member>
+    <member refid="twi0__master_8c_1a88bac97d359ea3f873641d6ebf886231" kind="function"><name>isTWIBad</name></member>
+    <member refid="twi0__master_8c_1a6fa83b03086be1a5348c221f5c65587d" kind="function"><name>TWI_initHost</name></member>
+    <member refid="twi0__master_8c_1a98aa41f921217ea835a6f8e993c7dbc3" kind="function"><name>TWI_initPins</name></member>
+    <member refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" kind="function"><name>_startTWI</name></member>
+    <member refid="twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde" kind="function"><name>_readFromTWI</name></member>
+    <member refid="twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb" kind="function"><name>_writeToTWI</name></member>
+    <member refid="twi0__master_8c_1a472ca814410582196cc43dc0d26ac959" kind="function"><name>TWI_sendByte</name></member>
+    <member refid="twi0__master_8c_1a35878eea0edaf2bcecf05c45c6c9e0f5" kind="function"><name>TWI_sendBytes</name></member>
+    <member refid="twi0__master_8c_1aba41249cfdcf6503f6facca53b858baf" kind="function"><name>TWI_readByte</name></member>
+    <member refid="twi0__master_8c_1a81074b35f6014cebe4d13ea41b38484d" kind="function"><name>TWI_readBytes</name></member>
+    <member refid="twi0__master_8c_1abace615165977923b5a9abf7fe760f8a" kind="function"><name>TWI_sendAndReadBytes</name></member>
+  </compound>
+  <compound refid="twi0__master_8h" kind="file"><name>twi0_master.h</name>
+    <member refid="twi0__master_8h_1a6fa83b03086be1a5348c221f5c65587d" kind="function"><name>TWI_initHost</name></member>
+    <member refid="twi0__master_8h_1a98aa41f921217ea835a6f8e993c7dbc3" kind="function"><name>TWI_initPins</name></member>
+    <member refid="twi0__master_8h_1a472ca814410582196cc43dc0d26ac959" kind="function"><name>TWI_sendByte</name></member>
+    <member refid="twi0__master_8h_1a35878eea0edaf2bcecf05c45c6c9e0f5" kind="function"><name>TWI_sendBytes</name></member>
+    <member refid="twi0__master_8h_1aba41249cfdcf6503f6facca53b858baf" kind="function"><name>TWI_readByte</name></member>
+    <member refid="twi0__master_8h_1a81074b35f6014cebe4d13ea41b38484d" kind="function"><name>TWI_readBytes</name></member>
+    <member refid="twi0__master_8h_1abace615165977923b5a9abf7fe760f8a" kind="function"><name>TWI_sendAndReadBytes</name></member>
+  </compound>
+  <compound refid="usart3_8c" kind="file"><name>usart3.c</name>
+    <member refid="usart3_8c_1a290c577d8d7380019971c8081544f131" kind="function"><name>USART3_init</name></member>
+    <member refid="usart3_8c_1a506414426742aaed46baa16b07acdec7" kind="function"><name>USART3_read</name></member>
+    <member refid="usart3_8c_1a512d409fcaf076cdad171684b1dc01af" kind="function"><name>USART3_send_char</name></member>
+    <member refid="usart3_8c_1a3498a62a7db807a2dc834e38db2985e9" kind="function"><name>USART3_send_string</name></member>
+    <member refid="usart3_8c_1a914a9817f460f33c6cb96f2ed993067a" kind="function"><name>USART3_serlcd_clear</name></member>
+    <member refid="usart3_8c_1a46dae884396b64833dc8ee4dccd808da" kind="function"><name>USART3_serlcd_backlight</name></member>
+  </compound>
+  <compound refid="usart3_8h" kind="file"><name>usart3.h</name>
+    <member refid="usart3_8h_1a488c271e6c83a80de94b2d6c06c369b7" kind="function"><name>USART3_init</name></member>
+    <member refid="usart3_8h_1a7135becf6c267a1a4ba33668aab939ae" kind="function"><name>USART3_read</name></member>
+    <member refid="usart3_8h_1a512d409fcaf076cdad171684b1dc01af" kind="function"><name>USART3_send_char</name></member>
+    <member refid="usart3_8h_1a3498a62a7db807a2dc834e38db2985e9" kind="function"><name>USART3_send_string</name></member>
+    <member refid="usart3_8h_1a25e9ce100be80a27531a3c424b1798c2" kind="function"><name>USART3_serlcd_clear</name></member>
+    <member refid="usart3_8h_1a46dae884396b64833dc8ee4dccd808da" kind="function"><name>USART3_serlcd_backlight</name></member>
+  </compound>
+  <compound refid="dir_cd16923a1e55c3ae5f2c532f5045287f" kind="dir"><name>D:/ESE381/Global/ese381</name>
+  </compound>
+  <compound refid="dir_e356d814c23afbb097109eeba79d8580" kind="dir"><name>D:/ESE381/Global/ese381/ese381</name>
+  </compound>
+</doxygenindex>

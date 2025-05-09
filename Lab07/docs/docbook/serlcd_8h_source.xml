@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_serlcd_8h_source" xml:lang="en-US">
+<title>serlcd.h</title>
+<indexterm><primary>D:/ESE381/Lab06/src/Task2/serlcd.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_serlcd_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;SERLCD_H_</emphasis>
+<anchor xml:id="_serlcd_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#define&#32;SERLCD_H_</emphasis>
+<anchor xml:id="_serlcd_8h_source_1l00003"/>00003 
+<anchor xml:id="_serlcd_8h_source_1l00004"/>00004 <emphasis role="preprocessor">#ifndef&#32;F_CPU</emphasis>
+<anchor xml:id="_serlcd_8h_source_1l00005"/>00005 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#warning&#32;&quot;F_CPU&#32;is&#32;not&#32;defined!&#32;Defaulting&#32;to&#32;4&#32;MHz.&quot;</emphasis>
+<anchor xml:id="_serlcd_8h_source_1l00006"/><link linkend="_serlcd_8h_1a43bafb28b29491ec7f871319b5a3b2f8">00006</link> <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#define&#32;F_CPU&#32;4000000UL</emphasis>
+<anchor xml:id="_serlcd_8h_source_1l00007"/>00007 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;F_CPU&#32;is&#32;not&#32;defined&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+<anchor xml:id="_serlcd_8h_source_1l00008"/>00008 
+<anchor xml:id="_serlcd_8h_source_1l00009"/><link linkend="_serlcd_8h_1a87300936d844c1a423d732e28d71c509">00009</link> <emphasis role="preprocessor">#define&#32;TWI_SERLCD_INTERVAL_US&#32;150</emphasis>
+<anchor xml:id="_serlcd_8h_source_1l00010"/><link linkend="_serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2">00010</link> <emphasis role="preprocessor">#define&#32;SERLCD_ROWS&#32;4</emphasis>
+<anchor xml:id="_serlcd_8h_source_1l00011"/><link linkend="_serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28">00011</link> <emphasis role="preprocessor">#define&#32;SERLCD_COLS&#32;20</emphasis>
+<anchor xml:id="_serlcd_8h_source_1l00012"/>00012 
+<anchor xml:id="_serlcd_8h_source_1l00013"/>00013 <emphasis role="preprocessor">#include&#32;&lt;stdint.h&gt;</emphasis>
+<anchor xml:id="_serlcd_8h_source_1l00014"/>00014 
+<anchor xml:id="_serlcd_8h_source_1l00018"/><link linkend="_serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85">00018</link> <emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;<link linkend="_serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85">serlcd_buffer</link>[<link linkend="_serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2">SERLCD_ROWS</link>][<link linkend="_serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28">SERLCD_COLS</link>+1];
+<anchor xml:id="_serlcd_8h_source_1l00019"/>00019 
+<anchor xml:id="_serlcd_8h_source_1l00028"/>00028 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_serlcd_8h_1aec024d63790c43bb2635e0b3468583d8">send_string_SerLCD</link>(uint8_t&#32;addr,&#32;uint8_t&#32;*str,&#32;uint8_t&#32;len);
+<anchor xml:id="_serlcd_8h_source_1l00029"/>00029 
+<anchor xml:id="_serlcd_8h_source_1l00036"/>00036 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_serlcd_8h_1aae95d59b494981540233ed751f39e341">clear_SerLCD</link>(uint8_t&#32;addr);
+<anchor xml:id="_serlcd_8h_source_1l00037"/>00037 
+<anchor xml:id="_serlcd_8h_source_1l00044"/>00044 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_serlcd_8h_1a96469994c1d7399edae5231ed06d714a">update_SerLCD</link>(uint8_t&#32;addr);
+<anchor xml:id="_serlcd_8h_source_1l00045"/>00045 
+<anchor xml:id="_serlcd_8h_source_1l00046"/>00046 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SERLCD_H_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+</programlisting></section>

@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structscd41__data__t" xml:lang="en-US">
+<title>scd41_data_t Struct Reference</title>
+<indexterm><primary>scd41_data_t</primary></indexterm>
+<para>
+
+<para>Container for raw and converted SCD41 sensor data. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;scd41.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Data Fields    </title>
+        <itemizedlist>
+            <listitem><para>uint16_t <link linkend="_structscd41__data__t_1aa2dd73af24dfe2a9b2b8aaf8917be643">co2_raw</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_structscd41__data__t_1a8f687631f21b0ec1af9190a6e16cbd07">co2_crc</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_structscd41__data__t_1a047d7f97f65e020d9118d2a6638e81bb">temp_c_raw</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_structscd41__data__t_1a793c42f5f3acaa1f47e5f88215bf85d6">temp_c_crc</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_structscd41__data__t_1a2ce16830b237eef33a7a3b9498eb5361">rh_raw</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_structscd41__data__t_1ac2ca72396924faac9da3569ca7f8618e">rh_crc</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structscd41__data__t_1a10aa9d025b4a09a420126fb30f37a8af">temp_c</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structscd41__data__t_1aad864e72b35172fbe003fab04b990bf9">rh</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Container for raw and converted SCD41 sensor data. </para>
+
+
+
+<para>Holds raw 16-bit values and their CRCs as received from the sensor, along with floating-point temperature in °C and relative humidity in %. </para>
+<para>
+Definition at line <link linkend="_scd41_8h_source_1l00020">20</link> of file <link linkend="_scd41_8h_source">scd41.h</link>.</para>
+</section>
+<section>
+<title>Field Documentation</title>
+<anchor xml:id="_structscd41__data__t_1a8f687631f21b0ec1af9190a6e16cbd07"/><section>
+    <title>co2_crc</title>
+<indexterm><primary>co2_crc</primary><secondary>scd41_data_t</secondary></indexterm>
+<indexterm><primary>scd41_data_t</primary><secondary>co2_crc</secondary></indexterm>
+<para><computeroutput>uint8_t co2_crc</computeroutput></para>
+<para>CRC for raw CO? value </para>
+<para>
+Definition at line <link linkend="_scd41_8h_source_1l00022">22</link> of file <link linkend="_scd41_8h_source">scd41.h</link>.</para>
+</section>
+<anchor xml:id="_structscd41__data__t_1aa2dd73af24dfe2a9b2b8aaf8917be643"/><section>
+    <title>co2_raw</title>
+<indexterm><primary>co2_raw</primary><secondary>scd41_data_t</secondary></indexterm>
+<indexterm><primary>scd41_data_t</primary><secondary>co2_raw</secondary></indexterm>
+<para><computeroutput>uint16_t co2_raw</computeroutput></para>
+<para>Raw CO? value from sensor </para>
+<para>
+Definition at line <link linkend="_scd41_8h_source_1l00021">21</link> of file <link linkend="_scd41_8h_source">scd41.h</link>.</para>
+</section>
+<anchor xml:id="_structscd41__data__t_1aad864e72b35172fbe003fab04b990bf9"/><section>
+    <title>rh</title>
+<indexterm><primary>rh</primary><secondary>scd41_data_t</secondary></indexterm>
+<indexterm><primary>scd41_data_t</primary><secondary>rh</secondary></indexterm>
+<para><computeroutput>float rh</computeroutput></para>
+<para>Calculated relative humidity in percent </para>
+<para>
+Definition at line <link linkend="_scd41_8h_source_1l00028">28</link> of file <link linkend="_scd41_8h_source">scd41.h</link>.</para>
+</section>
+<anchor xml:id="_structscd41__data__t_1ac2ca72396924faac9da3569ca7f8618e"/><section>
+    <title>rh_crc</title>
+<indexterm><primary>rh_crc</primary><secondary>scd41_data_t</secondary></indexterm>
+<indexterm><primary>scd41_data_t</primary><secondary>rh_crc</secondary></indexterm>
+<para><computeroutput>uint8_t rh_crc</computeroutput></para>
+<para>CRC for raw relative humidity value </para>
+<para>
+Definition at line <link linkend="_scd41_8h_source_1l00026">26</link> of file <link linkend="_scd41_8h_source">scd41.h</link>.</para>
+</section>
+<anchor xml:id="_structscd41__data__t_1a2ce16830b237eef33a7a3b9498eb5361"/><section>
+    <title>rh_raw</title>
+<indexterm><primary>rh_raw</primary><secondary>scd41_data_t</secondary></indexterm>
+<indexterm><primary>scd41_data_t</primary><secondary>rh_raw</secondary></indexterm>
+<para><computeroutput>uint16_t rh_raw</computeroutput></para>
+<para>Raw relative humidity value from sensor </para>
+<para>
+Definition at line <link linkend="_scd41_8h_source_1l00025">25</link> of file <link linkend="_scd41_8h_source">scd41.h</link>.</para>
+</section>
+<anchor xml:id="_structscd41__data__t_1a10aa9d025b4a09a420126fb30f37a8af"/><section>
+    <title>temp_c</title>
+<indexterm><primary>temp_c</primary><secondary>scd41_data_t</secondary></indexterm>
+<indexterm><primary>scd41_data_t</primary><secondary>temp_c</secondary></indexterm>
+<para><computeroutput>float temp_c</computeroutput></para>
+<para>Calculated temperature in degrees Celsius </para>
+<para>
+Definition at line <link linkend="_scd41_8h_source_1l00027">27</link> of file <link linkend="_scd41_8h_source">scd41.h</link>.</para>
+</section>
+<anchor xml:id="_structscd41__data__t_1a793c42f5f3acaa1f47e5f88215bf85d6"/><section>
+    <title>temp_c_crc</title>
+<indexterm><primary>temp_c_crc</primary><secondary>scd41_data_t</secondary></indexterm>
+<indexterm><primary>scd41_data_t</primary><secondary>temp_c_crc</secondary></indexterm>
+<para><computeroutput>uint8_t temp_c_crc</computeroutput></para>
+<para>CRC for raw temperature value </para>
+<para>
+Definition at line <link linkend="_scd41_8h_source_1l00024">24</link> of file <link linkend="_scd41_8h_source">scd41.h</link>.</para>
+</section>
+<anchor xml:id="_structscd41__data__t_1a047d7f97f65e020d9118d2a6638e81bb"/><section>
+    <title>temp_c_raw</title>
+<indexterm><primary>temp_c_raw</primary><secondary>scd41_data_t</secondary></indexterm>
+<indexterm><primary>scd41_data_t</primary><secondary>temp_c_raw</secondary></indexterm>
+<para><computeroutput>uint16_t temp_c_raw</computeroutput></para>
+<para>Raw temperature value from sensor </para>
+<para>
+Definition at line <link linkend="_scd41_8h_source_1l00023">23</link> of file <link linkend="_scd41_8h_source">scd41.h</link>.</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Lab10/src/Lab10/Task3/<link linkend="_scd41_8h">scd41.h</link></section>
+</section>

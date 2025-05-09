@@ -1,0 +1,127 @@
+\doxysection{scd41\+\_\+data\+\_\+t Struct Reference}
+\hypertarget{structscd41__data__t}{}\label{structscd41__data__t}\index{scd41\_data\_t@{scd41\_data\_t}}
+
+
+Container for raw and converted SCD41 sensor data.  
+
+
+
+
+{\ttfamily \#include $<$scd41.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structscd41__data__t_aa2dd73af24dfe2a9b2b8aaf8917be643}{co2\+\_\+raw}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structscd41__data__t_a8f687631f21b0ec1af9190a6e16cbd07}{co2\+\_\+crc}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structscd41__data__t_a047d7f97f65e020d9118d2a6638e81bb}{temp\+\_\+c\+\_\+raw}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structscd41__data__t_a793c42f5f3acaa1f47e5f88215bf85d6}{temp\+\_\+c\+\_\+crc}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structscd41__data__t_a2ce16830b237eef33a7a3b9498eb5361}{rh\+\_\+raw}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structscd41__data__t_ac2ca72396924faac9da3569ca7f8618e}{rh\+\_\+crc}}
+\item 
+float \mbox{\hyperlink{structscd41__data__t_a10aa9d025b4a09a420126fb30f37a8af}{temp\+\_\+c}}
+\item 
+float \mbox{\hyperlink{structscd41__data__t_aad864e72b35172fbe003fab04b990bf9}{rh}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container for raw and converted SCD41 sensor data. 
+
+Holds raw 16-\/bit values and their CRCs as received from the sensor, along with floating-\/point temperature in °C and relative humidity in \%. 
+
+Definition at line \mbox{\hyperlink{scd41_8h_source_l00020}{20}} of file \mbox{\hyperlink{scd41_8h_source}{scd41.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structscd41__data__t_a8f687631f21b0ec1af9190a6e16cbd07}\index{scd41\_data\_t@{scd41\_data\_t}!co2\_crc@{co2\_crc}}
+\index{co2\_crc@{co2\_crc}!scd41\_data\_t@{scd41\_data\_t}}
+\doxysubsubsection{\texorpdfstring{co2\_crc}{co2\_crc}}
+{\footnotesize\ttfamily \label{structscd41__data__t_a8f687631f21b0ec1af9190a6e16cbd07} 
+uint8\+\_\+t co2\+\_\+crc}
+
+CRC for raw CO? value 
+
+Definition at line \mbox{\hyperlink{scd41_8h_source_l00022}{22}} of file \mbox{\hyperlink{scd41_8h_source}{scd41.\+h}}.
+
+\Hypertarget{structscd41__data__t_aa2dd73af24dfe2a9b2b8aaf8917be643}\index{scd41\_data\_t@{scd41\_data\_t}!co2\_raw@{co2\_raw}}
+\index{co2\_raw@{co2\_raw}!scd41\_data\_t@{scd41\_data\_t}}
+\doxysubsubsection{\texorpdfstring{co2\_raw}{co2\_raw}}
+{\footnotesize\ttfamily \label{structscd41__data__t_aa2dd73af24dfe2a9b2b8aaf8917be643} 
+uint16\+\_\+t co2\+\_\+raw}
+
+Raw CO? value from sensor 
+
+Definition at line \mbox{\hyperlink{scd41_8h_source_l00021}{21}} of file \mbox{\hyperlink{scd41_8h_source}{scd41.\+h}}.
+
+\Hypertarget{structscd41__data__t_aad864e72b35172fbe003fab04b990bf9}\index{scd41\_data\_t@{scd41\_data\_t}!rh@{rh}}
+\index{rh@{rh}!scd41\_data\_t@{scd41\_data\_t}}
+\doxysubsubsection{\texorpdfstring{rh}{rh}}
+{\footnotesize\ttfamily \label{structscd41__data__t_aad864e72b35172fbe003fab04b990bf9} 
+float rh}
+
+Calculated relative humidity in percent 
+
+Definition at line \mbox{\hyperlink{scd41_8h_source_l00028}{28}} of file \mbox{\hyperlink{scd41_8h_source}{scd41.\+h}}.
+
+\Hypertarget{structscd41__data__t_ac2ca72396924faac9da3569ca7f8618e}\index{scd41\_data\_t@{scd41\_data\_t}!rh\_crc@{rh\_crc}}
+\index{rh\_crc@{rh\_crc}!scd41\_data\_t@{scd41\_data\_t}}
+\doxysubsubsection{\texorpdfstring{rh\_crc}{rh\_crc}}
+{\footnotesize\ttfamily \label{structscd41__data__t_ac2ca72396924faac9da3569ca7f8618e} 
+uint8\+\_\+t rh\+\_\+crc}
+
+CRC for raw relative humidity value 
+
+Definition at line \mbox{\hyperlink{scd41_8h_source_l00026}{26}} of file \mbox{\hyperlink{scd41_8h_source}{scd41.\+h}}.
+
+\Hypertarget{structscd41__data__t_a2ce16830b237eef33a7a3b9498eb5361}\index{scd41\_data\_t@{scd41\_data\_t}!rh\_raw@{rh\_raw}}
+\index{rh\_raw@{rh\_raw}!scd41\_data\_t@{scd41\_data\_t}}
+\doxysubsubsection{\texorpdfstring{rh\_raw}{rh\_raw}}
+{\footnotesize\ttfamily \label{structscd41__data__t_a2ce16830b237eef33a7a3b9498eb5361} 
+uint16\+\_\+t rh\+\_\+raw}
+
+Raw relative humidity value from sensor 
+
+Definition at line \mbox{\hyperlink{scd41_8h_source_l00025}{25}} of file \mbox{\hyperlink{scd41_8h_source}{scd41.\+h}}.
+
+\Hypertarget{structscd41__data__t_a10aa9d025b4a09a420126fb30f37a8af}\index{scd41\_data\_t@{scd41\_data\_t}!temp\_c@{temp\_c}}
+\index{temp\_c@{temp\_c}!scd41\_data\_t@{scd41\_data\_t}}
+\doxysubsubsection{\texorpdfstring{temp\_c}{temp\_c}}
+{\footnotesize\ttfamily \label{structscd41__data__t_a10aa9d025b4a09a420126fb30f37a8af} 
+float temp\+\_\+c}
+
+Calculated temperature in degrees Celsius 
+
+Definition at line \mbox{\hyperlink{scd41_8h_source_l00027}{27}} of file \mbox{\hyperlink{scd41_8h_source}{scd41.\+h}}.
+
+\Hypertarget{structscd41__data__t_a793c42f5f3acaa1f47e5f88215bf85d6}\index{scd41\_data\_t@{scd41\_data\_t}!temp\_c\_crc@{temp\_c\_crc}}
+\index{temp\_c\_crc@{temp\_c\_crc}!scd41\_data\_t@{scd41\_data\_t}}
+\doxysubsubsection{\texorpdfstring{temp\_c\_crc}{temp\_c\_crc}}
+{\footnotesize\ttfamily \label{structscd41__data__t_a793c42f5f3acaa1f47e5f88215bf85d6} 
+uint8\+\_\+t temp\+\_\+c\+\_\+crc}
+
+CRC for raw temperature value 
+
+Definition at line \mbox{\hyperlink{scd41_8h_source_l00024}{24}} of file \mbox{\hyperlink{scd41_8h_source}{scd41.\+h}}.
+
+\Hypertarget{structscd41__data__t_a047d7f97f65e020d9118d2a6638e81bb}\index{scd41\_data\_t@{scd41\_data\_t}!temp\_c\_raw@{temp\_c\_raw}}
+\index{temp\_c\_raw@{temp\_c\_raw}!scd41\_data\_t@{scd41\_data\_t}}
+\doxysubsubsection{\texorpdfstring{temp\_c\_raw}{temp\_c\_raw}}
+{\footnotesize\ttfamily \label{structscd41__data__t_a047d7f97f65e020d9118d2a6638e81bb} 
+uint16\+\_\+t temp\+\_\+c\+\_\+raw}
+
+Raw temperature value from sensor 
+
+Definition at line \mbox{\hyperlink{scd41_8h_source_l00023}{23}} of file \mbox{\hyperlink{scd41_8h_source}{scd41.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Lab10/src/\+Lab10/\+Task3/\mbox{\hyperlink{scd41_8h}{scd41.\+h}}\end{DoxyCompactItemize}

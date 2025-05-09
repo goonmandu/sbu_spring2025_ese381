@@ -1,0 +1,7 @@
+<map id="Lab10/src/Lab10/Task3/scd41.c" name="Lab10/src/Lab10/Task3/scd41.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="49,5,206,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,96,130,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,50,88,85,84,82,110,47"/>
+<area shape="rect" id="Node000003" href="$scd41_8h.html" title="Interface for interacting with the SCD41 CO? sensor via I2C." alt="" coords="154,96,221,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="145,47,171,82,167,85,141,50"/>
+</map>

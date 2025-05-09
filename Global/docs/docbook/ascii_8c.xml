@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ascii_8c" xml:lang="en-US">
+<title>D:/ESE381/Global/ese381/ese381/ascii.c File Reference</title>
+<indexterm><primary>D:/ESE381/Global/ese381/ese381/ascii.c</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;ascii.h&quot;<?linebreak?></programlisting>Include dependency graph for ascii.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="ascii_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="_ascii_8c_1acd5b28e1a9097bc5737aa7cc6821be2b">complement_case</link> (uint8_t c)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_ascii_8c_1acd5b28e1a9097bc5737aa7cc6821be2b"/><section>
+    <title>complement_case()</title>
+<indexterm><primary>complement_case</primary><secondary>ascii.c</secondary></indexterm>
+<indexterm><primary>ascii.c</primary><secondary>complement_case</secondary></indexterm>
+<para><computeroutput>uint8_t complement_case (uint8_t c)</computeroutput></para>
+<para>Toggles capitalization of an ASCII character. All other characters are not affected. Example: a becomes A, R becomes r, { becomes {.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>c</entry><entry>
+<para>Character to toggle the capitalization of. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Resulting character. </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_ascii_8c_source_1l00003">3</link> of file <link linkend="_ascii_8c_source">ascii.c</link>.</para>
+</section>
+</section>
+</section>

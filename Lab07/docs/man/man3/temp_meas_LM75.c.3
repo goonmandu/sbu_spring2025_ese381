@@ -1,0 +1,118 @@
+.TH "D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c" 3 "Version 0" "Lab07" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <util/delay\&.h>\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include <twi/twi0_master\&.h>\fP
+.br
+\fR#include 'serlcd\&.h'\fP
+.br
+\fR#include 'lm75\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSERLCD_ADDR\fP   0x72"
+.br
+.ti -1c
+.RI "#define \fBLM75_ADDR\fP   0x48"
+.br
+.ti -1c
+.RI "#define \fBF_CPU\fP   4000000UL"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfill_buffer\fP ()"
+.br
+.ti -1c
+.RI "float \fBc_to_f\fP (float c)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (void)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "uint16_t \fBlm75_bytes\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define F_CPU   4000000UL"
+
+.PP
+Definition at line \fB11\fP of file \fBtemp_meas_LM75\&.c\fP\&.
+.SS "#define LM75_ADDR   0x48"
+
+.PP
+Definition at line \fB10\fP of file \fBtemp_meas_LM75\&.c\fP\&.
+.SS "#define SERLCD_ADDR   0x72"
+TO THE PRELAB GRADER:
+
+.PP
+This program is intended to be the solution code for both Task 2 and Task 3 as Task 3 is simply an extension of Task 2 with none of the Task 2 components modified\&. 
+.PP
+Definition at line \fB9\fP of file \fBtemp_meas_LM75\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "float c_to_f (float c)"
+Converts celsius to fahrenheit\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIc\fP Celsius\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Fahrenheit\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB74\fP of file \fBtemp_meas_LM75\&.c\fP\&.
+.SS "void fill_buffer ()"
+Fills \fRserlcd_buffer\fP with Lab 07 template\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB60\fP of file \fBtemp_meas_LM75\&.c\fP\&.
+.SS "int main (void )"
+
+.PP
+Definition at line \fB26\fP of file \fBtemp_meas_LM75\&.c\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "uint16_t lm75_bytes"
+
+.PP
+Definition at line \fB24\fP of file \fBtemp_meas_LM75\&.c\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Lab07 from the source code\&.

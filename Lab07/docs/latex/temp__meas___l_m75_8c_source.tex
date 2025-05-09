@@ -1,0 +1,64 @@
+\doxysection{temp\+\_\+meas\+\_\+\+LM75.\+c}
+\hypertarget{temp__meas___l_m75_8c_source}{}\label{temp__meas___l_m75_8c_source}\index{D:/ESE381/Lab06/src/Task2/temp\_meas\_LM75.c@{D:/ESE381/Lab06/src/Task2/temp\_meas\_LM75.c}}
+\mbox{\hyperlink{temp__meas___l_m75_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00009}\mbox{\hyperlink{temp__meas___l_m75_8c_a92586ca8aecf916e0729fd2e50e1ad48}{00009}}\ \textcolor{preprocessor}{\#define\ SERLCD\_ADDR\ 0x72}}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00010}\mbox{\hyperlink{temp__meas___l_m75_8c_a48b0d5e3234086fa92932198b565eb6b}{00010}}\ \textcolor{preprocessor}{\#define\ LM75\_ADDR\ 0x48}}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00011}\mbox{\hyperlink{temp__meas___l_m75_8c_a43bafb28b29491ec7f871319b5a3b2f8}{00011}}\ \textcolor{preprocessor}{\#define\ F\_CPU\ 4000000UL}}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <util/delay.h>}}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00016}00016\ \textcolor{comment}{//\ \#define\ TWI\_ENABLE\_PULLUPS}}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <twi/twi0\_master.h>}}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serlcd_8h}{serlcd.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lm75_8h}{lm75.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00021}00021\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{temp__meas___l_m75_8c_ae2e0f7cf24504a9d075c351f848b7d8d}{fill\_buffer}}();}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00022}00022\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{temp__meas___l_m75_8c_a68a292c808957403e5ca69a16ee52592}{c\_to\_f}}(\textcolor{keywordtype}{float}\ c);}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00024}\mbox{\hyperlink{temp__meas___l_m75_8c_a78f1124f769dea5b40ef26818088fdd3}{00024}}\ uint16\_t\ \mbox{\hyperlink{temp__meas___l_m75_8c_a78f1124f769dea5b40ef26818088fdd3}{lm75\_bytes}};}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00026}\mbox{\hyperlink{temp__meas___l_m75_8c_a840291bc02cba5474a4cb46a9b9566fe}{00026}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{temp__meas___l_m75_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{float}\ deg\_c,\ deg\_f;}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00028}00028\ \ \ \ \ int8\_t\ ipart,\ fpart;}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00029}00029\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00030}00030\ \ \ \ \ TWI\_initHost();}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00031}00031\ \ \ \ \ TWI\_initPins();}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00032}00032\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{serlcd_8c_aae95d59b494981540233ed751f39e341}{clear\_SerLCD}}(\mbox{\hyperlink{temp__meas___l_m75_8c_a92586ca8aecf916e0729fd2e50e1ad48}{SERLCD\_ADDR}});}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{temp__meas___l_m75_8c_ae2e0f7cf24504a9d075c351f848b7d8d}{fill\_buffer}}();}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00035}00035\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00037}00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{temp__meas___l_m75_8c_a78f1124f769dea5b40ef26818088fdd3}{lm75\_bytes}}\ =\ \mbox{\hyperlink{lm75_8c_a1783c5db1415960e6a87e9be965d5153}{read\_LM75\_temp\_bytes}}(\mbox{\hyperlink{temp__meas___l_m75_8c_a48b0d5e3234086fa92932198b565eb6b}{LM75\_ADDR}});}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00038}00038\ \ \ \ \ \ \ \ \ deg\_c\ =\ \mbox{\hyperlink{lm75_8c_a41112386168f6b29f716d86bb9742bab}{lm75\_to\_celsius}}(\mbox{\hyperlink{temp__meas___l_m75_8c_a78f1124f769dea5b40ef26818088fdd3}{lm75\_bytes}});}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00039}00039\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00040}00040\ \ \ \ \ \ \ \ \ deg\_f\ =\ \mbox{\hyperlink{temp__meas___l_m75_8c_a68a292c808957403e5ca69a16ee52592}{c\_to\_f}}(deg\_c);}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ ipart\ =\ (int8\_t)deg\_c;}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00042}00042\ \ \ \ \ \ \ \ \ fpart\ =\ (int8\_t)((deg\_c\ -\/\ ipart)\ *\ 10);}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fpart\ <\ 0)\ fpart\ *=\ -\/1;}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ sprintf(\mbox{\hyperlink{serlcd_8h_a185c8f21f3e5dafd872962fae9826c85}{serlcd\_buffer}}[1],\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \%3d.\%1d\ C\ \ \ \ \ \ \ "{}}\ ,\ ipart,\ fpart);}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00045}00045\ \ \ \ \ \ \ \ \ ipart\ =\ (int8\_t)deg\_f;}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ fpart\ =\ (int8\_t)((deg\_f\ -\/\ ipart)\ *\ 10);}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fpart\ <\ 0)\ fpart\ *=\ -\/1;}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00048}00048\ \ \ \ \ \ \ \ \ sprintf(\mbox{\hyperlink{serlcd_8h_a185c8f21f3e5dafd872962fae9826c85}{serlcd\_buffer}}[2],\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \%3d.\%1d\ F\ \ \ \ \ \ \ "{}}\ ,\ ipart,\ fpart);}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{serlcd_8c_a96469994c1d7399edae5231ed06d714a}{update\_SerLCD}}(\mbox{\hyperlink{temp__meas___l_m75_8c_a92586ca8aecf916e0729fd2e50e1ad48}{SERLCD\_ADDR}});}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ \_delay\_ms(500);}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00060}\mbox{\hyperlink{temp__meas___l_m75_8c_ae2e0f7cf24504a9d075c351f848b7d8d}{00060}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{temp__meas___l_m75_8c_ae2e0f7cf24504a9d075c351f848b7d8d}{fill\_buffer}}()\ \{}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 01234567890123456789}}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00062}00062\ \ \ \ \ sprintf(\mbox{\hyperlink{serlcd_8h_a185c8f21f3e5dafd872962fae9826c85}{serlcd\_buffer}}[0],\ \textcolor{stringliteral}{"{}\ \ LM75\ Temperature\ \ "{}});}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00063}00063\ \ \ \ \ sprintf(\mbox{\hyperlink{serlcd_8h_a185c8f21f3e5dafd872962fae9826c85}{serlcd\_buffer}}[1],\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}});}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00064}00064\ \ \ \ \ sprintf(\mbox{\hyperlink{serlcd_8h_a185c8f21f3e5dafd872962fae9826c85}{serlcd\_buffer}}[2],\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}});}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00065}00065\ \ \ \ \ sprintf(\mbox{\hyperlink{serlcd_8h_a185c8f21f3e5dafd872962fae9826c85}{serlcd\_buffer}}[3],\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}});}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00074}\mbox{\hyperlink{temp__meas___l_m75_8c_a68a292c808957403e5ca69a16ee52592}{00074}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{temp__meas___l_m75_8c_a68a292c808957403e5ca69a16ee52592}{c\_to\_f}}(\textcolor{keywordtype}{float}\ c)\ \{}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{return}\ c\ *\ 1.8f\ +\ 32;}
+\DoxyCodeLine{\Hypertarget{temp__meas___l_m75_8c_source_l00076}00076\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_usart3_8c_source" xml:lang="en-US">
+<title>usart3.c</title>
+<indexterm><primary>D:/ESE381/Global/ese381/ese381/usart3.c</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_usart3_8c_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&lt;avr/io.h&gt;</emphasis>
+<anchor xml:id="_usart3_8c_source_1l00002"/>00002 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_usart3_8h">usart3.h</link>&quot;</emphasis>
+<anchor xml:id="_usart3_8c_source_1l00003"/>00003 
+<anchor xml:id="_usart3_8c_source_1l00004"/><link linkend="_usart3_8c_1a290c577d8d7380019971c8081544f131">00004</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_usart3_8c_1a290c577d8d7380019971c8081544f131">USART3_init</link>()&#32;{
+<anchor xml:id="_usart3_8c_source_1l00005"/>00005 &#32;&#32;&#32;&#32;USART3.BAUD&#32;=&#32;1667;
+<anchor xml:id="_usart3_8c_source_1l00006"/>00006 &#32;&#32;&#32;&#32;USART3.CTRLC&#32;=&#32;0x03;
+<anchor xml:id="_usart3_8c_source_1l00007"/>00007 &#32;&#32;&#32;&#32;USART3.CTRLB&#32;=&#32;USART_TXEN_bm&#32;|&#32;USART_RXEN_bm;
+<anchor xml:id="_usart3_8c_source_1l00008"/>00008 &#32;&#32;&#32;&#32;VPORTB.DIR&#32;=&#32;0x01;
+<anchor xml:id="_usart3_8c_source_1l00009"/>00009 }
+<anchor xml:id="_usart3_8c_source_1l00010"/>00010 
+<anchor xml:id="_usart3_8c_source_1l00011"/><link linkend="_usart3_8c_1a506414426742aaed46baa16b07acdec7">00011</link> uint8_t&#32;<link linkend="_usart3_8c_1a506414426742aaed46baa16b07acdec7">USART3_read</link>()&#32;{
+<anchor xml:id="_usart3_8c_source_1l00012"/>00012 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(!(USART3.STATUS&#32;&amp;&#32;USART_RXCIF_bm));&#32;&#32;<emphasis role="comment">//&#32;wait&#32;for&#32;data&#32;to&#32;be&#32;fully&#32;received</emphasis>
+<anchor xml:id="_usart3_8c_source_1l00013"/>00013 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;USART3.RXDATAL;
+<anchor xml:id="_usart3_8c_source_1l00014"/>00014 }
+<anchor xml:id="_usart3_8c_source_1l00015"/>00015 
+<anchor xml:id="_usart3_8c_source_1l00016"/><link linkend="_usart3_8c_1a512d409fcaf076cdad171684b1dc01af">00016</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_usart3_8c_1a512d409fcaf076cdad171684b1dc01af">USART3_send_char</link>(uint8_t&#32;c)&#32;{
+<anchor xml:id="_usart3_8c_source_1l00017"/>00017 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(!(USART3.STATUS&#32;&amp;&#32;USART_DREIF_bm));&#32;&#32;<emphasis role="comment">//&#32;wait&#32;for&#32;prev&#32;data&#32;to&#32;be&#32;fully&#32;sent</emphasis>
+<anchor xml:id="_usart3_8c_source_1l00018"/>00018 &#32;&#32;&#32;&#32;USART3.TXDATAL&#32;=&#32;c;
+<anchor xml:id="_usart3_8c_source_1l00019"/>00019 }
+<anchor xml:id="_usart3_8c_source_1l00020"/>00020 
+<anchor xml:id="_usart3_8c_source_1l00021"/><link linkend="_usart3_8c_1a3498a62a7db807a2dc834e38db2985e9">00021</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_usart3_8c_1a3498a62a7db807a2dc834e38db2985e9">USART3_send_string</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*buf)&#32;{
+<anchor xml:id="_usart3_8c_source_1l00022"/>00022 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;strlen(buf);&#32;++i)&#32;{
+<anchor xml:id="_usart3_8c_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_usart3_8c_1a512d409fcaf076cdad171684b1dc01af">USART3_send_char</link>(buf[i]);
+<anchor xml:id="_usart3_8c_source_1l00024"/>00024 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_usart3_8c_source_1l00025"/>00025 }
+<anchor xml:id="_usart3_8c_source_1l00026"/>00026 
+<anchor xml:id="_usart3_8c_source_1l00027"/><link linkend="_usart3_8c_1a914a9817f460f33c6cb96f2ed993067a">00027</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_usart3_8c_1a914a9817f460f33c6cb96f2ed993067a">USART3_serlcd_clear</link>()&#32;{
+<anchor xml:id="_usart3_8c_source_1l00028"/>00028 &#32;&#32;&#32;&#32;<link linkend="_usart3_8c_1a512d409fcaf076cdad171684b1dc01af">USART3_send_char</link>(<emphasis role="charliteral">&apos;|&apos;</emphasis>);
+<anchor xml:id="_usart3_8c_source_1l00029"/>00029 &#32;&#32;&#32;&#32;<link linkend="_usart3_8c_1a512d409fcaf076cdad171684b1dc01af">USART3_send_char</link>(<emphasis role="charliteral">&apos;-&apos;</emphasis>);
+<anchor xml:id="_usart3_8c_source_1l00030"/>00030 }
+<anchor xml:id="_usart3_8c_source_1l00031"/>00031 
+<anchor xml:id="_usart3_8c_source_1l00032"/><link linkend="_usart3_8c_1a46dae884396b64833dc8ee4dccd808da">00032</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_usart3_8c_1a46dae884396b64833dc8ee4dccd808da">USART3_serlcd_backlight</link>(uint8_t&#32;r,&#32;uint8_t&#32;g,&#32;uint8_t&#32;b)&#32;{
+<anchor xml:id="_usart3_8c_source_1l00033"/>00033 &#32;&#32;&#32;&#32;<link linkend="_usart3_8c_1a512d409fcaf076cdad171684b1dc01af">USART3_send_char</link>(<emphasis role="charliteral">&apos;+&apos;</emphasis>);
+<anchor xml:id="_usart3_8c_source_1l00034"/>00034 &#32;&#32;&#32;&#32;<link linkend="_usart3_8c_1a512d409fcaf076cdad171684b1dc01af">USART3_send_char</link>(r);
+<anchor xml:id="_usart3_8c_source_1l00035"/>00035 &#32;&#32;&#32;&#32;<link linkend="_usart3_8c_1a512d409fcaf076cdad171684b1dc01af">USART3_send_char</link>(g);
+<anchor xml:id="_usart3_8c_source_1l00036"/>00036 &#32;&#32;&#32;&#32;<link linkend="_usart3_8c_1a512d409fcaf076cdad171684b1dc01af">USART3_send_char</link>(b);
+<anchor xml:id="_usart3_8c_source_1l00037"/>00037 }
+</programlisting></section>

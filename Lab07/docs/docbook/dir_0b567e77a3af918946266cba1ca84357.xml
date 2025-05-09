@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_0b567e77a3af918946266cba1ca84357" xml:lang="en-US">
+<title>D:/ESE381/Lab06/src Directory Reference</title>
+<indexterm><primary>D:/ESE381/Lab06/src Directory Reference</primary></indexterm>
+Directory dependency graph for src:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_0b567e77a3af918946266cba1ca84357_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_f01a4ff1384ef713166392880521a1b6">Task2</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

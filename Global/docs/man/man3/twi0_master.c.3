@@ -1,0 +1,288 @@
+.TH "D:/ESE381/Global/ese381/ese381/twi0_master.c" 3 "Version 0" "ESE 381 Module Drivers Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/ESE381/Global/ese381/ese381/twi0_master.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'twi0_master\&.h'\fP
+.br
+\fR#include <avr/io\&.h>\fP
+.br
+\fR#include <stdbool\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBTWI_READ\fP   true"
+.br
+.ti -1c
+.RI "#define \fBTWI_WRITE\fP   false"
+.br
+.ti -1c
+.RI "#define \fBTWI_IS_CLOCKHELD\fP()"
+.br
+.ti -1c
+.RI "#define \fBTWI_IS_BUSERR\fP()"
+.br
+.ti -1c
+.RI "#define \fBTWI_IS_ARBLOST\fP()"
+.br
+.ti -1c
+.RI "#define \fBCLIENT_NACK\fP()"
+.br
+.ti -1c
+.RI "#define \fBCLIENT_ACK\fP()"
+.br
+.ti -1c
+.RI "#define \fBTWI_IS_BUSBUSY\fP()"
+.br
+.ti -1c
+.RI "#define \fBTWI_WAIT\fP()"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBisTWIBad\fP (void)"
+.br
+.ti -1c
+.RI "void \fBTWI_initHost\fP (void)"
+.br
+.ti -1c
+.RI "void \fBTWI_initPins\fP (void)"
+.br
+.ti -1c
+.RI "bool \fB_startTWI\fP (uint8_t addr, bool read)"
+.br
+.ti -1c
+.RI "void \fB_readFromTWI\fP (uint8_t *data, uint8_t len)"
+.br
+.ti -1c
+.RI "bool \fB_writeToTWI\fP (uint8_t *data, uint8_t len)"
+.br
+.ti -1c
+.RI "bool \fBTWI_sendByte\fP (uint8_t addr, uint8_t data)"
+.br
+.ti -1c
+.RI "bool \fBTWI_sendBytes\fP (uint8_t addr, uint8_t *data, uint8_t len)"
+.br
+.ti -1c
+.RI "bool \fBTWI_readByte\fP (uint8_t addr, uint8_t *data)"
+.br
+.ti -1c
+.RI "bool \fBTWI_readBytes\fP (uint8_t addr, uint8_t *data, uint8_t len)"
+.br
+.ti -1c
+.RI "bool \fBTWI_sendAndReadBytes\fP (uint8_t addr, uint8_t regAddress, uint8_t *data, uint8_t len)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CLIENT_ACK()"
+\fBValue:\fP
+.nf
+!(TWI0\&.MSTATUS & TWI_RXACK_bm)
+.PP
+.fi
+
+.PP
+Definition at line \fB41\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "#define CLIENT_NACK()"
+\fBValue:\fP
+.nf
+TWI0\&.MSTATUS & TWI_RXACK_bm
+.PP
+.fi
+
+.PP
+Definition at line \fB40\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "#define TWI_IS_ARBLOST()"
+\fBValue:\fP
+.nf
+TWI0\&.MSTATUS & TWI_ARBLOST_bm
+.PP
+.fi
+
+.PP
+Definition at line \fB38\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "#define TWI_IS_BUSBUSY()"
+\fBValue:\fP
+.nf
+((TWI0\&.MSTATUS & TWI_BUSSTATE_BUSY_gc) == TWI_BUSSTATE_BUSY_gc)
+.PP
+.fi
+
+.PP
+Definition at line \fB43\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "#define TWI_IS_BUSERR()"
+\fBValue:\fP
+.nf
+TWI0\&.MSTATUS & TWI_BUSERR_bm
+.PP
+.fi
+
+.PP
+Definition at line \fB37\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "#define TWI_IS_CLOCKHELD()"
+\fBValue:\fP
+.nf
+TWI0\&.MSTATUS & TWI_CLKHOLD_bm
+.PP
+.fi
+
+.PP
+Definition at line \fB36\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "#define TWI_READ   true"
+Adapted by Mingi Hwang on 24 Mar 2025 from original source: https://github.com/microchip-pic-avr-examples/avr128db48-bare-metal-twi-mplab/tree/master/twi-host.X/peripherals/TWI
+
+.PP
+ORIGINAL SOURCE LICENSE STATEMENT
+
+.PP
+(c) 2020 Microchip Technology Inc\&. and its subsidiaries\&.
+
+.PP
+Subject to your compliance with these terms, you may use Microchip software and any derivatives exclusively with Microchip products\&. You're responsible for complying with 3rd party license terms applicable to your use of 3rd party software (including open source software) that may accompany Microchip software\&.
+
+.PP
+SOFTWARE IS "AS IS\&." NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE\&.
+
+.PP
+IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE\&. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE\&. 
+.PP
+Definition at line \fB33\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "#define TWI_WAIT()"
+\fBValue:\fP
+.nf
+while (!((TWI_IS_CLOCKHELD()) || (TWI_IS_BUSERR()) || (TWI_IS_ARBLOST()) || (TWI_IS_BUSBUSY())))
+.PP
+.fi
+
+.PP
+Definition at line \fB45\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "#define TWI_WRITE   false"
+
+.PP
+Definition at line \fB34\fP of file \fBtwi0_master\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void _readFromTWI (uint8_t * data, uint8_t len)"
+
+.PP
+Definition at line \fB114\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "bool _startTWI (uint8_t addr, bool read)"
+
+.PP
+Definition at line \fB91\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "bool _writeToTWI (uint8_t * data, uint8_t len)"
+
+.PP
+Definition at line \fB144\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "bool isTWIBad (void )"
+
+.PP
+Definition at line \fB47\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "void TWI_initHost (void )"
+Adapted by Mingi Hwang on 24 Mar 2025 from original source: https://github.com/microchip-pic-avr-examples/avr128db48-bare-metal-twi-mplab/tree/master/twi-host.X/peripherals/TWI
+
+.PP
+ORIGINAL SOURCE LICENSE STATEMENT
+
+.PP
+(c) 2020 Microchip Technology Inc\&. and its subsidiaries\&.
+
+.PP
+Subject to your compliance with these terms, you may use Microchip software and any derivatives exclusively with Microchip products\&. You're responsible for complying with 3rd party license terms applicable to your use of 3rd party software (including open source software) that may accompany Microchip software\&.
+
+.PP
+SOFTWARE IS "AS IS\&." NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE\&.
+
+.PP
+IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE\&. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE\&. Prof\&. Short does not want us to use internal pull-ups\&. External 10k PURs will be used\&. If defined, internal pull-up resistors will be used Initializes the TWI peripheral in Host Mode\&. 
+.PP
+Definition at line \fB55\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "void TWI_initPins (void )"
+Initializes the I/O used by the TWI peripheral\&. 
+.PP
+Definition at line \fB76\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "bool TWI_readByte (uint8_t addr, uint8_t * data)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP - Client Device Address 
+.br
+\fIdata\fP - Where the byte received should be stored
+.RE
+.PP
+Attempts to read 1 byte of data from the client\&. Returns true if successful, fails if unable to get data\&. 
+.PP
+Definition at line \fB195\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "bool TWI_readBytes (uint8_t addr, uint8_t * data, uint8_t len)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP - Client Device Address 
+.br
+\fIdata\fP - Where the bytes received should be stored 
+.br
+\fIlen\fP - Number of Bytes to Send
+.RE
+.PP
+Attempts to read len bytes of data from the client\&. Returns true if successful, false if it failed to get data\&. 
+.PP
+Definition at line \fB208\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "bool TWI_sendAndReadBytes (uint8_t addr, uint8_t regAddress, uint8_t * data, uint8_t len)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP - Client Device Address 
+.br
+\fIregAddress\fP - Address of Register to Read From 
+.br
+\fIdata\fP - Where the bytes received should be stored 
+.br
+\fIlen\fP - Number of Bytes to Send
+.RE
+.PP
+Writes a single byte (regAddress) to the client, then restarts and attempts to read len of data\&. Returns true if successful, false if it failed to get data\&. 
+.PP
+Definition at line \fB220\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "bool TWI_sendByte (uint8_t addr, uint8_t data)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP - Client Device Address 
+.br
+\fIdata\fP - Data to Send
+.RE
+.PP
+Sends a byte of data to the specified address\&. Returns true if successful, false if it failed 
+.PP
+Definition at line \fB166\fP of file \fBtwi0_master\&.c\fP\&.
+.SS "bool TWI_sendBytes (uint8_t addr, uint8_t * data, uint8_t len)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP - Client Device Address 
+.br
+\fIdata\fP - Pointer to the data to send 
+.br
+\fIlen\fP - Number of Bytes to Send
+.RE
+.PP
+Attempts to send len bytes of data to the client\&. Returns true if successful, false if it failed 
+.PP
+Definition at line \fB180\fP of file \fBtwi0_master\&.c\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ESE 381 Module Drivers Library from the source code\&.

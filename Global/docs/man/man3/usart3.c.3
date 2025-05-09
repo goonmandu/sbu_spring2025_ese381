@@ -1,0 +1,133 @@
+.TH "D:/ESE381/Global/ese381/ese381/usart3.c" 3 "Version 0" "ESE 381 Module Drivers Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/ESE381/Global/ese381/ese381/usart3.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <avr/io\&.h>\fP
+.br
+\fR#include 'usart3\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUSART3_init\fP ()"
+.br
+.ti -1c
+.RI "uint8_t \fBUSART3_read\fP ()"
+.br
+.ti -1c
+.RI "void \fBUSART3_send_char\fP (uint8_t c)"
+.br
+.ti -1c
+.RI "void \fBUSART3_send_string\fP (const char *buf)"
+.br
+.ti -1c
+.RI "void \fBUSART3_serlcd_clear\fP ()"
+.br
+.ti -1c
+.RI "void \fBUSART3_serlcd_backlight\fP (uint8_t r, uint8_t g, uint8_t b)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void USART3_init (void )"
+Initializes USART3 to 9600 8N1 and sets the pin directions\&. 
+.PP
+Definition at line \fB4\fP of file \fBusart3\&.c\fP\&.
+.SS "uint8_t USART3_read (void )"
+Blockingly reads a byte from USART3 by polling the RXCIF flag\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Byte read from USART3\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB11\fP of file \fBusart3\&.c\fP\&.
+.SS "void USART3_send_char (uint8_t c)"
+Blockingly sends a byte out of USART3 by polling the DREIF flag\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIc\fP Byte to be sent\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB16\fP of file \fBusart3\&.c\fP\&.
+.SS "void USART3_send_string (const char * buf)"
+Blockingly sends a null-terminated ASCII string out of USART3 by calling \fRUSART3_send_char\fP multiple times\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIbuf\fP Pointer to char array to be sent\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB21\fP of file \fBusart3\&.c\fP\&.
+.SS "void USART3_serlcd_backlight (uint8_t r, uint8_t g, uint8_t b)"
+Blockingly sends the sequence +rgb to control the backlight RGB value on an RGB SparkFun SerLCD\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIr\fP Red\&. 0 to 255\&. 
+.br
+\fIg\fP Green\&. 0 to 255\&. 
+.br
+\fIb\fP Blue\&. 0 to 255\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB32\fP of file \fBusart3\&.c\fP\&.
+.SS "void USART3_serlcd_clear (void )"
+Blockingly sends the sequence |- out of USART3 to clear a SparkFun SerLCD\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB27\fP of file \fBusart3\&.c\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ESE 381 Module Drivers Library from the source code\&.

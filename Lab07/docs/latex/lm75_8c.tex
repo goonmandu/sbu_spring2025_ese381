@@ -1,0 +1,75 @@
+\doxysection{D\+:/\+ESE381/\+Lab06/src/\+Task2/lm75.c File Reference}
+\hypertarget{lm75_8c}{}\label{lm75_8c}\index{D:/ESE381/Lab06/src/Task2/lm75.c@{D:/ESE381/Lab06/src/Task2/lm75.c}}
+{\ttfamily \#include $<$twi/twi0\+\_\+master.\+h$>$}\newline
+{\ttfamily \#include "{}lm75.\+h"{}}\newline
+Include dependency graph for lm75.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{lm75_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{lm75_8c_a1783c5db1415960e6a87e9be965d5153}{read\+\_\+\+LM75\+\_\+temp\+\_\+bytes}} (uint8\+\_\+t addr)
+\item 
+float \mbox{\hyperlink{lm75_8c_a41112386168f6b29f716d86bb9742bab}{lm75\+\_\+to\+\_\+celsius}} (uint16\+\_\+t bytes)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lm75_8c_a41112386168f6b29f716d86bb9742bab}\index{lm75.c@{lm75.c}!lm75\_to\_celsius@{lm75\_to\_celsius}}
+\index{lm75\_to\_celsius@{lm75\_to\_celsius}!lm75.c@{lm75.c}}
+\doxysubsubsection{\texorpdfstring{lm75\_to\_celsius()}{lm75\_to\_celsius()}}
+{\footnotesize\ttfamily \label{lm75_8c_a41112386168f6b29f716d86bb9742bab} 
+float lm75\+\_\+to\+\_\+celsius (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{bytes}{}\end{DoxyParamCaption})}
+
+Converts the LM75 raw data (2 bytes) to celsius.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bytes} & Two bytes read from the LM75. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Temperature in celsius. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lm75_8c_source_l00010}{10}} of file \mbox{\hyperlink{lm75_8c_source}{lm75.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{lm75_8c_a41112386168f6b29f716d86bb9742bab_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lm75_8c_a1783c5db1415960e6a87e9be965d5153}\index{lm75.c@{lm75.c}!read\_LM75\_temp\_bytes@{read\_LM75\_temp\_bytes}}
+\index{read\_LM75\_temp\_bytes@{read\_LM75\_temp\_bytes}!lm75.c@{lm75.c}}
+\doxysubsubsection{\texorpdfstring{read\_LM75\_temp\_bytes()}{read\_LM75\_temp\_bytes()}}
+{\footnotesize\ttfamily \label{lm75_8c_a1783c5db1415960e6a87e9be965d5153} 
+uint16\+\_\+t read\+\_\+\+LM75\+\_\+temp\+\_\+bytes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr}{}\end{DoxyParamCaption})}
+
+Reads the two-\/byte result from an LM75 temperature sensor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & I2C slave address of the LM75. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2 bytes from the LM75. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lm75_8c_source_l00004}{4}} of file \mbox{\hyperlink{lm75_8c_source}{lm75.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{lm75_8c_a1783c5db1415960e6a87e9be965d5153_icgraph}
+\end{center}
+\end{figure}

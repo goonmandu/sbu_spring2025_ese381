@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_usart3_8h_source" xml:lang="en-US">
+<title>usart3.h</title>
+<indexterm><primary>D:/ESE381/Global/ese381/ese381/usart3.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_usart3_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+<anchor xml:id="_usart3_8h_source_1l00002"/>00002 
+<anchor xml:id="_usart3_8h_source_1l00003"/>00003 <emphasis role="preprocessor">#include&#32;&lt;string.h&gt;</emphasis>
+<anchor xml:id="_usart3_8h_source_1l00004"/>00004 
+<anchor xml:id="_usart3_8h_source_1l00008"/>00008 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_usart3_8h_1a488c271e6c83a80de94b2d6c06c369b7">USART3_init</link>(<emphasis role="keywordtype">void</emphasis>);
+<anchor xml:id="_usart3_8h_source_1l00009"/>00009 
+<anchor xml:id="_usart3_8h_source_1l00016"/>00016 uint8_t&#32;<link linkend="_usart3_8h_1a7135becf6c267a1a4ba33668aab939ae">USART3_read</link>(<emphasis role="keywordtype">void</emphasis>);
+<anchor xml:id="_usart3_8h_source_1l00017"/>00017 
+<anchor xml:id="_usart3_8h_source_1l00024"/>00024 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_usart3_8h_1a512d409fcaf076cdad171684b1dc01af">USART3_send_char</link>(uint8_t&#32;c);
+<anchor xml:id="_usart3_8h_source_1l00025"/>00025 
+<anchor xml:id="_usart3_8h_source_1l00033"/>00033 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_usart3_8h_1a3498a62a7db807a2dc834e38db2985e9">USART3_send_string</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*buf);
+<anchor xml:id="_usart3_8h_source_1l00034"/>00034 
+<anchor xml:id="_usart3_8h_source_1l00042"/>00042 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_usart3_8h_1a25e9ce100be80a27531a3c424b1798c2">USART3_serlcd_clear</link>(<emphasis role="keywordtype">void</emphasis>);
+<anchor xml:id="_usart3_8h_source_1l00043"/>00043 
+<anchor xml:id="_usart3_8h_source_1l00053"/>00053 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_usart3_8h_1a46dae884396b64833dc8ee4dccd808da">USART3_serlcd_backlight</link>(uint8_t&#32;r,&#32;uint8_t&#32;g,&#32;uint8_t&#32;b);
+</programlisting></section>

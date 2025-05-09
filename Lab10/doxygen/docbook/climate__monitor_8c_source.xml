@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_climate__monitor_8c_source" xml:lang="en-US">
+<title>climate_monitor.c</title>
+<indexterm><primary>Lab10/src/Lab10/Task3/climate_monitor.c</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_climate__monitor_8c_source_1l00001"/><link linkend="_climate__monitor_8c_1a43bafb28b29491ec7f871319b5a3b2f8">00001</link> <emphasis role="preprocessor">#define&#32;F_CPU&#32;4000000UL</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00002"/><link linkend="_climate__monitor_8c_1a39f1cb051808572abc3926c273116336">00002</link> <emphasis role="preprocessor">#define&#32;SCD41_ADDR&#32;0x62</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00003"/><link linkend="_climate__monitor_8c_1a92586ca8aecf916e0729fd2e50e1ad48">00003</link> <emphasis role="preprocessor">#define&#32;SERLCD_ADDR&#32;0x72</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00004"/>00004 
+<anchor xml:id="_climate__monitor_8c_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&lt;avr/io.h&gt;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00006"/>00006 <emphasis role="preprocessor">#include&#32;&lt;util/delay.h&gt;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00007"/>00007 
+<anchor xml:id="_climate__monitor_8c_source_1l00008"/>00008 <emphasis role="preprocessor">#include&#32;&lt;stdio.h&gt;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00009"/>00009 <emphasis role="preprocessor">#include&#32;&lt;string.h&gt;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00010"/>00010 
+<anchor xml:id="_climate__monitor_8c_source_1l00011"/>00011 <emphasis role="preprocessor">#include&#32;&lt;twi/twi0_master.h&gt;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00012"/>00012 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_serlcd_8h">serlcd.h</link>&quot;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00013"/>00013 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_scd41_8h">scd41.h</link>&quot;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00014"/>00014 
+<anchor xml:id="_climate__monitor_8c_source_1l00015"/>00015 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[<link linkend="_serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2">SERLCD_ROWS</link>][<link linkend="_serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28">SERLCD_COLS</link>+1];
+<anchor xml:id="_climate__monitor_8c_source_1l00016"/>00016 
+<anchor xml:id="_climate__monitor_8c_source_1l00017"/><link linkend="_climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697">00017</link> <link linkend="_structscd41__data__t">scd41_data_t</link>&#32;<link linkend="_climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697">scd41_data</link>;
+<anchor xml:id="_climate__monitor_8c_source_1l00018"/>00018 
+<anchor xml:id="_climate__monitor_8c_source_1l00019"/>00019 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_climate__monitor_8c_1ae2e0f7cf24504a9d075c351f848b7d8d">fill_buffer</link>();
+<anchor xml:id="_climate__monitor_8c_source_1l00020"/>00020 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_climate__monitor_8c_1a46b05d6d1daef9b152ad5c36d18bc39c">initializing</link>();
+<anchor xml:id="_climate__monitor_8c_source_1l00021"/>00021 <emphasis role="comment">//&#32;void&#32;TWI_initHost_test(void);</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00022"/>00022 
+<anchor xml:id="_climate__monitor_8c_source_1l00023"/><link linkend="_climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4">00023</link> <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link>()&#32;{
+<anchor xml:id="_climate__monitor_8c_source_1l00024"/>00024 &#32;&#32;&#32;&#32;TWI_initHost();
+<anchor xml:id="_climate__monitor_8c_source_1l00025"/>00025 &#32;&#32;&#32;&#32;TWI_initPins();
+<anchor xml:id="_climate__monitor_8c_source_1l00026"/>00026 &#32;&#32;&#32;&#32;
+<anchor xml:id="_climate__monitor_8c_source_1l00027"/>00027 &#32;&#32;&#32;&#32;<link linkend="_serlcd_8c_1ae0028b85aa630926c9fc2e9b93dfc1cc">turn_backlight_off</link>(<link linkend="_climate__monitor_8c_1a92586ca8aecf916e0729fd2e50e1ad48">SERLCD_ADDR</link>);
+<anchor xml:id="_climate__monitor_8c_source_1l00028"/>00028 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;serlcd_set_background_rgb(SERLCD_ADDR,&#32;0xF5,&#32;0xA9,&#32;0xB8);</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00029"/>00029 &#32;&#32;&#32;&#32;<link linkend="_climate__monitor_8c_1a46b05d6d1daef9b152ad5c36d18bc39c">initializing</link>();
+<anchor xml:id="_climate__monitor_8c_source_1l00030"/>00030 &#32;&#32;&#32;&#32;<link linkend="_serlcd_8c_1a96469994c1d7399edae5231ed06d714a">update_SerLCD</link>(<link linkend="_climate__monitor_8c_1a92586ca8aecf916e0729fd2e50e1ad48">SERLCD_ADDR</link>);
+<anchor xml:id="_climate__monitor_8c_source_1l00031"/>00031 &#32;&#32;&#32;&#32;
+<anchor xml:id="_climate__monitor_8c_source_1l00032"/>00032 &#32;&#32;&#32;&#32;<link linkend="_scd41_8c_1a5e947b775032bb94e49086b95477a205">scd41_start_periodic_meas</link>(<link linkend="_climate__monitor_8c_1a39f1cb051808572abc3926c273116336">SCD41_ADDR</link>);
+<anchor xml:id="_climate__monitor_8c_source_1l00033"/>00033 &#32;&#32;&#32;&#32;_delay_ms(1000);
+<anchor xml:id="_climate__monitor_8c_source_1l00034"/>00034 &#32;&#32;&#32;&#32;
+<anchor xml:id="_climate__monitor_8c_source_1l00035"/>00035 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(1)&#32;{
+<anchor xml:id="_climate__monitor_8c_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(!<link linkend="_scd41_8c_1a4ca4e8746f6fdac58b506247e805cda3">scd41_has_data</link>(<link linkend="_climate__monitor_8c_1a39f1cb051808572abc3926c273116336">SCD41_ADDR</link>))&#32;{
+<anchor xml:id="_climate__monitor_8c_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_delay_ms(250);
+<anchor xml:id="_climate__monitor_8c_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_climate__monitor_8c_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697">scd41_data</link>&#32;=&#32;<link linkend="_scd41_8c_1a8c06da70168e9f5015616aa26d752fff">scd41_read_data</link>(<link linkend="_climate__monitor_8c_1a39f1cb051808572abc3926c273116336">SCD41_ADDR</link>);
+<anchor xml:id="_climate__monitor_8c_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_climate__monitor_8c_1ae2e0f7cf24504a9d075c351f848b7d8d">fill_buffer</link>();
+<anchor xml:id="_climate__monitor_8c_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_serlcd_8c_1a96469994c1d7399edae5231ed06d714a">update_SerLCD</link>(<link linkend="_climate__monitor_8c_1a92586ca8aecf916e0729fd2e50e1ad48">SERLCD_ADDR</link>);
+<anchor xml:id="_climate__monitor_8c_source_1l00042"/>00042 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_climate__monitor_8c_source_1l00043"/>00043 }
+<anchor xml:id="_climate__monitor_8c_source_1l00044"/>00044 
+<anchor xml:id="_climate__monitor_8c_source_1l00045"/>00045 <emphasis role="comment">/*</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00046"/>00046 <emphasis role="comment">void&#32;TWI_initHost_test(void)&#32;{</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00047"/>00047 <emphasis role="comment">&#32;&#32;&#32;&#32;//Standard&#32;100kHz&#32;TWI,&#32;4&#32;Cycle&#32;Hold,&#32;50ns&#32;SDA&#32;Hold&#32;Time</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00048"/>00048 <emphasis role="comment">&#32;&#32;&#32;&#32;TWI0.CTRLA&#32;=&#32;TWI_SDAHOLD_50NS_gc;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00049"/>00049 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00050"/>00050 <emphasis role="comment">&#32;&#32;&#32;&#32;//Clear&#32;Dual&#32;Control</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00051"/>00051 <emphasis role="comment">&#32;&#32;&#32;&#32;TWI0.DUALCTRL&#32;=&#32;0x00;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00052"/>00052 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00053"/>00053 <emphasis role="comment">&#32;&#32;&#32;&#32;//Enable&#32;Run&#32;in&#32;Debug</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00054"/>00054 <emphasis role="comment">&#32;&#32;&#32;&#32;TWI0.DBGCTRL&#32;=&#32;TWI_DBGRUN_bm;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00055"/>00055 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00056"/>00056 <emphasis role="comment">&#32;&#32;&#32;&#32;//Clear&#32;MSTATUS&#32;(write&#32;1&#32;to&#32;flags).&#32;BUSSTATE&#32;set&#32;to&#32;idle</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00057"/>00057 <emphasis role="comment">&#32;&#32;&#32;&#32;TWI0.MSTATUS&#32;=&#32;TWI_RIF_bm&#32;|&#32;TWI_WIF_bm&#32;|&#32;TWI_CLKHOLD_bm&#32;|&#32;TWI_RXACK_bm&#32;|</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00058"/>00058 <emphasis role="comment">&#32;&#32;&#32;&#32;TWI_ARBLOST_bm&#32;|&#32;TWI_BUSERR_bm&#32;|&#32;TWI_BUSSTATE_IDLE_gc;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00059"/>00059 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00060"/>00060 <emphasis role="comment">&#32;&#32;&#32;&#32;//Set&#32;for&#32;100kHz&#32;from&#32;a&#32;4MHz&#32;oscillator</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00061"/>00061 <emphasis role="comment">&#32;&#32;&#32;&#32;TWI0.MBAUD&#32;=&#32;0;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00062"/>00062 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00063"/>00063 <emphasis role="comment">&#32;&#32;&#32;&#32;//[No&#32;ISRs]&#32;and&#32;Host&#32;Mode</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00064"/>00064 <emphasis role="comment">&#32;&#32;&#32;&#32;TWI0.MCTRLA&#32;=&#32;TWI_ENABLE_bm;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00065"/>00065 <emphasis role="comment">}</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00066"/>00066 <emphasis role="comment">&#32;*/</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00067"/>00067 
+<anchor xml:id="_climate__monitor_8c_source_1l00068"/><link linkend="_climate__monitor_8c_1ae2e0f7cf24504a9d075c351f848b7d8d">00068</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_climate__monitor_8c_1ae2e0f7cf24504a9d075c351f848b7d8d">fill_buffer</link>()&#32;{
+<anchor xml:id="_climate__monitor_8c_source_1l00069"/>00069 &#32;&#32;&#32;&#32;int8_t&#32;ipart,&#32;fpart;
+<anchor xml:id="_climate__monitor_8c_source_1l00070"/>00070 &#32;&#32;&#32;&#32;sprintf(<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[0],&#32;<emphasis role="stringliteral">&quot;%-20s&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;&#32;&#32;&#32;&#32;SCD41&#32;Output&quot;</emphasis>);
+<anchor xml:id="_climate__monitor_8c_source_1l00071"/>00071 &#32;&#32;&#32;&#32;
+<anchor xml:id="_climate__monitor_8c_source_1l00072"/>00072 &#32;&#32;&#32;&#32;ipart&#32;=&#32;(int8_t)<link linkend="_climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697">scd41_data</link>.temp_c;
+<anchor xml:id="_climate__monitor_8c_source_1l00073"/>00073 &#32;&#32;&#32;&#32;fpart&#32;=&#32;(int8_t)((<link linkend="_climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697">scd41_data</link>.temp_c&#32;-&#32;ipart)&#32;*&#32;10);
+<anchor xml:id="_climate__monitor_8c_source_1l00074"/>00074 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(fpart&#32;&lt;&#32;0)&#32;fpart&#32;*=&#32;-1;
+<anchor xml:id="_climate__monitor_8c_source_1l00075"/>00075 &#32;&#32;&#32;&#32;sprintf(<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[1],&#32;<emphasis role="stringliteral">&quot;%-20s&quot;</emphasis>,&#32;(<emphasis role="keywordtype">char</emphasis>[21]){0});
+<anchor xml:id="_climate__monitor_8c_source_1l00076"/>00076 &#32;&#32;&#32;&#32;snprintf(<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[1],&#32;21,&#32;<emphasis role="stringliteral">&quot;Temp:&#32;&#32;&#32;%2d.%1d&#32;C&quot;</emphasis>,&#32;ipart,&#32;fpart);
+<anchor xml:id="_climate__monitor_8c_source_1l00077"/>00077 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;strlen(<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[1]);&#32;i&#32;&lt;&#32;20;&#32;i++)&#32;<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[1][i]&#32;=&#32;<emphasis role="charliteral">&apos;&#32;&apos;</emphasis>;
+<anchor xml:id="_climate__monitor_8c_source_1l00078"/>00078 &#32;&#32;&#32;&#32;<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[1][20]&#32;=&#32;<emphasis role="charliteral">&apos;\0&apos;</emphasis>;
+<anchor xml:id="_climate__monitor_8c_source_1l00079"/>00079 
+<anchor xml:id="_climate__monitor_8c_source_1l00080"/>00080 &#32;&#32;&#32;&#32;ipart&#32;=&#32;<link linkend="_climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697">scd41_data</link>.rh;
+<anchor xml:id="_climate__monitor_8c_source_1l00081"/>00081 &#32;&#32;&#32;&#32;sprintf(<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[2],&#32;<emphasis role="stringliteral">&quot;%-20s&quot;</emphasis>,&#32;(<emphasis role="keywordtype">char</emphasis>[21]){0});
+<anchor xml:id="_climate__monitor_8c_source_1l00082"/>00082 &#32;&#32;&#32;&#32;snprintf(<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[2],&#32;21,&#32;<emphasis role="stringliteral">&quot;RelHum:&#32;%d&#32;%%&quot;</emphasis>,&#32;ipart);
+<anchor xml:id="_climate__monitor_8c_source_1l00083"/>00083 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;strlen(<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[2]);&#32;i&#32;&lt;&#32;20;&#32;i++)&#32;<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[2][i]&#32;=&#32;<emphasis role="charliteral">&apos;&#32;&apos;</emphasis>;
+<anchor xml:id="_climate__monitor_8c_source_1l00084"/>00084 &#32;&#32;&#32;&#32;<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[2][20]&#32;=&#32;<emphasis role="charliteral">&apos;\0&apos;</emphasis>;
+<anchor xml:id="_climate__monitor_8c_source_1l00085"/>00085 
+<anchor xml:id="_climate__monitor_8c_source_1l00086"/>00086 &#32;&#32;&#32;&#32;sprintf(<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[3],&#32;<emphasis role="stringliteral">&quot;%-20s&quot;</emphasis>,&#32;(<emphasis role="keywordtype">char</emphasis>[21]){0});
+<anchor xml:id="_climate__monitor_8c_source_1l00087"/>00087 &#32;&#32;&#32;&#32;snprintf(<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[3],&#32;21,&#32;<emphasis role="stringliteral">&quot;CO2:&#32;&#32;&#32;&#32;%d&#32;ppm&quot;</emphasis>,&#32;<link linkend="_climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697">scd41_data</link>.co2_raw);
+<anchor xml:id="_climate__monitor_8c_source_1l00088"/>00088 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;strlen(<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[3]);&#32;i&#32;&lt;&#32;20;&#32;i++)&#32;<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[3][i]&#32;=&#32;<emphasis role="charliteral">&apos;&#32;&apos;</emphasis>;
+<anchor xml:id="_climate__monitor_8c_source_1l00089"/>00089 &#32;&#32;&#32;&#32;<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[3][20]&#32;=&#32;<emphasis role="charliteral">&apos;\0&apos;</emphasis>;
+<anchor xml:id="_climate__monitor_8c_source_1l00090"/>00090 }
+<anchor xml:id="_climate__monitor_8c_source_1l00091"/>00091 
+<anchor xml:id="_climate__monitor_8c_source_1l00092"/><link linkend="_climate__monitor_8c_1a46b05d6d1daef9b152ad5c36d18bc39c">00092</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_climate__monitor_8c_1a46b05d6d1daef9b152ad5c36d18bc39c">initializing</link>()&#32;{
+<anchor xml:id="_climate__monitor_8c_source_1l00093"/>00093 &#32;&#32;&#32;&#32;sprintf(<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[0],&#32;<emphasis role="stringliteral">&quot;%-20s&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;&#32;&#32;&#32;&#32;SCD41&#32;Output&quot;</emphasis>);
+<anchor xml:id="_climate__monitor_8c_source_1l00094"/>00094 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;01234567890123456789&quot;</emphasis>
+<anchor xml:id="_climate__monitor_8c_source_1l00095"/>00095 &#32;&#32;&#32;&#32;sprintf(<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[1],&#32;<emphasis role="stringliteral">&quot;Waiting&#32;for&#32;SCD41...&quot;</emphasis>);
+<anchor xml:id="_climate__monitor_8c_source_1l00096"/>00096 &#32;&#32;&#32;&#32;sprintf(<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[2],&#32;<emphasis role="stringliteral">&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>);
+<anchor xml:id="_climate__monitor_8c_source_1l00097"/>00097 &#32;&#32;&#32;&#32;sprintf(<link linkend="_climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link>[3],&#32;<emphasis role="stringliteral">&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>);
+<anchor xml:id="_climate__monitor_8c_source_1l00098"/>00098 }
+</programlisting></section>

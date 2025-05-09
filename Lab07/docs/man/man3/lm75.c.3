@@ -1,0 +1,62 @@
+.TH "D:/ESE381/Lab06/src/Task2/lm75.c" 3 "Version 0" "Lab07" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/ESE381/Lab06/src/Task2/lm75.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <twi/twi0_master\&.h>\fP
+.br
+\fR#include 'lm75\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "uint16_t \fBread_LM75_temp_bytes\fP (uint8_t addr)"
+.br
+.ti -1c
+.RI "float \fBlm75_to_celsius\fP (uint16_t bytes)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "float lm75_to_celsius (uint16_t bytes)"
+Converts the LM75 raw data (2 bytes) to celsius\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIbytes\fP Two bytes read from the LM75\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Temperature in celsius\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB10\fP of file \fBlm75\&.c\fP\&.
+.SS "uint16_t read_LM75_temp_bytes (uint8_t addr)"
+Reads the two-byte result from an LM75 temperature sensor\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP I2C slave address of the LM75\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+2 bytes from the LM75\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB4\fP of file \fBlm75\&.c\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Lab07 from the source code\&.

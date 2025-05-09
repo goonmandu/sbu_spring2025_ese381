@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.13.2" xml:lang="en-US">
+  <compound refid="structscd41__data__t" kind="struct"><name>scd41_data_t</name>
+    <member refid="structscd41__data__t_1aa2dd73af24dfe2a9b2b8aaf8917be643" kind="variable"><name>co2_raw</name></member>
+    <member refid="structscd41__data__t_1a8f687631f21b0ec1af9190a6e16cbd07" kind="variable"><name>co2_crc</name></member>
+    <member refid="structscd41__data__t_1a047d7f97f65e020d9118d2a6638e81bb" kind="variable"><name>temp_c_raw</name></member>
+    <member refid="structscd41__data__t_1a793c42f5f3acaa1f47e5f88215bf85d6" kind="variable"><name>temp_c_crc</name></member>
+    <member refid="structscd41__data__t_1a2ce16830b237eef33a7a3b9498eb5361" kind="variable"><name>rh_raw</name></member>
+    <member refid="structscd41__data__t_1ac2ca72396924faac9da3569ca7f8618e" kind="variable"><name>rh_crc</name></member>
+    <member refid="structscd41__data__t_1a10aa9d025b4a09a420126fb30f37a8af" kind="variable"><name>temp_c</name></member>
+    <member refid="structscd41__data__t_1aad864e72b35172fbe003fab04b990bf9" kind="variable"><name>rh</name></member>
+  </compound>
+  <compound refid="climate__monitor_8c" kind="file"><name>climate_monitor.c</name>
+    <member refid="climate__monitor_8c_1a43bafb28b29491ec7f871319b5a3b2f8" kind="define"><name>F_CPU</name></member>
+    <member refid="climate__monitor_8c_1a39f1cb051808572abc3926c273116336" kind="define"><name>SCD41_ADDR</name></member>
+    <member refid="climate__monitor_8c_1a92586ca8aecf916e0729fd2e50e1ad48" kind="define"><name>SERLCD_ADDR</name></member>
+    <member refid="climate__monitor_8c_1a9882e0e64074b315c1c4ecd54d8de5cb" kind="variable"><name>serlcd_buffer</name></member>
+    <member refid="climate__monitor_8c_1a92ace26aeb49cd3504f41532cfa80697" kind="variable"><name>scd41_data</name></member>
+    <member refid="climate__monitor_8c_1ae2e0f7cf24504a9d075c351f848b7d8d" kind="function"><name>fill_buffer</name></member>
+    <member refid="climate__monitor_8c_1a46b05d6d1daef9b152ad5c36d18bc39c" kind="function"><name>initializing</name></member>
+    <member refid="climate__monitor_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="climate__monitor_8d" kind="file"><name>climate_monitor.d</name>
+  </compound>
+  <compound refid="main_8d" kind="file"><name>main.d</name>
+  </compound>
+  <compound refid="scd41_8d" kind="file"><name>scd41.d</name>
+  </compound>
+  <compound refid="serlcd_8d" kind="file"><name>serlcd.d</name>
+  </compound>
+  <compound refid="scd41_8c" kind="file"><name>scd41.c</name>
+    <member refid="scd41_8c_1af58765a7f7c168d69eafc42a602f3990" kind="variable"><name>start_meas</name></member>
+    <member refid="scd41_8c_1acc2ed5706ac141b2ef78dbd9b7f6bc67" kind="variable"><name>read_meas</name></member>
+    <member refid="scd41_8c_1a18993addc09b36d5d8040464c4c2a327" kind="variable"><name>stop_meas</name></member>
+    <member refid="scd41_8c_1a828244f882c4f19b9d75f273842f7d93" kind="variable"><name>data_ready</name></member>
+    <member refid="scd41_8c_1a5e947b775032bb94e49086b95477a205" kind="function"><name>scd41_start_periodic_meas</name></member>
+    <member refid="scd41_8c_1a0485ec86cee25367d2762783d76ae12c" kind="function"><name>scd41_stop_periodic_meas</name></member>
+    <member refid="scd41_8c_1a4ca4e8746f6fdac58b506247e805cda3" kind="function"><name>scd41_has_data</name></member>
+    <member refid="scd41_8c_1a8c06da70168e9f5015616aa26d752fff" kind="function"><name>scd41_read_data</name></member>
+  </compound>
+  <compound refid="scd41_8h" kind="file"><name>scd41.h</name>
+    <member refid="scd41_8h_1a5e947b775032bb94e49086b95477a205" kind="function"><name>scd41_start_periodic_meas</name></member>
+    <member refid="scd41_8h_1a0485ec86cee25367d2762783d76ae12c" kind="function"><name>scd41_stop_periodic_meas</name></member>
+    <member refid="scd41_8h_1a4ca4e8746f6fdac58b506247e805cda3" kind="function"><name>scd41_has_data</name></member>
+    <member refid="scd41_8h_1a8c06da70168e9f5015616aa26d752fff" kind="function"><name>scd41_read_data</name></member>
+  </compound>
+  <compound refid="serlcd_8c" kind="file"><name>serlcd.c</name>
+    <member refid="serlcd_8c_1aec024d63790c43bb2635e0b3468583d8" kind="function"><name>send_string_SerLCD</name></member>
+    <member refid="serlcd_8c_1aae95d59b494981540233ed751f39e341" kind="function"><name>clear_SerLCD</name></member>
+    <member refid="serlcd_8c_1a96469994c1d7399edae5231ed06d714a" kind="function"><name>update_SerLCD</name></member>
+    <member refid="serlcd_8c_1ae0028b85aa630926c9fc2e9b93dfc1cc" kind="function"><name>turn_backlight_off</name></member>
+    <member refid="serlcd_8c_1a0dd8c0b6f054f78d97273423fd965aec" kind="function"><name>serlcd_set_background_rgb</name></member>
+  </compound>
+  <compound refid="serlcd_8h" kind="file"><name>serlcd.h</name>
+    <member refid="serlcd_8h_1a43bafb28b29491ec7f871319b5a3b2f8" kind="define"><name>F_CPU</name></member>
+    <member refid="serlcd_8h_1a87300936d844c1a423d732e28d71c509" kind="define"><name>TWI_SERLCD_INTERVAL_US</name></member>
+    <member refid="serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2" kind="define"><name>SERLCD_ROWS</name></member>
+    <member refid="serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28" kind="define"><name>SERLCD_COLS</name></member>
+    <member refid="serlcd_8h_1a9882e0e64074b315c1c4ecd54d8de5cb" kind="variable"><name>serlcd_buffer</name></member>
+    <member refid="serlcd_8h_1aec024d63790c43bb2635e0b3468583d8" kind="function"><name>send_string_SerLCD</name></member>
+    <member refid="serlcd_8h_1aae95d59b494981540233ed751f39e341" kind="function"><name>clear_SerLCD</name></member>
+    <member refid="serlcd_8h_1a96469994c1d7399edae5231ed06d714a" kind="function"><name>update_SerLCD</name></member>
+    <member refid="serlcd_8h_1ae0028b85aa630926c9fc2e9b93dfc1cc" kind="function"><name>turn_backlight_off</name></member>
+    <member refid="serlcd_8h_1a0dd8c0b6f054f78d97273423fd965aec" kind="function"><name>serlcd_set_background_rgb</name></member>
+  </compound>
+  <compound refid="dir_e66566bd352532857e2117cd2cc27b92" kind="dir"><name>Lab10/src/Lab10/Task3/Debug</name>
+  </compound>
+  <compound refid="dir_887df86ca82b5736ed586f4c646db434" kind="dir"><name>Lab10</name>
+  </compound>
+  <compound refid="dir_4c10d255f31da9eed8cb28f9c48f4f6c" kind="dir"><name>Lab10/src/Lab10</name>
+  </compound>
+  <compound refid="dir_aa277ffc5554ac736f735b2d40bf9825" kind="dir"><name>Lab10/src</name>
+  </compound>
+  <compound refid="dir_adef5f42ebf2f8890ce47a32613a09ba" kind="dir"><name>Lab10/src/Lab10/Task3</name>
+  </compound>
+</doxygenindex>

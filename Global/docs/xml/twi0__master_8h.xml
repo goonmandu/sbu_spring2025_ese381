@@ -1,0 +1,381 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="twi0__master_8h" kind="file" language="C++">
+    <compoundname>twi0_master.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="twi0__master_8c" local="yes">D:/ESE381/Global/ese381/ese381/twi0_master.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/ESE381/Global/ese381/ese381/twi0_master.h</label>
+        <link refid="twi0__master_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdbool.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>D:/ESE381/Global/ese381/ese381/twi0_master.c</label>
+        <link refid="twi0__master_8c"/>
+      </node>
+      <node id="1">
+        <label>D:/ESE381/Global/ese381/ese381/twi0_master.h</label>
+        <link refid="twi0__master_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="twi0__master_8h_1a6fa83b03086be1a5348c221f5c65587d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TWI_initHost</definition>
+        <argsstring>(void)</argsstring>
+        <name>TWI_initHost</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adapted by Mingi Hwang on 24 Mar 2025 from original source: <ulink url="https://github.com/microchip-pic-avr-examples/avr128db48-bare-metal-twi-mplab/tree/master/twi-host.X/peripherals/TWI">https://github.com/microchip-pic-avr-examples/avr128db48-bare-metal-twi-mplab/tree/master/twi-host.X/peripherals/TWI</ulink></para>
+<para>ORIGINAL SOURCE LICENSE STATEMENT</para>
+<para>(c) 2020 Microchip Technology Inc. and its subsidiaries.</para>
+<para>Subject to your compliance with these terms, you may use Microchip software and any derivatives exclusively with Microchip products. You&apos;re responsible for complying with 3rd party license terms applicable to your use of 3rd party software (including open source software) that may accompany Microchip software.</para>
+<para>SOFTWARE IS &quot;AS IS.&quot; NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.</para>
+<para>IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP&apos;S TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE. Prof. Short does not want us to use internal pull-ups. External 10k PURs will be used. If defined, internal pull-up resistors will be used Initializes the TWI peripheral in Host Mode. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.h" line="49" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="55" bodyend="74" declfile="D:/ESE381/Global/ese381/ese381/twi0_master.h" declline="49" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="twi0__master_8h_1a98aa41f921217ea835a6f8e993c7dbc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TWI_initPins</definition>
+        <argsstring>(void)</argsstring>
+        <name>TWI_initPins</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the I/O used by the TWI peripheral. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.h" line="54" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="76" bodyend="89" declfile="D:/ESE381/Global/ese381/ese381/twi0_master.h" declline="54" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="twi0__master_8h_1a472ca814410582196cc43dc0d26ac959" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TWI_sendByte</definition>
+        <argsstring>(uint8_t addr, uint8_t data)</argsstring>
+        <name>TWI_sendByte</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Client Device Address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Data to Send</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Sends a byte of data to the specified address. Returns true if successful, false if it failed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.h" line="63" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="166" bodyend="178" declfile="D:/ESE381/Global/ese381/ese381/twi0_master.h" declline="63" declcolumn="6"/>
+        <references refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" compoundref="twi0__master_8c" startline="91" endline="111">_startTWI</references>
+        <references refid="twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb" compoundref="twi0__master_8c" startline="144" endline="164">_writeToTWI</references>
+        <references refid="twi0__master_8c_1a3b68e8e777b71520f9dbfac733774d5f" compoundref="twi0__master_8c" startline="34">TWI_WRITE</references>
+      </memberdef>
+      <memberdef kind="function" id="twi0__master_8h_1a35878eea0edaf2bcecf05c45c6c9e0f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TWI_sendBytes</definition>
+        <argsstring>(uint8_t addr, uint8_t *data, uint8_t len)</argsstring>
+        <name>TWI_sendBytes</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Client Device Address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to the data to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Number of Bytes to Send</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Attempts to send len bytes of data to the client. Returns true if successful, false if it failed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.h" line="73" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="180" bodyend="193" declfile="D:/ESE381/Global/ese381/ese381/twi0_master.h" declline="73" declcolumn="6"/>
+        <references refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" compoundref="twi0__master_8c" startline="91" endline="111">_startTWI</references>
+        <references refid="twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb" compoundref="twi0__master_8c" startline="144" endline="164">_writeToTWI</references>
+        <references refid="twi0__master_8c_1a3b68e8e777b71520f9dbfac733774d5f" compoundref="twi0__master_8c" startline="34">TWI_WRITE</references>
+      </memberdef>
+      <memberdef kind="function" id="twi0__master_8h_1aba41249cfdcf6503f6facca53b858baf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TWI_readByte</definition>
+        <argsstring>(uint8_t addr, uint8_t *data)</argsstring>
+        <name>TWI_readByte</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Client Device Address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Where the byte received should be stored</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Attempts to read 1 byte of data from the client. Returns true if successful, fails if unable to get data. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.h" line="82" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="195" bodyend="205" declfile="D:/ESE381/Global/ese381/ese381/twi0_master.h" declline="82" declcolumn="6"/>
+        <references refid="twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde" compoundref="twi0__master_8c" startline="114" endline="141">_readFromTWI</references>
+        <references refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" compoundref="twi0__master_8c" startline="91" endline="111">_startTWI</references>
+        <references refid="twi0__master_8c_1aaf9a8abccd811954f9cc316f2b2f87b3" compoundref="twi0__master_8c" startline="33">TWI_READ</references>
+      </memberdef>
+      <memberdef kind="function" id="twi0__master_8h_1a81074b35f6014cebe4d13ea41b38484d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TWI_readBytes</definition>
+        <argsstring>(uint8_t addr, uint8_t *data, uint8_t len)</argsstring>
+        <name>TWI_readBytes</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Client Device Address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Where the bytes received should be stored </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Number of Bytes to Send</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Attempts to read len bytes of data from the client. Returns true if successful, false if it failed to get data. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.h" line="92" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="208" bodyend="218" declfile="D:/ESE381/Global/ese381/ese381/twi0_master.h" declline="92" declcolumn="6"/>
+        <references refid="twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde" compoundref="twi0__master_8c" startline="114" endline="141">_readFromTWI</references>
+        <references refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" compoundref="twi0__master_8c" startline="91" endline="111">_startTWI</references>
+        <references refid="twi0__master_8c_1aaf9a8abccd811954f9cc316f2b2f87b3" compoundref="twi0__master_8c" startline="33">TWI_READ</references>
+      </memberdef>
+      <memberdef kind="function" id="twi0__master_8h_1abace615165977923b5a9abf7fe760f8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TWI_sendAndReadBytes</definition>
+        <argsstring>(uint8_t addr, uint8_t regAddress, uint8_t *data, uint8_t len)</argsstring>
+        <name>TWI_sendAndReadBytes</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>regAddress</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Client Device Address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>regAddress</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address of Register to Read From </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Where the bytes received should be stored </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Number of Bytes to Send</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Writes a single byte (regAddress) to the client, then restarts and attempts to read len of data. Returns true if successful, false if it failed to get data. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/ESE381/Global/ese381/ese381/twi0_master.h" line="103" column="6" bodyfile="D:/ESE381/Global/ese381/ese381/twi0_master.c" bodystart="220" bodyend="249" declfile="D:/ESE381/Global/ese381/ese381/twi0_master.h" declline="103" declcolumn="6"/>
+        <references refid="twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde" compoundref="twi0__master_8c" startline="114" endline="141">_readFromTWI</references>
+        <references refid="twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d" compoundref="twi0__master_8c" startline="91" endline="111">_startTWI</references>
+        <references refid="twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb" compoundref="twi0__master_8c" startline="144" endline="164">_writeToTWI</references>
+        <references refid="twi0__master_8c_1a88bac97d359ea3f873641d6ebf886231" compoundref="twi0__master_8c" startline="47" endline="53">isTWIBad</references>
+        <references refid="twi0__master_8c_1aaf9a8abccd811954f9cc316f2b2f87b3" compoundref="twi0__master_8c" startline="33">TWI_READ</references>
+        <references refid="twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503" compoundref="twi0__master_8c" startline="45">TWI_WAIT</references>
+        <references refid="twi0__master_8c_1a3b68e8e777b71520f9dbfac733774d5f" compoundref="twi0__master_8c" startline="34">TWI_WRITE</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TWI0_MASTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TWI0_MASTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>TWI_ENABLE_PULLUPS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8h_1a6fa83b03086be1a5348c221f5c65587d" kindref="member">TWI_initHost</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8h_1a98aa41f921217ea835a6f8e993c7dbc3" kindref="member">TWI_initPins</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8h_1a472ca814410582196cc43dc0d26ac959" kindref="member">TWI_sendByte</ref>(uint8_t<sp/>addr,<sp/>uint8_t<sp/>data);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8h_1a35878eea0edaf2bcecf05c45c6c9e0f5" kindref="member">TWI_sendBytes</ref>(uint8_t<sp/>addr,<sp/>uint8_t*<sp/>data,<sp/>uint8_t<sp/>len);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8h_1aba41249cfdcf6503f6facca53b858baf" kindref="member">TWI_readByte</ref>(uint8_t<sp/>addr,<sp/>uint8_t*<sp/>data);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8h_1a81074b35f6014cebe4d13ea41b38484d" kindref="member">TWI_readBytes</ref>(uint8_t<sp/>addr,<sp/>uint8_t*<sp/>data,<sp/>uint8_t<sp/>len);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="twi0__master_8h_1abace615165977923b5a9abf7fe760f8a" kindref="member">TWI_sendAndReadBytes</ref>(uint8_t<sp/>addr,<sp/>uint8_t<sp/>regAddress,<sp/>uint8_t*<sp/>data,<sp/>uint8_t<sp/>len);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight><highlight class="comment">/*<sp/>TWI0_MASTER_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="D:/ESE381/Global/ese381/ese381/twi0_master.h"/>
+  </compounddef>
+</doxygen>

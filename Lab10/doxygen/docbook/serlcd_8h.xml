@@ -1,0 +1,349 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_serlcd_8h" xml:lang="en-US">
+<title>Lab10/src/Lab10/Task3/serlcd.h File Reference</title>
+<indexterm><primary>Lab10/src/Lab10/Task3/serlcd.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;stdint.h&gt;<?linebreak?></programlisting>Include dependency graph for serlcd.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="serlcd_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="serlcd_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_serlcd_8h_1a43bafb28b29491ec7f871319b5a3b2f8">F_CPU</link>&#160;&#160;&#160;4000000UL</para>
+</listitem>
+            <listitem><para>#define <link linkend="_serlcd_8h_1a87300936d844c1a423d732e28d71c509">TWI_SERLCD_INTERVAL_US</link>&#160;&#160;&#160;150</para>
+</listitem>
+            <listitem><para>#define <link linkend="_serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2">SERLCD_ROWS</link>&#160;&#160;&#160;4</para>
+</listitem>
+            <listitem><para>#define <link linkend="_serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28">SERLCD_COLS</link>&#160;&#160;&#160;20</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_serlcd_8h_1aec024d63790c43bb2635e0b3468583d8">send_string_SerLCD</link> (uint8_t addr, uint8_t *str, uint8_t len)</para>
+</listitem>
+            <listitem><para>void <link linkend="_serlcd_8h_1aae95d59b494981540233ed751f39e341">clear_SerLCD</link> (uint8_t addr)</para>
+</listitem>
+            <listitem><para>void <link linkend="_serlcd_8h_1a96469994c1d7399edae5231ed06d714a">update_SerLCD</link> (uint8_t addr)</para>
+</listitem>
+            <listitem><para>void <link linkend="_serlcd_8h_1ae0028b85aa630926c9fc2e9b93dfc1cc">turn_backlight_off</link> (uint8_t addr)</para>
+</listitem>
+            <listitem><para>void <link linkend="_serlcd_8h_1a0dd8c0b6f054f78d97273423fd965aec">serlcd_set_background_rgb</link> (uint8_t addr, uint8_t r, uint8_t g, uint8_t b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>char <link linkend="_serlcd_8h_1a9882e0e64074b315c1c4ecd54d8de5cb">serlcd_buffer</link> [<link linkend="_serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2">SERLCD_ROWS</link>][<link linkend="_serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28">SERLCD_COLS</link>+1]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_serlcd_8h_1a43bafb28b29491ec7f871319b5a3b2f8"/><section>
+    <title>F_CPU</title>
+<indexterm><primary>F_CPU</primary><secondary>serlcd.h</secondary></indexterm>
+<indexterm><primary>serlcd.h</primary><secondary>F_CPU</secondary></indexterm>
+<para><computeroutput>#define F_CPU&#160;&#160;&#160;4000000UL</computeroutput></para><para>
+Definition at line <link linkend="_serlcd_8h_source_1l00006">6</link> of file <link linkend="_serlcd_8h_source">serlcd.h</link>.</para>
+</section>
+<anchor xml:id="_serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28"/><section>
+    <title>SERLCD_COLS</title>
+<indexterm><primary>SERLCD_COLS</primary><secondary>serlcd.h</secondary></indexterm>
+<indexterm><primary>serlcd.h</primary><secondary>SERLCD_COLS</secondary></indexterm>
+<para><computeroutput>#define SERLCD_COLS&#160;&#160;&#160;20</computeroutput></para><para>
+Definition at line <link linkend="_serlcd_8h_source_1l00011">11</link> of file <link linkend="_serlcd_8h_source">serlcd.h</link>.</para>
+</section>
+<anchor xml:id="_serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2"/><section>
+    <title>SERLCD_ROWS</title>
+<indexterm><primary>SERLCD_ROWS</primary><secondary>serlcd.h</secondary></indexterm>
+<indexterm><primary>serlcd.h</primary><secondary>SERLCD_ROWS</secondary></indexterm>
+<para><computeroutput>#define SERLCD_ROWS&#160;&#160;&#160;4</computeroutput></para><para>
+Definition at line <link linkend="_serlcd_8h_source_1l00010">10</link> of file <link linkend="_serlcd_8h_source">serlcd.h</link>.</para>
+</section>
+<anchor xml:id="_serlcd_8h_1a87300936d844c1a423d732e28d71c509"/><section>
+    <title>TWI_SERLCD_INTERVAL_US</title>
+<indexterm><primary>TWI_SERLCD_INTERVAL_US</primary><secondary>serlcd.h</secondary></indexterm>
+<indexterm><primary>serlcd.h</primary><secondary>TWI_SERLCD_INTERVAL_US</secondary></indexterm>
+<para><computeroutput>#define TWI_SERLCD_INTERVAL_US&#160;&#160;&#160;150</computeroutput></para><para>
+Definition at line <link linkend="_serlcd_8h_source_1l00009">9</link> of file <link linkend="_serlcd_8h_source">serlcd.h</link>.</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_serlcd_8h_1aae95d59b494981540233ed751f39e341"/><section>
+    <title>clear_SerLCD()</title>
+<indexterm><primary>clear_SerLCD</primary><secondary>serlcd.h</secondary></indexterm>
+<indexterm><primary>serlcd.h</primary><secondary>clear_SerLCD</secondary></indexterm>
+<para><computeroutput>void clear_SerLCD (uint8_t addr)</computeroutput></para>
+<para>Sends the byte sequence |- out of TWI0 to clear the SerLCD.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>addr</entry><entry>
+<para>I2C slave address of the SerLCD. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_serlcd_8c_source_1l00016">16</link> of file <link linkend="_serlcd_8c_source">serlcd.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="serlcd_8h_aae95d59b494981540233ed751f39e341_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_serlcd_8h_1aec024d63790c43bb2635e0b3468583d8"/><section>
+    <title>send_string_SerLCD()</title>
+<indexterm><primary>send_string_SerLCD</primary><secondary>serlcd.h</secondary></indexterm>
+<indexterm><primary>serlcd.h</primary><secondary>send_string_SerLCD</secondary></indexterm>
+<para><computeroutput>void send_string_SerLCD (uint8_t addr, uint8_t * str, uint8_t len)</computeroutput></para>
+<para>Sends char array to the SerLCD out of TWI0.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>addr</entry><entry>
+<para>I2C slave address of the SerLCD. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>str</entry><entry>
+<para>Pointer to start of char array to be sent. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>len</entry><entry>
+<para>Length of char array. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_serlcd_8c_source_1l00009">9</link> of file <link linkend="_serlcd_8c_source">serlcd.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="serlcd_8h_aec024d63790c43bb2635e0b3468583d8_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_serlcd_8h_1a0dd8c0b6f054f78d97273423fd965aec"/><section>
+    <title>serlcd_set_background_rgb()</title>
+<indexterm><primary>serlcd_set_background_rgb</primary><secondary>serlcd.h</secondary></indexterm>
+<indexterm><primary>serlcd.h</primary><secondary>serlcd_set_background_rgb</secondary></indexterm>
+<para><computeroutput>void serlcd_set_background_rgb (uint8_t addr, uint8_t r, uint8_t g, uint8_t b)</computeroutput></para>
+<para>Sets the RGB background color of the SerLCD backlight.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>addr</entry><entry>
+<para>I2C slave address of the SerLCD. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>r</entry><entry>
+<para>Red intensity (0–255). </para>
+</entry>
+                            </row>
+                            <row>
+<entry>g</entry><entry>
+<para>Green intensity (0–255). </para>
+</entry>
+                            </row>
+                            <row>
+<entry>b</entry><entry>
+<para>Blue intensity (0–255). </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_serlcd_8c_source_1l00043">43</link> of file <link linkend="_serlcd_8c_source">serlcd.c</link>.</para>
+</section>
+<anchor xml:id="_serlcd_8h_1ae0028b85aa630926c9fc2e9b93dfc1cc"/><section>
+    <title>turn_backlight_off()</title>
+<indexterm><primary>turn_backlight_off</primary><secondary>serlcd.h</secondary></indexterm>
+<indexterm><primary>serlcd.h</primary><secondary>turn_backlight_off</secondary></indexterm>
+<para><computeroutput>void turn_backlight_off (uint8_t addr)</computeroutput></para>
+<para>Sends byte sequence to turn off the SerLCD backlight.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>addr</entry><entry>
+<para>I2C slave address of the SerLCD. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_serlcd_8c_source_1l00030">30</link> of file <link linkend="_serlcd_8c_source">serlcd.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="serlcd_8h_ae0028b85aa630926c9fc2e9b93dfc1cc_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_serlcd_8h_1a96469994c1d7399edae5231ed06d714a"/><section>
+    <title>update_SerLCD()</title>
+<indexterm><primary>update_SerLCD</primary><secondary>serlcd.h</secondary></indexterm>
+<indexterm><primary>serlcd.h</primary><secondary>update_SerLCD</secondary></indexterm>
+<para><computeroutput>void update_SerLCD (uint8_t addr)</computeroutput></para>
+<para>Sends contents of <computeroutput>serlcd_buffer</computeroutput> out of TWI0.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>addr</entry><entry>
+<para>I2C slave address of the SerLCD. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_serlcd_8c_source_1l00023">23</link> of file <link linkend="_serlcd_8c_source">serlcd.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="serlcd_8h_a96469994c1d7399edae5231ed06d714a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="serlcd_8h_a96469994c1d7399edae5231ed06d714a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_serlcd_8h_1a9882e0e64074b315c1c4ecd54d8de5cb"/><section>
+    <title>serlcd_buffer</title>
+<indexterm><primary>serlcd_buffer</primary><secondary>serlcd.h</secondary></indexterm>
+<indexterm><primary>serlcd.h</primary><secondary>serlcd_buffer</secondary></indexterm>
+<para><computeroutput>char serlcd_buffer[<link linkend="_serlcd_8h_1a1db3ed071f2efe10511f4a740919bff2">SERLCD_ROWS</link>][<link linkend="_serlcd_8h_1ab1e63f7dc45d7bae8a6eff9e3aff3c28">SERLCD_COLS</link>+1]</computeroutput></para>
+<para>The 4x20 character buffer for the SerLCD. </para>
+<para>
+Definition at line <link linkend="_serlcd_8h_source_1l00018">18</link> of file <link linkend="_serlcd_8h_source">serlcd.h</link>.</para>
+</section>
+</section>
+</section>

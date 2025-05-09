@@ -1,0 +1,9 @@
+<map id="TWI_sendByte" name="TWI_sendByte">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,114,57"/>
+<area shape="rect" id="Node000002" href="$twi0__master_8c.html#a5b0e3bd68badf9ef45b187cbc4ef275d" title=" " alt="" coords="170,5,249,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,32,154,25,155,31,114,37"/>
+<area shape="rect" id="Node000004" href="$twi0__master_8c.html#af12b3c7e52e7b420a53cf17fda194eeb" title=" " alt="" coords="162,56,257,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="114,51,147,56,146,61,114,56"/>
+<area shape="rect" id="Node000003" href="$twi0__master_8c.html#a88bac97d359ea3f873641d6ebf886231" title=" " alt="" coords="305,5,384,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="249,16,289,16,289,21,249,21"/>
+</map>

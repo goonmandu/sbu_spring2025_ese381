@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structscd41__data__t" kind="struct" language="C++" prot="public">
+    <compoundname>scd41_data_t</compoundname>
+    <includes refid="scd41_8h" local="no">scd41.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structscd41__data__t_1aa2dd73af24dfe2a9b2b8aaf8917be643" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t co2_raw</definition>
+        <argsstring></argsstring>
+        <name>co2_raw</name>
+        <qualifiedname>scd41_data_t::co2_raw</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Raw CO? value from sensor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/scd41.h" line="21" column="10" bodyfile="Lab10/src/Lab10/Task3/scd41.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="scd41_8c_1a8c06da70168e9f5015616aa26d752fff" compoundref="scd41_8c" startline="24" endline="40">scd41_read_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structscd41__data__t_1a8f687631f21b0ec1af9190a6e16cbd07" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t co2_crc</definition>
+        <argsstring></argsstring>
+        <name>co2_crc</name>
+        <qualifiedname>scd41_data_t::co2_crc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CRC for raw CO? value </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/scd41.h" line="22" column="9" bodyfile="Lab10/src/Lab10/Task3/scd41.h" bodystart="22" bodyend="-1"/>
+        <referencedby refid="scd41_8c_1a8c06da70168e9f5015616aa26d752fff" compoundref="scd41_8c" startline="24" endline="40">scd41_read_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structscd41__data__t_1a047d7f97f65e020d9118d2a6638e81bb" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t temp_c_raw</definition>
+        <argsstring></argsstring>
+        <name>temp_c_raw</name>
+        <qualifiedname>scd41_data_t::temp_c_raw</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Raw temperature value from sensor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/scd41.h" line="23" column="10" bodyfile="Lab10/src/Lab10/Task3/scd41.h" bodystart="23" bodyend="-1"/>
+        <referencedby refid="scd41_8c_1a8c06da70168e9f5015616aa26d752fff" compoundref="scd41_8c" startline="24" endline="40">scd41_read_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structscd41__data__t_1a793c42f5f3acaa1f47e5f88215bf85d6" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t temp_c_crc</definition>
+        <argsstring></argsstring>
+        <name>temp_c_crc</name>
+        <qualifiedname>scd41_data_t::temp_c_crc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CRC for raw temperature value </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/scd41.h" line="24" column="9" bodyfile="Lab10/src/Lab10/Task3/scd41.h" bodystart="24" bodyend="-1"/>
+        <referencedby refid="scd41_8c_1a8c06da70168e9f5015616aa26d752fff" compoundref="scd41_8c" startline="24" endline="40">scd41_read_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structscd41__data__t_1a2ce16830b237eef33a7a3b9498eb5361" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t rh_raw</definition>
+        <argsstring></argsstring>
+        <name>rh_raw</name>
+        <qualifiedname>scd41_data_t::rh_raw</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Raw relative humidity value from sensor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/scd41.h" line="25" column="10" bodyfile="Lab10/src/Lab10/Task3/scd41.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="scd41_8c_1a8c06da70168e9f5015616aa26d752fff" compoundref="scd41_8c" startline="24" endline="40">scd41_read_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structscd41__data__t_1ac2ca72396924faac9da3569ca7f8618e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t rh_crc</definition>
+        <argsstring></argsstring>
+        <name>rh_crc</name>
+        <qualifiedname>scd41_data_t::rh_crc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CRC for raw relative humidity value </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/scd41.h" line="26" column="9" bodyfile="Lab10/src/Lab10/Task3/scd41.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="scd41_8c_1a8c06da70168e9f5015616aa26d752fff" compoundref="scd41_8c" startline="24" endline="40">scd41_read_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structscd41__data__t_1a10aa9d025b4a09a420126fb30f37a8af" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float temp_c</definition>
+        <argsstring></argsstring>
+        <name>temp_c</name>
+        <qualifiedname>scd41_data_t::temp_c</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculated temperature in degrees Celsius </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/scd41.h" line="27" column="7" bodyfile="Lab10/src/Lab10/Task3/scd41.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="scd41_8c_1a8c06da70168e9f5015616aa26d752fff" compoundref="scd41_8c" startline="24" endline="40">scd41_read_data</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structscd41__data__t_1aad864e72b35172fbe003fab04b990bf9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float rh</definition>
+        <argsstring></argsstring>
+        <name>rh</name>
+        <qualifiedname>scd41_data_t::rh</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculated relative humidity in percent </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Lab10/src/Lab10/Task3/scd41.h" line="28" column="7" bodyfile="Lab10/src/Lab10/Task3/scd41.h" bodystart="28" bodyend="-1"/>
+        <referencedby refid="scd41_8c_1a8c06da70168e9f5015616aa26d752fff" compoundref="scd41_8c" startline="24" endline="40">scd41_read_data</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Container for raw and converted SCD41 sensor data. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Holds raw 16-bit values and their CRCs as received from the sensor, along with floating-point temperature in °C and relative humidity in %. </para>
+    </detaileddescription>
+    <location file="Lab10/src/Lab10/Task3/scd41.h" line="20" column="1" bodyfile="Lab10/src/Lab10/Task3/scd41.h" bodystart="20" bodyend="29"/>
+    <listofallmembers>
+      <member refid="structscd41__data__t_1a8f687631f21b0ec1af9190a6e16cbd07" prot="public" virt="non-virtual"><scope>scd41_data_t</scope><name>co2_crc</name></member>
+      <member refid="structscd41__data__t_1aa2dd73af24dfe2a9b2b8aaf8917be643" prot="public" virt="non-virtual"><scope>scd41_data_t</scope><name>co2_raw</name></member>
+      <member refid="structscd41__data__t_1aad864e72b35172fbe003fab04b990bf9" prot="public" virt="non-virtual"><scope>scd41_data_t</scope><name>rh</name></member>
+      <member refid="structscd41__data__t_1ac2ca72396924faac9da3569ca7f8618e" prot="public" virt="non-virtual"><scope>scd41_data_t</scope><name>rh_crc</name></member>
+      <member refid="structscd41__data__t_1a2ce16830b237eef33a7a3b9498eb5361" prot="public" virt="non-virtual"><scope>scd41_data_t</scope><name>rh_raw</name></member>
+      <member refid="structscd41__data__t_1a10aa9d025b4a09a420126fb30f37a8af" prot="public" virt="non-virtual"><scope>scd41_data_t</scope><name>temp_c</name></member>
+      <member refid="structscd41__data__t_1a793c42f5f3acaa1f47e5f88215bf85d6" prot="public" virt="non-virtual"><scope>scd41_data_t</scope><name>temp_c_crc</name></member>
+      <member refid="structscd41__data__t_1a047d7f97f65e020d9118d2a6638e81bb" prot="public" virt="non-virtual"><scope>scd41_data_t</scope><name>temp_c_raw</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

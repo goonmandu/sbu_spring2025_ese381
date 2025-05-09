@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_0b567e77a3af918946266cba1ca84357" kind="dir">
+    <compoundname>D:/ESE381/Lab06/src</compoundname>
+    <innerdir refid="dir_f01a4ff1384ef713166392880521a1b6">D:/ESE381/Lab06/src/Task2</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/ESE381/Lab06/src/"/>
+  </compounddef>
+</doxygen>

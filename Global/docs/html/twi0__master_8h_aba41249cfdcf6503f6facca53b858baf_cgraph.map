@@ -1,0 +1,9 @@
+<map id="TWI_readByte" name="TWI_readByte">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,111,57"/>
+<area shape="rect" id="Node000002" href="$twi0__master_8c.html#aac65a59189d5da063979d45c6a21fdde" title=" " alt="" coords="159,5,267,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,33,143,27,144,33,112,38"/>
+<area shape="rect" id="Node000003" href="$twi0__master_8c.html#a5b0e3bd68badf9ef45b187cbc4ef275d" title=" " alt="" coords="173,56,252,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,50,158,58,157,63,111,55"/>
+<area shape="rect" id="Node000004" href="$twi0__master_8c.html#a88bac97d359ea3f873641d6ebf886231" title=" " alt="" coords="315,56,394,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="253,67,300,67,300,72,253,72"/>
+</map>

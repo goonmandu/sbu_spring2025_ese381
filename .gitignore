@@ -1,0 +1,8 @@
+# Ignore the Debug directory
+**/Debug/
+
+# Ignore all rendered PDFs (for prelabs and postlabs)
+**/*.pdf
+
+# Ignore the Testing directory
+./Testing/

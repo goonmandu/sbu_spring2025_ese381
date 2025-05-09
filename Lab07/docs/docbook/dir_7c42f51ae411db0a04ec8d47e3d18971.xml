@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_7c42f51ae411db0a04ec8d47e3d18971" xml:lang="en-US">
+<title>D:/ESE381/Lab06 Directory Reference</title>
+<indexterm><primary>D:/ESE381/Lab06 Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_0b567e77a3af918946266cba1ca84357">src</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

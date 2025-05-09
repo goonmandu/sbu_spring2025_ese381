@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_e356d814c23afbb097109eeba79d8580" xml:lang="en-US">
+<title>D:/ESE381/Global/ese381/ese381 Directory Reference</title>
+<indexterm><primary>D:/ESE381/Global/ese381/ese381 Directory Reference</primary></indexterm>
+Directory dependency graph for ese381:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_e356d814c23afbb097109eeba79d8580_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_ascii_8c">ascii.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_ascii_8h">ascii.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_spi0_8c">spi0.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_spi0_8h">spi0.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_twi0__master_8c">twi0_master.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_twi0__master_8h">twi0_master.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_usart3_8c">usart3.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_usart3_8h">usart3.h</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

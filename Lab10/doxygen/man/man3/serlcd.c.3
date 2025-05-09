@@ -1,0 +1,138 @@
+.TH "Lab10/src/Lab10/Task3/serlcd.c" 3 "Version 0.1" "Lab10 Climate Sensor" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Lab10/src/Lab10/Task3/serlcd.c
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'serlcd\&.h'\fP
+.br
+\fR#include <avr/io\&.h>\fP
+.br
+\fR#include <util/delay\&.h>\fP
+.br
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include <twi/twi0_master\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsend_string_SerLCD\fP (uint8_t addr, uint8_t *str, uint8_t len)"
+.br
+.ti -1c
+.RI "void \fBclear_SerLCD\fP (uint8_t addr)"
+.br
+.ti -1c
+.RI "void \fBupdate_SerLCD\fP (uint8_t addr)"
+.br
+.ti -1c
+.RI "void \fBturn_backlight_off\fP (uint8_t addr)"
+.br
+.ti -1c
+.RI "void \fBserlcd_set_background_rgb\fP (uint8_t addr, uint8_t r, uint8_t g, uint8_t b)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void clear_SerLCD (uint8_t addr)"
+Sends the byte sequence |- out of TWI0 to clear the SerLCD\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP I2C slave address of the SerLCD\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB16\fP of file \fBserlcd\&.c\fP\&.
+.SS "void send_string_SerLCD (uint8_t addr, uint8_t * str, uint8_t len)"
+Sends char array to the SerLCD out of TWI0\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP I2C slave address of the SerLCD\&. 
+.br
+\fIstr\fP Pointer to start of char array to be sent\&. 
+.br
+\fIlen\fP Length of char array\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB9\fP of file \fBserlcd\&.c\fP\&.
+.SS "void serlcd_set_background_rgb (uint8_t addr, uint8_t r, uint8_t g, uint8_t b)"
+Sets the RGB background color of the SerLCD backlight\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP I2C slave address of the SerLCD\&. 
+.br
+\fIr\fP Red intensity (0–255)\&. 
+.br
+\fIg\fP Green intensity (0–255)\&. 
+.br
+\fIb\fP Blue intensity (0–255)\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB43\fP of file \fBserlcd\&.c\fP\&.
+.SS "void turn_backlight_off (uint8_t addr)"
+Sends byte sequence to turn off the SerLCD backlight\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP I2C slave address of the SerLCD\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB30\fP of file \fBserlcd\&.c\fP\&.
+.SS "void update_SerLCD (uint8_t addr)"
+Sends contents of \fRserlcd_buffer\fP out of TWI0\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddr\fP I2C slave address of the SerLCD\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+None 
+.RE
+.PP
+
+.PP
+Definition at line \fB23\fP of file \fBserlcd\&.c\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Lab10 Climate Sensor from the source code\&.

@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_twi0__master_8c_source" xml:lang="en-US">
+<title>twi0_master.c</title>
+<indexterm><primary>D:/ESE381/Global/ese381/ese381/twi0_master.c</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_twi0__master_8c_source_1l00001"/>00001 
+<anchor xml:id="_twi0__master_8c_source_1l00027"/>00027 
+<anchor xml:id="_twi0__master_8c_source_1l00028"/>00028 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_twi0__master_8h">twi0_master.h</link>&quot;</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00029"/>00029 
+<anchor xml:id="_twi0__master_8c_source_1l00030"/>00030 <emphasis role="preprocessor">#include&#32;&lt;avr/io.h&gt;</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00031"/>00031 <emphasis role="preprocessor">#include&#32;&lt;stdbool.h&gt;</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00032"/>00032 
+<anchor xml:id="_twi0__master_8c_source_1l00033"/><link linkend="_twi0__master_8c_1aaf9a8abccd811954f9cc316f2b2f87b3">00033</link> <emphasis role="preprocessor">#define&#32;TWI_READ&#32;true</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00034"/><link linkend="_twi0__master_8c_1a3b68e8e777b71520f9dbfac733774d5f">00034</link> <emphasis role="preprocessor">#define&#32;TWI_WRITE&#32;false</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00035"/>00035 
+<anchor xml:id="_twi0__master_8c_source_1l00036"/><link linkend="_twi0__master_8c_1afa0cbcb8305cff49652e10c777215a5a">00036</link> <emphasis role="preprocessor">#define&#32;TWI_IS_CLOCKHELD()&#32;TWI0.MSTATUS&#32;&amp;&#32;TWI_CLKHOLD_bm</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00037"/><link linkend="_twi0__master_8c_1ab11b79abe3e8a765908aca36c72fd50b">00037</link> <emphasis role="preprocessor">#define&#32;TWI_IS_BUSERR()&#32;TWI0.MSTATUS&#32;&amp;&#32;TWI_BUSERR_bm</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00038"/><link linkend="_twi0__master_8c_1ae97361cb8531ee2979c62b3a57d4a821">00038</link> <emphasis role="preprocessor">#define&#32;TWI_IS_ARBLOST()&#32;TWI0.MSTATUS&#32;&amp;&#32;TWI_ARBLOST_bm</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00039"/>00039 
+<anchor xml:id="_twi0__master_8c_source_1l00040"/><link linkend="_twi0__master_8c_1aa0c501a160d4a7bbac583a0760b69879">00040</link> <emphasis role="preprocessor">#define&#32;CLIENT_NACK()&#32;TWI0.MSTATUS&#32;&amp;&#32;TWI_RXACK_bm</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00041"/><link linkend="_twi0__master_8c_1a61a1d47676f2c72e1f73f5218c03322e">00041</link> <emphasis role="preprocessor">#define&#32;CLIENT_ACK()&#32;!(TWI0.MSTATUS&#32;&amp;&#32;TWI_RXACK_bm)</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00042"/>00042 
+<anchor xml:id="_twi0__master_8c_source_1l00043"/><link linkend="_twi0__master_8c_1a86cd4c8996cbafb28d602fac380ffb6b">00043</link> <emphasis role="preprocessor">#define&#32;TWI_IS_BUSBUSY()&#32;((TWI0.MSTATUS&#32;&amp;&#32;TWI_BUSSTATE_BUSY_gc)&#32;==&#32;TWI_BUSSTATE_BUSY_gc)</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00044"/>00044 
+<anchor xml:id="_twi0__master_8c_source_1l00045"/><link linkend="_twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503">00045</link> <emphasis role="preprocessor">#define&#32;TWI_WAIT()&#32;while&#32;(!((TWI_IS_CLOCKHELD())&#32;||&#32;(TWI_IS_BUSERR())&#32;||&#32;(TWI_IS_ARBLOST())&#32;||&#32;(TWI_IS_BUSBUSY())))</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00046"/>00046 
+<anchor xml:id="_twi0__master_8c_source_1l00047"/><link linkend="_twi0__master_8c_1a88bac97d359ea3f873641d6ebf886231">00047</link> <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_twi0__master_8c_1a88bac97d359ea3f873641d6ebf886231">isTWIBad</link>(<emphasis role="keywordtype">void</emphasis>)&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00048"/>00048 &#32;&#32;&#32;&#32;<emphasis role="comment">//Checks&#32;for:&#32;NACK,&#32;ARBLOST,&#32;BUSERR,&#32;Bus&#32;Busy</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00049"/>00049 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((((TWI0.MSTATUS)&#32;&amp;&#32;(TWI_RXACK_bm&#32;|&#32;TWI_ARBLOST_bm&#32;|&#32;TWI_BUSERR_bm))&#32;&gt;&#32;0)&#32;||&#32;(<link linkend="_twi0__master_8c_1a86cd4c8996cbafb28d602fac380ffb6b">TWI_IS_BUSBUSY</link>()))&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00051"/>00051 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_twi0__master_8c_source_1l00052"/>00052 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00053"/>00053 }
+<anchor xml:id="_twi0__master_8c_source_1l00054"/>00054 
+<anchor xml:id="_twi0__master_8c_source_1l00055"/><link linkend="_twi0__master_8c_1a6fa83b03086be1a5348c221f5c65587d">00055</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_twi0__master_8c_1a6fa83b03086be1a5348c221f5c65587d">TWI_initHost</link>(<emphasis role="keywordtype">void</emphasis>)&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00056"/>00056 &#32;&#32;&#32;&#32;<emphasis role="comment">//Standard&#32;100kHz&#32;TWI,&#32;4&#32;Cycle&#32;Hold,&#32;50ns&#32;SDA&#32;Hold&#32;Time</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00057"/>00057 &#32;&#32;&#32;&#32;TWI0.CTRLA&#32;=&#32;TWI_SDAHOLD_50NS_gc;
+<anchor xml:id="_twi0__master_8c_source_1l00058"/>00058 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00059"/>00059 &#32;&#32;&#32;&#32;<emphasis role="comment">//Clear&#32;Dual&#32;Control</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00060"/>00060 &#32;&#32;&#32;&#32;TWI0.DUALCTRL&#32;=&#32;0x00;
+<anchor xml:id="_twi0__master_8c_source_1l00061"/>00061 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00062"/>00062 &#32;&#32;&#32;&#32;<emphasis role="comment">//Enable&#32;Run&#32;in&#32;Debug</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00063"/>00063 &#32;&#32;&#32;&#32;TWI0.DBGCTRL&#32;=&#32;TWI_DBGRUN_bm;
+<anchor xml:id="_twi0__master_8c_source_1l00064"/>00064 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00065"/>00065 &#32;&#32;&#32;&#32;<emphasis role="comment">//Clear&#32;MSTATUS&#32;(write&#32;1&#32;to&#32;flags).&#32;BUSSTATE&#32;set&#32;to&#32;idle</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00066"/>00066 &#32;&#32;&#32;&#32;TWI0.MSTATUS&#32;=&#32;TWI_RIF_bm&#32;|&#32;TWI_WIF_bm&#32;|&#32;TWI_CLKHOLD_bm&#32;|&#32;TWI_RXACK_bm&#32;|
+<anchor xml:id="_twi0__master_8c_source_1l00067"/>00067 &#32;&#32;&#32;&#32;TWI_ARBLOST_bm&#32;|&#32;TWI_BUSERR_bm&#32;|&#32;TWI_BUSSTATE_IDLE_gc;
+<anchor xml:id="_twi0__master_8c_source_1l00068"/>00068 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00069"/>00069 &#32;&#32;&#32;&#32;<emphasis role="comment">//Set&#32;for&#32;100kHz&#32;from&#32;a&#32;4MHz&#32;oscillator</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00070"/>00070 &#32;&#32;&#32;&#32;TWI0.MBAUD&#32;=&#32;15;
+<anchor xml:id="_twi0__master_8c_source_1l00071"/>00071 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00072"/>00072 &#32;&#32;&#32;&#32;<emphasis role="comment">//[No&#32;ISRs]&#32;and&#32;Host&#32;Mode</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00073"/>00073 &#32;&#32;&#32;&#32;TWI0.MCTRLA&#32;=&#32;TWI_ENABLE_bm;
+<anchor xml:id="_twi0__master_8c_source_1l00074"/>00074 }
+<anchor xml:id="_twi0__master_8c_source_1l00075"/>00075 
+<anchor xml:id="_twi0__master_8c_source_1l00076"/><link linkend="_twi0__master_8c_1a98aa41f921217ea835a6f8e993c7dbc3">00076</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_twi0__master_8c_1a98aa41f921217ea835a6f8e993c7dbc3">TWI_initPins</link>(<emphasis role="keywordtype">void</emphasis>)&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00077"/>00077 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Use&#32;PA2&#32;and&#32;PA3&#32;(default)</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00078"/>00078 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00079"/>00079 &#32;&#32;&#32;&#32;<emphasis role="comment">//Output&#32;I/O</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00080"/>00080 &#32;&#32;&#32;&#32;PORTA.DIRSET&#32;=&#32;PIN2_bm&#32;|&#32;PIN3_bm;
+<anchor xml:id="_twi0__master_8c_source_1l00081"/>00081 
+<anchor xml:id="_twi0__master_8c_source_1l00082"/>00082 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#ifdef&#32;TWI_ENABLE_PULLUPS</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00083"/>00083 &#32;&#32;&#32;&#32;<emphasis role="comment">//Enable&#32;Pull-Ups</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00084"/>00084 &#32;&#32;&#32;&#32;PORTA.PINCONFIG&#32;=&#32;PORT_PULLUPEN_bm;
+<anchor xml:id="_twi0__master_8c_source_1l00085"/>00085 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;#endif</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00086"/>00086 
+<anchor xml:id="_twi0__master_8c_source_1l00087"/>00087 &#32;&#32;&#32;&#32;<emphasis role="comment">//Select&#32;RA2/RA3</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00088"/>00088 &#32;&#32;&#32;&#32;PORTA.PINCTRLUPD&#32;=&#32;PIN2_bm&#32;|&#32;PIN3_bm;
+<anchor xml:id="_twi0__master_8c_source_1l00089"/>00089 }
+<anchor xml:id="_twi0__master_8c_source_1l00090"/>00090 
+<anchor xml:id="_twi0__master_8c_source_1l00091"/><link linkend="_twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d">00091</link> <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d">_startTWI</link>(uint8_t&#32;addr,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;read)&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00092"/>00092 &#32;&#32;&#32;&#32;<emphasis role="comment">//If&#32;the&#32;Bus&#32;is&#32;Busy</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00093"/>00093 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_twi0__master_8c_1a86cd4c8996cbafb28d602fac380ffb6b">TWI_IS_BUSBUSY</link>())&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00094"/>00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00095"/>00095 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_twi0__master_8c_source_1l00096"/>00096 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00097"/>00097 &#32;&#32;&#32;&#32;<emphasis role="comment">//Send&#32;Address</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00098"/>00098 &#32;&#32;&#32;&#32;TWI0.MADDR&#32;=&#32;(addr&#32;&lt;&lt;&#32;1)&#32;|&#32;read;
+<anchor xml:id="_twi0__master_8c_source_1l00099"/>00099 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00100"/>00100 &#32;&#32;&#32;&#32;<emphasis role="comment">//Wait...</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00101"/>00101 &#32;&#32;&#32;&#32;<link linkend="_twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503">TWI_WAIT</link>();
+<anchor xml:id="_twi0__master_8c_source_1l00102"/>00102 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00103"/>00103 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_twi0__master_8c_1a88bac97d359ea3f873641d6ebf886231">isTWIBad</link>())&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00104"/>00104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Stop&#32;the&#32;Bus</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00105"/>00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TWI0.MCTRLB&#32;=&#32;TWI_MCMD_STOP_gc;
+<anchor xml:id="_twi0__master_8c_source_1l00106"/>00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00107"/>00107 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_twi0__master_8c_source_1l00108"/>00108 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00109"/>00109 &#32;&#32;&#32;&#32;<emphasis role="comment">//TWI&#32;Started</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00110"/>00110 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00111"/>00111 }
+<anchor xml:id="_twi0__master_8c_source_1l00112"/>00112 
+<anchor xml:id="_twi0__master_8c_source_1l00113"/>00113 <emphasis role="comment">//Internal&#32;Function:&#32;Reads&#32;len&#32;bytes&#32;from&#32;TWI,&#32;then&#32;issues&#32;a&#32;bus&#32;STOP</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00114"/><link linkend="_twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde">00114</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde">_readFromTWI</link>(uint8_t*&#32;data,&#32;uint8_t&#32;len)&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00115"/>00115 &#32;&#32;&#32;&#32;uint8_t&#32;bCount&#32;=&#32;0;
+<anchor xml:id="_twi0__master_8c_source_1l00116"/>00116 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00117"/>00117 &#32;&#32;&#32;&#32;<emphasis role="comment">//Release&#32;the&#32;clock&#32;hold</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00118"/>00118 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00119"/>00119 &#32;&#32;&#32;&#32;TWI0.MSTATUS&#32;=&#32;TWI_CLKHOLD_bm;
+<anchor xml:id="_twi0__master_8c_source_1l00120"/>00120 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00121"/>00121 &#32;&#32;&#32;&#32;<emphasis role="comment">//TWI0.MCTRLB&#32;=&#32;TWI_MCMD_RECVTRANS_gc;</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00122"/>00122 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00123"/>00123 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(bCount&#32;&lt;&#32;len)&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00124"/>00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Wait...</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00125"/>00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503">TWI_WAIT</link>();
+<anchor xml:id="_twi0__master_8c_source_1l00126"/>00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00127"/>00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Store&#32;data</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00128"/>00128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data[bCount]&#32;=&#32;TWI0.MDATA;
+<anchor xml:id="_twi0__master_8c_source_1l00129"/>00129 
+<anchor xml:id="_twi0__master_8c_source_1l00130"/>00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Increment&#32;the&#32;counter</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00131"/>00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bCount&#32;+=&#32;1;
+<anchor xml:id="_twi0__master_8c_source_1l00132"/>00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00133"/>00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(bCount&#32;!=&#32;len)&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00134"/>00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//If&#32;not&#32;done,&#32;then&#32;ACK&#32;and&#32;read&#32;the&#32;next&#32;byte</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00135"/>00135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TWI0.MCTRLB&#32;=&#32;TWI_ACKACT_ACK_gc&#32;|&#32;TWI_MCMD_RECVTRANS_gc;
+<anchor xml:id="_twi0__master_8c_source_1l00136"/>00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_twi0__master_8c_source_1l00137"/>00137 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_twi0__master_8c_source_1l00138"/>00138 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00139"/>00139 &#32;&#32;&#32;&#32;<emphasis role="comment">//NACK&#32;and&#32;STOP&#32;the&#32;bus</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00140"/>00140 &#32;&#32;&#32;&#32;TWI0.MCTRLB&#32;=&#32;TWI_ACKACT_NACK_gc&#32;|&#32;TWI_MCMD_STOP_gc;
+<anchor xml:id="_twi0__master_8c_source_1l00141"/>00141 }
+<anchor xml:id="_twi0__master_8c_source_1l00142"/>00142 
+<anchor xml:id="_twi0__master_8c_source_1l00143"/>00143 <emphasis role="comment">//Internal&#32;Function:&#32;Write&#32;len&#32;bytes&#32;to&#32;TWI.&#32;Does&#32;NOT&#32;STOP&#32;the&#32;bus.&#32;Returns&#32;true&#32;if&#32;successful</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00144"/><link linkend="_twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb">00144</link> <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb">_writeToTWI</link>(uint8_t*&#32;data,&#32;uint8_t&#32;len)&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00145"/>00145 &#32;&#32;&#32;&#32;uint8_t&#32;count&#32;=&#32;0;
+<anchor xml:id="_twi0__master_8c_source_1l00146"/>00146 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00147"/>00147 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(count&#32;&lt;&#32;len)&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00148"/>00148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Write&#32;a&#32;byte</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00149"/>00149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TWI0.MDATA&#32;=&#32;data[count];
+<anchor xml:id="_twi0__master_8c_source_1l00150"/>00150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00151"/>00151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Wait...</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00152"/>00152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503">TWI_WAIT</link>();
+<anchor xml:id="_twi0__master_8c_source_1l00153"/>00153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00154"/>00154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//If&#32;the&#32;client&#32;NACKed,&#32;then&#32;abort&#32;the&#32;write</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00155"/>00155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_twi0__master_8c_1aa0c501a160d4a7bbac583a0760b69879">CLIENT_NACK</link>())&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00156"/>00156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00157"/>00157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_twi0__master_8c_source_1l00158"/>00158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00159"/>00159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Increment&#32;the&#32;counter</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00160"/>00160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;count++;
+<anchor xml:id="_twi0__master_8c_source_1l00161"/>00161 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_twi0__master_8c_source_1l00162"/>00162 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00163"/>00163 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00164"/>00164 }
+<anchor xml:id="_twi0__master_8c_source_1l00165"/>00165 
+<anchor xml:id="_twi0__master_8c_source_1l00166"/><link linkend="_twi0__master_8c_1a472ca814410582196cc43dc0d26ac959">00166</link> <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_twi0__master_8c_1a472ca814410582196cc43dc0d26ac959">TWI_sendByte</link>(uint8_t&#32;addr,&#32;uint8_t&#32;data)&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00167"/>00167 &#32;&#32;&#32;&#32;<emphasis role="comment">//Address&#32;Client&#32;Device&#32;(Write)</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00168"/>00168 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!<link linkend="_twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d">_startTWI</link>(addr,&#32;<link linkend="_twi0__master_8c_1a3b68e8e777b71520f9dbfac733774d5f">TWI_WRITE</link>))&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00169"/>00169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00170"/>00170 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_twi0__master_8c_source_1l00171"/>00171 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00172"/>00172 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;success&#32;=&#32;<link linkend="_twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb">_writeToTWI</link>(&amp;data,&#32;1);
+<anchor xml:id="_twi0__master_8c_source_1l00173"/>00173 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00174"/>00174 &#32;&#32;&#32;&#32;<emphasis role="comment">//Stop&#32;the&#32;bus</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00175"/>00175 &#32;&#32;&#32;&#32;TWI0.MCTRLB&#32;=&#32;TWI_MCMD_STOP_gc;
+<anchor xml:id="_twi0__master_8c_source_1l00176"/>00176 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00177"/>00177 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;success;
+<anchor xml:id="_twi0__master_8c_source_1l00178"/>00178 }
+<anchor xml:id="_twi0__master_8c_source_1l00179"/>00179 
+<anchor xml:id="_twi0__master_8c_source_1l00180"/><link linkend="_twi0__master_8c_1a35878eea0edaf2bcecf05c45c6c9e0f5">00180</link> <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_twi0__master_8c_1a35878eea0edaf2bcecf05c45c6c9e0f5">TWI_sendBytes</link>(uint8_t&#32;addr,&#32;uint8_t*&#32;data,&#32;uint8_t&#32;len)&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00181"/>00181 &#32;&#32;&#32;&#32;<emphasis role="comment">//Address&#32;Client&#32;Device&#32;(Write)</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00182"/>00182 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!<link linkend="_twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d">_startTWI</link>(addr,&#32;<link linkend="_twi0__master_8c_1a3b68e8e777b71520f9dbfac733774d5f">TWI_WRITE</link>))&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00183"/>00183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00184"/>00184 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_twi0__master_8c_source_1l00185"/>00185 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00186"/>00186 &#32;&#32;&#32;&#32;<emphasis role="comment">//Write&#32;the&#32;bytes&#32;to&#32;the&#32;client</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00187"/>00187 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;success&#32;=&#32;<link linkend="_twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb">_writeToTWI</link>(data,&#32;len);
+<anchor xml:id="_twi0__master_8c_source_1l00188"/>00188 
+<anchor xml:id="_twi0__master_8c_source_1l00189"/>00189 &#32;&#32;&#32;&#32;<emphasis role="comment">//Stop&#32;the&#32;bus</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00190"/>00190 &#32;&#32;&#32;&#32;TWI0.MCTRLB&#32;=&#32;TWI_MCMD_STOP_gc;
+<anchor xml:id="_twi0__master_8c_source_1l00191"/>00191 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00192"/>00192 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;success;
+<anchor xml:id="_twi0__master_8c_source_1l00193"/>00193 }
+<anchor xml:id="_twi0__master_8c_source_1l00194"/>00194 
+<anchor xml:id="_twi0__master_8c_source_1l00195"/><link linkend="_twi0__master_8c_1aba41249cfdcf6503f6facca53b858baf">00195</link> <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_twi0__master_8c_1aba41249cfdcf6503f6facca53b858baf">TWI_readByte</link>(uint8_t&#32;addr,&#32;uint8_t*&#32;data)&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00196"/>00196 &#32;&#32;&#32;&#32;<emphasis role="comment">//Address&#32;Client&#32;Device&#32;(Read)</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00197"/>00197 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!<link linkend="_twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d">_startTWI</link>(addr,&#32;<link linkend="_twi0__master_8c_1aaf9a8abccd811954f9cc316f2b2f87b3">TWI_READ</link>))&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00198"/>00198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00199"/>00199 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_twi0__master_8c_source_1l00200"/>00200 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00201"/>00201 &#32;&#32;&#32;&#32;<emphasis role="comment">//Read&#32;byte&#32;from&#32;client</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00202"/>00202 &#32;&#32;&#32;&#32;<link linkend="_twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde">_readFromTWI</link>(data,&#32;1);
+<anchor xml:id="_twi0__master_8c_source_1l00203"/>00203 
+<anchor xml:id="_twi0__master_8c_source_1l00204"/>00204 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00205"/>00205 }
+<anchor xml:id="_twi0__master_8c_source_1l00206"/>00206 
+<anchor xml:id="_twi0__master_8c_source_1l00207"/>00207 
+<anchor xml:id="_twi0__master_8c_source_1l00208"/><link linkend="_twi0__master_8c_1a81074b35f6014cebe4d13ea41b38484d">00208</link> <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_twi0__master_8c_1a81074b35f6014cebe4d13ea41b38484d">TWI_readBytes</link>(uint8_t&#32;addr,&#32;uint8_t*&#32;data,&#32;uint8_t&#32;len)&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00209"/>00209 &#32;&#32;&#32;&#32;<emphasis role="comment">//Address&#32;Client&#32;Device&#32;(Read)</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00210"/>00210 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!<link linkend="_twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d">_startTWI</link>(addr,&#32;<link linkend="_twi0__master_8c_1aaf9a8abccd811954f9cc316f2b2f87b3">TWI_READ</link>))&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00211"/>00211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00212"/>00212 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_twi0__master_8c_source_1l00213"/>00213 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00214"/>00214 &#32;&#32;&#32;&#32;<emphasis role="comment">//Read&#32;bytes&#32;from&#32;client</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00215"/>00215 &#32;&#32;&#32;&#32;<link linkend="_twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde">_readFromTWI</link>(data,&#32;len);
+<anchor xml:id="_twi0__master_8c_source_1l00216"/>00216 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00217"/>00217 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00218"/>00218 }
+<anchor xml:id="_twi0__master_8c_source_1l00219"/>00219 
+<anchor xml:id="_twi0__master_8c_source_1l00220"/><link linkend="_twi0__master_8c_1abace615165977923b5a9abf7fe760f8a">00220</link> <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_twi0__master_8c_1abace615165977923b5a9abf7fe760f8a">TWI_sendAndReadBytes</link>(uint8_t&#32;addr,&#32;uint8_t&#32;regAddress,&#32;uint8_t*&#32;data,&#32;uint8_t&#32;len)&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00221"/>00221 &#32;&#32;&#32;&#32;<emphasis role="comment">//Address&#32;Client&#32;Device&#32;(Write)</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00222"/>00222 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!<link linkend="_twi0__master_8c_1a5b0e3bd68badf9ef45b187cbc4ef275d">_startTWI</link>(addr,&#32;<link linkend="_twi0__master_8c_1a3b68e8e777b71520f9dbfac733774d5f">TWI_WRITE</link>))&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00223"/>00223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00224"/>00224 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_twi0__master_8c_source_1l00225"/>00225 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00226"/>00226 &#32;&#32;&#32;&#32;<emphasis role="comment">//Write&#32;register&#32;address</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00227"/>00227 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!<link linkend="_twi0__master_8c_1af12b3c7e52e7b420a53cf17fda194eeb">_writeToTWI</link>(&amp;regAddress,&#32;1))&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00228"/>00228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TWI0.MCTRLB&#32;=&#32;TWI_MCMD_STOP_gc;
+<anchor xml:id="_twi0__master_8c_source_1l00229"/>00229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00230"/>00230 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_twi0__master_8c_source_1l00231"/>00231 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00232"/>00232 &#32;&#32;&#32;&#32;<emphasis role="comment">//Restart&#32;the&#32;TWI&#32;Bus&#32;in&#32;READ&#32;mode</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00233"/>00233 &#32;&#32;&#32;&#32;TWI0.MADDR&#32;|=&#32;<link linkend="_twi0__master_8c_1aaf9a8abccd811954f9cc316f2b2f87b3">TWI_READ</link>;
+<anchor xml:id="_twi0__master_8c_source_1l00234"/>00234 &#32;&#32;&#32;&#32;TWI0.MCTRLB&#32;=&#32;TWI_MCMD_REPSTART_gc;
+<anchor xml:id="_twi0__master_8c_source_1l00235"/>00235 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00236"/>00236 &#32;&#32;&#32;&#32;<emphasis role="comment">//Wait...</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00237"/>00237 &#32;&#32;&#32;&#32;<link linkend="_twi0__master_8c_1aef324916c0a83c59999e0c67e5b3a503">TWI_WAIT</link>();
+<anchor xml:id="_twi0__master_8c_source_1l00238"/>00238 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00239"/>00239 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_twi0__master_8c_1a88bac97d359ea3f873641d6ebf886231">isTWIBad</link>())&#32;{
+<anchor xml:id="_twi0__master_8c_source_1l00240"/>00240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Stop&#32;the&#32;TWI&#32;Bus&#32;if&#32;an&#32;error&#32;occurred</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00241"/>00241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TWI0.MCTRLB&#32;=&#32;TWI_MCMD_STOP_gc;
+<anchor xml:id="_twi0__master_8c_source_1l00242"/>00242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00243"/>00243 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_twi0__master_8c_source_1l00244"/>00244 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00245"/>00245 &#32;&#32;&#32;&#32;<emphasis role="comment">//Read&#32;the&#32;data&#32;from&#32;the&#32;client</emphasis>
+<anchor xml:id="_twi0__master_8c_source_1l00246"/>00246 &#32;&#32;&#32;&#32;<link linkend="_twi0__master_8c_1aac65a59189d5da063979d45c6a21fdde">_readFromTWI</link>(data,&#32;len);
+<anchor xml:id="_twi0__master_8c_source_1l00247"/>00247 &#32;&#32;&#32;&#32;
+<anchor xml:id="_twi0__master_8c_source_1l00248"/>00248 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_twi0__master_8c_source_1l00249"/>00249 }
+</programlisting></section>

@@ -1,0 +1,161 @@
+\doxysection{D\+:/\+ESE381/\+Lab06/src/\+Task2/temp\+\_\+meas\+\_\+\+LM75.c File Reference}
+\hypertarget{temp__meas___l_m75_8c}{}\label{temp__meas___l_m75_8c}\index{D:/ESE381/Lab06/src/Task2/temp\_meas\_LM75.c@{D:/ESE381/Lab06/src/Task2/temp\_meas\_LM75.c}}
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$twi/twi0\+\_\+master.\+h$>$}\newline
+{\ttfamily \#include "{}serlcd.\+h"{}}\newline
+{\ttfamily \#include "{}lm75.\+h"{}}\newline
+Include dependency graph for temp\+\_\+meas\+\_\+\+LM75.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{temp__meas___l_m75_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{temp__meas___l_m75_8c_a92586ca8aecf916e0729fd2e50e1ad48}{SERLCD\+\_\+\+ADDR}}~0x72
+\item 
+\#define \mbox{\hyperlink{temp__meas___l_m75_8c_a48b0d5e3234086fa92932198b565eb6b}{LM75\+\_\+\+ADDR}}~0x48
+\item 
+\#define \mbox{\hyperlink{temp__meas___l_m75_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+CPU}}~4000000\+UL
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{temp__meas___l_m75_8c_ae2e0f7cf24504a9d075c351f848b7d8d}{fill\+\_\+buffer}} ()
+\item 
+float \mbox{\hyperlink{temp__meas___l_m75_8c_a68a292c808957403e5ca69a16ee52592}{c\+\_\+to\+\_\+f}} (float c)
+\item 
+int \mbox{\hyperlink{temp__meas___l_m75_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{temp__meas___l_m75_8c_a78f1124f769dea5b40ef26818088fdd3}{lm75\+\_\+bytes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{temp__meas___l_m75_8c_a43bafb28b29491ec7f871319b5a3b2f8}\index{temp\_meas\_LM75.c@{temp\_meas\_LM75.c}!F\_CPU@{F\_CPU}}
+\index{F\_CPU@{F\_CPU}!temp\_meas\_LM75.c@{temp\_meas\_LM75.c}}
+\doxysubsubsection{\texorpdfstring{F\_CPU}{F\_CPU}}
+{\footnotesize\ttfamily \label{temp__meas___l_m75_8c_a43bafb28b29491ec7f871319b5a3b2f8} 
+\#define F\+\_\+\+CPU~4000000\+UL}
+
+
+
+Definition at line \mbox{\hyperlink{temp__meas___l_m75_8c_source_l00011}{11}} of file \mbox{\hyperlink{temp__meas___l_m75_8c_source}{temp\+\_\+meas\+\_\+\+LM75.\+c}}.
+
+\Hypertarget{temp__meas___l_m75_8c_a48b0d5e3234086fa92932198b565eb6b}\index{temp\_meas\_LM75.c@{temp\_meas\_LM75.c}!LM75\_ADDR@{LM75\_ADDR}}
+\index{LM75\_ADDR@{LM75\_ADDR}!temp\_meas\_LM75.c@{temp\_meas\_LM75.c}}
+\doxysubsubsection{\texorpdfstring{LM75\_ADDR}{LM75\_ADDR}}
+{\footnotesize\ttfamily \label{temp__meas___l_m75_8c_a48b0d5e3234086fa92932198b565eb6b} 
+\#define LM75\+\_\+\+ADDR~0x48}
+
+
+
+Definition at line \mbox{\hyperlink{temp__meas___l_m75_8c_source_l00010}{10}} of file \mbox{\hyperlink{temp__meas___l_m75_8c_source}{temp\+\_\+meas\+\_\+\+LM75.\+c}}.
+
+\Hypertarget{temp__meas___l_m75_8c_a92586ca8aecf916e0729fd2e50e1ad48}\index{temp\_meas\_LM75.c@{temp\_meas\_LM75.c}!SERLCD\_ADDR@{SERLCD\_ADDR}}
+\index{SERLCD\_ADDR@{SERLCD\_ADDR}!temp\_meas\_LM75.c@{temp\_meas\_LM75.c}}
+\doxysubsubsection{\texorpdfstring{SERLCD\_ADDR}{SERLCD\_ADDR}}
+{\footnotesize\ttfamily \label{temp__meas___l_m75_8c_a92586ca8aecf916e0729fd2e50e1ad48} 
+\#define SERLCD\+\_\+\+ADDR~0x72}
+
+TO THE PRELAB GRADER\+:
+
+This program is intended to be the solution code for both Task 2 and Task 3 as Task 3 is simply an extension of Task 2 with none of the Task 2 components modified. 
+
+Definition at line \mbox{\hyperlink{temp__meas___l_m75_8c_source_l00009}{9}} of file \mbox{\hyperlink{temp__meas___l_m75_8c_source}{temp\+\_\+meas\+\_\+\+LM75.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{temp__meas___l_m75_8c_a68a292c808957403e5ca69a16ee52592}\index{temp\_meas\_LM75.c@{temp\_meas\_LM75.c}!c\_to\_f@{c\_to\_f}}
+\index{c\_to\_f@{c\_to\_f}!temp\_meas\_LM75.c@{temp\_meas\_LM75.c}}
+\doxysubsubsection{\texorpdfstring{c\_to\_f()}{c\_to\_f()}}
+{\footnotesize\ttfamily \label{temp__meas___l_m75_8c_a68a292c808957403e5ca69a16ee52592} 
+float c\+\_\+to\+\_\+f (\begin{DoxyParamCaption}\item[{float}]{c}{}\end{DoxyParamCaption})}
+
+Converts celsius to fahrenheit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Celsius. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Fahrenheit. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{temp__meas___l_m75_8c_source_l00074}{74}} of file \mbox{\hyperlink{temp__meas___l_m75_8c_source}{temp\+\_\+meas\+\_\+\+LM75.\+c}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{temp__meas___l_m75_8c_a68a292c808957403e5ca69a16ee52592_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{temp__meas___l_m75_8c_ae2e0f7cf24504a9d075c351f848b7d8d}\index{temp\_meas\_LM75.c@{temp\_meas\_LM75.c}!fill\_buffer@{fill\_buffer}}
+\index{fill\_buffer@{fill\_buffer}!temp\_meas\_LM75.c@{temp\_meas\_LM75.c}}
+\doxysubsubsection{\texorpdfstring{fill\_buffer()}{fill\_buffer()}}
+{\footnotesize\ttfamily \label{temp__meas___l_m75_8c_ae2e0f7cf24504a9d075c351f848b7d8d} 
+void fill\+\_\+buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Fills {\ttfamily serlcd\+\_\+buffer} with Lab 07 template.
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{temp__meas___l_m75_8c_source_l00060}{60}} of file \mbox{\hyperlink{temp__meas___l_m75_8c_source}{temp\+\_\+meas\+\_\+\+LM75.\+c}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{temp__meas___l_m75_8c_ae2e0f7cf24504a9d075c351f848b7d8d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{temp__meas___l_m75_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{temp\_meas\_LM75.c@{temp\_meas\_LM75.c}!main@{main}}
+\index{main@{main}!temp\_meas\_LM75.c@{temp\_meas\_LM75.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{temp__meas___l_m75_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{temp__meas___l_m75_8c_source_l00026}{26}} of file \mbox{\hyperlink{temp__meas___l_m75_8c_source}{temp\+\_\+meas\+\_\+\+LM75.\+c}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{temp__meas___l_m75_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{temp__meas___l_m75_8c_a78f1124f769dea5b40ef26818088fdd3}\index{temp\_meas\_LM75.c@{temp\_meas\_LM75.c}!lm75\_bytes@{lm75\_bytes}}
+\index{lm75\_bytes@{lm75\_bytes}!temp\_meas\_LM75.c@{temp\_meas\_LM75.c}}
+\doxysubsubsection{\texorpdfstring{lm75\_bytes}{lm75\_bytes}}
+{\footnotesize\ttfamily \label{temp__meas___l_m75_8c_a78f1124f769dea5b40ef26818088fdd3} 
+uint16\+\_\+t lm75\+\_\+bytes}
+
+
+
+Definition at line \mbox{\hyperlink{temp__meas___l_m75_8c_source_l00024}{24}} of file \mbox{\hyperlink{temp__meas___l_m75_8c_source}{temp\+\_\+meas\+\_\+\+LM75.\+c}}.
+

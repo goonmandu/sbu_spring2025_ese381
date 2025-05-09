@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_f01a4ff1384ef713166392880521a1b6" xml:lang="en-US">
+<title>D:/ESE381/Lab06/src/Task2 Directory Reference</title>
+<indexterm><primary>D:/ESE381/Lab06/src/Task2 Directory Reference</primary></indexterm>
+Directory dependency graph for Task2:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_f01a4ff1384ef713166392880521a1b6_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_lm75_8c">lm75.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_lm75_8h">lm75.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_serlcd_8c">serlcd.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_serlcd_8h">serlcd.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_temp__meas___l_m75_8c">temp_meas_LM75.c</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

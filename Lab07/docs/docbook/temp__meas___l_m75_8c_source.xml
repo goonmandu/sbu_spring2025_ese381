@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_temp__meas___l_m75_8c_source" xml:lang="en-US">
+<title>temp_meas_LM75.c</title>
+<indexterm><primary>D:/ESE381/Lab06/src/Task2/temp_meas_LM75.c</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_temp__meas___l_m75_8c_source_1l00001"/>00001 
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00008"/>00008 
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00009"/><link linkend="_temp__meas___l_m75_8c_1a92586ca8aecf916e0729fd2e50e1ad48">00009</link> <emphasis role="preprocessor">#define&#32;SERLCD_ADDR&#32;0x72</emphasis>
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00010"/><link linkend="_temp__meas___l_m75_8c_1a48b0d5e3234086fa92932198b565eb6b">00010</link> <emphasis role="preprocessor">#define&#32;LM75_ADDR&#32;0x48</emphasis>
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00011"/><link linkend="_temp__meas___l_m75_8c_1a43bafb28b29491ec7f871319b5a3b2f8">00011</link> <emphasis role="preprocessor">#define&#32;F_CPU&#32;4000000UL</emphasis>
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00012"/>00012 
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00013"/>00013 <emphasis role="preprocessor">#include&#32;&lt;util/delay.h&gt;</emphasis>
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00014"/>00014 <emphasis role="preprocessor">#include&#32;&lt;stdio.h&gt;</emphasis>
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00015"/>00015 
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00016"/>00016 <emphasis role="comment">//&#32;#define&#32;TWI_ENABLE_PULLUPS</emphasis>
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00017"/>00017 <emphasis role="preprocessor">#include&#32;&lt;twi/twi0_master.h&gt;</emphasis>
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00018"/>00018 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_serlcd_8h">serlcd.h</link>&quot;</emphasis>
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00019"/>00019 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_lm75_8h">lm75.h</link>&quot;</emphasis>
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00020"/>00020 
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00021"/>00021 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_temp__meas___l_m75_8c_1ae2e0f7cf24504a9d075c351f848b7d8d">fill_buffer</link>();
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00022"/>00022 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_temp__meas___l_m75_8c_1a68a292c808957403e5ca69a16ee52592">c_to_f</link>(<emphasis role="keywordtype">float</emphasis>&#32;c);
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00023"/>00023 
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00024"/><link linkend="_temp__meas___l_m75_8c_1a78f1124f769dea5b40ef26818088fdd3">00024</link> uint16_t&#32;<link linkend="_temp__meas___l_m75_8c_1a78f1124f769dea5b40ef26818088fdd3">lm75_bytes</link>;
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00025"/>00025 
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00026"/><link linkend="_temp__meas___l_m75_8c_1a840291bc02cba5474a4cb46a9b9566fe">00026</link> <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_temp__meas___l_m75_8c_1a840291bc02cba5474a4cb46a9b9566fe">main</link>(<emphasis role="keywordtype">void</emphasis>)&#32;{
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00027"/>00027 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;deg_c,&#32;deg_f;
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00028"/>00028 &#32;&#32;&#32;&#32;int8_t&#32;ipart,&#32;fpart;
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00029"/>00029 &#32;&#32;&#32;&#32;
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00030"/>00030 &#32;&#32;&#32;&#32;TWI_initHost();
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00031"/>00031 &#32;&#32;&#32;&#32;TWI_initPins();
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00032"/>00032 &#32;&#32;&#32;&#32;
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00033"/>00033 &#32;&#32;&#32;&#32;<link linkend="_serlcd_8c_1aae95d59b494981540233ed751f39e341">clear_SerLCD</link>(<link linkend="_temp__meas___l_m75_8c_1a92586ca8aecf916e0729fd2e50e1ad48">SERLCD_ADDR</link>);
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00034"/>00034 &#32;&#32;&#32;&#32;<link linkend="_temp__meas___l_m75_8c_1ae2e0f7cf24504a9d075c351f848b7d8d">fill_buffer</link>();
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00035"/>00035 &#32;&#32;&#32;&#32;
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00036"/>00036 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(1)&#32;{
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_temp__meas___l_m75_8c_1a78f1124f769dea5b40ef26818088fdd3">lm75_bytes</link>&#32;=&#32;<link linkend="_lm75_8c_1a1783c5db1415960e6a87e9be965d5153">read_LM75_temp_bytes</link>(<link linkend="_temp__meas___l_m75_8c_1a48b0d5e3234086fa92932198b565eb6b">LM75_ADDR</link>);
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;deg_c&#32;=&#32;<link linkend="_lm75_8c_1a41112386168f6b29f716d86bb9742bab">lm75_to_celsius</link>(<link linkend="_temp__meas___l_m75_8c_1a78f1124f769dea5b40ef26818088fdd3">lm75_bytes</link>);
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;deg_f&#32;=&#32;<link linkend="_temp__meas___l_m75_8c_1a68a292c808957403e5ca69a16ee52592">c_to_f</link>(deg_c);
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ipart&#32;=&#32;(int8_t)deg_c;
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fpart&#32;=&#32;(int8_t)((deg_c&#32;-&#32;ipart)&#32;*&#32;10);
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(fpart&#32;&lt;&#32;0)&#32;fpart&#32;*=&#32;-1;
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sprintf(<link linkend="_serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85">serlcd_buffer</link>[1],&#32;<emphasis role="stringliteral">&quot;&#32;&#32;&#32;&#32;&#32;&#32;%3d.%1d&#32;C&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>&#32;,&#32;ipart,&#32;fpart);
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ipart&#32;=&#32;(int8_t)deg_f;
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fpart&#32;=&#32;(int8_t)((deg_f&#32;-&#32;ipart)&#32;*&#32;10);
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(fpart&#32;&lt;&#32;0)&#32;fpart&#32;*=&#32;-1;
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sprintf(<link linkend="_serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85">serlcd_buffer</link>[2],&#32;<emphasis role="stringliteral">&quot;&#32;&#32;&#32;&#32;&#32;&#32;%3d.%1d&#32;F&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>&#32;,&#32;ipart,&#32;fpart);
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_serlcd_8c_1a96469994c1d7399edae5231ed06d714a">update_SerLCD</link>(<link linkend="_temp__meas___l_m75_8c_1a92586ca8aecf916e0729fd2e50e1ad48">SERLCD_ADDR</link>);
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_delay_ms(500);
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00051"/>00051 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00052"/>00052 }
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00053"/>00053 
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00060"/><link linkend="_temp__meas___l_m75_8c_1ae2e0f7cf24504a9d075c351f848b7d8d">00060</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_temp__meas___l_m75_8c_1ae2e0f7cf24504a9d075c351f848b7d8d">fill_buffer</link>()&#32;{
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00061"/>00061 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;01234567890123456789</emphasis>
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00062"/>00062 &#32;&#32;&#32;&#32;sprintf(<link linkend="_serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85">serlcd_buffer</link>[0],&#32;<emphasis role="stringliteral">&quot;&#32;&#32;LM75&#32;Temperature&#32;&#32;&quot;</emphasis>);
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00063"/>00063 &#32;&#32;&#32;&#32;sprintf(<link linkend="_serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85">serlcd_buffer</link>[1],&#32;<emphasis role="stringliteral">&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>);
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00064"/>00064 &#32;&#32;&#32;&#32;sprintf(<link linkend="_serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85">serlcd_buffer</link>[2],&#32;<emphasis role="stringliteral">&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>);
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00065"/>00065 &#32;&#32;&#32;&#32;sprintf(<link linkend="_serlcd_8h_1a185c8f21f3e5dafd872962fae9826c85">serlcd_buffer</link>[3],&#32;<emphasis role="stringliteral">&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&quot;</emphasis>);
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00066"/>00066 }
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00067"/>00067 
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00074"/><link linkend="_temp__meas___l_m75_8c_1a68a292c808957403e5ca69a16ee52592">00074</link> <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_temp__meas___l_m75_8c_1a68a292c808957403e5ca69a16ee52592">c_to_f</link>(<emphasis role="keywordtype">float</emphasis>&#32;c)&#32;{
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00075"/>00075 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;c&#32;*&#32;1.8f&#32;+&#32;32;
+<anchor xml:id="_temp__meas___l_m75_8c_source_1l00076"/>00076 }
+</programlisting></section>

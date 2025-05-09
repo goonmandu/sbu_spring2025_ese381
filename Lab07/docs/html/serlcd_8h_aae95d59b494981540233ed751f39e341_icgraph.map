@@ -1,0 +1,8 @@
+<map id="clear_SerLCD" name="clear_SerLCD">
+<area shape="rect" id="Node000001" title=" " alt="" coords="265,5,368,32"/>
+<area shape="rect" id="Node000002" href="$temp__meas___l_m75_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="249,21,55,21,55,16,249,16"/>
+<area shape="rect" id="Node000003" href="$serlcd_8c.html#a96469994c1d7399edae5231ed06d714a" title=" " alt="" coords="103,31,217,57"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="250,32,218,37,217,32,249,27"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="87,32,54,26,55,21,88,27"/>
+</map>
