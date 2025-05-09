@@ -33,7 +33,7 @@ All solutions and projects can be opened with Microchip Studio directly via the 
 # Warnings and Disclaimers
 **THESE FILES ARE PROVIDED FOR REFERENCE USE ONLY.**
 
-By copying my work and submitting them as your own, you are commiting **ACADEMIC DISHONESTY** and may be referred to the Stony Brook University Academic Judiciary.  
+By copying my work and submitting them as your own, you are committing **ACADEMIC DISHONESTY** and may be referred to the Stony Brook University Academic Judiciary.  
 If found responsible, you **WILL** get an **F** as your final grade as per Prof. Short's academic honesty policy.  
 I bear **NO RESPONSIBILITY** to your being found of cheating or any other consequence arising from your use of my code. This repository is for personal archival purposes, not to share my answers with other people.
 
@@ -45,12 +45,11 @@ The following parts of this repository were derived, adapted, or otherwise sourc
   - `Global/ese381/ese381/twi0_master.c`
   - `Global/ese381/ese381/twi0_master.h`
 - [SCD41 API, HAL, and Example Usage by Sensirion AG](https://github.com/Sensirion/embedded-i2c-scd4x)
-  - All of `Lab11/src/Lab11/Lab11/*` and `Lab11/src/Lab11/Lab11-Polling/*` except for the follwoing:
+  - All of `Lab11/src/Lab11/Lab11/*` and `Lab11/src/Lab11/Lab11-Polling/*` except for the following:
     - `Debug/`
     - `Lab11.componentinfo.xml`
     - `Lab11.cproj`
     - `Lab11-Polling.componentinfo.xml`
     - `Lab11-Polling.cproj`
     - The skeleton for `sensirion_i2c_hal.c`
-      - The HAL implementation for both scenarion (ISR-based and polling) was written by myself and is licensed under the MIT License (same as this repository).
-
+      - The HAL implementation for both scenario (ISR-based and polling) was written by myself and is licensed under the MIT License (same as this repository).
